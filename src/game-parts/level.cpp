@@ -24,6 +24,7 @@ namespace GameParts{
             players.push_back(player);
             p->setOrigin(sz.x / 2, sz.y / 2);
             p->setPosition(player->getPosition()->getX(), player->getPosition()->getY());
+            pRects.push_back(p);
         }
     }
 

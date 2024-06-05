@@ -3,6 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 
+// Dá para usar um set ou list de players
+// Usar map para texturas
+
 namespace GameParts
 {
     class Level

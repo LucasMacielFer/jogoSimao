@@ -1,6 +1,8 @@
 #pragma once
 #include "game-parts/level.h"
 
+// Salvamento/carregamento desacoplado com "function" do stl
+
 namespace GameMain
 {
     class Game
