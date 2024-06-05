@@ -1,4 +1,4 @@
-#include "level.h"
+#include "../../include/game-parts/level.h"
 
 namespace GameParts{
     Level::Level():
