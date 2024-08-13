@@ -1,19 +1,19 @@
-FILES = main game level entity player
-CPP = $(wildcard src/*.cpp) $(wildcard src/game-parts/*.cpp) $(wildcard src/elements/entities/*.cpp) $(wildcard src/elements/scenario/*.cpp)
+FILES = main Ente Gerenciador_Grafico Gerenciador_Eventos Entidade Personagem
+CPP = $(wildcard src/*.cpp) $(wildcard src/gerenciadores/*.cpp) $(wildcard src/entidades/*.cpp) $(wildcard src/entidades/personagens/*.cpp)
 ODIR = bin
-OBJ = $(patsubst src/elements/entities/%.cpp,$(ODIR)/%.o, $(wildcard src/elements/entities/*.cpp))
-OBJ += $(patsubst src/elements/scenario/%.cpp,$(ODIR)/%.o, $(wildcard src/elements/scenario/*.cpp))
-OBJ += $(patsubst src/game-parts/%.cpp,$(ODIR)/%.o, $(wildcard src/game-parts/*.cpp))
+OBJ = $(patsubst src/gerenciadores/%.cpp,$(ODIR)/%.o, $(wildcard src/gerenciadores/*.cpp))
+OBJ += $(patsubst src/entidades/%.cpp,$(ODIR)/%.o, $(wildcard src/entidades/*.cpp))
+OBJ += $(patsubst src/entidades/personagens/%.cpp,$(ODIR)/%.o, $(wildcard src/entidades/personagens/*.cpp))
 OBJ += $(patsubst src/%.cpp,$(ODIR)/%.o, $(wildcard src/*.cpp))
 
 
-$(ODIR)/%.o:: src/elements/entities/%.cpp
+$(ODIR)/%.o:: src/gerenciadores/%.cpp
 	g++ -Iinclude -g -fsanitize=address -c -o $@ $<
 
-$(ODIR)/%.o:: src/elements/scenario/%.cpp
+$(ODIR)/%.o:: src/entidades/%.cpp
 	g++ -Iinclude -g -fsanitize=address -c -o $@ $<
 
-$(ODIR)/%.o:: src/game-parts/%.cpp
+$(ODIR)/%.o:: src/entidades/personagens/%.cpp
 	g++ -Iinclude -g -fsanitize=address -c -o $@ $<
 
 $(ODIR)/%.o:: src/%.cpp
