@@ -4,8 +4,7 @@ namespace Entities
 {
     int Entity::idCounter = 0;
 
-    Entity::Entity(int pos[2], int sz[2], const char* tp, float s, int mh, int d, int rd):
-    texturePath(tp),
+    Entity::Entity(int pos[2], int sz[2], float s, int mh, int d, int rd):
     speed(s),
     health(mh),
     maxHealth(mh),
@@ -19,7 +18,6 @@ namespace Entities
     }
 
     Entity::Entity():
-    texturePath(""),
     speed(0),
     health(0),
     maxHealth(0),
@@ -35,11 +33,6 @@ namespace Entities
     Entity::~Entity()
     {
         delete position;
-    }
-
-    const char* Entity::getTexturePath() const
-    {
-        return texturePath;
     }
 
     Math::IntCoords* Entity::getPosition()
@@ -86,11 +79,6 @@ namespace Entities
     int Entity::getRangedDamage() const
     {
         return rangedDamage;
-    }
-
-    void Entity::setTexturePath(const char* tp)
-    {
-        texturePath = tp;
     }
 
     void Entity::setPosition(Math::IntCoords* pos)

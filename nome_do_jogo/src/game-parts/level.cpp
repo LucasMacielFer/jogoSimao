@@ -1,8 +1,7 @@
 #include "../../include/game-parts/level.h"
 
 namespace GameParts{
-    Level::Level():
-    nPlayers(0)
+    Level::Level()
     {
         window = new sf::RenderWindow(sf::VideoMode(1000, 800), "Game");
     }
@@ -18,13 +17,12 @@ namespace GameParts{
         {
             sf::Vector2f sz(player->getWidth(), player->getHeight());
             sf::RectangleShape* p = new sf::RectangleShape(sz);
-            sf::Texture pTexture;
-            pTexture.loadFromFile(player->getTexturePath());
-            p->setTexture(&pTexture);
             players.push_back(player);
             p->setOrigin(sz.x / 2, sz.y / 2);
             p->setPosition(player->getPosition()->getX(), player->getPosition()->getY());
+            p->setFillColor(sf::Color::White);
             pRects.push_back(p);
+            window->draw(*p);
         }
     }
 
@@ -91,6 +89,7 @@ namespace GameParts{
             sf::RectangleShape* p = pRects[i];
             Entities::Player* player = players[i];
             p->setPosition(player->getPosition()->getX(), player->getPosition()->getY());
+            cout << player->getPosition()->getX() << " " << player->getPosition()->getY() << endl;
         }
     }
 
@@ -99,7 +98,8 @@ namespace GameParts{
         window->clear();
         for(int i = 0; i < players.size(); i++)
         {
-            window->draw(*pRects[i]);
+            window->draw(*(pRects[i]));
         }
+        window->display();
     }
 }

@@ -8,7 +8,6 @@ namespace Entities
         protected:
             static int idCounter;
             const int id;
-            const char* texturePath;
             Math::IntCoords* position;
             Math::IntCoords* size;
             float speed;
@@ -18,7 +17,7 @@ namespace Entities
             int rangedDamage;
 
         public:
-            Entity(int pos[2], int sz[2], const char* tp, float s, const int mh, int d, int rd);
+            Entity(int pos[2], int sz[2], float s, const int mh, int d, int rd);
             Entity();
             virtual ~Entity();
             const int getId() const;
@@ -32,7 +31,6 @@ namespace Entities
             int getHealth() const;
             int getAttackDamage() const;
             int getRangedDamage() const;
-            void setTexturePath(const char* tp);
             void setPosition(Math::IntCoords* pos);
             void setSize(Math::IntCoords* sz);
             void setPosition(int pos[2]);

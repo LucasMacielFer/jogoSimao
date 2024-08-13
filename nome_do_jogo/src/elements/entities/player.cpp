@@ -2,8 +2,8 @@
 
 namespace Entities
 {
-    Player::Player(int pos[2], int sz[2], const char* tp):
-    Entity(pos, sz, tp, 0.5, 100, 20, 10),
+    Player::Player(int pos[2], int sz[2]):
+    Entity(pos, sz, 0.5, 100, 20, 10),
     score(0)
     {
     }

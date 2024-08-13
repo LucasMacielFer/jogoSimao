@@ -46,9 +46,11 @@ namespace Math {
     typedef Coordinates<unsigned int> UIntCoords;
 
     template <typename T>
-    Coordinates<T>::Coordinates(T x, T y)
+    Coordinates<T>::Coordinates(T xx, T yy):
+    x((T)0),
+    y((T)0)
     {
-        setCoordinates(x, y);
+        setCoordinates(xx, yy);
     }
 
     template <typename T>
@@ -82,22 +84,22 @@ namespace Math {
     }
 
     template <typename T>
-    void Coordinates<T>::setCoordinates(T x, T y)
+    void Coordinates<T>::setCoordinates(T xx, T yy)
     {
-        x = x;
-        y = y;
+        x = xx;
+        y = yy;
     }
 
     template <typename T>
-    void Coordinates<T>::setX(T x)
+    void Coordinates<T>::setX(T xx)
     {
-        x = x;
+        x = xx;
     }
 
     template <typename T>
-    void Coordinates<T>::setY(T y)
+    void Coordinates<T>::setY(T yy)
     {
-        y = y;
+        y = yy;
     }
 
     template <typename T>

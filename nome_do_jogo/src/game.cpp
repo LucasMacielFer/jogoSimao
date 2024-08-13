@@ -9,8 +9,8 @@ namespace GameMain
         int pos2[2] = {700, 300};
 
         level = new GameParts::Level();
-        player1 = new Entities::Player(pos1, size, "textures/player1.jpg");
-        player2 = new Entities::Player(pos2, size, "textures/player2.jpg");
+        player1 = new Entities::Player(pos1, size);
+        player2 = new Entities::Player(pos2, size);
         level->addPlayer(player1);
         level->addPlayer(player2);
     }
@@ -28,6 +28,7 @@ namespace GameMain
         {
             level->update();
             level->render();
+            level->executeEvent(level->getEvents());
         }
     }
 }

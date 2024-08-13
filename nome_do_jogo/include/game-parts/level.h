@@ -12,7 +12,6 @@ namespace GameParts
     {
     private:
         static int const MAX_PLAYERS = 2;
-        const int nPlayers;
         std::vector<Entities::Player*> players;
         std::vector<sf::RectangleShape*> pRects;
         sf::RenderWindow* window;

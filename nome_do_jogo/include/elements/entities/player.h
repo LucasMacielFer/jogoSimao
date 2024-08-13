@@ -9,7 +9,7 @@ namespace Entities
             int score;
 
         public:
-            Player(int pos[2], int sz[2], const char* tp);
+            Player(int pos[2], int sz[2]);
             Player();
             ~Player();
             int getScore() const;
