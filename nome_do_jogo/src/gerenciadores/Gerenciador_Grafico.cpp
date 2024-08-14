@@ -1,5 +1,6 @@
 #include "../../include/gerenciadores/Gerenciador_Grafico.h"
 #include "../../include/Ente.h"
+#include "../../include/auxiliares/Coordenada.h"
 
 namespace Gerenciadores
 {
