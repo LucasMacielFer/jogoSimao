@@ -46,6 +46,8 @@ namespace Gerenciadores
                 case sf::Keyboard::Key::S:
                     personagem1->mover(-2);
                     break;
+                default:
+                    break;
             }
             if(personagem2)
             {
@@ -62,6 +64,8 @@ namespace Gerenciadores
                         break;
                     case sf::Keyboard::Key::Down:
                         personagem2->mover(-2);
+                        break;
+                    default:
                         break;
                 }
             }
