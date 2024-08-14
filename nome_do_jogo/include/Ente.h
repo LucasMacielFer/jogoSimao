@@ -6,7 +6,7 @@ class Ente
 {
 private:
     static int cont;
-
+ 
 protected:
     Gerenciadores::Gerenciador_Grafico* pGGrafico;
     int id;
