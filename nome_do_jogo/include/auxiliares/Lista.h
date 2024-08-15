@@ -34,15 +34,15 @@ namespace Auxiliares
 
                 void setProximo(Elemento<Tipo>* pP)  { pProximo = pP;}
 
-                const Elemento<Tipo>* getProximo() const{ return pProximo;}
+                Elemento<Tipo>* getProximo(){ return pProximo;}
 
                 void setAnterior(Elemento<Tipo>* pA) { pAnterior = pA;}
 
-                const Elemento<Tipo>* getAnterior() const { return pAnterior;}
+                Elemento<Tipo>* getAnterior() { return pAnterior;}
 
                 void setInfo(Tipo* info){ pInfo = info;}
 
-                const Tipo* getInfo() const{ return pInfo;}
+                Tipo* getInfo(){ return pInfo;}
 
             };
 
@@ -64,8 +64,8 @@ namespace Auxiliares
         private:
 
             void setElemento(Elemento<T>* pElemento);
-            const Elemento<T>* getPrimeiro() const { return pPrimeiro;}
-            const Elemento<T>* getAtual() const { return pAtual;}
+            Elemento<T>* getPrimeiro(){ return pPrimeiro;}
+            Elemento<T>* getAtual(){ return pAtual;}
 
     };
 
@@ -139,6 +139,7 @@ namespace Auxiliares
         if(chave >= tamanho || chave < 0)
         {
             std::cout << "Invalid position" << std::endl;
+            exit(1);
         }
 
         else 
@@ -148,7 +149,7 @@ namespace Auxiliares
             {
                 pAux = pAux->getProximo();
             }
-            return pAux;
+            return (pAux->getInfo());
         }
     }
 
