@@ -66,6 +66,7 @@ namespace Auxiliares
             void setElemento(Elemento<T>* pElemento);
             const Elemento<T>* getPrimeiro() const { return pPrimeiro;}
             const Elemento<T>* getAtual() const { return pAtual;}
+
     };
 
     template<class T>
