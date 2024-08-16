@@ -13,7 +13,7 @@ namespace Entidades
             int velocidade;
 
         public:
-            Personagem(const int vd = 10, const int vel = 10, const int tamXX=10, const int tamYY=10, const int xx=0, const int yy=0);
+            Personagem(const float vd = 10.0f, const float vel = 10.0f, const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
             virtual ~Personagem();
             void mover(int dir);
             const int getVidas() const;

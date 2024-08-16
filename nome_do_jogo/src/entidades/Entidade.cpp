@@ -2,15 +2,15 @@
 
 namespace Entidades
 {
-    Entidade::Entidade(const int tamXX, const int tamYY, const int xx, const int yy):
+    Entidade::Entidade(const float tamXX, const float tamYY, const float xx, const float yy):
     Ente(),
     tamX(tamXX),
     tamY(tamYY),
     x(xx),
     y(yy),
-    retangulo(sf::Vector2f(100, 100))
+    retangulo(sf::Vector2f(100.0f, 100.0f))
     {
-        retangulo.setOrigin(tamX / 2, tamY / 2);
+        retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
         retangulo.setPosition(x, y);
         retangulo.setFillColor(sf::Color::White);
     }
@@ -21,28 +21,28 @@ namespace Entidades
         y = -1;
     }
 
-    void Entidade::setTamanho(const int xx, const int yy)
+    void Entidade::setTamanho(const float xx, const float yy)
     {
         tamX = xx;
         tamY = yy;
     }
 
     //Mudar para sf::Vector2f v = {tamX, tamY};
-    const int* Entidade::getTamanho() const
+    const sf::Vector2f Entidade::getTamanho() const
     {
-        int v[2] = {tamX, tamY};
+        sf::Vector2f v = {tamX, tamY};
         return v;
     }
 
-    void Entidade::setPosicao(const int xx, const int yy)
+    void Entidade::setPosicao(const float xx, const float yy)
     {
         x = xx;
         y = yy;
     }
 
-    const int* Entidade::getPosicao() const 
+    const sf::Vector2f Entidade::getPosicao() const 
     {
-        int v[2] = {x, y};
+        sf::Vector2f v = {x, y};
         return v;
     }
 

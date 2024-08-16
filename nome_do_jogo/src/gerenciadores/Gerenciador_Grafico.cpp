@@ -7,8 +7,8 @@ namespace Gerenciadores
     Gerenciador_Grafico* Gerenciador_Grafico::pInstancia(NULL);
 
     Gerenciador_Grafico::Gerenciador_Grafico():
-    tamanhoJanela({1000, 800}),
-    janela(sf::VideoMode(tamanhoJanela[0], tamanhoJanela[1]), "Jogo")
+    tamanhoJanela({1000.0f, 800.0f}),
+    janela(sf::VideoMode(tamanhoJanela.x, tamanhoJanela.y), "Jogo")
     {
         janela.setFramerateLimit(60);
     }

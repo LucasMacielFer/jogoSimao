@@ -20,7 +20,7 @@ namespace Gerenciadores
         listaObstaculos = NULL;
     }
 
-    /*const sf::Vector2f Gerenciador_Colisoes::calculadora_colisoes(Entidades::Entidade* entidade1, Entidades::Entidade* entidade2)
+    const sf::Vector2f Gerenciador_Colisoes::calculadora_colisoes(Entidades::Entidade* entidade1, Entidades::Entidade* entidade2)
     {
         if(entidade1 && entidade2)
         {
@@ -30,9 +30,11 @@ namespace Gerenciadores
             sf::Vector2f tamanho1 = entidade1->getTamanho();
             sf::Vector2f tamanho2 = entidade2->getTamanho();
 
+            //Calculo da distância relativa entre os centros de cada entidade.
             float dist_centro_em_x = fabs((posicao1.x + tamanho1.x/2.0f) - (posicao2.x + tamanho2.x/2.0f));
             float dist_centro_em_y = fabs((posicao1.y + tamanho1.y/2.0f) - (posicao2.y + tamanho2.y/2.0f));
 
+            //Um vetor que indica que ocorre colisão se os dois parâmetros são negativos.
             return sf::Vector2f(dist_centro_em_x - ((tamanho1.x/2.0f) + (tamanho2.x/2.0f)), dist_centro_em_y - ((tamanho1.y/2.0f) + (tamanho2.y/2.0f)) );
         }
         else
@@ -40,9 +42,9 @@ namespace Gerenciadores
             std::cout << "Ponteiros nulos comparados na calculadora" << std::endl;
             exit(1);
         }
-    }*/
+    }
 
-    /*void Gerenciador_Colisoes::executar()
+    void Gerenciador_Colisoes::executar()
     {
 
         //Percorre os personagens e verifica colisão com outros personagens.
@@ -86,7 +88,4 @@ namespace Gerenciadores
         }
 
     }
-
-    */
-
 }
