@@ -11,6 +11,7 @@ namespace Entidades
         protected:
             int vidas;
             int velocidade;
+            bool ataque;
 
         public:
             Personagem(const float vd = 10.0f, const float vel = 10.0f, const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
@@ -22,8 +23,8 @@ namespace Entidades
             void operator--();
 
             // Devem ser virtuais puras
-            void executar();
-            void salvar();
+            virtual void executar();
+            virtual void salvar();
         };
     }
 }

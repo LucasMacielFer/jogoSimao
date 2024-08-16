@@ -7,7 +7,8 @@ namespace Entidades
         Personagem::Personagem(const float vd, const float vel, const float tamXX, const float tamYY, const float xx, const float yy):
         Entidade(tamXX, tamYY, xx, yy),
         vidas(vd),
-        velocidade(vel)
+        velocidade(vel),
+        ataque(false)
         {
         }
 
