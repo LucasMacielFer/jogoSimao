@@ -27,6 +27,7 @@ namespace Entidades
         tamY = yy;
     }
 
+    //Mudar para sf::Vector2f v = {tamX, tamY};
     const int* Entidade::getTamanho() const
     {
         int v[2] = {tamX, tamY};
