@@ -30,44 +30,39 @@ namespace Gerenciadores
         {
             pGGrafico->fecharJanela();
         }
-        else if(e.type == sf::Event::KeyPressed)
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
         {
-            switch(e.key.code)
+            personagem1->mover(-1);
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+        {
+            personagem1->mover(1);
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+        {
+            personagem1->mover(2);
+        }
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+        {
+            personagem1->mover(-2);
+        }
+        if(personagem2)
+        {
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
             {
-                case sf::Keyboard::Key::A:
-                    personagem1->mover(-1);
-                    break;
-                case sf::Keyboard::Key::D:
-                    personagem1->mover(1);
-                    break;
-                case sf::Keyboard::Key::W:
-                    personagem1->mover(2);
-                    break;
-                case sf::Keyboard::Key::S:
-                    personagem1->mover(-2);
-                    break;
-                default:
-                    break;
+                personagem2->mover(-1);
             }
-            if(personagem2)
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
             {
-                switch(e.key.code)
-                {
-                    case sf::Keyboard::Key::Left:
-                        personagem2->mover(-1);
-                        break;
-                    case sf::Keyboard::Key::Right:
-                        personagem2->mover(1);
-                        break;
-                    case sf::Keyboard::Key::Up:
-                        personagem2->mover(2);
-                        break;
-                    case sf::Keyboard::Key::Down:
-                        personagem2->mover(-2);
-                        break;
-                    default:
-                        break;
-                }
+                personagem2->mover(1);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
+            {
+                personagem2->mover(2);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
+            {
+                personagem2->mover(-2);
             }
         }
     }
