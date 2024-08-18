@@ -24,6 +24,21 @@ namespace Entidades
                 {
 
                 }
+
+                /*void Jogador::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
+                {
+                    if(entAlternativa)
+                    {
+                        if( entAlternativa->getId() == "Inimigo" )
+                        {
+                            entAlternativa->sofrerDano(dano);
+                        }
+                        else if(entAlternativa->getId() == "Obstaculo")
+                        {
+                            regularColisao(entAlternativa, distancia_colisao);
+                        }
+                    }
+                }*/
                 
         }
 
