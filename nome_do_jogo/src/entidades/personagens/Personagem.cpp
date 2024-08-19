@@ -4,8 +4,8 @@ namespace Entidades
 {
     namespace Personagens
     {
-        Personagem::Personagem(const int vd, const float vel, const int danos, const float duraEspera, const float duraAtaque, const float tamXX, const float tamYY, const float xx, const float yy):
-        Entidade(tamXX, tamYY, xx, yy),
+        Personagem::Personagem(std::string txt, const int vd, const float vel, const int danos, const float duraEspera, const float duraAtaque, const float tamXX, const float tamYY, const float xx, const float yy):
+        Entidade(txt, tamXX, tamYY, xx, yy),
         vidas(vd),
         velocidade(vel),
         dano(danos),

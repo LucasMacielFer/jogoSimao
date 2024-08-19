@@ -2,9 +2,11 @@
 
 int Ente::cont(0);
     
-Ente::Ente():
-id(++cont)
+Ente::Ente(std::string txt):
+id(++cont),
+textura(txt)
 {
+    std::cout<<"Entidade sem textura"<<std::endl;
 }
 
 Ente::~Ente()

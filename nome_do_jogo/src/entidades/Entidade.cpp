@@ -2,8 +2,8 @@
 
 namespace Entidades
 {
-    Entidade::Entidade(const float tamXX, const float tamYY, const float xx, const float yy):
-    Ente(),
+    Entidade::Entidade(std::string txt, const float tamXX, const float tamYY, const float xx, const float yy):
+    Ente(txt),
     tamX(tamXX),
     tamY(tamYY),
     x(xx),

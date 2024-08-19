@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-namespace Auxiliares
+namespace Listas
 {
     template< class T>
     class Lista

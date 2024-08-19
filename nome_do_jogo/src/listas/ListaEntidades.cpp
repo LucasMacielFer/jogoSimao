@@ -1,6 +1,6 @@
-#include "auxiliares/ListaEntidades.h"
+#include "listas/ListaEntidades.h"
 
-namespace Auxiliares 
+namespace Listas 
 {
     ListaEntidades::ListaEntidades(): lista_entidades()
     {
