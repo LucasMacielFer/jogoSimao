@@ -61,7 +61,7 @@ namespace Gerenciadores
 
                     if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                     {
-                        //entidade1->colisao(entidade2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                        //entidade1->colidir(entidade2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
                     }
                 }
             }
@@ -81,7 +81,7 @@ namespace Gerenciadores
 
                     if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                     {
-                        //entidade1->colisao(entidade2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                        //entidade1->colidir(entidade2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
                     }
                 }
             }
