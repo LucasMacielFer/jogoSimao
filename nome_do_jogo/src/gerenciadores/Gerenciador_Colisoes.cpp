@@ -8,7 +8,7 @@ namespace Gerenciadores
 
     }
 
-    Gerenciador_Colisoes::Gerenciador_Colisoes(Auxiliares::ListaEntidades* lPersonagens, Auxiliares::ListaEntidades* lObstaculos):
+    Gerenciador_Colisoes::Gerenciador_Colisoes(Listas::ListaEntidades* lPersonagens, Listas::ListaEntidades* lObstaculos):
     listaPersonagens(lPersonagens), listaObstaculos(lObstaculos)
     {
 

@@ -22,5 +22,5 @@ std::string Ente::getTextura() const
 
 void Ente::setTextura(std::string txt)
 {
-    textura = txt
+    textura = txt;
 }
