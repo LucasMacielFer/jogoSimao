@@ -17,6 +17,8 @@ protected:
 public:
     Ente(std::string txt="");
     virtual ~Ente();
+    std::string getTextura() const;
+    void setTextura(std::string txt);
     virtual void desenhar(sf::RenderWindow& janela) = 0;
     virtual void executar() = 0;
 };

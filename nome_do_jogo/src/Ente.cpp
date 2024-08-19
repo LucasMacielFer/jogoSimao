@@ -12,5 +12,15 @@ textura(txt)
 Ente::~Ente()
 {
     id = -1;
-    pGGrafico = NULL;
+    pGGrafico = NULL; 
+}
+
+std::string Ente::getTextura() const
+{
+    return textura;
+}
+
+void Ente::setTextura(std::string txt)
+{
+    textura = txt
 }
