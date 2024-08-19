@@ -18,8 +18,8 @@ namespace Entidades
 
                 void executar();
                 void salvar();
-                //void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
-            
+                void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+                void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
         };
     }
 }

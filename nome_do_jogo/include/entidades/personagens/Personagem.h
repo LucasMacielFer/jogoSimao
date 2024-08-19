@@ -30,6 +30,7 @@ namespace Entidades
             const bool emAtaque() const;
             void aumentarDuracaoAtaque(const float tempo);
             const int getDano() const;
+            void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             //void regularColisao(Entidade* entAltenativa, sf::Vector2f distancia_colisao);
             void operator++();
             void operator--();

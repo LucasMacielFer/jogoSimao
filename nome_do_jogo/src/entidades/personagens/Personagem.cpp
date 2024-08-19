@@ -111,10 +111,35 @@ namespace Entidades
             }
         }
 
-        /*void Personagem::regularColisao(Entidade* EntAlternativa, sf::Vector2f distancia_colisao)
+        void Personagem::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)// Método adaptado do monitor Matheus Burda. https://github.com/MatheusBurda/Desert.git Acesso em: 19/08/2024.
         {
-
-        }*/
+            Personagem* paux = static_cast<Personagem*> (entAlternativa);
+            
+            if(distancia_colisao.x > distancia_colisao.y)
+            {
+                if(x < paux->x)
+                {
+                    x += distancia_colisao.x;
+                }
+                else 
+                {
+                    x -= distancia_colisao.x;
+                }
+                velocidade = 0.0f;
+            }
+            else 
+            {
+                if(y < paux->y)
+                {
+                    y += distancia_colisao.y;
+                }
+                else 
+                {
+                    y -= distancia_colisao.y;
+                }
+                velocidade = 0.0f;
+            }
+        }
 
         void Personagem::operator++()
         {

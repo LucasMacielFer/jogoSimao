@@ -15,6 +15,11 @@ Ente::~Ente()
     pGGrafico = NULL; 
 }
 
+const int Ente::getId() const
+{
+    return id;
+}
+
 std::string Ente::getTextura() const
 {
     return textura;

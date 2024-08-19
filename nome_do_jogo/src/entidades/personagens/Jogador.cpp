@@ -22,19 +22,24 @@ namespace Entidades
 
         }
 
-        /*void Jogador::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
+        void Jogador::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
             if(entAlternativa)
             {
-                if( entAlternativa->getId() == "Inimigo" )
+                if( entAlternativa->getId() == 1    /*"Inimigo"*/ )
                 {
-                    entAlternativa->sofrerDano(dano);
+                    Personagem* paux = static_cast<Personagem*>(entAlternativa);
+                    if(paux && emAtaque())
+                    {
+                        paux->sofrerDano(dano);
+                    }
                 }
-                else if(entAlternativa->getId() == "Obstaculo")
+                else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
                 {
-                    regularColisao(entAlternativa, distancia_colisao);
+                    Personagem* paux = static_cast<Personagem*>(entAlternativa);
+                    paux->regularColisao(entAlternativa, distancia_colisao);
                 }
             }
-        }*/
+        }
     }
 }
