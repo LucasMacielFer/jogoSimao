@@ -13,7 +13,7 @@ namespace Entidades
 
             public:
 
-                Jogador(std::string txt="",const int vd = 10, const float vel = 10.0f, const int danos = 1, const float duraEspera = 0.0f, const float duraAtaque = 0.0f, const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
+                Jogador(std::string txt="",const int vd = 10, const float vel = 10.0f, const int danos = 1, const float duraEspera = 0.0f, const float duraAtaque = 0.0f, const float tamXX=100.0f, const float tamYY=100.0f, const float xx=0.0f, const float yy=0.0f);
                 ~Jogador();
 
                 const int getPontuacao() const;

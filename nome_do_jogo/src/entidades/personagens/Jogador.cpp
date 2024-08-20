@@ -35,20 +35,19 @@ namespace Entidades
         {
             if(entAlternativa)
             {
-                if( entAlternativa->getId() == 1    /*"Inimigo"*/ )
-                {
-                    Personagem* paux = static_cast<Personagem*>(entAlternativa);
-                    if(paux && emAtaque())
-                    {
-                        paux->sofrerDano(dano);
-                    }
-                }
-                else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
-                {
-                    Personagem* paux = static_cast<Personagem*>(this);
-                    paux->regularColisao(entAlternativa, distancia_colisao);
+                //if( entAlternativa->getId() == 1    /*"Inimigo"*/ )
+                //{
+                //    Personagem* paux = static_cast<Personagem*>(entAlternativa);
+                //    if(paux && emAtaque())
+                //    {
+                //        paux->sofrerDano(dano);
+                //    }
+                //}
+                //else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
+                //{
+                    regularColisao(entAlternativa, distancia_colisao);
                     puloDisponivel = true;
-                }
+                //}
             }
         }
 
@@ -59,7 +58,6 @@ namespace Entidades
                 //implementar a ação da gravidade com velocidade.y = - raiz de mgh(porém é preciso alterar o atributo de velocidade)
                 puloDisponivel = false;
             }
-
         }
     }
 }

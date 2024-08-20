@@ -8,7 +8,7 @@ namespace Entidades
     tamY(tamYY),
     x(xx),
     y(yy),
-    retangulo(sf::Vector2f(100.0f, 100.0f))
+    retangulo(sf::Vector2f(tamXX, tamYY))
     {
         retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
         retangulo.setPosition(x, y);

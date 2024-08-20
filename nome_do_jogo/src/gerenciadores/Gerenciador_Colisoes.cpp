@@ -45,8 +45,8 @@ namespace Gerenciadores
             sf::Vector2f tamanho2 = e2->getTamanho();
 
             //Calculo da distância relativa entre os centros de cada entidade.
-            float dist_centro_em_x = fabs((posicao1.x + tamanho1.x/2.0f) - (posicao2.x + tamanho2.x/2.0f));
-            float dist_centro_em_y = fabs((posicao1.y + tamanho1.y/2.0f) - (posicao2.y + tamanho2.y/2.0f));
+            float dist_centro_em_x = fabs((posicao1.x) - (posicao2.x));
+            float dist_centro_em_y = fabs((posicao1.y) - (posicao2.y));
 
             //Um vetor que indica que ocorre colisão se os dois parâmetros são negativos.
             return sf::Vector2f(dist_centro_em_x - ((tamanho1.x/2.0f) + (tamanho2.x/2.0f)), dist_centro_em_y - ((tamanho1.y/2.0f) + (tamanho2.y/2.0f)) );
@@ -70,7 +70,7 @@ namespace Gerenciadores
 
                 if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
-                    //pJogador1->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                    pJogador1->colidir(obst, distancia_colisao);
                     //obst->colidir(pJogador1, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
                 }
             }
@@ -80,7 +80,7 @@ namespace Gerenciadores
 
                 if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
-                    //pJogador2->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                    pJogador2->colidir(obst, distancia_colisao);
                     //obst->colidir(pJogador2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
                 }
             }
