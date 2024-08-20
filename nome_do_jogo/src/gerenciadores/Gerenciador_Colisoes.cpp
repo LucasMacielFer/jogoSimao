@@ -68,7 +68,7 @@ namespace Gerenciadores
             {
                 sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador1), static_cast<Entidades::Entidade*>(obst));
 
-                if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
+                if(distancia_colisao.x <= 0.0f && distancia_colisao.y <= 0.0f)
                 {
                     pJogador1->colidir(obst, distancia_colisao);
                     //obst->colidir(pJogador1, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
@@ -78,7 +78,7 @@ namespace Gerenciadores
             {
                 sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador2), static_cast<Entidades::Entidade*>(obst));
 
-                if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
+                if(distancia_colisao.x <= 0.0f && distancia_colisao.y <= 0.0f)
                 {
                     pJogador2->colidir(obst, distancia_colisao);
                     //obst->colidir(pJogador2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade

@@ -107,24 +107,26 @@ namespace Entidades
                 if(x < paux->x)
                 {
                     x += distancia_colisao.x;
+                    if(velocidadeX > 0) {velocidadeX = 0;}
                 }
-                else 
+                else
                 {
                     x -= distancia_colisao.x;
+                    if(velocidadeX < 0) {velocidadeX = 0;}
                 }
-                velocidadeX = 0.0f;
             }
             else 
             {
                 if(y < paux->y)
                 {
                     y += distancia_colisao.y;
+                    if(velocidadeY > 0) {velocidadeY = 0;}
                 }
                 else 
                 {
                     y -= distancia_colisao.y;
+                    if(velocidadeY < 0) {velocidadeY = 0;}
                 }
-                velocidadeY = 0.0f;
             }
         }
 

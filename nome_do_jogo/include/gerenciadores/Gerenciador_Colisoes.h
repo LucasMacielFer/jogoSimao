@@ -24,9 +24,11 @@ namespace Gerenciadores
             void tratarColisoesJogsObstacs();
             void tratarColisoesJogsInimgs();
             void tratarColisoesInimgsObstacs();
+            // Perguntar: É necessário??
             void tratarColisoesImimgs();
             void incluirObstaculo(Entidades::Obstaculos::Obstaculo* pO);
             void incluirInimigo(Entidades::Personagens::Inimigo* pI);
+            // Método para apagar listas! (Reutilizar o gerenciador na fase 2)
             void setJog1(Entidades::Personagens::Jogador* pJog1);
             void setJog2(Entidades::Personagens::Jogador* pJog2);
             void executar();

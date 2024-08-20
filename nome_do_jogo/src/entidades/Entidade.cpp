@@ -12,7 +12,7 @@ namespace Entidades
     {
         retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
         retangulo.setPosition(x, y);
-        retangulo.setFillColor(sf::Color::White);
+        retangulo.setFillColor(sf::Color::Yellow);
     }
 
     Entidade::~Entidade()
