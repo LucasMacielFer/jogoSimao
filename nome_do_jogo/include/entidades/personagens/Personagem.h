@@ -31,7 +31,7 @@ namespace Entidades
             virtual void atacar();
             const bool ataqueDisponivel() const;
             const bool emAtaque() const;
-            void aumentarDuracaoAtaque(const float tempo);
+            void aumentarTempoExecucao(const float tempo);
             const int getDano() const;
             void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void setVelocidadeX(const float vx);

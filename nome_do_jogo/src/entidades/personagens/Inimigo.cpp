@@ -20,6 +20,50 @@ namespace Entidades
         {
             jogadorPerseguido = pJogador;
         }
+
+        sf::Vector2f Inimigo:: getPosJogador()
+        {
+            if(jogadorPerseguido)
+            {
+                return jogadorPerseguido->getPosicao();
+            }
+            else
+            {
+                std::cout << "Ponteiro Nulo" << std::endl;
+                exit(1);
+            }
+        }
+
+        //Função Virtual pura
+        void Inimigo::salvar()
+        {
+
+        }
+
+        //Função Virtual pura
+        void  Inimigo::executar()
+        {
+
+        }
+
+        void Inimigo::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
+        {
+            if(entAlternativa)
+                {
+                    //if( entAlternativa->getId() == 0    /*"Jogador"*/ )
+                    //{
+                    //    Personagem* paux = static_cast<Personagem*>(entAlternativa);
+                    //    if(paux && emAtaque())
+                    //    {
+                    //        paux->atacar();
+                    //    }
+                    //}
+                    //else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
+                    //{
+                        regularColisao(entAlternativa, distancia_colisao);
+                    //}
+                }
+        }
     }
 
 }

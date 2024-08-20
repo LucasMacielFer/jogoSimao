@@ -76,7 +76,7 @@ namespace Entidades
         {
             return atacando;
         }
-        void Personagem::aumentarDuracaoAtaque(const float tempo)
+        void Personagem::aumentarTempoExecucao(const float tempo)
         {
             if(emAtaque())
             {

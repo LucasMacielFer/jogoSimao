@@ -54,6 +54,7 @@ namespace Gerenciadores
         else
         {
             std::cout << "Ponteiros nulos comparados na calculadora" << std::endl;
+            exit(1);
         }
     }
 
