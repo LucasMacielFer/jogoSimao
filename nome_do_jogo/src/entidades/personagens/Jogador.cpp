@@ -4,7 +4,7 @@ namespace Entidades
 {
     namespace Personagens
     {
-        Jogador::Jogador(): Personagem(), pontuacao(0)
+        Jogador::Jogador(std::string txt,const int vd, const float vel, const int danos, const float duraEspera, const float duraAtaque, const float tamXX, const float tamYY, const float xx, const float yy): Personagem(txt, vd, vel, danos, duraEspera, duraAtaque, tamXX, tamYY, xx, yy), pontuacao(0)
         {
 
         }
@@ -13,6 +13,15 @@ namespace Entidades
             pontuacao = -1;
         }
 
+        const int Jogador:: getPontuacao() const
+        {
+            return pontuacao;
+        }
+
+        void Jogador:: operator++()
+        {
+            pontuacao++;
+        }
         void Jogador::executar()
         {
 
@@ -36,10 +45,21 @@ namespace Entidades
                 }
                 else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
                 {
-                    Personagem* paux = static_cast<Personagem*>(entAlternativa);
+                    Personagem* paux = static_cast<Personagem*>(this);
                     paux->regularColisao(entAlternativa, distancia_colisao);
+                    puloDisponivel = true;
                 }
             }
+        }
+
+        void Jogador::pular()
+        {
+            if(puloDisponivel)
+            {
+                //implementar a ação da gravidade com velocidade.y = - raiz de mgh(porém é preciso alterar o atributo de velocidade)
+                puloDisponivel = false;
+            }
+
         }
     }
 }

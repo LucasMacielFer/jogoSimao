@@ -4,14 +4,21 @@ namespace Entidades
 {
     namespace Personagens
     {
-        Inimigo::Inimigo(): Personagem()
+        Inimigo::Inimigo(std::string txt,const int vd, const float vel, const int danos, const float duraEspera, const float duraAtaque, const float tamXX, const float tamYY, const float xx, const float yy): Personagem(txt, vd, vel, danos, duraEspera, duraAtaque, tamXX, tamYY, xx, yy),
+        jogadorPerseguido(NULL),
+        distancia_jogador(0.0f, 0.0f)
         {
 
         }
 
         Inimigo::~Inimigo()
         {
-            poder_ataque = -1;
+            jogadorPerseguido = NULL;
+        }
+
+        void Inimigo:: setJogador(Jogador* pJogador)
+        {
+            jogadorPerseguido = pJogador;
         }
     }
 

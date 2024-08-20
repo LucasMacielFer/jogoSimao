@@ -13,6 +13,7 @@ namespace Entidades
             float velocidade;
             int dano;
             bool atacando;
+            bool puloDisponivel;
             const float duracaoEspera;
             const float duracaoAtaque;
             float tempoEsperando;
@@ -39,6 +40,7 @@ namespace Entidades
             virtual void executar();
             virtual void salvar();
             virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+            virtual void pular();
         };
     }
 }

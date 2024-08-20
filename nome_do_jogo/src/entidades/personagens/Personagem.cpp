@@ -10,6 +10,7 @@ namespace Entidades
         velocidade(vel),
         dano(danos),
         atacando(false),
+        puloDisponivel(false),
         duracaoEspera(duraEspera),
         duracaoAtaque(duraAtaque),
         tempoEsperando(0.0f),
@@ -162,6 +163,11 @@ namespace Entidades
 
         void Personagem::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
+        }
+
+        void Personagem::pular()
+        {
+
         }
     }
 }
