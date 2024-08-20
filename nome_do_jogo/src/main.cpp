@@ -5,11 +5,11 @@ int main()
 {
     Gerenciadores::Gerenciador_Eventos* gEventos = Gerenciadores::Gerenciador_Eventos::getInstancia();
     Gerenciadores::Gerenciador_Grafico* gGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
-    Entidades::Personagens::Personagem* p1 = new Entidades::Personagens::Personagem();
-    Entidades::Personagens::Personagem* p2 = new Entidades::Personagens::Personagem();
+    Entidades::Personagens::Jogador* p1 = new Entidades::Personagens::Jogador();
+    Entidades::Personagens::Jogador* p2 = new Entidades::Personagens::Jogador();
 
-    gEventos->setPersonagem1(p1);
-    gEventos->setPersonagem2(p2);
+    gEventos->setJogador1(p1);
+    gEventos->setJogador2(p2);
 
     //Para testes
     //sf::RectangleShape retangulo(sf::Vector2f(100, 100));
@@ -20,6 +20,9 @@ int main()
     {
         gEventos->executar();
         gGrafico->limparJanela();
+
+        p1->executar();
+        p2->executar();
         
         //gGrafico->getJanela().draw(retangulo);
         gGrafico->desenhaEnte(static_cast<Ente*>(p1));

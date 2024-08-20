@@ -8,6 +8,8 @@ namespace Entidades
         Entidade(txt, tamXX, tamYY, xx, yy),
         vidas(vd),
         velocidade(vel),
+        velocidadeX(0),
+        velocidadeY(0),
         dano(danos),
         atacando(false),
         puloDisponivel(false),
@@ -23,26 +25,10 @@ namespace Entidades
             vidas = -1;
         }
 
-        void Personagem::mover(int dir)
+        void Personagem::mover()
         {
-            switch(dir)
-            {
-                case -1:
-                    x -= velocidade;
-                    break;
-                case 1:
-                    x += velocidade;
-                    break;
-                case -2:
-                    y += velocidade;
-                    break;
-                case 2:
-                    y -= velocidade;
-                    break;
-                default:
-                    break;
-            }
-
+            x += velocidadeX;
+            y += velocidadeY;
             atualizaEntidade();
         }
 
@@ -126,7 +112,7 @@ namespace Entidades
                 {
                     x -= distancia_colisao.x;
                 }
-                velocidade = 0.0f;
+                velocidadeX = 0.0f;
             }
             else 
             {
@@ -138,36 +124,18 @@ namespace Entidades
                 {
                     y -= distancia_colisao.y;
                 }
-                velocidade = 0.0f;
+                velocidadeY = 0.0f;
             }
         }
 
-        void Personagem::operator++()
+        void Personagem::setVelocidadeX(const float vx)
         {
-            vidas++;
+            vx < velocidade? velocidadeX = vx : velocidadeX = velocidade;
         }
 
-        void Personagem::operator--()
+        void Personagem::setVelocidadeY(const float vy)
         {
-            vidas--;
-        }
-
-        // Devem ser virtuais PURAS
-        void Personagem::executar()
-        {
-        }
-
-        void Personagem::salvar()
-        {
-        }
-
-        void Personagem::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
-        {
-        }
-
-        void Personagem::pular()
-        {
-
+            vy < velocidade? velocidadeY = vy : velocidadeY = velocidade;
         }
     }
 }

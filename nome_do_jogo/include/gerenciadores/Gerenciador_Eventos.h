@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Gerenciador_Grafico.h"
-#include "../entidades/personagens/Personagem.h"
+#include "../entidades/personagens/Jogador.h"
 
 namespace Gerenciadores
 {
@@ -11,8 +11,8 @@ namespace Gerenciadores
         // Ponteiro estático para instância do gerenciador - Padrão de projeto Singleton
         static Gerenciador_Eventos* pInstancia;
         Gerenciador_Grafico* pGGrafico;
-        Entidades::Personagens::Personagem* personagem1;
-        Entidades::Personagens::Personagem* personagem2;
+        Entidades::Personagens::Jogador* jogador1;
+        Entidades::Personagens::Jogador* jogador2;
     
     private:
         // Construtora privada, em conformidade com o padrão de projeto Singleton
@@ -23,8 +23,8 @@ namespace Gerenciadores
     public:
         ~Gerenciador_Eventos();
         void executar();
-        void setPersonagem1(Entidades::Personagens::Personagem* pP);
-        void setPersonagem2(Entidades::Personagens::Personagem* pP);
+        void setJogador1(Entidades::Personagens::Jogador* pJ);
+        void setJogador2(Entidades::Personagens::Jogador* pJ);
         static Gerenciador_Eventos* getInstancia();
     };
 }

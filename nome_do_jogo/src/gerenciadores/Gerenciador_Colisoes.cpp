@@ -3,32 +3,46 @@
 
 namespace Gerenciadores
 {
-    Gerenciador_Colisoes::Gerenciador_Colisoes() : listaPersonagens(NULL), listaObstaculos(NULL)
+
+    Gerenciador_Colisoes::Gerenciador_Colisoes():
+    pJogador1(NULL),
+    pJogador2(NULL),
+    LObstaculos(),
+    LInimigos()
     {
-
-    }
-
-    Gerenciador_Colisoes::Gerenciador_Colisoes(Listas::ListaEntidades* lPersonagens, Listas::ListaEntidades* lObstaculos):
-    listaPersonagens(lPersonagens), listaObstaculos(lObstaculos)
-    {
-
+        LObstaculos.clear();
+        LInimigos.clear();
     }
 
     Gerenciador_Colisoes::~Gerenciador_Colisoes()
     {
-        listaPersonagens = NULL;
-        listaObstaculos = NULL;
+        std::vector<Entidades::Personagens::Inimigo*>::iterator itrInim;
+        std::list<Entidades::Obstaculos::Obstaculo*>::iterator itrObs;
+
+        pJogador1 = NULL;
+        pJogador2 = NULL;
+        
+        for(itrInim=LInimigos.begin(); itrInim!=LInimigos.end(); itrInim++)
+        {
+            (*itrInim) = NULL;
+        }
+        LInimigos.clear();
+        for(itrObs=LObstaculos.begin(); itrObs!=LObstaculos.end(); itrObs++)
+        {
+            (*itrObs) = NULL;
+        }
+        LObstaculos.clear();
     }
 
-    const sf::Vector2f Gerenciador_Colisoes::calculadora_colisoes(Entidades::Entidade* entidade1, Entidades::Entidade* entidade2)
+    const sf::Vector2f Gerenciador_Colisoes::calculaColisoes(Entidades::Entidade* e1, Entidades::Entidade* e2)
     {
-        if(entidade1 && entidade2)
+        if(e1 && e2)
         {
-            sf::Vector2f posicao1 = entidade1->getPosicao();
-            sf::Vector2f posicao2 = entidade2->getPosicao();
+            sf::Vector2f posicao1 = e1->getPosicao();
+            sf::Vector2f posicao2 = e2->getPosicao();
 
-            sf::Vector2f tamanho1 = entidade1->getTamanho();
-            sf::Vector2f tamanho2 = entidade2->getTamanho();
+            sf::Vector2f tamanho1 = e1->getTamanho();
+            sf::Vector2f tamanho2 = e2->getTamanho();
 
             //Calculo da distância relativa entre os centros de cada entidade.
             float dist_centro_em_x = fabs((posicao1.x + tamanho1.x/2.0f) - (posicao2.x + tamanho2.x/2.0f));
@@ -40,52 +54,126 @@ namespace Gerenciadores
         else
         {
             std::cout << "Ponteiros nulos comparados na calculadora" << std::endl;
-            exit(1);
         }
     }
 
-    void Gerenciador_Colisoes::executar()
+    void Gerenciador_Colisoes::tratarColisoesJogsObstacs()
     {
-
-        //Percorre os personagens e verifica colisão com outros personagens.
-        if(listaPersonagens)
+        std::list<Entidades::Obstaculos::Obstaculo*>::iterator itrObs;
+        Entidades::Obstaculos::Obstaculo* obst = NULL;
+        for(itrObs=LObstaculos.begin(); itrObs!=LObstaculos.end(); itrObs++)
         {
-            for(int i = 0; i < listaPersonagens->tamanho(); i++)
+            obst = (*itrObs);
+            if(pJogador1)
             {
-                Entidades::Entidade* entidade1 = listaPersonagens->operator[](i);
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador1), static_cast<Entidades::Entidade*>(obst));
 
-                for(int j = i + 1; j < listaPersonagens->tamanho(); j++)
+                if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
-                    Entidades::Entidade* entidade2 = listaPersonagens->operator[](j);
-                    sf::Vector2f distancia_colisao = calculadora_colisoes(entidade1, entidade2);
+                    //pJogador1->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                    //obst->colidir(pJogador1, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                }
+            }
+            if(pJogador2)
+            {
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador2), static_cast<Entidades::Entidade*>(obst));
 
-                    if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
-                    {
-                        //entidade1->colidir(entidade2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
-                    }
+                if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
+                {
+                    //pJogador2->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                    //obst->colidir(pJogador2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
                 }
             }
         }
-        //Percorre os personagens e verifica colisão com algum objeto.
-
-        if(listaPersonagens && listaObstaculos)
-        {
-            for(int k = 0; k < listaPersonagens->tamanho(); k++)
-            {
-                Entidades::Entidade* entidade1 = listaPersonagens->operator[](k);
-
-                for(int l = 0; l < listaObstaculos->tamanho(); l++)
-                {
-                    Entidades::Entidade* entidade2 = listaObstaculos->operator[](l);
-                    sf::Vector2f distancia_colisao = calculadora_colisoes(entidade1, entidade2);
-
-                    if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
-                    {
-                        //entidade1->colidir(entidade2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
-                    }
-                }
-            }
-        }
-
     }
-}
+
+    void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
+    {
+        std::vector<Entidades::Personagens::Inimigo*>::iterator itrInim;
+        Entidades::Personagens::Inimigo* inim = NULL;
+        for(itrInim=LInimigos.begin(); itrInim!=LInimigos.end(); itrInim++)
+        {
+            inim = (*itrInim);
+            if(pJogador1)
+            {
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador1), static_cast<Entidades::Entidade*>(inim));
+
+                if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
+                {
+                    //pJogador1->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                    //obst->colidir(pJogador1, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                }
+            }
+            if(pJogador2)
+            {
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador2), static_cast<Entidades::Entidade*>(inim));
+
+                if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
+                {
+                    //pJogador2->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                    //obst->colidir(pJogador2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                }
+            }
+        }
+    }
+
+    void Gerenciador_Colisoes::tratarColisoesInimgsObstacs() {
+        std::list<Entidades::Obstaculos::Obstaculo*>::iterator itrObs;
+
+        for (int i=0; i<LInimigos.size(); i++) {
+            Entidades::Entidade* inimigo = static_cast<Entidades::Entidade*>(LInimigos[i]);
+            for (itrObs = LObstaculos.begin(); itrObs != LObstaculos.end(); itrObs++) {
+                Entidades::Entidade* obstaculo = static_cast<Entidades::Entidade*>(*itrObs);
+                sf::Vector2f distancia_colisao = calculaColisoes(inimigo, obstaculo);
+
+                if (distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f) {
+                    // inimigo->colidir(obstaculo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
+                    // obstaculo->colidir(inimigo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
+                }
+            }
+        }
+    }
+
+    void Gerenciador_Colisoes::tratarColisoesImimgs() {
+        for (int i=0; i<LInimigos.size(); i++) {
+            Entidades::Entidade* inimigo1 = static_cast<Entidades::Entidade*>(LInimigos[i]);
+            for (int j=i; j<LInimigos.size(); j++) {
+                Entidades::Entidade* inimigo2 = static_cast<Entidades::Entidade*>(LInimigos[j]);
+                sf::Vector2f distancia_colisao = calculaColisoes(inimigo1, inimigo2);
+
+                if (distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f) {
+                    // inimigo1->colidir(inimigo2, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
+                    // inimigo2->colidir(inimigo1, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
+                }
+            }
+        }
+    }
+
+    void Gerenciador_Colisoes::incluirObstaculo(Entidades::Obstaculos::Obstaculo* pO) {
+        if (pO) {
+            LObstaculos.push_back(pO);
+        }
+    }
+
+    void Gerenciador_Colisoes::incluirInimigo(Entidades::Personagens::Inimigo* pI) {
+        if (pI) {
+            LInimigos.push_back(pI);
+        }
+    }
+
+    void Gerenciador_Colisoes::setJog1(Entidades::Personagens::Jogador* pJog1) {
+        pJogador1 = pJog1;
+    }
+
+    void Gerenciador_Colisoes::setJog2(Entidades::Personagens::Jogador* pJog2) {
+        pJogador2 = pJog2;
+    }
+
+    void Gerenciador_Colisoes::executar() {
+        tratarColisoesJogsObstacs();
+        tratarColisoesInimgsObstacs();
+        tratarColisoesImimgs();
+        // Adicione outras funções de tratamento de colisão conforme necessário
+    }
+
+} // namespace Gerenciadores

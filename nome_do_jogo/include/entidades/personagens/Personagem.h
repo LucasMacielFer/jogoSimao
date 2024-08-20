@@ -10,7 +10,9 @@ namespace Entidades
         {
         protected:
             int vidas;
-            float velocidade;
+            const float velocidade;
+            float velocidadeX;
+            float velocidadeY; 
             int dano;
             bool atacando;
             bool puloDisponivel;
@@ -22,7 +24,7 @@ namespace Entidades
         public:
             Personagem(std::string txt="",const int vd = 10, const float vel = 10.0f, const int danos = 1, const float duraEspera = 0.0f, const float duraAtaque = 0.0f, const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
             virtual ~Personagem();
-            void mover(int dir);
+            void mover();
             const int getVidas() const;
             void setVidas(const int v);
             virtual void sofrerDano(const int dano);
@@ -32,15 +34,15 @@ namespace Entidades
             void aumentarDuracaoAtaque(const float tempo);
             const int getDano() const;
             void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+            void setVelocidadeX(const float vx);
+            void setVelocidadeY(const float vy);
             //void regularColisao(Entidade* entAltenativa, sf::Vector2f distancia_colisao);
-            void operator++();
-            void operator--();
 
             // Devem ser virtuais puras
-            virtual void executar();
-            virtual void salvar();
-            virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
-            virtual void pular();
+            virtual void executar() = 0;
+            virtual void salvar() = 0;
+            virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;
+            virtual void pular() = 0;
         };
     }
 }

@@ -24,7 +24,7 @@ namespace Entidades
         }
         void Jogador::executar()
         {
-
+            mover();
         }
         void Jogador::salvar()
         {
