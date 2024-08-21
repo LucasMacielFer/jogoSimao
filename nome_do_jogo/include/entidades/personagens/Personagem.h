@@ -30,7 +30,7 @@ namespace Entidades
             const int getVidas() const;
             void setVidas(const int v);
             virtual void sofrerDano(const int dano);
-            virtual void atacar();
+            virtual void atacar(Personagem* pPersonagem);
             void pular();
             const bool ataqueDisponivel() const;
             const bool emAtaque() const;

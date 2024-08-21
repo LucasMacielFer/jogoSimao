@@ -21,7 +21,6 @@ namespace Entidades
                 void executar(float dt);
                 void salvar();
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
-                // void pular();
         };
     }
 }

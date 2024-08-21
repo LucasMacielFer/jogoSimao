@@ -51,11 +51,15 @@ namespace Entidades
                 //Precisa se desativar o jogador;
             }
         }
-        void Personagem::atacar()
+        void Personagem::atacar(Personagem* pPersonagem)
         {
             //Coloca o personagem no status de atacar se for possível.
             if(ataqueDisponivel())
             {
+                if(!atacando)
+                {
+                    pPersonagem->sofrerDano(dano);
+                }
                 atacando = true;
             }
         }

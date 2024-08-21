@@ -34,24 +34,6 @@ namespace Entidades
             }
         }
 
-        void Inimigo::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
-        {
-            if(entAlternativa)
-                {
-                    //if( entAlternativa->getId() == 0    /*"Jogador"*/ )
-                    //{
-                    //    Personagem* paux = static_cast<Personagem*>(entAlternativa);
-                    //    if(paux && emAtaque())
-                    //    {
-                    //        paux->atacar();
-                    //    }
-                    //}
-                    //else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
-                    //{
-                        regularColisao(entAlternativa, distancia_colisao);
-                    //}
-                }
-        }
     }
 
 }

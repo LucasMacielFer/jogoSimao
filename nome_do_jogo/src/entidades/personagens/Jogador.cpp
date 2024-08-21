@@ -41,7 +41,12 @@ namespace Entidades
                 //    Personagem* paux = static_cast<Personagem*>(entAlternativa);
                 //    if(paux && emAtaque())
                 //    {
-                //        paux->sofrerDano(dano);
+                //        Personagem* pJogador = static_cast <Personagem*> (this);    
+                //        if(pJogador)
+                //        {
+                //             pJogador->atacar(paux);
+                //        }
+                //    
                 //    }
                 //}
                 //else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
@@ -52,15 +57,5 @@ namespace Entidades
             }
         }
 
-        /*
-        void Jogador::pular()
-        {
-            if(puloDisponivel)
-            {
-                //implementar a ação da gravidade com velocidade.y = - raiz de mgh(porém é preciso alterar o atributo de velocidade)
-                puloDisponivel = false;
-            }
-        }
-        */
     }
 }
