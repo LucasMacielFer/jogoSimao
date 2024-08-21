@@ -21,5 +21,5 @@ public:
     std::string getTextura() const;
     void setTextura(std::string txt);
     virtual void desenhar(sf::RenderWindow& janela) = 0;
-    virtual void executar() = 0;
+    virtual void executar(float dt) = 0;
 };

@@ -12,13 +12,18 @@ namespace Gerenciadores
     class Gerenciador_Colisoes
     {
         private:
+            // Ponteiro estático para instância do gerenciador - Padrão de projeto Singleton
+            static Gerenciador_Colisoes* pInstancia;
             Entidades::Personagens::Jogador* pJogador1;
             Entidades::Personagens::Jogador* pJogador2;
             std::vector<Entidades::Personagens::Inimigo*> LInimigos;
             std::list<Entidades::Obstaculos::Obstaculo*> LObstaculos;
+
+        private:
+            // Construtora privada, em conformidade com o padrão de projeto Singleton
+            Gerenciador_Colisoes();
             
         public:
-            Gerenciador_Colisoes();
             ~Gerenciador_Colisoes();
             const sf::Vector2f calculaColisoes(Entidades::Entidade* e1, Entidades::Entidade* e2);
             void tratarColisoesJogsObstacs();
@@ -32,5 +37,6 @@ namespace Gerenciadores
             void setJog1(Entidades::Personagens::Jogador* pJog1);
             void setJog2(Entidades::Personagens::Jogador* pJog2);
             void executar();
+            static Gerenciador_Colisoes* getInstancia();
     };
 }

@@ -5,9 +5,9 @@ namespace Gerenciadores
 {
     // Inicialização de pInstancia como NULL
     Gerenciador_Grafico* Gerenciador_Grafico::pInstancia(NULL);
+    const sf::Vector2f Gerenciador_Grafico::tamanhoJanela({1000.0f, 800.0f});
 
     Gerenciador_Grafico::Gerenciador_Grafico():
-    tamanhoJanela({1000.0f, 800.0f}),
     janela(sf::VideoMode(tamanhoJanela.x, tamanhoJanela.y), "Jogo")
     {
         janela.setFramerateLimit(60);
@@ -45,6 +45,12 @@ namespace Gerenciadores
     void Gerenciador_Grafico::executar()
     {
     }
+
+    const bool Gerenciador_Grafico::janelaAberta() const
+    {
+        return janela.isOpen();
+    }
+
 
     // Execução efetiva do padrão de projeto singleton
     Gerenciador_Grafico* Gerenciador_Grafico::getInstancia()

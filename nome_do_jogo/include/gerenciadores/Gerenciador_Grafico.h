@@ -10,7 +10,7 @@ namespace Gerenciadores
     private:
         // Ponteiro estático para instância do gerenciador - Padrão de projeto Singleton
         static Gerenciador_Grafico* pInstancia;
-        const sf::Vector2f tamanhoJanela;
+        static const sf::Vector2f tamanhoJanela;
         sf::RenderWindow janela;
 
     private:
@@ -25,6 +25,7 @@ namespace Gerenciadores
         void desenhaEnte(Ente* pE);
         sf::RenderWindow& getJanela();
         void executar();
+        const bool janelaAberta() const;
         static Gerenciador_Grafico* getInstancia();
     };
 }

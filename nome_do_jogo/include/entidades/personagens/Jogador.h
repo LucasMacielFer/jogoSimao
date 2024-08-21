@@ -18,10 +18,10 @@ namespace Entidades
 
                 const int getPontuacao() const;
                 void operator++();
-                void executar();
+                void executar(float dt);
                 void salvar();
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
-                void pular();
+                // void pular();
         };
     }
 }

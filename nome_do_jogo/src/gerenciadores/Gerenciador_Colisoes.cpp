@@ -3,6 +3,7 @@
 
 namespace Gerenciadores
 {
+    Gerenciador_Colisoes* Gerenciador_Colisoes::pInstancia(NULL);
 
     Gerenciador_Colisoes::Gerenciador_Colisoes():
     pJogador1(NULL),
@@ -175,6 +176,16 @@ namespace Gerenciadores
         tratarColisoesInimgsObstacs();
         tratarColisoesImimgs();
         // Adicione outras funções de tratamento de colisão conforme necessário
+    }
+
+    // Execução efetiva do padrão de projeto singleton
+    Gerenciador_Colisoes* Gerenciador_Colisoes::getInstancia()
+    {
+        if(!pInstancia)
+        {
+            pInstancia = new Gerenciador_Colisoes();
+        }
+        return pInstancia;
     }
 
 } // namespace Gerenciadores

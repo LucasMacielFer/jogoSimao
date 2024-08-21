@@ -24,7 +24,7 @@ namespace Entidades
                 void setJogador(Jogador* pJogador);
                 sf::Vector2f getPosJogador();
                 virtual void salvar() = 0;
-                virtual void executar() = 0;
+                virtual void executar(float dt) = 0;
                 virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
         };
     }

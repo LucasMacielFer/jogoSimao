@@ -22,8 +22,9 @@ namespace Entidades
         {
             pontuacao++;
         }
-        void Jogador::executar()
+        void Jogador::executar(float dt)
         {
+            aplicaGravidade(dt);
             mover();
         }
         void Jogador::salvar()
@@ -51,6 +52,7 @@ namespace Entidades
             }
         }
 
+        /*
         void Jogador::pular()
         {
             if(puloDisponivel)
@@ -59,5 +61,6 @@ namespace Entidades
                 puloDisponivel = false;
             }
         }
+        */
     }
 }

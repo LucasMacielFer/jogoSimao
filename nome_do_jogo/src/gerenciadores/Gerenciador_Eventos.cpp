@@ -36,21 +36,21 @@ namespace Gerenciadores
             {
                 case sf::Keyboard::Key::A:
                 case sf::Keyboard::Key::D:
-                    jogador1->setVelocidadeX(0);
+                    jogador1->setSentidoMovY(0);
                     break;
                 case sf::Keyboard::Key::W:
                 case sf::Keyboard::Key::S:
-                    jogador1->setVelocidadeY(0);
+                    jogador1->setSentidoMovY(0);
                     break;
                 case sf::Keyboard::Key::Left:
                 case sf::Keyboard::Key::Right:
                     if (jogador2)
-                        jogador2->setVelocidadeX(0);
+                        jogador2->setSentidoMovX(0);
                     break;
                 case sf::Keyboard::Key::Up:
                 case sf::Keyboard::Key::Down:
                     if (jogador2)
-                        jogador2->setVelocidadeY(0);
+                        jogador2->setSentidoMovX(0);
                     break;
                 default:
                     break;
@@ -58,37 +58,29 @@ namespace Gerenciadores
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
         {
-            jogador1->setVelocidadeX(-10);
+            jogador1->setSentidoMovX(-1);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
         {
-            jogador1->setVelocidadeX(10);
+            jogador1->setSentidoMovX(1);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
         {
-            jogador1->setVelocidadeY(-10);
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-        {
-            jogador1->setVelocidadeY(10);
+            jogador1->pular();
         }
         if(jogador2)
         {
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
             {
-                jogador2->setVelocidadeX(-10);
+                jogador2->setSentidoMovX(-1);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
             {
-                jogador2->setVelocidadeX(10);
+                jogador2->setSentidoMovX(1);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
             {
-                jogador2->setVelocidadeY(-10);
-            }
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
-            {
-                jogador2->setVelocidadeY(10);
+                jogador2->pular();
             }
         }
     }

@@ -34,18 +34,6 @@ namespace Entidades
             }
         }
 
-        //Função Virtual pura
-        void Inimigo::salvar()
-        {
-
-        }
-
-        //Função Virtual pura
-        void  Inimigo::executar()
-        {
-
-        }
-
         void Inimigo::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
             if(entAlternativa)

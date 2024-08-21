@@ -23,7 +23,7 @@ namespace Entidades
         void setPosicao(const float xx, const float yy);
         const sf::Vector2f getPosicao() const;
         void desenhar(sf::RenderWindow& janela);
-        virtual void executar() = 0;
+        virtual void executar(float dt) = 0;
         virtual void salvar() = 0;
 
     protected:

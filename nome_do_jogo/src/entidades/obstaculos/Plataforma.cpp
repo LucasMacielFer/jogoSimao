@@ -18,7 +18,7 @@ namespace Entidades
         {
         }
 
-        void Plataforma::executar()
+        void Plataforma::executar(float dt)
         {
         }
 

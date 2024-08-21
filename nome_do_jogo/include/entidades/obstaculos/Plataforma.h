@@ -14,7 +14,7 @@ namespace Entidades
             Plataforma(std::string txt="", const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
             ~Plataforma();
             void salvar();
-            void executar();
+            void executar(float dt);
             void obstacular(Personagens::Jogador* p);
         };
     }

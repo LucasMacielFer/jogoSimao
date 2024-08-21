@@ -58,8 +58,17 @@ namespace Entidades
             {
                 atacando = true;
             }
-
         }
+
+        void Personagem::pular()
+        {
+            if(puloDisponivel)
+            {
+                velocidadeY = -10;
+                puloDisponivel = false;
+            }
+        }
+
         const bool Personagem::ataqueDisponivel() const
         {
             //Responde se ele pode atacar, comparando o tempo da finalização do ultimo ataque com o tempo mínimo necessário de espera para realizar outro ataque.
@@ -98,7 +107,8 @@ namespace Entidades
             }
         }
 
-        void Personagem::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)// Método adaptado do monitor Matheus Burda. https://github.com/MatheusBurda/Desert.git Acesso em: 19/08/2024.
+        // Método adaptado do monitor Matheus Burda. https://github.com/MatheusBurda/Desert.git Acesso em: 19/08/2024.
+        void Personagem::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
             Personagem* paux = static_cast<Personagem*> (entAlternativa);
             
@@ -121,6 +131,7 @@ namespace Entidades
                 {
                     y += distancia_colisao.y;
                     if(velocidadeY > 0) {velocidadeY = 0;}
+                    if(!puloDisponivel) {puloDisponivel = true;}
                 }
                 else 
                 {
@@ -130,14 +141,21 @@ namespace Entidades
             }
         }
 
-        void Personagem::setVelocidadeX(const float vx)
+        void Personagem::setSentidoMovX(const float s)
         {
-            vx < velocidade? velocidadeX = vx : velocidadeX = velocidade;
+            if(s <= 1 && s >= -1) {velocidadeX = s*velocidade;}
         }
 
-        void Personagem::setVelocidadeY(const float vy)
+        void Personagem::setSentidoMovY(const float s)
         {
-            vy < velocidade? velocidadeY = vy : velocidadeY = velocidade;
+            if(s <= 1 && s >= -1) {velocidadeX = s*velocidade;}
+        }
+
+        // Implementação da gravidade baseada no jogo Desert++, do monitor Matheus Burda
+        // Disponível em: https://github.com/MatheusBurda/Desert/tree/4d1ec28610a4675cfa3defc2a1aac12f28ffad2b
+        void Personagem::aplicaGravidade(float dt)
+        {
+            velocidadeY += GRAVIDADE*dt;
         }
     }
 }
