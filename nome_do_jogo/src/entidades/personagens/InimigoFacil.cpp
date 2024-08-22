@@ -14,6 +14,46 @@ namespace Entidades
             
         }
 
+        /*void InimigoFacil:: executar(float dt) //Estrutura levemente adaptada do código do monitor Matheus Burda. https://github.com/MatheusBurda/Desert.git. Acesso em: 21/08/2024. 
+        { 
+            Personagem::aumentarTempoExecucao(dt); 
+            distancia_jogador = getPosJogador().x - getPosicao().x; 
+
+            if(fabs(distancia_jogador) < ALCANCE_INIMIGO_FACIL) 
+             { 
+                if(distancia_jogador >= 0) 
+                { 
+                    if(velocidadeX < 0) 
+                    { 
+                        velocidadeX ++; 
+                    } 
+                    else 
+                    { 
+                        velocidadeX = 0.0f; 
+                    } 
+                } 
+                else 
+                { 
+                    if(velocidadeX > 0) 
+                    { 
+                        velocidadeX--; 
+                    } 
+                    else 
+                    { 
+                        velocidadeX = 0.0f; 
+                    } 
+                } 
+            }
+             if (fabs(distancia_jogador) < ALCANCE_ATAQUE_INIMIGO && Personagem::ataqueDisponivel()) 
+             { 
+                Personagem* paux = static_cast<Personagem*> (jogadorPerseguido); 
+                Personagem::atacar(paux); 
+             } 
+             
+             aplicaGravidade(dt);
+             mover(); }
+             */
+
         void InimigoFacil::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
             if(entAlternativa)
