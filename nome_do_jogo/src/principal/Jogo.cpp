@@ -6,9 +6,10 @@ namespace Principal
     gEventos(Gerenciadores::Gerenciador_Eventos::getInstancia()),
     gColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia()),
     gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
-    p1(new Entidades::Personagens::Jogador()),
-    p2(new Entidades::Personagens::Jogador()),
-    plat(new Entidades::Obstaculos::Plataforma("", 1000, 100, 500, 750)),
+    p1(new Entidades::Personagens::Jogador(sf::Color::Blue, 100, 100, 50, 700)),
+    p2(new Entidades::Personagens::Jogador(sf::Color::Cyan, 100, 100, 50, 100)),
+    inim(new Entidades::Personagens::InimigoFacil(sf::Color::Red, 100, 100)),
+    plat(new Entidades::Obstaculos::Plataforma(1000, 100, 500, 750)),
     relogio(),
     tempo(0.0f)
     {
@@ -17,6 +18,7 @@ namespace Principal
         gColisoes->setJog1(p1);
         gColisoes->setJog2(p2);
         gColisoes->incluirObstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(plat));
+        gColisoes->incluirInimigo(static_cast<Entidades::Personagens::Inimigo*>(inim));
     }
 
     Jogo::~Jogo()
@@ -41,6 +43,7 @@ namespace Principal
             relogio.restart();
 
             plat->executar(tempo);
+            inim->executar(tempo);
             p1->executar(tempo);
             p2->executar(tempo);
             
@@ -48,6 +51,7 @@ namespace Principal
             gGrafico->desenhaEnte(static_cast<Ente*>(p1));
             gGrafico->desenhaEnte(static_cast<Ente*>(p2));
             gGrafico->desenhaEnte(static_cast<Ente*>(plat));
+            gGrafico->desenhaEnte(static_cast<Ente*>(inim));
             gGrafico->mostrarJanela();
         }
     }

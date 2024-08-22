@@ -4,10 +4,26 @@ namespace Entidades
 {
     namespace Personagens
     {
-        Jogador::Jogador(std::string txt,const int vd, const float vel, const int danos, const float duraEspera, const float duraAtaque, const float tamXX, const float tamYY, const float xx, const float yy): Personagem(txt, vd, vel, danos, duraEspera, duraAtaque, tamXX, tamYY, xx, yy), pontuacao(0)
-        {
+        const unsigned int Jogador::idClasse(1);
 
+        Jogador::Jogador(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
+        Personagem(idClasse, c ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque), 
+        pontuacao(0)
+        {
         }
+
+        Jogador::Jogador(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
+        Personagem(idClasse, c, tamXX, tamYY, xx, yy),
+        pontuacao(0)
+        {
+        }
+
+        Jogador::Jogador():
+        Personagem(),
+        pontuacao(-1)
+        {
+        }
+
         Jogador::~Jogador()
         {
             pontuacao = -1;
@@ -22,6 +38,24 @@ namespace Entidades
         {
             pontuacao++;
         }
+
+        void Jogador::atacarCorpo(Personagens::Personagem* pPersonagem)
+        {
+            if(ataqueDisponivel())
+            {
+                if(!atacando)
+                {
+                    pPersonagem->sofrerDano(forca);
+                }
+                atacando = true;
+            }
+        }
+
+        void Jogador::atacarDist(Personagens::Personagem* pPersonagem)
+        {
+            // Implementar caso o jogador venha a atacar em distancia também
+        }
+
         void Jogador::executar(float dt)
         {
             aplicaGravidade(dt);

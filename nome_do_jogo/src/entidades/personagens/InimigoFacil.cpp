@@ -4,9 +4,19 @@ namespace Entidades
 {
     namespace Personagens
     {
-        InimigoFacil::InimigoFacil(std::string txt,const int vd, const float vel, const int danos, const float duraEspera, const float duraAtaque, const float tamXX, const float tamYY, const float xx, const float yy): Inimigo(txt, vd, vel, danos, duraEspera, duraAtaque, tamXX, tamYY, xx, yy)
+        InimigoFacil::InimigoFacil(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
+        Inimigo(c, tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque)
         {
+        }
 
+        InimigoFacil::InimigoFacil(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
+        Inimigo(c, tamXX, tamYY, xx, yy)
+        {
+        }
+
+        InimigoFacil::InimigoFacil():
+        Inimigo()
+        {
         }
 
         InimigoFacil::~InimigoFacil()
@@ -54,11 +64,12 @@ namespace Entidades
              mover(); }
              */
 
+        /*
         void InimigoFacil::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
             if(entAlternativa)
                 {
-                    //if( entAlternativa->getId() == 0    /*"Jogador"*/ )
+                    //if( entAlternativa->getId() == 0    //"Jogador" )
                     //{
                     //    Personagem* paux = static_cast<Personagem*>(entAlternativa);
                     //    if(paux && emAtaque())
@@ -67,12 +78,17 @@ namespace Entidades
                     //        paux->atacar(pAtacado);
                     //    }
                     //}
-                    //else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
+                    //else if(entAlternativa->getId() == 2  //"Obstaculo")
                     //{
                         regularColisao(entAlternativa, distancia_colisao);
                     //}
                 }
         }
+        */
+
+       void InimigoFacil::salvar()
+       {
+       }
     }
 
 }

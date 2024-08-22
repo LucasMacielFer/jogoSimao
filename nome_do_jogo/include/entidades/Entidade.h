@@ -16,7 +16,8 @@ namespace Entidades
         sf::RectangleShape retangulo;
     
     public:
-        Entidade(std::string txt="", const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
+        Entidade(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx=0.0f, const float yy=0.0f);
+        Entidade();
         virtual ~Entidade();
         void setTamanho(const float xx, const float yy);
         const sf::Vector2f getTamanho() const;

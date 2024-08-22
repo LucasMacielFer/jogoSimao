@@ -10,22 +10,57 @@ namespace Entidades
         class Inimigo : public Personagem
         {
             private:
-
-            Jogador* jogadorPerseguido;
+                static const unsigned int idClasse;
+                float tempoVolta;
+                Jogador* jogadorPerseguido;
 
             protected:
-
-            sf::Vector2f distancia_jogador;
+                sf::Vector2f distancia_jogador;
 
             public:
-
-                Inimigo(std::string txt="",const int vd = 10, const float vel = 10.0f, const int danos = 1, const float duraEspera = 0.0f, const float duraAtaque = 0.0f, const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
+                Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
+                Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx=0.0f, const float yy=0.0f);
+                Inimigo();
                 ~Inimigo();
                 void setJogador(Jogador* pJogador);
                 sf::Vector2f getPosJogador();
+                void executar(float dt);
+                void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+                virtual void direcionar();
+                virtual void atacarCorpo(Personagem* pPersonagem);
+                virtual void atacarDist(Personagem* pPersonagem);
                 virtual void salvar() = 0;
-                virtual void executar(float dt) = 0;
-                virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;
         };
     }
 }
+
+/*
+TEMPLATE METHOD:
+
+direcionar:
+Fácil: Anda de um lado ao outro eternamente
+Difícil: Anda de um lado ao outro. Quando encontra, persegue o jogador
+Chefão: Persegue o jogador desde o momento que spawna
+
+atacarCorpo:
+Fácil: 10% de chance de errar o ataque e dar 0.5x o dano
+Difícil: Ataca sempre
+Chefão: 20% de chance de aumentar o dano em 1.5x
+
+atacarDist:
+Fácil: Não ataca em distância
+Difícil: Ataca em distância
+Chefão: Não sabemos ainda
+
+-> Efetivação Template Method
+executar: Chamará em ordem:
+direcionar();
+mover();
+atacarDist();
+
+-> Efetivação Template Method
+colidir: Chamará em ordem:
+regularColisao();
+atacarCorpo();
+
+*/

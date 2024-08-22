@@ -2,7 +2,7 @@
 #include "../Entidade.h"
 #include "../personagens/Jogador.h"
 
-
+ 
 namespace Entidades
 {
     namespace Obstaculos
@@ -10,10 +10,12 @@ namespace Entidades
         class Obstaculo : public Entidade
         {
         private:
+            static const unsigned int idClasse;
             bool danoso;
         
         public:
-            Obstaculo(bool dano=false, std::string txt="", const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
+            Obstaculo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano=false);
+            Obstaculo();
             virtual ~Obstaculo();
             virtual void salvar() = 0;
             virtual void executar(float dt) = 0;

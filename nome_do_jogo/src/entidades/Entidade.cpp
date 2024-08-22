@@ -2,8 +2,8 @@
 
 namespace Entidades
 {
-    Entidade::Entidade(std::string txt, const float tamXX, const float tamYY, const float xx, const float yy):
-    Ente(txt),
+    Entidade::Entidade(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
+    Ente(i),
     tamX(tamXX),
     tamY(tamYY),
     x(xx),
@@ -12,7 +12,17 @@ namespace Entidades
     {
         retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
         retangulo.setPosition(x, y);
-        retangulo.setFillColor(sf::Color::Yellow);
+        retangulo.setFillColor(c);
+    }
+
+    Entidade::Entidade():
+    Ente(-1),
+    tamX(0),
+    tamY(0),
+    x(0),
+    y(0),
+    retangulo()
+    {
     }
 
     Entidade::~Entidade()

@@ -4,21 +4,57 @@ namespace Entidades
 {
     namespace Personagens
     {
-        Personagem::Personagem(std::string txt, const int vd, const float vel, const int danos, const float duraEspera, const float duraAtaque, const float tamXX, const float tamYY, const float xx, const float yy):
-        Entidade(txt, tamXX, tamYY, xx, yy),
+        Personagem::Personagem(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
+        Entidade(i, c, tamXX, tamYY, xx, yy),
         vidas(vd),
         velocidade(vel),
-        velocidadeX(0),
-        velocidadeY(0),
-        dano(danos),
+        velocidadeX(0.0f),
+        velocidadeY(0.0f),
+        forca(f),
         atacando(false),
         puloDisponivel(false),
         duracaoEspera(duraEspera),
         duracaoAtaque(duraAtaque),
         tempoEsperando(0.0f),
-        tempoAtacando(0.0f)
+        tempoAtacando(0.0f),
+        sentidoMovX(1)
         {
         }
+
+        Personagem::Personagem(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
+        Entidade(i, c, tamXX, tamYY, xx, yy),
+        vidas(100),
+        velocidade(10.0f),
+        velocidadeX(0.0f),
+        velocidadeY(0.0f),
+        forca(20),
+        atacando(false),
+        puloDisponivel(false),
+        duracaoEspera(2.0f),
+        duracaoAtaque(2.0f),
+        tempoEsperando(0.0f),
+        tempoAtacando(0.0f),
+        sentidoMovX(1)
+        {
+        }
+
+        Personagem::Personagem():
+        Entidade(),
+        vidas(0.0f),
+        velocidade(0.0f),
+        velocidadeX(0.0f),
+        velocidadeY(0.0f),
+        forca(0),
+        atacando(false),
+        puloDisponivel(false),
+        duracaoEspera(0.0f),
+        duracaoAtaque(0.0f),
+        tempoEsperando(0.0f),
+        tempoAtacando(0.0f),
+        sentidoMovX(1)
+        {
+        }
+
 
         Personagem::~Personagem()
         {
@@ -48,9 +84,13 @@ namespace Entidades
 
             if(vidas <= 0)
             {
-                //Precisa se desativar o jogador;
+                //Precisa se desativar o personagem;
             }
         }
+
+        /*
+        Método retirado e substituido, mas ainda não tenho certeza
+
         void Personagem::atacar(Personagem* pPersonagem)
         {
             //Coloca o personagem no status de atacar se for possível.
@@ -63,6 +103,7 @@ namespace Entidades
                 atacando = true;
             }
         }
+        */
 
         void Personagem::pular()
         {
@@ -145,13 +186,9 @@ namespace Entidades
             }
         }
 
-        void Personagem::setSentidoMovX(const float s)
+        void Personagem::movimentaX(const float s)
         {
-            if(s <= 1 && s >= -1) {velocidadeX = s*velocidade;}
-        }
-
-        void Personagem::setSentidoMovY(const float s)
-        {
+            sentidoMovX = s;
             if(s <= 1 && s >= -1) {velocidadeX = s*velocidade;}
         }
 

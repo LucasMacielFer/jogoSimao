@@ -4,9 +4,18 @@ namespace Entidades
 {
     namespace Obstaculos
     {
-        Plataforma::Plataforma(std::string txt, const float tamXX, const float tamYY, const float xx, const float yy):
-        Obstaculo(false, txt, tamXX, tamYY, xx, yy),
-        forcaSustentacao(10) //Aqui vai vir a gravidade!
+        Plataforma::Plataforma(const float tamXX, const float tamYY, const float xx, const float yy):
+        Obstaculo(sf::Color::Green, tamXX, tamYY, xx, yy, false)
+        {
+        }
+
+        Plataforma::Plataforma(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
+        Obstaculo(c, tamXX, tamYY, xx, yy, false)
+        {
+        }
+
+        Plataforma::Plataforma():
+        Obstaculo()
         {
         }
 

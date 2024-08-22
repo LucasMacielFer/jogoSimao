@@ -9,15 +9,19 @@ namespace Entidades
         class Jogador : public Personagem
         {
             private:
+                static const unsigned int idClasse;
                 int pontuacao;
 
-            public:
+            public: 
 
-                Jogador(std::string txt="",const int vd = 10, const float vel = 10.0f, const int danos = 1, const float duraEspera = 0.0f, const float duraAtaque = 0.0f, const float tamXX=100.0f, const float tamYY=100.0f, const float xx=0.0f, const float yy=0.0f);
+                Jogador(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
+                Jogador(sf::Color c, const float tamXX, const float tamYY, const float xx=0.0f, const float yy=0.0f);
+                Jogador();
                 ~Jogador();
-
                 const int getPontuacao() const;
                 void operator++();
+                void atacarCorpo(Personagens::Personagem* pPersonagem);
+                void atacarDist(Personagens::Personagem* pPersonagem);
                 void executar(float dt);
                 void salvar();
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);

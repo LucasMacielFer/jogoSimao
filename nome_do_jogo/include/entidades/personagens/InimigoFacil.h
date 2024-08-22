@@ -8,17 +8,16 @@ namespace Entidades
     {
         class InimigoFacil : public Inimigo
         {
-            private:
-
-            protected:
-
             public:
 
-                InimigoFacil(std::string txt="",const int vd = 10, const float vel = 10.0f, const int danos = 1, const float duraEspera = 0.0f, const float duraAtaque = 0.0f, const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
+                InimigoFacil(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
+                InimigoFacil(sf::Color c, const float tamXX, const float tamYY, const float xx=0.0f, const float yy=0.0f);
+                InimigoFacil();
                 ~InimigoFacil();
-                //virtual void salvar();
-                //virtual void executar(float dt);
-                virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+                void salvar();
+                //void atacarCorpo(Personagem* pPersonagem);
+                //void atacarDist(Personagem* pPersonagem); 
+                //void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
         };
     }
 }

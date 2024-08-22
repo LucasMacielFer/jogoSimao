@@ -4,9 +4,17 @@ namespace Entidades
 {
     namespace Obstaculos
     {
-        Obstaculo::Obstaculo(bool dano, std::string txt, const float tamXX, const float tamYY, const float xx, const float yy):
-        Entidade(txt, tamXX, tamYY, xx, yy),
+        const unsigned int Obstaculo::idClasse(3);
+
+        Obstaculo::Obstaculo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano):
+        Entidade(idClasse, c, tamXX, tamYY, xx, yy),
         danoso(dano)
+        {
+        }
+
+        Obstaculo::Obstaculo():
+        Entidade(),
+        danoso(false)
         {
         }
 
@@ -15,4 +23,4 @@ namespace Entidades
             danoso = false;
         }
     }
-}
+} 

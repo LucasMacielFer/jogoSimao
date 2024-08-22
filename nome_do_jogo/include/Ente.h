@@ -7,19 +7,19 @@
 class Ente
 {
 private:
-    static int cont;
-    std::string textura;
- 
+    // Ainda não há texturas
+    //std::string textura;
+
 protected:
     Gerenciadores::Gerenciador_Grafico* pGGrafico;
     int id;
     
 public:
-    Ente(std::string txt="");
+    Ente(const int i);
     virtual ~Ente();
     const int getId() const;
-    std::string getTextura() const;
-    void setTextura(std::string txt);
+    //std::string getTextura() const;
+    //void setTextura(std::string txt);
     virtual void desenhar(sf::RenderWindow& janela) = 0;
-    virtual void executar(float dt) = 0;
+    virtual void executar(const float dt) = 0;
 };

@@ -12,36 +12,37 @@ namespace Entidades
         {
         protected:
             int vidas;
-            const float velocidade;
+            float velocidade;
             float velocidadeX;
             float velocidadeY;
-            int dano;
+            int forca;
             bool atacando;
             bool puloDisponivel;
             const float duracaoEspera;
             const float duracaoAtaque;
             float tempoEsperando;
             float tempoAtacando;
+            int sentidoMovX;
 
         public:
-            Personagem(std::string txt="",const int vd = 10, const float vel = 10.0f, const int danos = 1, const float duraEspera = 0.0f, const float duraAtaque = 0.0f, const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
+            Personagem(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
+            Personagem(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx=0.0f, const float yy=0.0f);
+            Personagem();
             virtual ~Personagem();
-            void mover();
             const int getVidas() const;
             void setVidas(const int v);
-            virtual void sofrerDano(const int dano);
-            virtual void atacar(Personagem* pPersonagem);
-            void pular();
             const bool ataqueDisponivel() const;
             const bool emAtaque() const;
             void aumentarTempoExecucao(const float tempo);
             const int getDano() const;
             void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
-            void setSentidoMovX(const float s);
-            void setSentidoMovY(const float s);
+            void movimentaX(const float s);
+            void mover();
             void aplicaGravidade(float dt);
-
-            // Devem ser virtuais puras
+            void pular();
+            void sofrerDano(const int dano);
+            virtual void atacarCorpo(Personagem* pPersonagem) = 0; 
+            virtual void atacarDist(Personagem* pPersonagem) = 0;
             virtual void executar(float dt) = 0;
             virtual void salvar() = 0;
             virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;

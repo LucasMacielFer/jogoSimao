@@ -36,21 +36,21 @@ namespace Gerenciadores
             {
                 case sf::Keyboard::Key::A:
                 case sf::Keyboard::Key::D:
-                    jogador1->setSentidoMovY(0);
+                    jogador1->movimentaX(0);
                     break;
                 case sf::Keyboard::Key::W:
                 case sf::Keyboard::Key::S:
-                    jogador1->setSentidoMovY(0);
+                    jogador1->movimentaX(0);
                     break;
                 case sf::Keyboard::Key::Left:
                 case sf::Keyboard::Key::Right:
                     if (jogador2)
-                        jogador2->setSentidoMovX(0);
+                        jogador2->movimentaX(0);
                     break;
                 case sf::Keyboard::Key::Up:
                 case sf::Keyboard::Key::Down:
                     if (jogador2)
-                        jogador2->setSentidoMovX(0);
+                        jogador2->movimentaX(0);
                     break;
                 default:
                     break;
@@ -58,11 +58,11 @@ namespace Gerenciadores
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
         {
-            jogador1->setSentidoMovX(-1);
+            jogador1->movimentaX(-1);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
         {
-            jogador1->setSentidoMovX(1);
+            jogador1->movimentaX(1);
         }
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
         {
@@ -72,11 +72,11 @@ namespace Gerenciadores
         {
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
             {
-                jogador2->setSentidoMovX(-1);
+                jogador2->movimentaX(-1);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
             {
-                jogador2->setSentidoMovX(1);
+                jogador2->movimentaX(1);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
             {

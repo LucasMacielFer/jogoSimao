@@ -123,13 +123,13 @@ namespace Gerenciadores
         std::list<Entidades::Obstaculos::Obstaculo*>::iterator itrObs;
 
         for (int i=0; i<LInimigos.size(); i++) {
-            Entidades::Entidade* inimigo = static_cast<Entidades::Entidade*>(LInimigos[i]);
+            Entidades::Personagens::Inimigo* inimigo = LInimigos[i];
             for (itrObs = LObstaculos.begin(); itrObs != LObstaculos.end(); itrObs++) {
-                Entidades::Entidade* obstaculo = static_cast<Entidades::Entidade*>(*itrObs);
-                sf::Vector2f distancia_colisao = calculaColisoes(inimigo, obstaculo);
+                Entidades::Obstaculos::Obstaculo* obstaculo = *itrObs;
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(inimigo), static_cast<Entidades::Entidade*>(obstaculo));
 
                 if (distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f) {
-                    // inimigo->colidir(obstaculo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
+                    inimigo->colidir(obstaculo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
                     // obstaculo->colidir(inimigo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
                 }
             }

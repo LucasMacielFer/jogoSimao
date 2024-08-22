@@ -1,12 +1,8 @@
 #include "../include/Ente.h"
-
-int Ente::cont(0);
     
-Ente::Ente(std::string txt):
-id(++cont),
-textura(txt)
+Ente::Ente(const int i):
+id(i)
 {
-    std::cout<<"Entidade sem textura"<<std::endl;
 }
 
 Ente::~Ente()
@@ -20,12 +16,16 @@ const int Ente::getId() const
     return id;
 }
 
+/*
+Temporariamente não há textura
+
 std::string Ente::getTextura() const
 {
-    return textura;
+    return c;
 }
 
 void Ente::setTextura(std::string txt)
 {
     textura = txt;
 }
+*/

@@ -2,16 +2,15 @@
 #include "Obstaculo.h"
 
 namespace Entidades
-{
+{ 
     namespace Obstaculos
     {
         class Plataforma : public Obstaculo
         {
-        private:
-            float forcaSustentacao;
-
         public:            
-            Plataforma(std::string txt="", const float tamXX=10.0f, const float tamYY=10.0f, const float xx=0.0f, const float yy=0.0f);
+            Plataforma(const float tamXX, const float tamYY, const float xx, const float yy);
+            Plataforma(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy);
+            Plataforma();
             ~Plataforma();
             void salvar();
             void executar(float dt);
