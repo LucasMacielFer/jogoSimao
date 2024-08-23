@@ -9,7 +9,9 @@ namespace Principal
     p1(new Entidades::Personagens::Jogador(sf::Color::Blue, 50, 700)),
     p2(new Entidades::Personagens::Jogador(sf::Color::Cyan, 50, 100)),
     inim(new Entidades::Personagens::Lobisomem(sf::Color::Red, 100, 100)),
-    plat(new Entidades::Obstaculos::Plataforma(1000, 100, 500, 750)),
+    plat(new Entidades::Obstaculos::Plataforma(1024, 100, 512, 750)),
+    gosma(new Entidades::Obstaculos::Gosma(sf::Color::Yellow, 0.2, 900, 690)),
+    esp(new Entidades::Obstaculos::Espinho(sf::Color::Magenta, 10, 800 ,675)),
     relogio(),
     tempo(0.0f)
     {
@@ -20,6 +22,8 @@ namespace Principal
         gColisoes->setJog1(p1);
         gColisoes->setJog2(p2);
         gColisoes->incluirObstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(plat));
+        gColisoes->incluirObstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(gosma));
+        gColisoes->incluirObstaculo(static_cast<Entidades::Obstaculos::Obstaculo*>(esp));
         gColisoes->incluirInimigo(static_cast<Entidades::Personagens::Inimigo*>(inim));
     }
 
@@ -45,6 +49,8 @@ namespace Principal
             relogio.restart();
 
             plat->executar(tempo);
+            gosma->executar(tempo);
+            esp->executar(tempo);
             inim->executar(tempo);
             p1->executar(tempo);
             p2->executar(tempo);
@@ -54,6 +60,8 @@ namespace Principal
             gGrafico->desenhaEnte(static_cast<Ente*>(p2));
             gGrafico->desenhaEnte(static_cast<Ente*>(plat));
             gGrafico->desenhaEnte(static_cast<Ente*>(inim));
+            gGrafico->desenhaEnte(static_cast<Ente*>(gosma));
+            gGrafico->desenhaEnte(static_cast<Ente*>(esp));
             gGrafico->mostrarJanela();
         }
     }

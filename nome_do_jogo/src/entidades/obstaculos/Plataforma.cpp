@@ -31,9 +31,10 @@ namespace Entidades
         {
         }
 
-        void Plataforma::obstacular(Personagens::Jogador* p)
+        void Plataforma::obstacular(Personagens::Personagem* p)
         {
-            //Plataforma não obstacula!
+            p->setVelocidade(p->getVelMax());
+            p->setPulo(true);
         }
     }
 }

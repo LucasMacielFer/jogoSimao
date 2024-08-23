@@ -103,6 +103,19 @@ namespace Entidades
         return v;
     }
 
+    void Entidade::setVelocidade(const float vel)
+    {
+        if(vel > 0)
+            velocidade = vel;
+        else
+            velocidade = 0;
+    }
+
+    const float Entidade::getVelMax() const
+    {
+        return maxVelocidade;
+    }
+
     void Entidade::movimentaX(const float s)
     {
         sentidoMovX = s;

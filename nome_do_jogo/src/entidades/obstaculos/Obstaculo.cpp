@@ -23,10 +23,6 @@ namespace Entidades
             danoso = false;
         }
 
-        void Obstaculo::obstacular(Personagens::Jogador* p)
-        {
-        }
-
         void Obstaculo::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {            
             if(distancia_colisao.x > distancia_colisao.y)
@@ -56,9 +52,9 @@ namespace Entidades
         void Obstaculo::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
             regularColisao(entAlternativa, distancia_colisao);
-            if(entAlternativa->getId()==1)
+            if(entAlternativa->getId()==1 || entAlternativa->getId()==2)
             {
-                obstacular(dynamic_cast<Personagens::Jogador*>(entAlternativa));
+                obstacular(dynamic_cast<Personagens::Personagem*>(entAlternativa));
             }
         }
     }

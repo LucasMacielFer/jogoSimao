@@ -25,6 +25,8 @@ namespace Entidades
             virtual ~Personagem();
             const int getVidas() const;
             void setVidas(const int v);
+            const bool getPulo() const;
+            void setPulo(const bool p);
             const bool ataqueDisponivel() const;
             const bool emAtaque() const;
             void aumentarTempoExecucao(const float tempo);

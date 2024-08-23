@@ -28,7 +28,6 @@ namespace Entidades
                 void executar(float dt);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();
-                virtual void operator--();
                 virtual void direcionar();
                 virtual void atacarCorpo(Personagem* pPersonagem);
                 virtual void atacarDist(Personagem* pPersonagem);

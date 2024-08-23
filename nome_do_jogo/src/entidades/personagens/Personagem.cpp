@@ -47,6 +47,16 @@ namespace Entidades
         {
             vidas = v;
         }
+        
+        const bool Personagem::getPulo() const
+        {
+            return puloDisponivel;
+        }
+
+        void Personagem::setPulo(const bool p)
+        {
+            puloDisponivel = p;
+        }   
 
         void Personagem::sofrerDano(const int dano)
         {
@@ -150,7 +160,6 @@ namespace Entidades
                 {
                     y += distancia_colisao.y;
                     if(velocidadeY > 0) {velocidadeY = 0;}
-                    if(!puloDisponivel) {puloDisponivel = true;}
                 }
                 else 
                 {

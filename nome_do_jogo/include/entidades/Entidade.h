@@ -32,6 +32,8 @@ namespace Entidades
             const sf::Vector2f getTamanho() const;
             void setPosicao(const float xx, const float yy);
             const sf::Vector2f getPosicao() const;
+            void setVelocidade(const float vel);
+            const float getVelMax() const;
             void movimentaX(const float s);
             void aplicaGravidade(float dt);
             void desenhar(sf::RenderWindow& janela);
