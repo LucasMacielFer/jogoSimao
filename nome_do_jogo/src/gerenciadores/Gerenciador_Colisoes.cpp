@@ -130,7 +130,7 @@ namespace Gerenciadores
 
                 if (distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f) {
                     inimigo->colidir(obstaculo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
-                    // obstaculo->colidir(inimigo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
+                    obstaculo->colidir(inimigo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
                 }
             }
         }
