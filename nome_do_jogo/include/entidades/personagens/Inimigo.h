@@ -3,6 +3,8 @@
 #include "Personagem.h"
 #include "Jogador.h"
 
+#define TEMPO_VOLTA 1
+
 namespace Entidades
 {
     namespace Personagens
@@ -19,13 +21,14 @@ namespace Entidades
 
             public:
                 Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
-                Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx=0.0f, const float yy=0.0f);
                 Inimigo();
                 ~Inimigo();
                 void setJogador(Jogador* pJogador);
                 sf::Vector2f getPosJogador();
                 void executar(float dt);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+                void morrer();
+                virtual void operator--();
                 virtual void direcionar();
                 virtual void atacarCorpo(Personagem* pPersonagem);
                 virtual void atacarDist(Personagem* pPersonagem);

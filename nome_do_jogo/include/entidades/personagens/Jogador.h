@@ -2,6 +2,14 @@
 
 #include "Personagem.h"
 
+#define TAM_X_JOGADOR 50
+#define TAM_Y_JOGADOR 50
+#define VIDAS_JOGADOR 50
+#define VEL_MAX_JOGADOR 7
+#define FORCA_JOGADOR 10
+#define DURACAO_ATAQUE_JOGADOR 2.0f
+#define DURACAO_ESPERA_JOGADOR 2.0f
+
 namespace Entidades
 {
     namespace Personagens
@@ -14,8 +22,7 @@ namespace Entidades
 
             public: 
 
-                Jogador(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
-                Jogador(sf::Color c, const float tamXX, const float tamYY, const float xx=0.0f, const float yy=0.0f);
+                Jogador(sf::Color c, const float xx, const float yy);
                 Jogador();
                 ~Jogador();
                 const int getPontuacao() const;
@@ -25,6 +32,7 @@ namespace Entidades
                 void executar(float dt);
                 void salvar();
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+                void morrer();
         };
     }
 }

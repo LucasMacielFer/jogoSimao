@@ -3,7 +3,7 @@
 #include "../gerenciadores/Gerenciador_Eventos.h"
 #include "../gerenciadores/Gerenciador_Colisoes.h"
 #include "../entidades/obstaculos/Plataforma.h"
-#include "../entidades/personagens/InimigoFacil.h"
+#include "../entidades/personagens/Lobisomem.h"
 
 #define TICKRATE 0.017
 
@@ -19,7 +19,7 @@ namespace Principal
             // Aqui estará a lista de entidades!
             Entidades::Personagens::Jogador* p1;
             Entidades::Personagens::Jogador* p2;
-            Entidades::Personagens::InimigoFacil* inim;
+            Entidades::Personagens::Lobisomem* inim;
             Entidades::Obstaculos::Plataforma* plat;
 
             // Todo o gerenciamento de tempo foi feito baseado no jogo Desert++, do monitor Matheus Burda

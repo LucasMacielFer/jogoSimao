@@ -5,7 +5,7 @@ namespace Gerenciadores
 {
     // Inicialização de pInstancia como NULL
     Gerenciador_Grafico* Gerenciador_Grafico::pInstancia(NULL);
-    const sf::Vector2f Gerenciador_Grafico::tamanhoJanela({1000.0f, 800.0f});
+    const sf::Vector2f Gerenciador_Grafico::tamanhoJanela({1024.0f, 800.0f});
 
     Gerenciador_Grafico::Gerenciador_Grafico():
     janela(sf::VideoMode(tamanhoJanela.x, tamanhoJanela.y), "Jogo")

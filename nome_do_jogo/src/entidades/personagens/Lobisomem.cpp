@@ -1,30 +1,40 @@
-#include "../../../include/entidades/personagens/InimigoFacil.h"
+#include "../../../include/entidades/personagens/Lobisomem.h"
 
 namespace Entidades
 {
     namespace Personagens
     {
-        InimigoFacil::InimigoFacil(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
-        Inimigo(c, tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque)
+        Lobisomem::Lobisomem(sf::Color c, const float xx, const float yy):
+        Inimigo(c, TAM_X_LOBISOMEM, TAM_Y_LOBISOMEM, xx, yy, VIDAS_LOBISOMEM, VEL_MAX_LOBISOMEM, FORCA_LOBISOMEM, DURACAO_ESPERA_LOBISOMEM, DURACAO_ATAQUE_LOBISOMEM),
+        nivelAtrapalhado(rand()%20)
         {
         }
 
-        InimigoFacil::InimigoFacil(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
-        Inimigo(c, tamXX, tamYY, xx, yy)
+        Lobisomem::Lobisomem():
+        Inimigo(),
+        nivelAtrapalhado(0)
         {
         }
 
-        InimigoFacil::InimigoFacil():
-        Inimigo()
+        Lobisomem::~Lobisomem()
         {
         }
 
-        InimigoFacil::~InimigoFacil()
+        void Lobisomem::atacarCorpo(Personagem* pPersonagem)
         {
-            
+            if(ataqueDisponivel() && pPersonagem)
+            {
+                atacando = true;
+                pular();
+                if(rand()%100 > nivelAtrapalhado)
+                {
+                    pPersonagem->sofrerDano(forca);
+                }
+            }
         }
 
-        /*void InimigoFacil:: executar(float dt) //Estrutura levemente adaptada do código do monitor Matheus Burda. https://github.com/MatheusBurda/Desert.git. Acesso em: 21/08/2024. 
+
+        /*void Lobisomem::executar(float dt) //Estrutura levemente adaptada do código do monitor Matheus Burda. https://github.com/MatheusBurda/Desert.git. Acesso em: 21/08/2024. 
         { 
             Personagem::aumentarTempoExecucao(dt); 
             distancia_jogador = getPosJogador().x - getPosicao().x; 
@@ -65,7 +75,7 @@ namespace Entidades
              */
 
         /*
-        void InimigoFacil::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
+        void Lobisomem::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
             if(entAlternativa)
                 {
@@ -86,7 +96,7 @@ namespace Entidades
         }
         */
 
-       void InimigoFacil::salvar()
+       void Lobisomem::salvar()
        {
        }
     }

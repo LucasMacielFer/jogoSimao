@@ -6,14 +6,8 @@ namespace Entidades
     {
         const unsigned int Jogador::idClasse(1);
 
-        Jogador::Jogador(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
-        Personagem(idClasse, c ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque), 
-        pontuacao(0)
-        {
-        }
-
-        Jogador::Jogador(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
-        Personagem(idClasse, c, tamXX, tamYY, xx, yy),
+        Jogador::Jogador(sf::Color c, const float xx, const float yy):
+        Personagem(idClasse, c ,TAM_X_JOGADOR, TAM_Y_JOGADOR, xx, yy, VIDAS_JOGADOR, VEL_MAX_JOGADOR, FORCA_JOGADOR, DURACAO_ESPERA_JOGADOR, DURACAO_ATAQUE_JOGADOR), 
         pontuacao(0)
         {
         }
@@ -58,9 +52,14 @@ namespace Entidades
 
         void Jogador::executar(float dt)
         {
-            aplicaGravidade(dt);
-            mover();
+            if(vivo)
+            {
+                aumentarTempoExecucao(dt);
+                aplicaGravidade(dt);
+                mover();
+            }
         }
+
         void Jogador::salvar()
         {
 
@@ -91,5 +90,9 @@ namespace Entidades
             }
         }
 
+        void Jogador::morrer()
+        {
+            vivo = false;
+        }
     }
 }

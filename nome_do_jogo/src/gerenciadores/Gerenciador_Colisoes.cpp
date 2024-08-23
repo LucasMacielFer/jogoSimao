@@ -103,7 +103,7 @@ namespace Gerenciadores
                 if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
                     //pJogador1->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
-                    //obst->colidir(pJogador1, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                    inim->colidir(pJogador1, distancia_colisao); //metodo ainda precisa ser definido na classe entidade
                 }
             }
             if(pJogador2)
@@ -113,7 +113,7 @@ namespace Gerenciadores
                 if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
                     //pJogador2->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
-                    //obst->colidir(pJogador2, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
+                    inim->colidir(pJogador2, distancia_colisao); //metodo ainda precisa ser definido na classe entidade
                 }
             }
         }
@@ -173,6 +173,7 @@ namespace Gerenciadores
 
     void Gerenciador_Colisoes::executar() {
         tratarColisoesJogsObstacs();
+        tratarColisoesJogsInimgs();
         tratarColisoesInimgsObstacs();
         tratarColisoesImimgs();
         // Adicione outras funções de tratamento de colisão conforme necessário

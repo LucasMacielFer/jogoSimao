@@ -14,14 +14,6 @@ namespace Entidades
         {
         }
 
-        Inimigo::Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
-        Personagem(idClasse, c, tamXX, tamYY, xx, yy),
-        jogadorPerseguido(NULL),
-        distancia_jogador(0.0f, 0.0f),
-        tempoVolta(0.0f)
-        {
-        }
-
         Inimigo::Inimigo():
         Personagem(),
         jogadorPerseguido(NULL),
@@ -55,23 +47,29 @@ namespace Entidades
 
             void Inimigo::executar(float dt)
         {
-            tempoVolta += dt;
-            aplicaGravidade(dt);
-            direcionar();
-            mover();
-            atacarDist(jogadorPerseguido);
+            if(vivo)
+            {
+                tempoVolta += dt;
+                aumentarTempoExecucao(dt);
+                aplicaGravidade(dt);
+                direcionar();
+                mover();
+                atacarDist(jogadorPerseguido);
+            }
         }
 
         void Inimigo::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
-            regularColisao(entAlternativa, distancia_colisao);
-            atacarCorpo(jogadorPerseguido);
+            if(entAlternativa->getId()==3)
+                regularColisao(entAlternativa, distancia_colisao);
+            if(entAlternativa->getId()==1)
+                atacarCorpo(dynamic_cast<Personagem*>(entAlternativa));
         }
 
         void Inimigo::direcionar()
         {
             movimentaX(sentidoMovX);
-            if(tempoVolta >= 1)
+            if(tempoVolta >= TEMPO_VOLTA)
             {
                 sentidoMovX = -sentidoMovX;
                 tempoVolta = 0;
@@ -93,6 +91,11 @@ namespace Entidades
         void Inimigo::atacarDist(Personagem* pPersonagem)
         {
             // Não é implementada na classe inimigo. As derivadas podem implementá-la!
+        }
+
+        void Inimigo::morrer()
+        {
+            vivo = false;
         }
     }
 }

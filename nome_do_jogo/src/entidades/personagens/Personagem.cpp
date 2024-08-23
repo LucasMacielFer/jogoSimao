@@ -5,11 +5,8 @@ namespace Entidades
     namespace Personagens
     {
         Personagem::Personagem(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
-        Entidade(i, c, tamXX, tamYY, xx, yy),
+        Entidade(i, c, tamXX, tamYY, xx, yy, vel),
         vidas(vd),
-        velocidade(vel),
-        velocidadeX(0.0f),
-        velocidadeY(0.0f),
         forca(f),
         atacando(false),
         puloDisponivel(false),
@@ -17,33 +14,13 @@ namespace Entidades
         duracaoAtaque(duraAtaque),
         tempoEsperando(0.0f),
         tempoAtacando(0.0f),
-        sentidoMovX(1)
-        {
-        }
-
-        Personagem::Personagem(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
-        Entidade(i, c, tamXX, tamYY, xx, yy),
-        vidas(100),
-        velocidade(10.0f),
-        velocidadeX(0.0f),
-        velocidadeY(0.0f),
-        forca(20),
-        atacando(false),
-        puloDisponivel(false),
-        duracaoEspera(2.0f),
-        duracaoAtaque(2.0f),
-        tempoEsperando(0.0f),
-        tempoAtacando(0.0f),
-        sentidoMovX(1)
+        vivo(true)
         {
         }
 
         Personagem::Personagem():
         Entidade(),
         vidas(0.0f),
-        velocidade(0.0f),
-        velocidadeX(0.0f),
-        velocidadeY(0.0f),
         forca(0),
         atacando(false),
         puloDisponivel(false),
@@ -51,7 +28,7 @@ namespace Entidades
         duracaoAtaque(0.0f),
         tempoEsperando(0.0f),
         tempoAtacando(0.0f),
-        sentidoMovX(1)
+        vivo(false)
         {
         }
 
@@ -59,13 +36,6 @@ namespace Entidades
         Personagem::~Personagem()
         {
             vidas = -1;
-        }
-
-        void Personagem::mover()
-        {
-            x += velocidadeX;
-            y += velocidadeY;
-            atualizaEntidade();
         }
 
         const int Personagem::getVidas() const
@@ -81,10 +51,9 @@ namespace Entidades
         void Personagem::sofrerDano(const int dano)
         {
             vidas -= dano;
-
             if(vidas <= 0)
             {
-                //Precisa se desativar o personagem;
+                morrer();
             }
         }
 
@@ -114,6 +83,11 @@ namespace Entidades
             }
         }
 
+        const int Personagem::getForca() const
+        {
+            return forca;
+        }
+
         const bool Personagem::ataqueDisponivel() const
         {
             //Responde se ele pode atacar, comparando o tempo da finalização do ultimo ataque com o tempo mínimo necessário de espera para realizar outro ataque.
@@ -126,10 +100,12 @@ namespace Entidades
                 return false;    
             }
         }
+
         const bool Personagem::emAtaque() const
         {
             return atacando;
         }
+
         void Personagem::aumentarTempoExecucao(const float tempo)
         {
             if(emAtaque())
@@ -154,12 +130,10 @@ namespace Entidades
 
         // Método adaptado do monitor Matheus Burda. https://github.com/MatheusBurda/Desert.git Acesso em: 19/08/2024.
         void Personagem::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
-        {
-            Personagem* paux = static_cast<Personagem*> (entAlternativa);
-            
+        {            
             if(distancia_colisao.x > distancia_colisao.y)
             {
-                if(x < paux->x)
+                if(x < entAlternativa->getPosicao().x)
                 {
                     x += distancia_colisao.x;
                     if(velocidadeX > 0) {velocidadeX = 0;}
@@ -172,7 +146,7 @@ namespace Entidades
             }
             else 
             {
-                if(y < paux->y)
+                if(y < entAlternativa->getPosicao().y)
                 {
                     y += distancia_colisao.y;
                     if(velocidadeY > 0) {velocidadeY = 0;}
@@ -184,19 +158,6 @@ namespace Entidades
                     if(velocidadeY < 0) {velocidadeY = 0;}
                 }
             }
-        }
-
-        void Personagem::movimentaX(const float s)
-        {
-            sentidoMovX = s;
-            if(s <= 1 && s >= -1) {velocidadeX = s*velocidade;}
-        }
-
-        // Implementação da gravidade baseada no jogo Desert++, do monitor Matheus Burda
-        // Disponível em: https://github.com/MatheusBurda/Desert/tree/4d1ec28610a4675cfa3defc2a1aac12f28ffad2b
-        void Personagem::aplicaGravidade(float dt)
-        {
-            velocidadeY += GRAVIDADE*dt;
         }
     }
 }

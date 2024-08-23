@@ -17,9 +17,11 @@ namespace Entidades
             Obstaculo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano=false);
             Obstaculo();
             virtual ~Obstaculo();
+            void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+            void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
+            virtual void obstacular(Personagens::Jogador* p);
             virtual void salvar() = 0;
             virtual void executar(float dt) = 0;
-            virtual void obstacular(Personagens::Jogador* p) = 0;
         };
     }
 }

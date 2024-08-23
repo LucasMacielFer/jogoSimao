@@ -1,0 +1,1 @@
+#include "../../../include/entidades/personagens/Mago.h"

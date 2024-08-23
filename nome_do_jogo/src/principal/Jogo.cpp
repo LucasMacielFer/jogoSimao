@@ -6,13 +6,15 @@ namespace Principal
     gEventos(Gerenciadores::Gerenciador_Eventos::getInstancia()),
     gColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia()),
     gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
-    p1(new Entidades::Personagens::Jogador(sf::Color::Blue, 100, 100, 50, 700)),
-    p2(new Entidades::Personagens::Jogador(sf::Color::Cyan, 100, 100, 50, 100)),
-    inim(new Entidades::Personagens::InimigoFacil(sf::Color::Red, 100, 100)),
+    p1(new Entidades::Personagens::Jogador(sf::Color::Blue, 50, 700)),
+    p2(new Entidades::Personagens::Jogador(sf::Color::Cyan, 50, 100)),
+    inim(new Entidades::Personagens::Lobisomem(sf::Color::Red, 100, 100)),
     plat(new Entidades::Obstaculos::Plataforma(1000, 100, 500, 750)),
     relogio(),
     tempo(0.0f)
     {
+        time_t t;
+        srand((unsigned)time(&t));
         gEventos->setJogador1(p1);
         gEventos->setJogador2(p2);
         gColisoes->setJog1(p1);
