@@ -17,7 +17,7 @@ namespace Entidades
                 Jogador* jogadorPerseguido;
 
             protected:
-                sf::Vector2f distancia_jogador;
+                float distancia_jogador;
 
             public:
                 Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
@@ -31,6 +31,7 @@ namespace Entidades
                 virtual void direcionar();
                 virtual void atacarCorpo(Personagem* pPersonagem);
                 virtual void atacarDist(Personagem* pPersonagem);
+                virtual void habilidadeInimiga() = 0;
                 virtual void salvar() = 0;
         };
     }

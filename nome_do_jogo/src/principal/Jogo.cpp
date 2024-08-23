@@ -48,6 +48,8 @@ namespace Principal
             tempo = relogio.getElapsedTime().asSeconds();
             relogio.restart();
 
+            //inim->setJogador(p1);
+
             plat->executar(tempo);
             gosma->executar(tempo);
             esp->executar(tempo);

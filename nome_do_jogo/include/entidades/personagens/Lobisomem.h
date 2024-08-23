@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Inimigo.h"
+#include <cmath>
 
 #define TAM_X_LOBISOMEM 50
 #define TAM_Y_LOBISOMEM 50
@@ -9,6 +10,7 @@
 #define FORCA_LOBISOMEM 7
 #define DURACAO_ATAQUE_LOBISOMEM 1.0f
 #define DURACAO_ESPERA_LOBISOMEM 2.0f
+#define ALCANCE_LOBISOMEM 300.0f
 
 namespace Entidades
 {
@@ -28,6 +30,7 @@ namespace Entidades
                 ~Lobisomem();
                 void salvar();
                 void atacarCorpo(Personagem* pPersonagem);
+                void habilidadeInimiga();
         };
     }
 }

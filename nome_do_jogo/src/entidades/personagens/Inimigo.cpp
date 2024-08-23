@@ -9,7 +9,7 @@ namespace Entidades
         Inimigo::Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
         Personagem(idClasse, c ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque),
         jogadorPerseguido(NULL),
-        distancia_jogador(0.0f, 0.0f),
+        distancia_jogador(0.0f),
         tempoVolta(0.0f)
         {
         }
@@ -17,7 +17,7 @@ namespace Entidades
         Inimigo::Inimigo():
         Personagem(),
         jogadorPerseguido(NULL),
-        distancia_jogador(0.0f, 0.0f),
+        distancia_jogador(0.0f),
         tempoVolta(0.0f)
         {
         }
@@ -52,6 +52,7 @@ namespace Entidades
                 tempoVolta += dt;
                 aumentarTempoExecucao(dt);
                 aplicaGravidade(dt);
+                habilidadeInimiga();
                 direcionar();
                 mover();
                 atacarDist(jogadorPerseguido);
