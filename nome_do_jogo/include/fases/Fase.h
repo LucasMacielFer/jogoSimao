@@ -4,36 +4,39 @@
 #include "../gerenciadores/Gerenciador_Colisoes.h"
 #include "../gerenciadores/Gerenciador_Grafico.h"
 #include "../listas/ListaEntidades.h"
+#include "../CriadorMapas.h"
 
 namespace Fases
 {
-    class Fase
+    class Fase : public Ente
     {
         private:
+            static const int idClasse;
+            static Gerenciadores::Gerenciador_Colisoes* pGColisoes;
             const int nOFaceis;
             const int nOMedios;
             const int nODificeis;
             const int nIFaceis;
             const int nIDificeis;
             const int nIChefoes;
-            static Gerenciadores::Gerenciador_Grafico pGGrafico;
-            static Gerenciadores::Gerenciador_Colisoes pGColisoes;
             Entidades::Personagens::Jogador* jog1;
             Entidades::Personagens::Jogador* jog2;
-            //CriadorMapas criadorMapa;
             Listas::ListaEntidades* lEntidades;
-            std::string caminhoText;
             std::string caminhoTilemap;
 
         private:
             void gerenciarColisoes();
-            void executarEntidades();
+            void executarEntidades(float dt);
+            void criarMapa();
 
         public:
-            Fase(std::string text, std::string tile, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC);
+            Fase(std::string tilemap, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC);
+            Fase();
             ~Fase();
-            void setJogador1();
-            void setJogador2();
-            void executar();
+            void setJogador1(Entidades::Personagens::Jogador* jog);
+            void setJogador2(Entidades::Personagens::Jogador* jog);
+            void executar(float dt);
+            void desenhar(sf::RenderWindow& janela);
+            void salvar();
     };
 }
