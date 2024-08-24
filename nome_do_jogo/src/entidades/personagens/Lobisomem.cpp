@@ -36,12 +36,14 @@ namespace Entidades
 
         void Lobisomem::habilidadeInimiga() 
         {  
-          /*  distancia_jogador = getPosJogador().x - getPosicao().x; 
-
-            if(fabs(distancia_jogador) < ALCANCE_LOBISOMEM) 
-            { 
+            
+            distancia_jogador1 = getPosJogador1().x - getPosicao().x;
+            distancia_jogador2 = getPosJogador2().x - getPosicao().x;
+            
+            if(fabs(distancia_jogador1) < ALCANCE_LOBISOMEM || (fabs(distancia_jogador2) < ALCANCE_LOBISOMEM)) 
+             { 
                 rapido = true;
-            }
+             }
             else 
             {
                 rapido = false;
@@ -54,7 +56,7 @@ namespace Entidades
             else 
             {
                 setVelocidade(VEL_MAX_LOBISOMEM);
-            }*/
+            }
         }
 
 

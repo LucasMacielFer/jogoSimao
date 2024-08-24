@@ -5,38 +5,59 @@ namespace Entidades
     namespace Personagens
     {
         const unsigned int Inimigo::idClasse(2);
+        Jogador* Inimigo::jogador1Perseguido(NULL);
+        Jogador* Inimigo::jogador2Perseguido(NULL);
 
         Inimigo::Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
         Personagem(idClasse, c ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque),
-        jogadorPerseguido(NULL),
-        distancia_jogador(0.0f),
+        distancia_jogador1(0.0f),
+        distancia_jogador2(0.0f),
         tempoVolta(0.0f)
         {
         }
 
         Inimigo::Inimigo():
         Personagem(),
-        jogadorPerseguido(NULL),
-        distancia_jogador(0.0f),
+        distancia_jogador1(0.0f),
+        distancia_jogador2(0.0f),
         tempoVolta(0.0f)
         {
         }
 
         Inimigo::~Inimigo()
         {
-            jogadorPerseguido = NULL;
+            jogador1Perseguido = NULL;
+            jogador2Perseguido = NULL;
         }
 
-        void Inimigo::setJogador(Jogador* pJogador)
+        void Inimigo::setJogador1(Jogador* pJogador)
         {
-            jogadorPerseguido = pJogador;
+            jogador1Perseguido = pJogador;
         }
 
-        sf::Vector2f Inimigo::getPosJogador()
+        void Inimigo::setJogador2(Jogador* pJogador)
         {
-            if(jogadorPerseguido)
+            jogador2Perseguido = pJogador;
+        }
+
+        sf::Vector2f Inimigo::getPosJogador1()
+        {
+            if(jogador1Perseguido)
             {
-                return jogadorPerseguido->getPosicao();
+                return jogador1Perseguido->getPosicao();
+            }
+            else
+            {
+                std::cout << "Ponteiro Nulo" << std::endl;
+                exit(1);
+            }
+        }
+
+        sf::Vector2f Inimigo::getPosJogador2()
+        {
+            if(jogador2Perseguido)
+            {
+                return jogador2Perseguido->getPosicao();
             }
             else
             {
@@ -55,7 +76,7 @@ namespace Entidades
                 habilidadeInimiga();
                 direcionar();
                 mover();
-                atacarDist(jogadorPerseguido);
+                atacarDist(jogador1Perseguido);
             }
         }
 

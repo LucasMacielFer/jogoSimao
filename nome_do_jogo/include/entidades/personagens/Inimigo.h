@@ -14,17 +14,21 @@ namespace Entidades
             private:
                 static const unsigned int idClasse;
                 float tempoVolta;
-                Jogador* jogadorPerseguido;
+                static Jogador* jogador1Perseguido;
+                static Jogador* jogador2Perseguido;
 
             protected:
-                float distancia_jogador;
+                float distancia_jogador1;
+                float distancia_jogador2;
 
             public:
                 Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
                 Inimigo();
                 ~Inimigo();
-                void setJogador(Jogador* pJogador);
-                sf::Vector2f getPosJogador();
+                void setJogador1(Jogador* pJogador);
+                void setJogador2(Jogador* pJogador);
+                sf::Vector2f getPosJogador1();
+                sf::Vector2f getPosJogador2();
                 void executar(float dt);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();
@@ -34,6 +38,7 @@ namespace Entidades
                 virtual void habilidadeInimiga() = 0;
                 virtual void salvar() = 0;
         };
+
     }
 }
 
