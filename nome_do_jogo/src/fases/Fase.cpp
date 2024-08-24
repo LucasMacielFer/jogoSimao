@@ -7,12 +7,36 @@ namespace Fases
 
     void Fase::gerenciarColisoes()
     {
+        pGColisoes->setJog1(jog1);
+        pGColisoes->setJog2(jog2);
         pGColisoes->executar();
+    }
+
+    void Fase::inicializaColisoes()
+    {
+        Entidades::Entidade* pAux = NULL;
+        lEntidades.irAoPrimeiro();
+        while(!lEntidades.fim())
+        {
+            pAux = lEntidades.passoPercorrer();
+            if(pAux->getId() == 2)
+            {
+                pGColisoes->incluirInimigo(pAux);
+            }
+            else if(pAux->getId() == 3)
+            {
+                pGColisoes->incluirObstaculo(pAux);
+            }
+        }
     }
 
     void Fase::executarEntidades(float dt)
     {
-        // Percorrer a lista executando entidade por entidade
+        if(jog1)
+            jog1->executar(dt);
+        if(jog2)
+            jog2->executar(dt);
+        lEntidades.percorreExecutando(dt);
     }
 
     void Fase::criarMapa()
@@ -20,7 +44,7 @@ namespace Fases
         CriadorMapas* gerador = new CriadorMapas(caminhoTilemap);
         if(gerador)
         {
-            gerador->criarMapa(lEntidades, nOFaceis, nOMedios, nODificeis, nIFaceis, nIDificeis, nIChefoes);
+            gerador->criarMapa(&lEntidades, nOFaceis, nOMedios, nODificeis, nIFaceis, nIDificeis, nIChefoes);
             delete gerador;
             gerador = NULL;
         }
@@ -28,6 +52,7 @@ namespace Fases
 
     Fase::Fase(std::string tilemap, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC):
     Ente(idClasse),
+    lEntidades(),
     caminhoTilemap(tilemap),
     jog1(NULL),
     jog2(NULL),
@@ -38,10 +63,13 @@ namespace Fases
     nIDificeis(nID),
     nIChefoes(nIC)
     {
+        criarMapa();
+        inicializaColisoes();
     }
 
     Fase::Fase():
     Ente(-1),
+    lEntidades(),
     caminhoTilemap(""),
     jog1(NULL),
     jog2(NULL),
@@ -57,7 +85,7 @@ namespace Fases
     Fase::~Fase()
     {
         // Salvar?
-        // Destruir entidade por entidade
+        lEntidades.limpaLista();
     }
 
     // Será chamada pelo gerenciador grafico!
@@ -65,7 +93,11 @@ namespace Fases
     {
         jog1->desenhar(janela);
         jog2->desenhar(janela);
-        // Percorre a lista desenhando tudo
+        lEntidades.irAoPrimeiro();
+        while(!lEntidades.fim())
+        {
+            (lEntidades.passoPercorrer())->desenhar(janela);
+        }
     }
 
     void Fase::setJogador1(Entidades::Personagens::Jogador* jog)

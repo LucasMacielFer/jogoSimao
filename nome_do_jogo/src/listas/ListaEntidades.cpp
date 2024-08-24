@@ -2,9 +2,11 @@
 
 namespace Listas 
 {
-    ListaEntidades::ListaEntidades(): lista_entidades()
+    ListaEntidades::ListaEntidades():
+    lista_entidades(),
+    iterador_entidades(&lista_entidades)
     {
-
+        iterador_entidades.primeiro();
     }
 
     ListaEntidades::~ListaEntidades()
@@ -41,11 +43,32 @@ namespace Listas
         lista_entidades.limpar();
     }
 
-    const unsigned int ListaEntidades::tamanho() const{ return (lista_entidades.getTamanho());}
-
-    Entidades::Entidade* ListaEntidades::operator[](unsigned int chave)
+    void ListaEntidades::irAoPrimeiro()
     {
-        return (lista_entidades[chave]);
+        iterador_entidades.primeiro();
     }
 
+    Entidades::Entidade* ListaEntidades::passoPercorrer()
+    {
+        Entidades::Entidade* e = iterador_entidades.getAtual();
+        iterador_entidades.proximo();
+        return e;
+    }
+
+    void ListaEntidades::percorreExecutando(float dt)
+    {
+        iterador_entidades.primeiro();
+        while(!iterador_entidades.fimDaLista())
+        {
+            (iterador_entidades.getAtual())->executar(dt);
+            iterador_entidades.proximo();
+        }
+    }
+
+    const bool ListaEntidades::fim() const
+    {
+        return iterador_entidades.fimDaLista();
+    }
+
+    const unsigned int ListaEntidades::tamanho() const{ return (lista_entidades.getTamanho());}
 }

@@ -7,8 +7,7 @@ namespace Listas
     template< class T>
     class Lista
     {
-        private:
-
+        public:
             template < class Tipo>
             class Elemento
             {
@@ -43,28 +42,26 @@ namespace Listas
                 void setInfo(Tipo* info){ pInfo = info;}
 
                 Tipo* getInfo(){ return pInfo;}
-
             };
 
+        private:
             Elemento<T>* pPrimeiro;
             Elemento<T>* pAtual;
             unsigned int tamanho;
 
         public:
-
             Lista();
             ~Lista();
 
             void limpar();
             const unsigned int getTamanho() const { return tamanho;}
-            T* operator[](unsigned int chave);
+            //T* operator[](unsigned int chave);
             void adicionar(T* info);
             T* remover(T* info);
+            Elemento<T>* getPrimeiro(){ return pPrimeiro;}
 
         private:
-
             void setElemento(Elemento<T>* pElemento);
-            Elemento<T>* getPrimeiro(){ return pPrimeiro;}
             Elemento<T>* getAtual(){ return pAtual;}
 
     };
@@ -109,7 +106,7 @@ namespace Listas
     }
 
     template<class T>
-    void Lista<T>:: setElemento(Elemento<T>* pElemento)
+    void Lista<T>::setElemento(Elemento<T>* pElemento)
     {
         if(pElemento)
         {
@@ -133,6 +130,7 @@ namespace Listas
         }
     }
 
+    /*
     template<class T>
     T* Lista<T>::operator[](unsigned int chave)
     {
@@ -152,6 +150,7 @@ namespace Listas
             return (pAux->getInfo());
         }
     }
+    */
 
     template<class T>
     void Lista<T>::adicionar(T* info)

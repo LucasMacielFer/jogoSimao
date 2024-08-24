@@ -17,8 +17,8 @@ namespace Gerenciadores
 
     Gerenciador_Colisoes::~Gerenciador_Colisoes()
     {
-        std::vector<Entidades::Personagens::Inimigo*>::iterator itrInim;
-        std::list<Entidades::Obstaculos::Obstaculo*>::iterator itrObs;
+        std::vector<Entidades::Entidade*>::iterator itrInim;
+        std::list<Entidades::Entidade*>::iterator itrObs;
 
         pJogador1 = NULL;
         pJogador2 = NULL;
@@ -61,14 +61,14 @@ namespace Gerenciadores
 
     void Gerenciador_Colisoes::tratarColisoesJogsObstacs()
     {
-        std::list<Entidades::Obstaculos::Obstaculo*>::iterator itrObs;
-        Entidades::Obstaculos::Obstaculo* obst = NULL;
+        std::list<Entidades::Entidade*>::iterator itrObs;
+        Entidades::Entidade* obst = NULL;
         for(itrObs=LObstaculos.begin(); itrObs!=LObstaculos.end(); itrObs++)
         {
             obst = (*itrObs);
             if(pJogador1)
             {
-                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador1), static_cast<Entidades::Entidade*>(obst));
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador1), obst);
 
                 if(distancia_colisao.x <= 0.0f && distancia_colisao.y <= 0.0f)
                 {
@@ -78,7 +78,7 @@ namespace Gerenciadores
             }
             if(pJogador2)
             {
-                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador2), static_cast<Entidades::Entidade*>(obst));
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador2), obst);
 
                 if(distancia_colisao.x <= 0.0f && distancia_colisao.y <= 0.0f)
                 {
@@ -91,14 +91,14 @@ namespace Gerenciadores
 
     void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
     {
-        std::vector<Entidades::Personagens::Inimigo*>::iterator itrInim;
-        Entidades::Personagens::Inimigo* inim = NULL;
+        std::vector<Entidades::Entidade*>::iterator itrInim;
+        Entidades::Entidade* inim = NULL;
         for(itrInim=LInimigos.begin(); itrInim!=LInimigos.end(); itrInim++)
         {
             inim = (*itrInim);
             if(pJogador1)
             {
-                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador1), static_cast<Entidades::Entidade*>(inim));
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador1), inim);
 
                 if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
@@ -108,7 +108,7 @@ namespace Gerenciadores
             }
             if(pJogador2)
             {
-                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador2), static_cast<Entidades::Entidade*>(inim));
+                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(pJogador2), inim);
 
                 if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
@@ -120,13 +120,13 @@ namespace Gerenciadores
     }
 
     void Gerenciador_Colisoes::tratarColisoesInimgsObstacs() {
-        std::list<Entidades::Obstaculos::Obstaculo*>::iterator itrObs;
+        std::list<Entidades::Entidade*>::iterator itrObs;
 
         for (int i=0; i<LInimigos.size(); i++) {
-            Entidades::Personagens::Inimigo* inimigo = LInimigos[i];
+            Entidades::Entidade* inimigo = LInimigos[i];
             for (itrObs = LObstaculos.begin(); itrObs != LObstaculos.end(); itrObs++) {
-                Entidades::Obstaculos::Obstaculo* obstaculo = *itrObs;
-                sf::Vector2f distancia_colisao = calculaColisoes(static_cast<Entidades::Entidade*>(inimigo), static_cast<Entidades::Entidade*>(obstaculo));
+                Entidades::Entidade* obstaculo = *itrObs;
+                sf::Vector2f distancia_colisao = calculaColisoes(inimigo, obstaculo);
 
                 if (distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f) {
                     inimigo->colidir(obstaculo, distancia_colisao); // Método ainda precisa ser definido na classe Entidade
@@ -138,9 +138,9 @@ namespace Gerenciadores
 
     void Gerenciador_Colisoes::tratarColisoesImimgs() {
         for (int i=0; i<LInimigos.size(); i++) {
-            Entidades::Entidade* inimigo1 = static_cast<Entidades::Entidade*>(LInimigos[i]);
+            Entidades::Entidade* inimigo1 =LInimigos[i];
             for (int j=i; j<LInimigos.size(); j++) {
-                Entidades::Entidade* inimigo2 = static_cast<Entidades::Entidade*>(LInimigos[j]);
+                Entidades::Entidade* inimigo2 = LInimigos[j];
                 sf::Vector2f distancia_colisao = calculaColisoes(inimigo1, inimigo2);
 
                 if (distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f) {
@@ -151,13 +151,13 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Colisoes::incluirObstaculo(Entidades::Obstaculos::Obstaculo* pO) {
+    void Gerenciador_Colisoes::incluirObstaculo(Entidades::Entidade* pO) {
         if (pO) {
             LObstaculos.push_back(pO);
         }
     }
 
-    void Gerenciador_Colisoes::incluirInimigo(Entidades::Personagens::Inimigo* pI) {
+    void Gerenciador_Colisoes::incluirInimigo(Entidades::Entidade* pI) {
         if (pI) {
             LInimigos.push_back(pI);
         }

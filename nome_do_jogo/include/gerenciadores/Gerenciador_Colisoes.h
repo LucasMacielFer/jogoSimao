@@ -16,8 +16,8 @@ namespace Gerenciadores
             static Gerenciador_Colisoes* pInstancia;
             Entidades::Personagens::Jogador* pJogador1;
             Entidades::Personagens::Jogador* pJogador2;
-            std::vector<Entidades::Personagens::Inimigo*> LInimigos;
-            std::list<Entidades::Obstaculos::Obstaculo*> LObstaculos;
+            std::vector<Entidades::Entidade*> LInimigos;
+            std::list<Entidades::Entidade*> LObstaculos;
 
         private:
             // Construtora privada, em conformidade com o padrão de projeto Singleton
@@ -31,8 +31,8 @@ namespace Gerenciadores
             void tratarColisoesInimgsObstacs();
             // Perguntar: É necessário??
             void tratarColisoesImimgs();
-            void incluirObstaculo(Entidades::Obstaculos::Obstaculo* pO);
-            void incluirInimigo(Entidades::Personagens::Inimigo* pI);
+            void incluirObstaculo(Entidades::Entidade* pO);
+            void incluirInimigo(Entidades::Entidade* pI);
             // Método para apagar listas! (Reutilizar o gerenciador na fase 2)
             void setJog1(Entidades::Personagens::Jogador* pJog1);
             void setJog2(Entidades::Personagens::Jogador* pJog2);

@@ -3,8 +3,8 @@
 #include "Obstaculo.h"
 #include "../personagens/Personagem.h"
 
-#define TAM_X_GOSMA 200
-#define TAM_Y_GOSMA 20
+#define TAM_X_GOSMA 64
+#define TAM_Y_GOSMA 32
 
 namespace Entidades
 {

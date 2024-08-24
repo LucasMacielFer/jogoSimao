@@ -21,10 +21,11 @@ namespace Fases
             const int nIChefoes;
             Entidades::Personagens::Jogador* jog1;
             Entidades::Personagens::Jogador* jog2;
-            Listas::ListaEntidades* lEntidades;
+            Listas::ListaEntidades lEntidades;
             std::string caminhoTilemap;
 
         private:
+            void inicializaColisoes();
             void gerenciarColisoes();
             void executarEntidades(float dt);
             void criarMapa();

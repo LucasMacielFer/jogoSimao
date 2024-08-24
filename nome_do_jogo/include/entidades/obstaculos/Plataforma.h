@@ -1,15 +1,21 @@
 #pragma once
 #include "Obstaculo.h"
 
+#define TAM_PLAT_X 64.0
+#define TAM_PLAT_Y 32.0
+
 namespace Entidades
 { 
     namespace Obstaculos
     {
         class Plataforma : public Obstaculo
         {
+        private:
+            const bool chao;
+            
         public:            
-            Plataforma(const float tamXX, const float tamYY, const float xx, const float yy);
-            Plataforma(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy);
+            Plataforma(const float xx, const float yy, const bool ehChao);
+            Plataforma(sf::Color c, const float xx, const float yy, const bool ehChao);
             Plataforma();
             ~Plataforma();
             void salvar();
