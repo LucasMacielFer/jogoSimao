@@ -76,7 +76,6 @@ namespace Entidades
                 habilidadeInimiga();
                 direcionar();
                 mover();
-                atacarDist(jogador1Perseguido);
             }
         }
 
@@ -110,7 +109,7 @@ namespace Entidades
             }
         }
 
-        void Inimigo::atacarDist(Personagem* pPersonagem)
+        void Inimigo::atacarDist(float posJogador)
         {
             // Não é implementada na classe inimigo. As derivadas podem implementá-la!
         }

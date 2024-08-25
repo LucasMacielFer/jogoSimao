@@ -43,20 +43,14 @@ namespace Entidades
             if(fabs(distancia_jogador1) < ALCANCE_LOBISOMEM || (fabs(distancia_jogador2) < ALCANCE_LOBISOMEM)) 
              { 
                 rapido = true;
+                setVelocidade( VEL_MAX_LOBISOMEM*2);
              }
             else 
             {
                 rapido = false;
-            }
-
-            if(rapido)
-            {
-                setVelocidade( VEL_MAX_LOBISOMEM*2);
-            }
-            else 
-            {
                 setVelocidade(VEL_MAX_LOBISOMEM);
             }
+
         }
 
 

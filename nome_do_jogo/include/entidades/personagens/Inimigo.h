@@ -34,7 +34,7 @@ namespace Entidades
                 void morrer();
                 virtual void direcionar();
                 virtual void atacarCorpo(Personagem* pPersonagem);
-                virtual void atacarDist(Personagem* pPersonagem);
+                virtual void atacarDist(float posJogador);
                 virtual void habilidadeInimiga() = 0;
                 virtual void salvar() = 0;
         };

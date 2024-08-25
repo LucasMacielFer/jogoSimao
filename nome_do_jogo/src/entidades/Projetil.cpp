@@ -7,7 +7,7 @@ namespace Entidades
 
     Projetil::Projetil(Personagens::Inimigo* at, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel):
     Entidade(idClasse, c, tamXX, tamYY, xx, yy, sentMovX, vel),
-    dano(dano),
+    dano(1),
     ativo(true),
     atirador(at)
     {
@@ -24,6 +24,11 @@ namespace Entidades
     {
         atirador = NULL;
         dano = 0;
+    }
+
+    const bool Projetil:: getAtivo() const
+    {
+        return ativo;
     }
 
     void Projetil::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
