@@ -1,4 +1,6 @@
 #include "../../include/principal/Jogo.h"
+#include "SFML/Graphics/Color.hpp"
+#include "entidades/personagens/Esqueleto.h"
 
 namespace Principal
 {
@@ -8,6 +10,7 @@ namespace Principal
     gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
     p1(new Entidades::Personagens::Jogador(sf::Color::Blue, 50, 100)),
     p2(new Entidades::Personagens::Jogador(sf::Color::Cyan, 50, 100)),
+    inim(new Entidades::Personagens::Esqueleto(sf::Color::Red, 500, 100)),
     fase1(new Fases::Fase("../assets/maps/teste.json", 0, 0, 0, 0, 0, 0)),
     relogio(),
     tempo(0.0f)
@@ -18,8 +21,11 @@ namespace Principal
         gEventos->setJogador2(p2);
         gColisoes->setJog1(p1);
         gColisoes->setJog2(p2);
+        gColisoes->incluirInimigo(inim);
         fase1->setJogador1(p1);
         fase1->setJogador2(p2);
+        inim->setJogador1(p1);
+        inim->setJogador2(p2);
     }
 
     Jogo::~Jogo()
@@ -29,10 +35,12 @@ namespace Principal
         delete gColisoes;
         delete p1;
         delete p2;
+        delete inim;
     }
 
     void Jogo::executar()
     {
+        bool inicio = true;
         while(gGrafico->janelaAberta())
         {
             gGrafico->limparJanela();
@@ -42,9 +50,27 @@ namespace Principal
             tempo = relogio.getElapsedTime().asSeconds();
             relogio.restart();
             fase1->executar(tempo);
+            inim->executar(tempo);
             
             //gGrafico->getJanela().draw(retangulo);
             gGrafico->desenhaEnte(static_cast<Ente*>(fase1));
+            gGrafico->desenhaEnte(static_cast<Ente*>(inim));
+            if(inim->getFlecha())
+            {
+                if(inicio)
+                {
+                    gColisoes->incluirInimigo(inim->getFlecha());
+                    inicio = false;
+                }
+                
+                gGrafico->desenhaEnte(static_cast<Ente*> (inim->getFlecha()));
+
+                if(!((inim->getFlecha())->getAtivo()))
+                {
+                    gColisoes->removerInimigo();
+                    inicio = true;
+                }
+            }
             gGrafico->mostrarJanela();
         }
     }

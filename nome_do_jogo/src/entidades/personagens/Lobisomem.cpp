@@ -34,7 +34,7 @@ namespace Entidades
         }
 
 
-        void Lobisomem::habilidadeInimiga() 
+        void Lobisomem::habilidadeInimiga(float dt) 
         {  
             
             distancia_jogador1 = getPosJogador1().x - getPosicao().x;

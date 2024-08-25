@@ -35,7 +35,7 @@ namespace Entidades
             void pular();
             void sofrerDano(const int dano);
             virtual void atacarCorpo(Personagem* pPersonagem) = 0; 
-            virtual void atacarDist(Personagem* pPersonagem) = 0;
+            virtual void atacarDist(float posJogador) = 0;
             virtual void executar(float dt) = 0;
             virtual void salvar() = 0;
             virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;

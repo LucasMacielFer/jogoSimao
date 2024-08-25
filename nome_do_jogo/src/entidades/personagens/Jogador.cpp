@@ -45,7 +45,7 @@ namespace Entidades
             }
         }
 
-        void Jogador::atacarDist(Personagens::Personagem* pPersonagem)
+        void Jogador::atacarDist(float posJogador)
         {
             // Implementar caso o jogador venha a atacar em distancia também
         }

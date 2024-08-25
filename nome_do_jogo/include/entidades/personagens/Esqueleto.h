@@ -9,13 +9,13 @@
 #define TAM_Y_ESQUELETO 100
 #define VIDAS_ESQUELETO 30
 #define VEL_MAX_ESQUELETO 3.0f
-#define FORCA_ESQUELETO 10
+#define FORCA_ESQUELETO 1
 #define DURACAO_ATAQUE_ESQUELETO 1.0f
 #define DURACAO_ESPERA_ESQUELETO 2.0f
 #define ALCANCE_ESQUELETO 200.0f
-//#define TAMANHO_FLECHA_X
-//#define TAMANHO_FLECHA_Y
-//#define VELOCIDADE_FLECHA
+#define TAMANHO_FLECHA_X 25
+#define TAMANHO_FLECHA_Y 25
+#define VELOCIDADE_FLECHA 10.0f
 
 
 namespace Entidades
@@ -33,10 +33,11 @@ namespace Entidades
             Esqueleto(sf::Color c, const float xx, const float yy);
             Esqueleto();
             ~Esqueleto();
+            Projetil* getFlecha();
             void salvar();
             void atacarCorpo(Personagem* pPersonagem);
             void atacarDist(float posJogador);
-            void habilidadeInimiga();
+            void habilidadeInimiga(float dt);
 
         };
     }

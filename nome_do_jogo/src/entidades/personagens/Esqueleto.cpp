@@ -1,4 +1,5 @@
 #include "../../../include/entidades/personagens/Esqueleto.h"
+#include "SFML/Graphics/Color.hpp"
 
 namespace Entidades
 {
@@ -17,7 +18,13 @@ namespace Entidades
 
         Esqueleto::~Esqueleto()
         {
-            //delete flecha;
+            delete flecha;
+            flecha = NULL;
+        }
+
+        Projetil* Esqueleto::getFlecha()
+        {
+            return flecha;
         }
 
         void Esqueleto::atacarCorpo(Personagem* pPersonagem)
@@ -30,22 +37,22 @@ namespace Entidades
         }
 
 
-        void Esqueleto::habilidadeInimiga() 
+        void Esqueleto::habilidadeInimiga(float dt) 
         {  
             
             distancia_jogador1 = getPosJogador1().x - getPosicao().x;
             distancia_jogador2 = getPosJogador2().x - getPosicao().x;
 
-            /*if(flecha && !(flecha->getAtivo()))
+            if(flecha && !(flecha->getAtivo()))
             {
                 delete flecha;
                 flecha = NULL;
-            }*/
-
-            /*if(flecha) 
+            }
+            
+            if(flecha) 
             {
-                flecha->executar();
-            }*/
+                flecha->executar(dt);
+            }
             
             if(fabs(distancia_jogador1) < ALCANCE_ESQUELETO || (fabs(distancia_jogador2) < ALCANCE_ESQUELETO)) 
              { 
@@ -69,16 +76,18 @@ namespace Entidades
 
         void Esqueleto::atacarDist(float posJogador)
         {
-            if(!flecha)
+            if(!flecha && ataqueDisponivel())
             {
                 if(posJogador <= 0)
                 {
-                    //flecha = new Projetil( this, c, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y,sentMovX,VELOCIDADE_FLECHA);
+                    flecha = new Projetil( this,sf::Color::Red , TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FLECHA);
                 }
                 else 
                 {
-                    //flecha = new Projetil( this, c, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y,sentMovX,VELOCIDADE_FLECHA);
+                    flecha = new Projetil( this,sf::Color::Red, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
                 }
+
+                atacando = true;
 
             }
 

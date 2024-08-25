@@ -30,7 +30,7 @@ namespace Entidades
                 ~Lobisomem();
                 void salvar();
                 void atacarCorpo(Personagem* pPersonagem);
-                void habilidadeInimiga();
+                void habilidadeInimiga(float dt);
         };
     }
 }

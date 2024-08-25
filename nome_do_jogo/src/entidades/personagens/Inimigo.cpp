@@ -73,7 +73,7 @@ namespace Entidades
                 tempoVolta += dt;
                 aumentarTempoExecucao(dt);
                 aplicaGravidade(dt);
-                habilidadeInimiga();
+                habilidadeInimiga(dt);
                 direcionar();
                 mover();
             }

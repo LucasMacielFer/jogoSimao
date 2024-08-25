@@ -163,6 +163,11 @@ namespace Gerenciadores
         }
     }
 
+    void Gerenciador_Colisoes::removerInimigo()
+    {
+        LInimigos.pop_back();
+    }
+
     void Gerenciador_Colisoes::setJog1(Entidades::Personagens::Jogador* pJog1) {
         pJogador1 = pJog1;
     }
