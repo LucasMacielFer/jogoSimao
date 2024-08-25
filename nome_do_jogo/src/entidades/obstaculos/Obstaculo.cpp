@@ -24,7 +24,7 @@ namespace Entidades
         }
 
         void Obstaculo::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
-        {            
+        {
             if(distancia_colisao.x > distancia_colisao.y)
             {
                 if(x < entAlternativa->getPosicao().x)

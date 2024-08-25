@@ -6,7 +6,7 @@ namespace Principal
     gEventos(Gerenciadores::Gerenciador_Eventos::getInstancia()),
     gColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia()),
     gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
-    p1(new Entidades::Personagens::Jogador(sf::Color::Blue, 50, 700)),
+    p1(new Entidades::Personagens::Jogador(sf::Color::Blue, 50, 100)),
     p2(new Entidades::Personagens::Jogador(sf::Color::Cyan, 50, 100)),
     fase1(new Fases::Fase("../assets/maps/teste.json", 0, 0, 0, 0, 0, 0)),
     relogio(),
@@ -28,7 +28,7 @@ namespace Principal
         delete gEventos;
         delete gColisoes;
         delete p1;
-        delete p2;  
+        delete p2;
     }
 
     void Jogo::executar()

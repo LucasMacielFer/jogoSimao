@@ -50,6 +50,7 @@ namespace Listas
     template<class T>
     void Iterador<T>::primeiro()
     {
+        elemPrimeiro = lista->getPrimeiro();
         indiceAtual = 0;
         elemAtual = elemPrimeiro;
     }
@@ -58,6 +59,7 @@ namespace Listas
     void Iterador<T>::proximo()
     {
         elemAtual = elemAtual->getProximo();
+        indiceAtual++;
     }
 
     template<class T>

@@ -34,10 +34,49 @@ namespace Entidades
         {
         }
 
+        void Plataforma::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
+        {
+            if(distancia_colisao.x > distancia_colisao.y)
+            {
+                if(x < entAlternativa->getPosicao().x)
+                {
+                    if(velocidadeX > 0) {velocidadeX = 0;}
+                    if(entAlternativa->getId() == 1 || entAlternativa->getId() == 2)
+                    {
+                        dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
+                    }
+                }
+                else
+                {
+                    if(velocidadeX < 0) {velocidadeX = 0;}
+                    if(entAlternativa->getId() == 1 || entAlternativa->getId() == 2)
+                    {
+                        dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
+                    }
+                }
+            }
+            else 
+            {
+                if(y < entAlternativa->getPosicao().y)
+                {
+                    if(velocidadeY > 0) {velocidadeY = 0;}
+                    if(entAlternativa->getId() == 1 || entAlternativa->getId() == 2)
+                    {
+                        dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
+                    }
+                }
+                else 
+                {
+                    if(velocidadeY < 0) {velocidadeY = 0;}
+                }
+            }
+        }
+
         void Plataforma::obstacular(Personagens::Personagem* p)
         {
             p->setVelocidade(p->getVelMax());
-            p->setPulo(true);
+            if(chao)
+                p->setPulo(true);
         }
     }
 }

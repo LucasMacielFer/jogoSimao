@@ -20,6 +20,7 @@ namespace Entidades
             ~Plataforma();
             void salvar();
             void executar(float dt);
+            void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void obstacular(Personagens::Personagem* p);
         };
     }

@@ -70,5 +70,8 @@ namespace Listas
         return iterador_entidades.fimDaLista();
     }
 
-    const unsigned int ListaEntidades::tamanho() const{ return (lista_entidades.getTamanho());}
+    const unsigned int ListaEntidades::tamanho() const
+    {
+        return (lista_entidades.getTamanho());
+    }
 }
