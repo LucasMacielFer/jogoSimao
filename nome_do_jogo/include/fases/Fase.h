@@ -10,15 +10,9 @@ namespace Fases
 {
     class Fase : public Ente
     {
-        private:
+        protected:
             static const int idClasse;
             static Gerenciadores::Gerenciador_Colisoes* pGColisoes;
-            const int nOFaceis;
-            const int nOMedios;
-            const int nODificeis;
-            const int nIFaceis;
-            const int nIDificeis;
-            const int nIChefoes;
             int tamMapa;
             Entidades::Personagens::Jogador* jog1;
             Entidades::Personagens::Jogador* jog2;
@@ -26,16 +20,17 @@ namespace Fases
             std::string caminhoTilemap;
 
         private:
-            void inicializaColisoes();
             void gerenciarColisoes();
             void executarEntidades(float dt);
-            void criarMapa();
             const float calculaCentroCamera();
 
+        protected:
+            void inicializaColisoes();
+
         public:
-            Fase(std::string tilemap, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC);
+            Fase(std::string tilemap);
             Fase();
-            ~Fase();
+            virtual ~Fase();
             void setJogador1(Entidades::Personagens::Jogador* jog);
             void setJogador2(Entidades::Personagens::Jogador* jog);
             void executar(float dt);

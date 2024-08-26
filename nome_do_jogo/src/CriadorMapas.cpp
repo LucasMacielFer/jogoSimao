@@ -1,6 +1,12 @@
 #include "../include/CriadorMapas.h"
 
-CriadorMapas::CriadorMapas(std::string tilemap)
+CriadorMapas::CriadorMapas(std::string tilemap):
+contTamanho(0),
+contPlataformas(0),
+contGosmas(0),
+contEspinhos(0),
+contLobisomens(0),
+contEsqueletos(0)
 {
     carregarMapa(tilemap);
 }
@@ -21,7 +27,7 @@ void CriadorMapas::carregarMapa(std::string tilemap)
     arquivo.close();
 }
 
-const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC)
+const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const bool* plats, const bool* gosmas, const bool* esps, const bool* lobs, const bool* esqs)
 {
     // Pega as informações do mapa
     int sizeTiled = mapa["tilewidth"]; //tamhno do tile
@@ -32,13 +38,62 @@ const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const int nOF, 
     int posY = 0;
     int indice = 0;
 
-    for (int y = 0; y < height; y++) {
-        for (int x = 0; x < width; x++) {
+    for (int y = 0; y < height; y++) 
+    {
+        for (int x = 0; x < width; x++) 
+        {
             int tileId = mapa["layers"][0]["data"][indice++];
-            if(tileId != 0){
+            if(tileId != 0 && tileId != CODIGO_LOBISOMEM && tileId != CODIGO_ESQUELETO)
+            {
                 posX = x * sizeTiled;
                 posY = y * heightTiled;
                 lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+
+                switch (tileId)
+                {
+                case CODIGO_PLATAFORMA:
+                    if(plats[contPlataformas])
+                    {
+                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                    }
+                    if(contTamanho++ >= 3)
+                    {
+                        contTamanho = 0;
+                        contPlataformas++;
+                    }
+                    break;
+
+                case CODIGO_CHAO:
+                    lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                    break;
+
+                case CODIGO_GOSMA:
+                    if(gosmas[contGosmas])
+                    {
+                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                    }
+                    else
+                    {
+                        lista->acrescentarEntidade(criarEntidade(posX, posY, CODIGO_CHAO));
+                    }
+                    if(contTamanho++ >= 3)
+                    {
+                        contTamanho = 0;
+                        contGosmas++;
+                    }
+                    break;
+
+                case CODIGO_ESPINHO:
+                    if(esps[contEspinhos])
+                    {
+                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                    }
+                    contEspinhos++;
+                    break;
+
+                default:
+                    break;
+                }
             }
         }
     }
@@ -50,19 +105,19 @@ Entidades::Entidade* CriadorMapas::criarEntidade(const int posX, const int posY,
 {
     switch(tipo)
     {
-        case 9:
+        case CODIGO_CHAO:
             return new Entidades::Obstaculos::Plataforma("assets/textures/plat1.png", posX, posY, true);
             break;
 
-        case 7:
+        case CODIGO_PLATAFORMA:
             return new Entidades::Obstaculos::Plataforma("assets/textures/plat1.png", posX, posY, false);
             break;
 
-        case 25:
+        case CODIGO_GOSMA:
             return new Entidades::Obstaculos::Gosma("assets/textures/gosma.png", 0.3, posX, posY);
             break;
 
-        case 22:
+        case CODIGO_ESPINHO:
             return new Entidades::Obstaculos::Espinho("assets/textures/espinho.png", 10, posX, posY);
             break;
 

@@ -39,59 +39,43 @@ namespace Fases
         lEntidades.percorreExecutando(dt);
     }
 
-    void Fase::criarMapa()
-    {
-        CriadorMapas* gerador = new CriadorMapas(caminhoTilemap);
-        if(gerador)
-        {
-            tamMapa = gerador->criarMapa(&lEntidades, nOFaceis, nOMedios, nODificeis, nIFaceis, nIDificeis, nIChefoes);
-            delete gerador;
-            gerador = NULL;
-        }
-    }
-
     const float Fase::calculaCentroCamera()
     {
-        float x = 0.0f;
+        float xMedio = 0.0f;
+        float divisor = 0.0f;
         if(jog1)
         {
-            x += jog1->getPosicao().x;
+            xMedio += jog1->getPosicao().x;
+            divisor += 1.0;
         }
         if(jog2)
         {
-            x += jog2->getPosicao().x;
+            xMedio += jog2->getPosicao().x;
+            divisor += 1.0;
         }
         
-        x /= 2.0f;
-
-        if(x <= pGGrafico->getTamJanela().x/2.0f)
+        xMedio /= divisor;
+        
+        if(xMedio < (pGGrafico->getTamJanela().x/2.0f)+64)
         {
             return pGGrafico->getTamJanela().x/2.0f;
         }
-        else if(x >= (tamMapa - (pGGrafico->getTamJanela().x/2.0f)))
+        else if(xMedio > (tamMapa - (pGGrafico->getTamJanela().x/2.0f)))
         {
             return tamMapa - (pGGrafico->getTamJanela().x/2.0f);
         }
-        return x;
+        return xMedio;
     }
 
 
-    Fase::Fase(std::string tilemap, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC):
+    Fase::Fase(std::string tilemap):
     Ente(idClasse),
     lEntidades(),
     caminhoTilemap(tilemap),
     jog1(NULL),
     jog2(NULL),
-    nOFaceis(nOF),
-    nOMedios(nOM),
-    nODificeis(nOD),
-    nIFaceis(nIF),
-    nIDificeis(nID),
-    nIChefoes(nIC),
     tamMapa(0)
     {
-        criarMapa();
-        inicializaColisoes();
     }
 
     Fase::Fase():
@@ -100,12 +84,6 @@ namespace Fases
     caminhoTilemap(""),
     jog1(NULL),
     jog2(NULL),
-    nOFaceis(0),
-    nOMedios(0),
-    nODificeis(0),
-    nIFaceis(0),
-    nIDificeis(0),
-    nIChefoes(0),
     tamMapa(0)
     {
     }
@@ -119,8 +97,10 @@ namespace Fases
     // Será chamada pelo gerenciador grafico!
     void Fase::desenhar(sf::RenderWindow& janela)
     {
-        jog1->desenhar(janela);
-        jog2->desenhar(janela);
+        if(jog1)
+            jog1->desenhar(janela);
+        if(jog2)
+            jog2->desenhar(janela);
         lEntidades.irAoPrimeiro();
         while(!lEntidades.fim())
         {
@@ -140,9 +120,9 @@ namespace Fases
 
     void Fase::executar(float dt)
     {
-        pGGrafico->moveCamera(calculaCentroCamera());
         gerenciarColisoes();
         executarEntidades(dt);
+        pGGrafico->moveCamera(calculaCentroCamera());
     }
 
     void Fase::salvar()
