@@ -5,12 +5,12 @@ namespace Entidades
     namespace Obstaculos
     {
         Plataforma::Plataforma(const float xx, const float yy, const bool ehChao):
-        Obstaculo(sf::Color::Green, TAM_PLAT_X, TAM_PLAT_Y, xx, yy, false),
+        Obstaculo("", TAM_PLAT_X, TAM_PLAT_Y, xx, yy, false),
         chao(ehChao)
         {
         }
 
-        Plataforma::Plataforma(sf::Color c, const float xx, const float yy, const bool ehChao):
+        Plataforma::Plataforma(const char* c, const float xx, const float yy, const bool ehChao):
         Obstaculo(c, TAM_PLAT_X, TAM_PLAT_Y, xx, yy, false),
         chao(ehChao)
         {

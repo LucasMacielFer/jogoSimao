@@ -4,7 +4,7 @@ namespace Entidades
 {
     namespace Obstaculos
     {
-        Gosma::Gosma(sf::Color c, const float d, const float xx, const float yy):
+        Gosma::Gosma(const char* c, const float d, const float xx, const float yy):
         Obstaculo(c, TAM_X_GOSMA, TAM_Y_GOSMA, xx, yy, false),
         decrementoVelocidade(d)
         {

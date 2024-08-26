@@ -3,6 +3,7 @@
 Ente::Ente(const int i):
 id(i)
 {
+    pGGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
 }
 
 Ente::~Ente()

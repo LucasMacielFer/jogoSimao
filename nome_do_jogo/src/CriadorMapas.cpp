@@ -49,19 +49,19 @@ Entidades::Entidade* CriadorMapas::criarEntidade(const int posX, const int posY,
     switch(tipo)
     {
         case 9:
-            return new Entidades::Obstaculos::Plataforma(posX, posY, true);
+            return new Entidades::Obstaculos::Plataforma("assets/textures/plat1.png", posX, posY, true);
             break;
 
         case 7:
-            return new Entidades::Obstaculos::Plataforma(posX, posY, false);
+            return new Entidades::Obstaculos::Plataforma("assets/textures/plat1.png", posX, posY, false);
             break;
 
         case 25:
-            return new Entidades::Obstaculos::Gosma(sf::Color::Yellow, 0.3, posX, posY);
+            return new Entidades::Obstaculos::Gosma("assets/textures/gosma.png", 0.3, posX, posY);
             break;
 
         case 22:
-            return new Entidades::Obstaculos::Espinho(sf::Color::Magenta, 10, posX, posY);
+            return new Entidades::Obstaculos::Espinho("assets/textures/espinho.png", 10, posX, posY);
             break;
 
         default:

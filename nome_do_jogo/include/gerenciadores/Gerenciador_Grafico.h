@@ -12,6 +12,8 @@ namespace Gerenciadores
         static Gerenciador_Grafico* pInstancia;
         static const sf::Vector2f tamanhoJanela;
         sf::RenderWindow janela;
+        sf::View camera;
+        std::map<const char*, sf::Texture*> mapaTexturas;
 
     private:
         // Construtora privada, em conformidade com o padrão de projeto Singleton
@@ -24,8 +26,9 @@ namespace Gerenciadores
         void limparJanela();
         void desenhaEnte(Ente* pE);
         sf::RenderWindow& getJanela();
-        void executar();
+        void moveCamera(const float x);
         const bool janelaAberta() const;
+        sf::Texture* carregarTextura(const char* caminhoTextura);
         static Gerenciador_Grafico* getInstancia();
     };
 }

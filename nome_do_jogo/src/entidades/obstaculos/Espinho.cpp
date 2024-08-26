@@ -4,7 +4,7 @@ namespace Entidades
 {
     namespace Obstaculos
     {
-        Espinho::Espinho(sf::Color c, const int d, const float xx, const float yy):
+        Espinho::Espinho(const char* c, const int d, const float xx, const float yy):
         Obstaculo(c, TAM_X_ESPINHO, TAM_Y_ESPINHO, xx, yy, true),
         dano(d),
         danificar(true),

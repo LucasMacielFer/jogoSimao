@@ -29,6 +29,7 @@ namespace Fases
             void gerenciarColisoes();
             void executarEntidades(float dt);
             void criarMapa();
+            const float calculaCentroCamera();
 
         public:
             Fase(std::string tilemap, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC);

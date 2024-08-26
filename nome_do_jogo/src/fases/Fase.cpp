@@ -50,6 +50,22 @@ namespace Fases
         }
     }
 
+    const float Fase::calculaCentroCamera()
+    {
+        float x = 0.0f;
+        if(jog1)
+        {
+            x += jog1->getPosicao().x;
+        }
+        if(jog2)
+        {
+            x += jog2->getPosicao().x;
+        }
+        
+        return x/2.0f;
+    }
+
+
     Fase::Fase(std::string tilemap, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC):
     Ente(idClasse),
     lEntidades(),
@@ -112,6 +128,7 @@ namespace Fases
 
     void Fase::executar(float dt)
     {
+        pGGrafico->moveCamera(calculaCentroCamera());
         gerenciarColisoes();
         executarEntidades(dt);
     }

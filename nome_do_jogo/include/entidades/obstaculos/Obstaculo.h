@@ -14,7 +14,7 @@ namespace Entidades
             bool danoso;
         
         public:
-            Obstaculo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano=false);
+            Obstaculo(const char* c, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano=false);
             Obstaculo();
             virtual ~Obstaculo();
             virtual void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);

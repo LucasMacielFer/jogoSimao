@@ -10,7 +10,9 @@ namespace Gerenciadores
     Gerenciador_Grafico::Gerenciador_Grafico():
     janela(sf::VideoMode(tamanhoJanela.x, tamanhoJanela.y), "Jogo")
     {
+        camera = janela.getDefaultView();
         janela.setFramerateLimit(60);
+        janela.setView(camera);
     }
 
     Gerenciador_Grafico::~Gerenciador_Grafico()
@@ -42,8 +44,13 @@ namespace Gerenciadores
         return janela;
     }
 
-    void Gerenciador_Grafico::executar()
+    void Gerenciador_Grafico::moveCamera(const float x)
     {
+        if(x >= tamanhoJanela.x/2.0f)
+            camera.setCenter(x, tamanhoJanela.y/2);
+        else
+            camera.setCenter(tamanhoJanela.x/2.0f, tamanhoJanela.y/2.0f);
+        janela.setView(camera);
     }
 
     const bool Gerenciador_Grafico::janelaAberta() const
@@ -51,6 +58,24 @@ namespace Gerenciadores
         return janela.isOpen();
     }
 
+    sf::Texture* Gerenciador_Grafico::carregarTextura(const char* caminhoTextura)
+    {
+        if(mapaTexturas.count(caminhoTextura) <= 0)
+        {
+            sf::Texture* textura = new sf::Texture();
+            if(!textura->loadFromFile(caminhoTextura))
+            {
+                std::cout<<"Erro ao carregar textura " << caminhoTextura << std::endl;
+                exit(1);
+            }
+            mapaTexturas.insert(std::make_pair(caminhoTextura, textura));
+            return textura;
+        }
+        else
+        {
+            return mapaTexturas[caminhoTextura];
+        }
+    }
 
     // Execução efetiva do padrão de projeto singleton
     Gerenciador_Grafico* Gerenciador_Grafico::getInstancia()

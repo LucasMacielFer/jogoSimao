@@ -20,7 +20,7 @@ namespace Entidades
         retangulo.setFillColor(c);
     } 
 
-    Entidade::Entidade(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy):
+    Entidade::Entidade(const int i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy):
     Ente(i),
     tamX(tamXX),
     tamY(tamYY),
@@ -35,7 +35,7 @@ namespace Entidades
     {
         retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
         retangulo.setPosition(x, y);
-        retangulo.setFillColor(c);
+        retangulo.setTexture(pGGrafico->carregarTextura(txt));
     } 
 
     // Sobrecarga para o projetil

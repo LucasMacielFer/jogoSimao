@@ -16,7 +16,7 @@ namespace Entidades
                 const float decrementoVelocidade;
 
             public:
-                Gosma(sf::Color c, const float d, const float xx, const float yy);
+                Gosma(const char* c, const float d, const float xx, const float yy);
                 Gosma();
                 ~Gosma();
                 void obstacular(Personagens::Personagem* p);
