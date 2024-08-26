@@ -14,8 +14,7 @@ namespace Entidades
             const bool chao;
             
         public:            
-            Plataforma(const float xx, const float yy, const bool ehChao);
-            Plataforma(const char* c, const float xx, const float yy, const bool ehChao);
+            Plataforma(const char* txt, const float xx, const float yy, const bool ehChao);
             Plataforma();
             ~Plataforma();
             void salvar();

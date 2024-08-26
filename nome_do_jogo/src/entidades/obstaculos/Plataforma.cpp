@@ -4,14 +4,8 @@ namespace Entidades
 {
     namespace Obstaculos
     {
-        Plataforma::Plataforma(const float xx, const float yy, const bool ehChao):
-        Obstaculo("", TAM_PLAT_X, TAM_PLAT_Y, xx, yy, false),
-        chao(ehChao)
-        {
-        }
-
-        Plataforma::Plataforma(const char* c, const float xx, const float yy, const bool ehChao):
-        Obstaculo(c, TAM_PLAT_X, TAM_PLAT_Y, xx, yy, false),
+        Plataforma::Plataforma(const char* txt, const float xx, const float yy, const bool ehChao):
+        Obstaculo(txt, TAM_PLAT_X, TAM_PLAT_Y, xx, yy, false),
         chao(ehChao)
         {
         }

@@ -5,8 +5,8 @@ namespace Entidades
 {
     namespace Personagens
     {
-        Esqueleto::Esqueleto(sf::Color c, const float xx, const float yy):
-        Inimigo(c, TAM_X_ESQUELETO, TAM_Y_ESQUELETO, xx, yy, VIDAS_ESQUELETO, VEL_MAX_ESQUELETO, FORCA_ESQUELETO, DURACAO_ESPERA_ESQUELETO, DURACAO_ATAQUE_ESQUELETO),
+        Esqueleto::Esqueleto(const char* txt, const float xx, const float yy):
+        Inimigo(txt, TAM_X_ESQUELETO, TAM_Y_ESQUELETO, xx, yy, VIDAS_ESQUELETO, VEL_MAX_ESQUELETO, FORCA_ESQUELETO, DURACAO_ESPERA_ESQUELETO, DURACAO_ATAQUE_ESQUELETO),
         flecha(NULL)
         {
         }

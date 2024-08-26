@@ -18,7 +18,7 @@ namespace Entidades
                 float tempoEspera;
             
             public:
-                Espinho(const char* c, const int d, const float xx, const float yy);
+                Espinho(const char* txt, const int d, const float xx, const float yy);
                 Espinho();
                 ~Espinho();
                 void obstacular(Personagens::Personagem* p);

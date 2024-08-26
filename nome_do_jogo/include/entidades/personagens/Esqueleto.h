@@ -30,7 +30,7 @@ namespace Entidades
 
             public:
 
-            Esqueleto(sf::Color c, const float xx, const float yy);
+            Esqueleto(const char* txt, const float xx, const float yy);
             Esqueleto();
             ~Esqueleto();
             Projetil* getFlecha();

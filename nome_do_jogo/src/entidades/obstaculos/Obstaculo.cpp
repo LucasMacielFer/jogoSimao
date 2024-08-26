@@ -6,8 +6,8 @@ namespace Entidades
     {
         const unsigned int Obstaculo::idClasse(3);
 
-        Obstaculo::Obstaculo(const char* c, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano):
-        Entidade(idClasse, c, tamXX, tamYY, xx, yy),
+        Obstaculo::Obstaculo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano):
+        Entidade(idClasse, txt, tamXX, tamYY, xx, yy),
         danoso(dano)
         {
         }

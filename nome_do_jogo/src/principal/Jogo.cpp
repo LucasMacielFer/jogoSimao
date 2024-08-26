@@ -8,10 +8,10 @@ namespace Principal
     gEventos(Gerenciadores::Gerenciador_Eventos::getInstancia()),
     gColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia()),
     gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
-    p1(new Entidades::Personagens::Jogador(sf::Color::Blue, 50, 100)),
-    p2(new Entidades::Personagens::Jogador(sf::Color::Cyan, 50, 100)),
-    inim(new Entidades::Personagens::Esqueleto(sf::Color::Red, 500, 100)),
-    fase1(new Fases::Fase("../assets/maps/teste.json", 0, 0, 0, 0, 0, 0)),
+    p1(new Entidades::Personagens::Jogador("assets/textures/jogador.png", 50, 100)),
+    p2(new Entidades::Personagens::Jogador("assets/textures/jogador.png", 50, 100)),
+    inim(new Entidades::Personagens::Esqueleto("assets/textures/esqueleto.png", 500, 100)),
+    fase1(new Fases::Fase("assets/maps/teste.json", 0, 0, 0, 0, 0, 0)),
     relogio(),
     tempo(0.0f)
     {

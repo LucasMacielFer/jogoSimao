@@ -8,8 +8,8 @@ namespace Entidades
         Jogador* Inimigo::jogador1Perseguido(NULL);
         Jogador* Inimigo::jogador2Perseguido(NULL);
 
-        Inimigo::Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
-        Personagem(idClasse, c ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque),
+        Inimigo::Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
+        Personagem(idClasse, txt ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque),
         distancia_jogador1(0.0f),
         distancia_jogador2(0.0f),
         tempoVolta(0.0f)

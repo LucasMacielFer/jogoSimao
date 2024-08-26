@@ -4,8 +4,8 @@ namespace Entidades
 {
     namespace Personagens
     {
-        Lobisomem::Lobisomem(sf::Color c, const float xx, const float yy):
-        Inimigo(c, TAM_X_LOBISOMEM, TAM_Y_LOBISOMEM, xx, yy, VIDAS_LOBISOMEM, VEL_MAX_LOBISOMEM, FORCA_LOBISOMEM, DURACAO_ESPERA_LOBISOMEM, DURACAO_ATAQUE_LOBISOMEM),
+        Lobisomem::Lobisomem(const char* txt, const float xx, const float yy):
+        Inimigo(txt, TAM_X_LOBISOMEM, TAM_Y_LOBISOMEM, xx, yy, VIDAS_LOBISOMEM, VEL_MAX_LOBISOMEM, FORCA_LOBISOMEM, DURACAO_ESPERA_LOBISOMEM, DURACAO_ATAQUE_LOBISOMEM),
         nivelAtrapalhado(rand()%20), rapido(false)
         {
         }

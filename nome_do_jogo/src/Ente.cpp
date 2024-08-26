@@ -6,6 +6,13 @@ id(i)
     pGGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
 }
 
+Ente::Ente(const int i, const char* txt):
+id(i)
+{
+    pGGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
+    textura = pGGrafico->carregarTextura(txt);
+}
+
 Ente::~Ente()
 {
     id = -1;

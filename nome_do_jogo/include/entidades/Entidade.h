@@ -23,7 +23,7 @@ namespace Entidades
             sf::RectangleShape retangulo;
         
         public:
-            Entidade(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const float vel);
+            Entidade(const int i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const float vel);
             Entidade(const int i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy);
             Entidade(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel);
             Entidade();

@@ -22,7 +22,7 @@ namespace Entidades
 
             public: 
 
-                Jogador(sf::Color c, const float xx, const float yy);
+                Jogador(const char* txt, const float xx, const float yy);
                 Jogador();
                 ~Jogador();
                 const int getPontuacao() const;

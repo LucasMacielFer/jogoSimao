@@ -25,7 +25,7 @@ namespace Entidades
 
             public:
 
-                Lobisomem(sf::Color c, const float xx, const float yy);
+                Lobisomem(const char* txt, const float xx, const float yy);
                 Lobisomem();
                 ~Lobisomem();
                 void salvar();

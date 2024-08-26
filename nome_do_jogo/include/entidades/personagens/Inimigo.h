@@ -22,7 +22,7 @@ namespace Entidades
                 float distancia_jogador2;
 
             public:
-                Inimigo(sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
+                Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
                 Inimigo();
                 ~Inimigo();
                 void setJogador1(Jogador* pJogador);

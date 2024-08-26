@@ -4,8 +4,8 @@ namespace Entidades
 {
     namespace Obstaculos
     {
-        Gosma::Gosma(const char* c, const float d, const float xx, const float yy):
-        Obstaculo(c, TAM_X_GOSMA, TAM_Y_GOSMA, xx, yy, false),
+        Gosma::Gosma(const char* txt, const float d, const float xx, const float yy):
+        Obstaculo(txt, TAM_X_GOSMA, TAM_Y_GOSMA, xx, yy, false),
         decrementoVelocidade(d)
         {
         }

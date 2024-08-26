@@ -20,7 +20,7 @@ namespace Entidades
             bool vivo;
 
         public:
-            Personagem(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
+            Personagem(const int i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
             Personagem();
             virtual ~Personagem();
             const int getVidas() const;

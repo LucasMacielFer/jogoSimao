@@ -6,8 +6,8 @@ namespace Entidades
     {
         const unsigned int Jogador::idClasse(1);
 
-        Jogador::Jogador(sf::Color c, const float xx, const float yy):
-        Personagem(idClasse, c ,TAM_X_JOGADOR, TAM_Y_JOGADOR, xx, yy, VIDAS_JOGADOR, VEL_MAX_JOGADOR, FORCA_JOGADOR, DURACAO_ESPERA_JOGADOR, DURACAO_ATAQUE_JOGADOR), 
+        Jogador::Jogador(const char* txt, const float xx, const float yy):
+        Personagem(idClasse, txt ,TAM_X_JOGADOR, TAM_Y_JOGADOR, xx, yy, VIDAS_JOGADOR, VEL_MAX_JOGADOR, FORCA_JOGADOR, DURACAO_ESPERA_JOGADOR, DURACAO_ATAQUE_JOGADOR), 
         pontuacao(0)
         {
         }
