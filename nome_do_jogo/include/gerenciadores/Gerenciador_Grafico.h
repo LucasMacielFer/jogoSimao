@@ -1,6 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
+#define TAM_JANELA_X 1024
+#define TAM_JANELA_Y 800
+
 class Ente;
 
 namespace Gerenciadores
@@ -10,7 +13,7 @@ namespace Gerenciadores
     private:
         // Ponteiro estático para instância do gerenciador - Padrão de projeto Singleton
         static Gerenciador_Grafico* pInstancia;
-        static const sf::Vector2f tamanhoJanela;
+        const sf::Vector2f tamanhoJanela;
         sf::RenderWindow janela;
         sf::View camera;
         std::map<const char*, sf::Texture*> mapaTexturas;
@@ -29,6 +32,7 @@ namespace Gerenciadores
         void moveCamera(const float x);
         const bool janelaAberta() const;
         sf::Texture* carregarTextura(const char* caminhoTextura);
+        const sf::Vector2f getTamJanela() const;
         static Gerenciador_Grafico* getInstancia();
     };
 }

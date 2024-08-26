@@ -11,7 +11,7 @@ namespace Principal
     p1(new Entidades::Personagens::Jogador("assets/textures/jogador.png", 50, 100)),
     p2(new Entidades::Personagens::Jogador("assets/textures/jogador.png", 50, 100)),
     inim(new Entidades::Personagens::Esqueleto("assets/textures/esqueleto.png", 500, 100)),
-    fase1(new Fases::Fase("assets/maps/teste.json", 0, 0, 0, 0, 0, 0)),
+    fase1(new Fases::Fase("assets/maps/Testecamroll.json", 0, 0, 0, 0, 0, 0)),
     relogio(),
     tempo(0.0f)
     {

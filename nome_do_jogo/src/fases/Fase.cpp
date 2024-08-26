@@ -44,7 +44,7 @@ namespace Fases
         CriadorMapas* gerador = new CriadorMapas(caminhoTilemap);
         if(gerador)
         {
-            gerador->criarMapa(&lEntidades, nOFaceis, nOMedios, nODificeis, nIFaceis, nIDificeis, nIChefoes);
+            tamMapa = gerador->criarMapa(&lEntidades, nOFaceis, nOMedios, nODificeis, nIFaceis, nIDificeis, nIChefoes);
             delete gerador;
             gerador = NULL;
         }
@@ -62,7 +62,17 @@ namespace Fases
             x += jog2->getPosicao().x;
         }
         
-        return x/2.0f;
+        x /= 2.0f;
+
+        if(x <= pGGrafico->getTamJanela().x/2.0f)
+        {
+            return pGGrafico->getTamJanela().x/2.0f;
+        }
+        else if(x >= (tamMapa - (pGGrafico->getTamJanela().x/2.0f)))
+        {
+            return tamMapa - (pGGrafico->getTamJanela().x/2.0f);
+        }
+        return x;
     }
 
 
@@ -77,7 +87,8 @@ namespace Fases
     nODificeis(nOD),
     nIFaceis(nIF),
     nIDificeis(nID),
-    nIChefoes(nIC)
+    nIChefoes(nIC),
+    tamMapa(0)
     {
         criarMapa();
         inicializaColisoes();
@@ -94,7 +105,8 @@ namespace Fases
     nODificeis(0),
     nIFaceis(0),
     nIDificeis(0),
-    nIChefoes(0)
+    nIChefoes(0),
+    tamMapa(0)
     {
     }
 

@@ -19,6 +19,7 @@ namespace Fases
             const int nIFaceis;
             const int nIDificeis;
             const int nIChefoes;
+            int tamMapa;
             Entidades::Personagens::Jogador* jog1;
             Entidades::Personagens::Jogador* jog2;
             Listas::ListaEntidades lEntidades;

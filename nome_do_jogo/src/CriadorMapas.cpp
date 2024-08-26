@@ -21,7 +21,7 @@ void CriadorMapas::carregarMapa(std::string tilemap)
     arquivo.close();
 }
 
-void CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC)
+const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC)
 {
     // Pega as informações do mapa
     int sizeTiled = mapa["tilewidth"]; //tamhno do tile
@@ -42,6 +42,8 @@ void CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const int nOF, const
             }
         }
     }
+
+    return (width-1)*sizeTiled;
 }
 
 Entidades::Entidade* CriadorMapas::criarEntidade(const int posX, const int posY, const int tipo)

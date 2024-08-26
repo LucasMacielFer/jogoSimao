@@ -5,10 +5,10 @@ namespace Gerenciadores
 {
     // Inicialização de pInstancia como NULL
     Gerenciador_Grafico* Gerenciador_Grafico::pInstancia(NULL);
-    const sf::Vector2f Gerenciador_Grafico::tamanhoJanela({1024.0f, 800.0f});
 
     Gerenciador_Grafico::Gerenciador_Grafico():
-    janela(sf::VideoMode(tamanhoJanela.x, tamanhoJanela.y), "Jogo")
+    janela(sf::VideoMode(tamanhoJanela.x, tamanhoJanela.y), "Jogo"),
+    tamanhoJanela(sf::Vector2f(TAM_JANELA_X, TAM_JANELA_Y))
     {
         camera = janela.getDefaultView();
         janela.setFramerateLimit(60);
@@ -46,10 +46,7 @@ namespace Gerenciadores
 
     void Gerenciador_Grafico::moveCamera(const float x)
     {
-        if(x >= tamanhoJanela.x/2.0f)
-            camera.setCenter(x, tamanhoJanela.y/2);
-        else
-            camera.setCenter(tamanhoJanela.x/2.0f, tamanhoJanela.y/2.0f);
+        camera.setCenter(x, tamanhoJanela.y/2.0f);
         janela.setView(camera);
     }
 
@@ -75,6 +72,11 @@ namespace Gerenciadores
         {
             return mapaTexturas[caminhoTextura];
         }
+    }
+
+    const sf::Vector2f Gerenciador_Grafico::getTamJanela() const
+    {
+        return tamanhoJanela;
     }
 
     // Execução efetiva do padrão de projeto singleton

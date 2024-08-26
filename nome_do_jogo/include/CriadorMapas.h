@@ -19,6 +19,6 @@ class CriadorMapas
         CriadorMapas(std::string tilemap);
         ~CriadorMapas();
         void carregarMapa(std::string tilemap);
-        void criarMapa(Listas::ListaEntidades* lista, int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC);
+        const int criarMapa(Listas::ListaEntidades* lista, int nOF, const int nOM, const int nOD, const int nIF, const int nID, const int nIC);
         Entidades::Entidade* criarEntidade(const int posX, const int posY, const int tipo);
 };
