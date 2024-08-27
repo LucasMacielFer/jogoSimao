@@ -93,11 +93,11 @@ namespace Entidades
             {
                 if(posJogador <= 0)
                 {
-                    flecha = new Projetil(this,sf::Color::Red , TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FLECHA);
+                    flecha = new Projetil(this, CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FLECHA);
                 }
                 else 
                 {
-                    flecha = new Projetil(this,sf::Color::Red, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
+                    flecha = new Projetil(this, CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
                 }
 
                 flechaTratada = false;

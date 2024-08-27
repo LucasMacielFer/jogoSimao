@@ -29,6 +29,7 @@ namespace Fases
                         pEsq->setFTratada(true);
                     }
                 }
+                /*
                 else if(pInim->getTipo() == 3)
                 {
                     pMago = dynamic_cast<Entidades::Personagens::Mago*>(pInim);
@@ -39,6 +40,7 @@ namespace Fases
                         pMago->setBFTratada(true);
                     }
                 }
+                */
             }
             else if(pAux->getId() == 4)
             {

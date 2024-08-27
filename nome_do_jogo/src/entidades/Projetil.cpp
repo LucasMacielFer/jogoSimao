@@ -5,8 +5,8 @@ namespace Entidades
 {
     const int Projetil::idClasse(4);
 
-    Projetil::Projetil(Personagens::Inimigo* at, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel):
-    Entidade(idClasse, c, tamXX, tamYY, xx, yy, sentMovX, vel),
+    Projetil::Projetil(Personagens::Inimigo* at, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel):
+    Entidade(idClasse, txt, tamXX, tamYY, xx, yy, sentMovX, vel),
     dano(1),
     ativo(true),
     atirador(at)

@@ -39,8 +39,8 @@ namespace Entidades
     } 
 
     // Sobrecarga para o projetil
-    Entidade::Entidade(const int i, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel):
-    Ente(i),
+    Entidade::Entidade(const int i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel):
+    Ente(i, txt),
     tamX(tamXX),
     tamY(tamYY),
     x(xx + tamX/2.0f),
@@ -54,7 +54,7 @@ namespace Entidades
     {
         retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
         retangulo.setPosition(x, y);
-        retangulo.setFillColor(c);
+        retangulo.setTexture(textura);
     }
 
     Entidade::Entidade():

@@ -2,9 +2,10 @@
 #include "SFML/Graphics/Color.hpp"
 
 namespace Entidades
-{
+{   
     namespace Personagens
     {
+        /*
         Mago::Mago(const char* txt, const float xx, const float yy):
         Inimigo(txt, TAM_X_MAGO, TAM_Y_MAGO, xx, yy, VIDAS_MAGO, VEL_MAX_MAGO, FORCA_MAGO, DURACAO_ESPERA_MAGO, DURACAO_ATAQUE_MAGO, 3),
         fogo(NULL), 
@@ -12,6 +13,7 @@ namespace Entidades
         bolaDeFogoTratada(false)
         {
         }
+        */
 
         Mago::Mago():
         Inimigo(), 
@@ -23,10 +25,11 @@ namespace Entidades
 
         Mago::~Mago()
         {
-            delete fogo;
+            //delete fogo;
             fogo = NULL;
         }
 
+        /*
         Projetil* Mago::getFogo()
         {
             return fogo;
@@ -146,6 +149,6 @@ namespace Entidades
        void Mago::salvar()
        {
        }
+       */
     }
-
 }

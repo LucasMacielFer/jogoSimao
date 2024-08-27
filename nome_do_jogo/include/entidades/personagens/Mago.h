@@ -31,16 +31,16 @@ namespace Entidades
 
             public:
 
-            Mago(const char* txt, const float xx, const float yy);
+            //Mago(const char* txt, const float xx, const float yy);
             Mago();
             ~Mago();
-            Projetil* getFogo();
-            const bool getBFTratada() const;
-            void setBFTratada(const bool bf);
-            void salvar();
-            void atacarCorpo(Personagem* pPersonagem);
-            void atacarDist(float posJogador);
-            void habilidadeInimiga(float dt);
+            //Projetil* getFogo();
+            //const bool getBFTratada() const;
+            //void setBFTratada(const bool bf);
+            //void salvar();
+            //void atacarCorpo(Personagem* pPersonagem);
+            //void atacarDist(float posJogador);
+            //void habilidadeInimiga(float dt);
         };
     }
 }

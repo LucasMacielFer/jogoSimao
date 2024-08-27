@@ -18,7 +18,7 @@ namespace Entidades
             int dano;
 
         public:
-            Projetil(Personagens::Inimigo* at, sf::Color c, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel);
+            Projetil(Personagens::Inimigo* at, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel);
             Projetil();
             ~Projetil();
             const bool getAtivo() const;
