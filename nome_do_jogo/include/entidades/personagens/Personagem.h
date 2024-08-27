@@ -34,6 +34,7 @@ namespace Entidades
             void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void pular();
             void sofrerDano(const int dano);
+            const bool getVivo() const;
             virtual void atacarCorpo(Personagem* pPersonagem) = 0; 
             virtual void atacarDist(float posJogador) = 0;
             virtual void executar(float dt) = 0;

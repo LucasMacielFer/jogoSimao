@@ -4,6 +4,7 @@
 #include "Jogador.h"
 
 #define TEMPO_VOLTA 1
+#define FLOAT_MAX 1000000.0f
 
 namespace Entidades
 {
@@ -29,6 +30,8 @@ namespace Entidades
                 void setJogador2(Jogador* pJogador);
                 sf::Vector2f getPosJogador1();
                 sf::Vector2f getPosJogador2();
+                bool existeP1();
+                bool existeP2();
                 void executar(float dt);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();

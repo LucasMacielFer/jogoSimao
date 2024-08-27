@@ -67,6 +67,11 @@ namespace Entidades
             }
         }
 
+        const bool Personagem::getVivo() const
+        {
+            return vivo;
+        }
+
         /*
         Método retirado e substituido, mas ainda não tenho certeza
 

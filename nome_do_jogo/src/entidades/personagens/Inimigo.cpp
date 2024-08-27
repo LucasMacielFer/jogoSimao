@@ -66,6 +66,22 @@ namespace Entidades
             }
         }
 
+        bool Inimigo::existeP1()
+        {
+            if(jogador1Perseguido)
+                return true;
+            else
+                return false;
+        }
+
+        bool Inimigo::existeP2()
+        {
+            if(jogador2Perseguido)
+                return true;
+            else
+                return false;
+        }
+
             void Inimigo::executar(float dt)
         {
             if(vivo)

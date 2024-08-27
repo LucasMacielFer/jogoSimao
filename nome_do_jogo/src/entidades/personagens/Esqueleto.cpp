@@ -40,9 +40,16 @@ namespace Entidades
         void Esqueleto::habilidadeInimiga(float dt) 
         {  
             
-            distancia_jogador1 = getPosJogador1().x - getPosicao().x;
-            distancia_jogador2 = getPosJogador2().x - getPosicao().x;
+            if(existeP1())
+                distancia_jogador1 = getPosJogador1().x - getPosicao().x;
+            else
+                distancia_jogador1 = FLOAT_MAX;
 
+            if(existeP2())
+                distancia_jogador2 = getPosJogador2().x - getPosicao().x;
+            else
+                distancia_jogador2 = FLOAT_MAX;
+            
             if(flecha && !(flecha->getAtivo()))
             {
                 delete flecha;
@@ -60,11 +67,13 @@ namespace Entidades
                 
                 if(fabs(distancia_jogador1) < fabs(distancia_jogador2))
                 {
-                    atacarDist(distancia_jogador1);
+                    if(existeP1())
+                        atacarDist(distancia_jogador1);
                 }
                 else 
                 {
-                    atacarDist(distancia_jogador2);
+                    if(existeP2())
+                        atacarDist(distancia_jogador2);
                 }
              }
             else 

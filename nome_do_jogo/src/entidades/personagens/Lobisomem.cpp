@@ -1,4 +1,5 @@
 #include "../../../include/entidades/personagens/Lobisomem.h"
+#include "entidades/personagens/Inimigo.h"
 
 namespace Entidades
 {
@@ -36,9 +37,15 @@ namespace Entidades
 
         void Lobisomem::habilidadeInimiga(float dt) 
         {  
-            
-            distancia_jogador1 = getPosJogador1().x - getPosicao().x;
-            distancia_jogador2 = getPosJogador2().x - getPosicao().x;
+            if(existeP1())
+                distancia_jogador1 = getPosJogador1().x - getPosicao().x;
+            else
+                distancia_jogador1 = FLOAT_MAX;
+
+            if(existeP2())
+                distancia_jogador2 = getPosJogador2().x - getPosicao().x;
+            else
+                distancia_jogador2 = FLOAT_MAX;
             
             if(fabs(distancia_jogador1) < ALCANCE_LOBISOMEM || (fabs(distancia_jogador2) < ALCANCE_LOBISOMEM)) 
              { 

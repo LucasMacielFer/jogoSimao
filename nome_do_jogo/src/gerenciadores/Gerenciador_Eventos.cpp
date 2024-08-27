@@ -36,11 +36,13 @@ namespace Gerenciadores
             {
                 case sf::Keyboard::Key::A:
                 case sf::Keyboard::Key::D:
-                    jogador1->movimentaX(0);
+                    if(jogador1)
+                        jogador1->movimentaX(0);
                     break;
                 case sf::Keyboard::Key::W:
                 case sf::Keyboard::Key::S:
-                    jogador1->movimentaX(0);
+                    if(jogador1)
+                        jogador1->movimentaX(0);
                     break;
                 case sf::Keyboard::Key::Left:
                 case sf::Keyboard::Key::Right:
@@ -56,17 +58,20 @@ namespace Gerenciadores
                     break;
             }
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+        if(jogador1)
         {
-            jogador1->movimentaX(-1);
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-        {
-            jogador1->movimentaX(1);
-        }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
-        {
-            jogador1->pular();
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
+            {
+                jogador1->movimentaX(-1);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
+            {
+                jogador1->movimentaX(1);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
+            {
+                jogador1->pular();
+            }
         }
         if(jogador2)
         {

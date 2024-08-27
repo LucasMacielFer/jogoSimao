@@ -3,7 +3,8 @@
 #include "../gerenciadores/Gerenciador_Eventos.h"
 #include "../gerenciadores/Gerenciador_Colisoes.h"
 #include "../fases/FasePrimeira.h"
-#include "entidades/personagens/Esqueleto.h"
+//#include "entidades/personagens/Esqueleto.h"
+//#include "entidades/personagens/Mago.h"
 
 
 #define TICKRATE 0.017
@@ -20,7 +21,8 @@ namespace Principal
             // Aqui estará a lista de entidades!
             Entidades::Personagens::Jogador* p1;
             Entidades::Personagens::Jogador* p2;
-            Entidades::Personagens::Esqueleto* inim;
+            //Entidades::Personagens::Esqueleto* inim;
+            //Entidades::Personagens::Mago* inim;
             Fases::FasePrimeira* fase1;
 
             // Todo o gerenciamento de tempo foi feito baseado no jogo Desert++, do monitor Matheus Burda
