@@ -15,6 +15,7 @@
 #define CODIGO_CHAO 28
 #define CODIGO_LOBISOMEM 59
 #define CODIGO_ESQUELETO 53
+#define CODIGO_MAGO -1
 
 
 // O carregamento de mapas através de tilemaps no formato JSON foi implementado
@@ -24,17 +25,16 @@ class CriadorMapas
 {
     private:
         nlohmann::json mapa;
-        int contTamanho;
-        int contPlataformas;
-        int contGosmas;
-        int contEspinhos;
-        int contLobisomens;
-        int contEsqueletos;
+        int tamMapa;
+
+    private:
+        void carregarMapa(std::string tilemap);
 
     public:
         CriadorMapas(std::string tilemap);
         ~CriadorMapas(); 
-        void carregarMapa(std::string tilemap);
-        const int criarMapa(Listas::ListaEntidades* lista, const bool* plats, const bool* gosmas, const bool* esps, const bool* lobs, const bool* esqs);
+        void criarChao(Listas::ListaEntidades* lista);
+        void criarTipo(Listas::ListaEntidades* lista, const int idMapa, const bool* ocorrencias, const int max);
+        const int getTamMapa() const;
         Entidades::Entidade* criarEntidade(const int posX, const int posY, const int tipo);
 };

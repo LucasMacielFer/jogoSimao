@@ -55,6 +55,23 @@ namespace Fases
         }
     }
 
+    void Fase::criarChao()
+    {
+        criadorDeMapas->criarChao(&lEntidades);
+    }
+
+    void Fase::criarPlataformas(bool* plats, const int max)
+    {
+        aleatorizaOcorrencias(plats, max);
+        criadorDeMapas->criarTipo(&lEntidades, CODIGO_PLATAFORMA, plats, max);
+    }
+
+    void Fase::criarEsqueletos(bool* esqs, const int max)
+    {
+        aleatorizaOcorrencias(esqs, max);
+        criadorDeMapas->criarTipo(&lEntidades, CODIGO_ESQUELETO, esqs, max);
+    }
+
     void Fase::gerenciarColisoes()
     {
         pGColisoes->setJog1(jog1);
@@ -120,6 +137,7 @@ namespace Fases
 
     Fase::Fase(std::string tilemap):
     Ente(idClasse),
+    criadorDeMapas(new CriadorMapas(tilemap)),
     lEntidades(),
     caminhoTilemap(tilemap),
     jog1(NULL),
@@ -130,6 +148,7 @@ namespace Fases
 
     Fase::Fase():
     Ente(-1),
+    criadorDeMapas(NULL),
     lEntidades(),
     caminhoTilemap(""),
     jog1(NULL),
@@ -198,6 +217,28 @@ namespace Fases
         gerenciarProjeteis();
         executarEntidades(dt);
         pGGrafico->moveCamera(calculaCentroCamera());
+    }
+
+    void Fase::aleatorizaOcorrencias(bool* ocorrencias, const int max)
+    {
+        int i;
+        int cont = 0;
+        for(i=0; i<max; i++)
+        {
+            ocorrencias[i] = rand()%2 == 1 ? true : false;
+            if(ocorrencias[i]) {cont++;}
+        }
+
+        i = 0;
+        while(cont < 3)
+        {
+            if(!ocorrencias[i])
+            {
+                ocorrencias[i] = true;
+                cont++;
+            }
+            i++;
+        }
     }
 
     void Fase::salvar()

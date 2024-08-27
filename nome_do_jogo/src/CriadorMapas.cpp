@@ -1,18 +1,14 @@
 #include "../include/CriadorMapas.h"
 
 CriadorMapas::CriadorMapas(std::string tilemap):
-contTamanho(0),
-contPlataformas(0),
-contGosmas(0),
-contEspinhos(0),
-contLobisomens(0),
-contEsqueletos(0)
+tamMapa(-1)
 {
     carregarMapa(tilemap);
 }
 
 CriadorMapas::~CriadorMapas()
 {
+    tamMapa = -1;
 }
 
 void CriadorMapas::carregarMapa(std::string tilemap)
@@ -27,7 +23,37 @@ void CriadorMapas::carregarMapa(std::string tilemap)
     arquivo.close();
 }
 
-const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const bool* plats, const bool* gosmas, const bool* esps, const bool* lobs, const bool* esqs)
+void CriadorMapas::criarChao(Listas::ListaEntidades* lista)
+{
+// Pega as informações do mapa
+    int sizeTiled = mapa["tilewidth"]; //tamhno do tile
+    int heightTiled = mapa["tileheight"];
+    int width = mapa["width"];
+    int height = mapa["height"]; // altura do mapa
+    int posX = 0;
+    int posY = 0;
+    int indice = 0;
+    int contOcorrencias = 0;
+    int contTamanho = 0;
+
+    for (int y = 0; y < height; y++) 
+    {
+        for (int x = 0; x < width; x++) 
+        {
+            int tileId = mapa["layers"][0]["data"][indice++];
+            if(tileId == CODIGO_CHAO)
+            {
+                posX = x * sizeTiled;
+                posY = y * heightTiled;
+                lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
+            }
+        }
+    }
+    tamMapa = (width-1)*sizeTiled;
+}
+
+
+void CriadorMapas::criarTipo(Listas::ListaEntidades* lista, const int idMapa, const bool* ocorrencias, const int max)
 {
     // Pega as informações do mapa
     int sizeTiled = mapa["tilewidth"]; //tamhno do tile
@@ -37,74 +63,75 @@ const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const bool* pla
     int posX = 0;
     int posY = 0;
     int indice = 0;
+    int contOcorrencias = 0;
+    int contTamanho = 0;
 
     for (int y = 0; y < height; y++) 
     {
         for (int x = 0; x < width; x++) 
         {
             int tileId = mapa["layers"][0]["data"][indice++];
-            if(tileId != 0)
+            if(tileId == idMapa && contOcorrencias < max)
             {
                 posX = x * sizeTiled;
                 posY = y * heightTiled;
-                lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
 
                 switch (tileId)
                 {
                 case CODIGO_PLATAFORMA:
-                    if(plats[contPlataformas])
+                    if(ocorrencias[contOcorrencias])
                     {
-                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
                     }
                     if(contTamanho++ >= 3)
                     {
                         contTamanho = 0;
-                        contPlataformas++;
+                        contOcorrencias++;
                     }
                     break;
 
                 case CODIGO_CHAO:
-                    lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                    lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
                     break;
 
                 case CODIGO_GOSMA:
-                    if(gosmas[contGosmas])
+                    if(ocorrencias[contOcorrencias])
                     {
-                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
                     }
                     else
                     {
-                        lista->acrescentarEntidade(criarEntidade(posX, posY, CODIGO_CHAO));
+                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, CODIGO_CHAO)));
                     }
                     if(contTamanho++ >= 3)
                     {
                         contTamanho = 0;
-                        contGosmas++;
+                        contOcorrencias++;
                     }
                     break;
 
                 case CODIGO_ESPINHO:
-                    if(esps[contEspinhos])
+                    if(ocorrencias[contOcorrencias])
                     {
-                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
                     }
-                    contEspinhos++;
+                    contOcorrencias++;
                     break;
 
                 case CODIGO_LOBISOMEM:
-                    if(lobs[contLobisomens])
+                    if(ocorrencias[contOcorrencias])
                     {
-                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
                     }
-                    contLobisomens++;
+                    contOcorrencias++;
                     break;
 
                 case CODIGO_ESQUELETO:
-                    if(esqs[contEsqueletos])
+                    if(ocorrencias[contOcorrencias])
                     {
-                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
                     }
-                    contEsqueletos++;
+                    contOcorrencias++;
                     break;
 
                 default:
@@ -113,9 +140,13 @@ const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const bool* pla
             }
         }
     }
-
-    return (width-1)*sizeTiled;
 }
+
+const int CriadorMapas::getTamMapa() const
+{
+    return tamMapa;
+}
+
 
 Entidades::Entidade* CriadorMapas::criarEntidade(const int posX, const int posY, const int tipo)
 {
