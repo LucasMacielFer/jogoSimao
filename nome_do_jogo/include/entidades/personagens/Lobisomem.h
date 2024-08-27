@@ -4,7 +4,7 @@
 #include <cmath>
 
 #define TAM_X_LOBISOMEM 50
-#define TAM_Y_LOBISOMEM 50
+#define TAM_Y_LOBISOMEM 45
 #define VIDAS_LOBISOMEM 20
 #define VEL_MAX_LOBISOMEM 4.0f
 #define FORCA_LOBISOMEM 7

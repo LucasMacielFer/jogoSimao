@@ -12,7 +12,7 @@ namespace Entidades
 
         Gosma::Gosma():
         Obstaculo(),
-        decrementoVelocidade(0)
+        decrementoVelocidade(1)
         {
         }
 

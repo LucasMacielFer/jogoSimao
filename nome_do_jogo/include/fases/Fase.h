@@ -6,6 +6,8 @@
 #include "../listas/ListaEntidades.h"
 #include "../CriadorMapas.h"
 
+#include "../entidades/personagens/Mago.h"
+
 namespace Fases
 {
     class Fase : public Ente
@@ -20,6 +22,7 @@ namespace Fases
             std::string caminhoTilemap;
 
         private:
+            void gerenciarProjeteis();
             void gerenciarColisoes();
             void executarEntidades(float dt);
             const float calculaCentroCamera();

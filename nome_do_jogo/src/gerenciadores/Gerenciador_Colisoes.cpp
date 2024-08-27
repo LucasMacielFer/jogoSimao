@@ -163,9 +163,20 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Colisoes::removerInimigo()
+    void Gerenciador_Colisoes::removerObstaculo(Entidades::Entidade* pO)
     {
-        LInimigos.pop_back();
+        std::list<Entidades::Entidade*>::iterator itr;
+        itr = std::find(LObstaculos.begin(), LObstaculos.end(), pO);
+        if(itr != LObstaculos.end())
+            LObstaculos.erase(itr);
+    }
+
+    void Gerenciador_Colisoes::removerInimigo(Entidades::Entidade* pI)
+    {
+        std::vector<Entidades::Entidade*>::iterator itr;
+        itr = std::find(LInimigos.begin(), LInimigos.end(), pI);
+        if(itr != LInimigos.end())
+            LInimigos.erase(itr);
     }
 
     void Gerenciador_Colisoes::setJog1(Entidades::Personagens::Jogador* pJog1) {

@@ -5,8 +5,8 @@
 #include "entidades/personagens/Personagem.h"
 #include <cmath>
 
-#define TAM_X_ESQUELETO 30
-#define TAM_Y_ESQUELETO 100
+#define TAM_X_ESQUELETO 43
+#define TAM_Y_ESQUELETO 60
 #define VIDAS_ESQUELETO 30
 #define VEL_MAX_ESQUELETO 3.0f
 #define FORCA_ESQUELETO 1
@@ -27,6 +27,7 @@ namespace Entidades
             private:
 
             Projetil* flecha;
+            bool flechaTratada;
 
             public:
 
@@ -34,11 +35,12 @@ namespace Entidades
             Esqueleto();
             ~Esqueleto();
             Projetil* getFlecha();
+            const bool getFTratada() const;
+            void setFTratada(const bool f);
             void salvar();
             void atacarCorpo(Personagem* pPersonagem);
             void atacarDist(float posJogador);
             void habilidadeInimiga(float dt);
-
         };
     }
 }

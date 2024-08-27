@@ -6,13 +6,16 @@ namespace Entidades
     namespace Personagens
     {
         Esqueleto::Esqueleto(const char* txt, const float xx, const float yy):
-        Inimigo(txt, TAM_X_ESQUELETO, TAM_Y_ESQUELETO, xx, yy, VIDAS_ESQUELETO, VEL_MAX_ESQUELETO, FORCA_ESQUELETO, DURACAO_ESPERA_ESQUELETO, DURACAO_ATAQUE_ESQUELETO),
-        flecha(NULL)
+        Inimigo(txt, TAM_X_ESQUELETO, TAM_Y_ESQUELETO, xx, yy, VIDAS_ESQUELETO, VEL_MAX_ESQUELETO, FORCA_ESQUELETO, DURACAO_ESPERA_ESQUELETO, DURACAO_ATAQUE_ESQUELETO, 2),
+        flecha(NULL),
+        flechaTratada(true)
         {
         }
 
         Esqueleto::Esqueleto():
-        Inimigo(), flecha(NULL)
+        Inimigo(), 
+        flecha(NULL),
+        flechaTratada(true)
         {
         }
 
@@ -27,6 +30,16 @@ namespace Entidades
             return flecha;
         }
 
+        const bool Esqueleto::getFTratada() const
+        {
+            return flechaTratada;
+        }
+
+        void Esqueleto::setFTratada(const bool f)
+        {
+            flechaTratada = f;
+        }
+
         void Esqueleto::atacarCorpo(Personagem* pPersonagem)
         {
             if(ataqueDisponivel() && pPersonagem)
@@ -36,10 +49,8 @@ namespace Entidades
             }
         }
 
-
         void Esqueleto::habilidadeInimiga(float dt) 
         {  
-            
             if(existeP1())
                 distancia_jogador1 = getPosJogador1().x - getPosicao().x;
             else
@@ -52,13 +63,7 @@ namespace Entidades
             
             if(flecha && !(flecha->getAtivo()))
             {
-                delete flecha;
                 flecha = NULL;
-            }
-            
-            if(flecha) 
-            {
-                flecha->executar(dt);
             }
             
             if(fabs(distancia_jogador1) < ALCANCE_ESQUELETO || (fabs(distancia_jogador2) < ALCANCE_ESQUELETO)) 
@@ -80,7 +85,6 @@ namespace Entidades
             {
                 setVelocidade(VEL_MAX_ESQUELETO);
             }
-
         }
 
         void Esqueleto::atacarDist(float posJogador)
@@ -89,23 +93,20 @@ namespace Entidades
             {
                 if(posJogador <= 0)
                 {
-                    flecha = new Projetil( this,sf::Color::Red , TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FLECHA);
+                    flecha = new Projetil(this,sf::Color::Red , TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FLECHA);
                 }
                 else 
                 {
-                    flecha = new Projetil( this,sf::Color::Red, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
+                    flecha = new Projetil(this,sf::Color::Red, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
                 }
 
+                flechaTratada = false;
                 atacando = true;
-
             }
-
         }
-
 
        void Esqueleto::salvar()
        {
        }
     }
-
 }

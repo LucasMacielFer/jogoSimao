@@ -5,6 +5,54 @@ namespace Fases
     const int Fase::idClasse(4);
     Gerenciadores::Gerenciador_Colisoes* Fase::pGColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia());
 
+    void Fase::gerenciarProjeteis()
+    {
+        Entidades::Entidade* pAux = NULL;
+        Entidades::Personagens::Esqueleto* pEsq = NULL;
+        Entidades::Personagens::Mago* pMago = NULL;
+        Entidades::Personagens::Inimigo* pInim = NULL;
+        Entidades::Projetil* pProj = NULL;
+        lEntidades.irAoPrimeiro();
+        while(!lEntidades.fim())
+        {
+            pAux = lEntidades.passoPercorrer();
+            if(pAux->getId() == 2)
+            {
+                pInim = dynamic_cast<Entidades::Personagens::Inimigo*>(pAux);
+                if(pInim->getTipo() == 2)
+                {
+                    pEsq = dynamic_cast<Entidades::Personagens::Esqueleto*>(pInim);
+                    if(!pEsq->getFTratada())
+                    {
+                        lEntidades.acrescentarEntidade(pEsq->getFlecha());
+                        pGColisoes-> incluirInimigo(static_cast<Entidades::Entidade*>(pEsq->getFlecha()));
+                        pEsq->setFTratada(true);
+                    }
+                }
+                else if(pInim->getTipo() == 3)
+                {
+                    pMago = dynamic_cast<Entidades::Personagens::Mago*>(pInim);
+                    if(!pMago->getBFTratada())
+                    {
+                        lEntidades.acrescentarEntidade(pMago->getFogo());
+                        pGColisoes-> incluirInimigo(static_cast<Entidades::Entidade*>(pMago->getFogo()));
+                        pMago->setBFTratada(true);
+                    }
+                }
+            }
+            else if(pAux->getId() == 4)
+            {
+                pProj = dynamic_cast<Entidades::Projetil*>(pAux);
+                if(!pProj->getAtivo())
+                {
+                    pGColisoes->removerInimigo(static_cast<Entidades::Entidade*>(pProj));
+                    lEntidades.removerEntidade(static_cast<Entidades::Entidade*>(pProj));
+                    delete pProj;
+                }
+            }
+        }
+    }
+
     void Fase::gerenciarColisoes()
     {
         pGColisoes->setJog1(jog1);
@@ -58,7 +106,7 @@ namespace Fases
         
         if(xMedio < (pGGrafico->getTamJanela().x/2.0f)+64)
         {
-            return pGGrafico->getTamJanela().x/2.0f;
+            return pGGrafico->getTamJanela().x/2.0f + 64;
         }
         else if(xMedio > (tamMapa - (pGGrafico->getTamJanela().x/2.0f)))
         {
@@ -110,17 +158,42 @@ namespace Fases
 
     void Fase::setJogador1(Entidades::Personagens::Jogador* jog)
     {
+        Entidades::Entidade* pAux = NULL;
+        Entidades::Personagens::Inimigo* pInim = NULL;
+        lEntidades.irAoPrimeiro();
+        while(!lEntidades.fim())
+        {
+            pAux = lEntidades.passoPercorrer();
+            if(pAux->getId() == 2)
+            {
+                pInim = dynamic_cast<Entidades::Personagens::Inimigo*>(pAux);
+                pInim->setJogador1(jog);
+            }
+        }
         jog1 = jog;
     }
 
     void Fase::setJogador2(Entidades::Personagens::Jogador* jog)
     {
+        Entidades::Entidade* pAux = NULL;
+        Entidades::Personagens::Inimigo* pInim = NULL;
+        lEntidades.irAoPrimeiro();
+        while(!lEntidades.fim())
+        {
+            pAux = lEntidades.passoPercorrer();
+            if(pAux->getId() == 2)
+            {
+                pInim = dynamic_cast<Entidades::Personagens::Inimigo*>(pAux);
+                pInim->setJogador2(jog);
+            }
+        }
         jog2 = jog;
     }
 
     void Fase::executar(float dt)
     {
         gerenciarColisoes();
+        gerenciarProjeteis();
         executarEntidades(dt);
         pGGrafico->moveCamera(calculaCentroCamera());
     }

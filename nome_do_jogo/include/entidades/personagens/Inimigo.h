@@ -17,21 +17,23 @@ namespace Entidades
                 float tempoVolta;
                 static Jogador* jogador1Perseguido;
                 static Jogador* jogador2Perseguido;
+                const int tipoInim;
 
             protected:
                 float distancia_jogador1;
                 float distancia_jogador2;
 
             public:
-                Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque);
+                Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque, const int tipo);
                 Inimigo();
                 ~Inimigo();
                 void setJogador1(Jogador* pJogador);
                 void setJogador2(Jogador* pJogador);
                 sf::Vector2f getPosJogador1();
                 sf::Vector2f getPosJogador2();
-                bool existeP1();
-                bool existeP2();
+                const bool existeP1() const;
+                const bool existeP2() const;
+                const int getTipo() const;
                 void executar(float dt);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();

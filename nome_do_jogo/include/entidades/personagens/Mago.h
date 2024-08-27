@@ -27,6 +27,7 @@ namespace Entidades
 
             Projetil* fogo;
             float esperaTeleporte;
+            bool bolaDeFogoTratada;
 
             public:
 
@@ -34,6 +35,8 @@ namespace Entidades
             Mago();
             ~Mago();
             Projetil* getFogo();
+            const bool getBFTratada() const;
+            void setBFTratada(const bool bf);
             void salvar();
             void atacarCorpo(Personagem* pPersonagem);
             void atacarDist(float posJogador);

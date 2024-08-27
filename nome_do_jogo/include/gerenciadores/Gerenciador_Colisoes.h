@@ -1,4 +1,5 @@
 #pragma once
+#include <algorithm>
 #include <vector>
 #include <list>
 #include <SFML/Graphics.hpp>
@@ -33,7 +34,8 @@ namespace Gerenciadores
             void tratarColisoesImimgs();
             void incluirObstaculo(Entidades::Entidade* pO);
             void incluirInimigo(Entidades::Entidade* pI);
-            void removerInimigo();
+            void removerObstaculo(Entidades::Entidade* pO);
+            void removerInimigo(Entidades::Entidade* pI);
             // Método para apagar listas! (Reutilizar o gerenciador na fase 2)
             void setJog1(Entidades::Personagens::Jogador* pJog1);
             void setJog2(Entidades::Personagens::Jogador* pJog2);

@@ -8,11 +8,12 @@ namespace Entidades
         Jogador* Inimigo::jogador1Perseguido(NULL);
         Jogador* Inimigo::jogador2Perseguido(NULL);
 
-        Inimigo::Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque):
+        Inimigo::Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque, const int tipo):
         Personagem(idClasse, txt ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque),
         distancia_jogador1(0.0f),
         distancia_jogador2(0.0f),
-        tempoVolta(0.0f)
+        tempoVolta(0.0f),
+        tipoInim(tipo)
         {
         }
 
@@ -20,7 +21,8 @@ namespace Entidades
         Personagem(),
         distancia_jogador1(0.0f),
         distancia_jogador2(0.0f),
-        tempoVolta(0.0f)
+        tempoVolta(0.0f),
+        tipoInim(0)
         {
         }
 
@@ -66,7 +68,7 @@ namespace Entidades
             }
         }
 
-        bool Inimigo::existeP1()
+        const bool Inimigo::existeP1() const
         {
             if(jogador1Perseguido)
                 return true;
@@ -74,12 +76,17 @@ namespace Entidades
                 return false;
         }
 
-        bool Inimigo::existeP2()
+        const bool Inimigo::existeP2() const
         {
             if(jogador2Perseguido)
                 return true;
             else
                 return false;
+        }
+        
+        const int Inimigo::getTipo() const
+        {
+            return tipoInim;
         }
 
             void Inimigo::executar(float dt)

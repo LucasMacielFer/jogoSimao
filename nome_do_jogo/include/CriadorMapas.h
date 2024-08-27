@@ -6,6 +6,8 @@
 #include "entidades/obstaculos/Plataforma.h"
 #include "entidades/obstaculos/Gosma.h"
 #include "entidades/obstaculos/Espinho.h"
+#include "entidades/personagens/Lobisomem.h"
+#include "entidades/personagens/Esqueleto.h"
 
 #define CODIGO_PLATAFORMA 26
 #define CODIGO_GOSMA 50

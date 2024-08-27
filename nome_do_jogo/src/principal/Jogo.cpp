@@ -9,10 +9,10 @@ namespace Principal
     gEventos(Gerenciadores::Gerenciador_Eventos::getInstancia()),
     gColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia()),
     gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
-    p1(new Entidades::Personagens::Jogador("assets/textures/jogador.png", 50, 100)),
+    p1(new Entidades::Personagens::Jogador("assets/textures/jogador1.png", 43, 60)),
     //p1(NULL),
     //p2(NULL),
-    p2(new Entidades::Personagens::Jogador("assets/textures/jogador.png", 50, 100)),
+    p2(new Entidades::Personagens::Jogador("assets/textures/jogador2.png", 43, 60)),
     //inim(new Entidades::Personagens::Esqueleto("assets/textures/esqueleto.png", 500, 100)),
     //inim(new Entidades::Personagens::Mago("assets/textures/esqueleto.png", 500, 100)),
     fase1(new Fases::FasePrimeira()),
@@ -51,12 +51,12 @@ namespace Principal
             {
                 if(!p1->getVivo())
                 {
-                    delete p1;
-                    p1 = NULL;
                     fase1->setJogador1(NULL);
                     gEventos->setJogador1(NULL);
                     gColisoes->setJog1(NULL);
                     //inim->setJogador1(NULL);
+                    delete p1;
+                    p1 = NULL;
                 }
             }
 
@@ -64,12 +64,12 @@ namespace Principal
             {
                 if(!p2->getVivo())
                 {
-                    delete p2;
-                    p2 = NULL;
                     fase1->setJogador2(NULL);
                     gEventos->setJogador2(NULL);
                     gColisoes->setJog2(NULL);
                     //inim->setJogador2(NULL);
+                    delete p2;
+                    p2 = NULL;
                 }
             }
 

@@ -43,7 +43,7 @@ const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const bool* pla
         for (int x = 0; x < width; x++) 
         {
             int tileId = mapa["layers"][0]["data"][indice++];
-            if(tileId != 0 && tileId != CODIGO_LOBISOMEM && tileId != CODIGO_ESQUELETO)
+            if(tileId != 0)
             {
                 posX = x * sizeTiled;
                 posY = y * heightTiled;
@@ -91,6 +91,22 @@ const int CriadorMapas::criarMapa(Listas::ListaEntidades* lista, const bool* pla
                     contEspinhos++;
                     break;
 
+                case CODIGO_LOBISOMEM:
+                    if(lobs[contLobisomens])
+                    {
+                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                    }
+                    contLobisomens++;
+                    break;
+
+                case CODIGO_ESQUELETO:
+                    if(esqs[contEsqueletos])
+                    {
+                        lista->acrescentarEntidade(criarEntidade(posX, posY, tileId));
+                    }
+                    contEsqueletos++;
+                    break;
+
                 default:
                     break;
                 }
@@ -121,6 +137,14 @@ Entidades::Entidade* CriadorMapas::criarEntidade(const int posX, const int posY,
             return new Entidades::Obstaculos::Espinho("assets/textures/espinho.png", 10, posX, posY);
             break;
 
+        case CODIGO_LOBISOMEM:
+            return new Entidades::Personagens::Lobisomem("assets/textures/lobisomem.png", posX, posY);
+            break;
+
+        case CODIGO_ESQUELETO:
+            return new Entidades::Personagens::Esqueleto("assets/textures/esqueleto.png", posX, posY);
+            break;
+            
         default:
             return NULL;
             break;

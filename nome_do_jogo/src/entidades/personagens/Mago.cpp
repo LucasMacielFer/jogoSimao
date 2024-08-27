@@ -6,13 +6,18 @@ namespace Entidades
     namespace Personagens
     {
         Mago::Mago(const char* txt, const float xx, const float yy):
-        Inimigo(txt, TAM_X_MAGO, TAM_Y_MAGO, xx, yy, VIDAS_MAGO, VEL_MAX_MAGO, FORCA_MAGO, DURACAO_ESPERA_MAGO, DURACAO_ATAQUE_MAGO),
-        fogo(NULL), esperaTeleporte(0.0f)
+        Inimigo(txt, TAM_X_MAGO, TAM_Y_MAGO, xx, yy, VIDAS_MAGO, VEL_MAX_MAGO, FORCA_MAGO, DURACAO_ESPERA_MAGO, DURACAO_ATAQUE_MAGO, 3),
+        fogo(NULL), 
+        esperaTeleporte(0.0f),
+        bolaDeFogoTratada(false)
         {
         }
 
         Mago::Mago():
-        Inimigo(), fogo(NULL), esperaTeleporte(0.0f)
+        Inimigo(), 
+        fogo(NULL), 
+        esperaTeleporte(0.0f),
+        bolaDeFogoTratada(true)
         {
         }
 
@@ -25,6 +30,16 @@ namespace Entidades
         Projetil* Mago::getFogo()
         {
             return fogo;
+        }
+
+        const bool Mago::getBFTratada() const
+        {
+            return bolaDeFogoTratada;
+        }
+
+        void Mago::setBFTratada(const bool bf)
+        {
+            bolaDeFogoTratada = bf;
         }
 
         void Mago::atacarCorpo(Personagem* pPersonagem)
