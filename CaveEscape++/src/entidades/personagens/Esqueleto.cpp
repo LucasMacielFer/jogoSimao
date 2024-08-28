@@ -63,11 +63,6 @@ namespace Entidades
             else
                 distancia_jogador2 = FLOAT_MAX;
             
-            if(flecha && !(flecha->getAtivo()))
-            {
-                flecha = NULL;
-            }
-            
             if(fabs(distancia_jogador1) < ALCANCE_ESQUELETO || (fabs(distancia_jogador2) < ALCANCE_ESQUELETO)) 
             { 
                 setVelocidade(0);

@@ -33,7 +33,6 @@ namespace Entidades
             Fases::Fase* faseAgregado;
             Projetil* bolaFogo;
             float esperaTeleporte;
-            bool bolaDeFogoTratada;
 
             public:
 

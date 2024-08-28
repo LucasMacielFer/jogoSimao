@@ -10,8 +10,7 @@ namespace Entidades
         Mago::Mago(const char* txt, const float xx, const float yy):
         Inimigo(txt, TAM_X_MAGO, TAM_Y_MAGO, xx, yy, VIDAS_MAGO, VEL_MAX_MAGO, FORCA_MAGO, DURACAO_ESPERA_MAGO, DURACAO_ATAQUE_MAGO, 3),
         bolaFogo(NULL), 
-        esperaTeleporte(0.0f),
-        bolaDeFogoTratada(false)
+        esperaTeleporte(0.0f)
         {
         }
         
@@ -19,14 +18,14 @@ namespace Entidades
         Mago::Mago():
         Inimigo(), 
         bolaFogo(NULL), 
-        esperaTeleporte(0.0f),
-        bolaDeFogoTratada(true)
+        esperaTeleporte(0.0f)
         {
         }
 
         Mago::~Mago()
         {
-            delete bolaFogo;
+            if(bolaFogo)
+                delete bolaFogo;
             bolaFogo = NULL;
         }
 
@@ -64,11 +63,6 @@ namespace Entidades
                 distancia_jogador2 = getPosJogador2().x - getPosicao().x;
             else
                 distancia_jogador2 = FLOAT_MAX;
-
-            if(bolaFogo && !(bolaFogo->getAtivo()))
-            {
-                bolaFogo = NULL;
-            }
 
             if(esperaTeleporte < ESPERA_TELEPORTE_MAGO)
             {
@@ -138,7 +132,6 @@ namespace Entidades
                     faseAgregado->criarProjetil(static_cast<Inimigo*>(this), CAMINHO_FOGO, TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FOGO);
                 }
 
-                bolaDeFogoTratada = false;
                 atacando = true;
             }
         }
