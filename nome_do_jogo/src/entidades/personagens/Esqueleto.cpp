@@ -1,5 +1,5 @@
 #include "../../../include/entidades/personagens/Esqueleto.h"
-#include "SFML/Graphics/Color.hpp"
+#include "../../../include/fases/Fase.h"
 
 namespace Entidades
 {
@@ -8,14 +8,14 @@ namespace Entidades
         Esqueleto::Esqueleto(const char* txt, const float xx, const float yy):
         Inimigo(txt, TAM_X_ESQUELETO, TAM_Y_ESQUELETO, xx, yy, VIDAS_ESQUELETO, VEL_MAX_ESQUELETO, FORCA_ESQUELETO, DURACAO_ESPERA_ESQUELETO, DURACAO_ATAQUE_ESQUELETO, 2),
         flecha(NULL),
-        flechaTratada(true)
+        faseAgregado(NULL)
         {
         }
 
         Esqueleto::Esqueleto():
         Inimigo(), 
         flecha(NULL),
-        flechaTratada(true)
+        faseAgregado(NULL)
         {
         }
 
@@ -31,15 +31,16 @@ namespace Entidades
             return flecha;
         }
 
-        const bool Esqueleto::getFTratada() const
+        void Esqueleto::setFlecha(Projetil* p)
         {
-            return flechaTratada;
+            flecha = p;
         }
 
-        void Esqueleto::setFTratada(const bool f)
+        void Esqueleto::setFase(Fases::Fase* f)
         {
-            flechaTratada = f;
+            faseAgregado = f;
         }
+
 
         void Esqueleto::atacarCorpo(Personagem* pPersonagem)
         {
@@ -93,15 +94,13 @@ namespace Entidades
             if(!flecha && ataqueDisponivel())
             {
                 if(posJogador <= 0)
-                {
-                    flecha = new Projetil(static_cast<Inimigo*>(this), CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FLECHA);
+                { 
+                    faseAgregado->criarProjetil(static_cast<Inimigo*>(this), CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, x, y - 30, -1, -VELOCIDADE_FLECHA);
                 }
                 else 
                 {
-                    flecha = new Projetil(static_cast<Inimigo*>(this), CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
+                    faseAgregado->criarProjetil(static_cast<Inimigo*>(this), CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, x, y - 30, 1, VELOCIDADE_FLECHA);
                 }
-                
-                flechaTratada = false;
                 atacando = true;
             }
         }

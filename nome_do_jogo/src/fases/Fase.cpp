@@ -16,41 +16,23 @@ namespace Fases
         while(!lEntidades.fim())
         {
             pAux = lEntidades.passoPercorrer();
-            if(pAux->getId() == 2)
-            {
-                pInim = dynamic_cast<Entidades::Personagens::Inimigo*>(pAux);
-                if(pInim->getTipo() == 2)
-                {
-                    pEsq = dynamic_cast<Entidades::Personagens::Esqueleto*>(pInim);
-                    if(pEsq->getFlecha() && !pEsq->getFTratada())
-                    {
-                        std::cout<<"\n\n\nADICIONEI\n\n\n"<<std::endl;
-                        lEntidades.acrescentarEntidade(static_cast<Entidades::Entidade*>(pEsq->getFlecha()));
-                        pGColisoes->incluirInimigo(static_cast<Entidades::Entidade*>(pEsq->getFlecha()));
-                        pEsq->setFTratada(true);
-                    }
-                }
-                
-                else if(pInim->getTipo() == 3)
-                {
-                    pMago = dynamic_cast<Entidades::Personagens::Mago*>(pInim);
-                    if(pMago->getFogo() && !pMago->getBFTratada())
-                    {
-                        lEntidades.acrescentarEntidade(static_cast<Entidades::Entidade*>(pMago->getFogo()));
-                        pGColisoes->incluirInimigo(static_cast<Entidades::Entidade*>(pMago->getFogo()));
-                        pMago->setBFTratada(true);
-                    }
-                }
-            }
-            
-            else if(pAux->getId() == 4)
+            if(pAux->getId() == 4)
             {
                 pProj = dynamic_cast<Entidades::Projetil*>(pAux);
                 if(!pProj->getAtivo())
                 { 
-                    std::cout<<"\n\n\nREMOVI\n\n\n"<<std::endl;
                     pGColisoes->removerInimigo(static_cast<Entidades::Entidade*>(pProj));
                     lEntidades.removerEntidade(static_cast<Entidades::Entidade*>(pProj));
+                    if(pProj->getAtirador()->getTipo() == 2)
+                    {
+                        dynamic_cast<Entidades::Personagens::Esqueleto*>(pProj->getAtirador())->setFlecha(NULL);
+                    }
+                    /*
+                    if(pProj->getAtirador()->getTipo() == 3)
+                    {
+                        dynamic_cast<Entidades::Personagens::Mago*>(pProj->getAtirador())->setFogo(NULL);
+                    }
+                    */
                     delete pProj;
                     pProj = NULL;
                 }
@@ -92,6 +74,11 @@ namespace Fases
             if(pAux->getId() == 2)
             {
                 pGColisoes->incluirInimigo(pAux);
+                // TEMPORARIO - VAI PRA CRIAÇÃO DE MAPA
+                if(dynamic_cast<Entidades::Personagens::Inimigo*>(pAux)->getTipo() == 2)
+                {
+                    dynamic_cast<Entidades::Personagens::Esqueleto*>(pAux)->setFase(this);
+                }
             }
             else if(pAux->getId() == 3)
             {
@@ -213,6 +200,19 @@ namespace Fases
         }
         jog2 = jog;
     }
+
+    void Fase::criarProjetil(Entidades::Personagens::Inimigo* inim, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel)
+    {
+        Entidades::Projetil* pProj = new Entidades::Projetil(inim, txt, tamXX, tamYY, xx, yy, sentMovX, vel);
+        if(inim->getTipo() == 2)
+        {
+            Entidades::Personagens::Esqueleto* pEsq = dynamic_cast<Entidades::Personagens::Esqueleto*>(inim);
+            pEsq->setFlecha(pProj);
+        }
+
+        lEntidades.acrescentarEntidade(static_cast<Entidades::Entidade*>(pProj));
+    }
+
 
     void Fase::executar(float dt)
     {

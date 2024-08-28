@@ -32,6 +32,12 @@ namespace Entidades
     {
         return ativo;
     }
+    
+    Personagens::Inimigo* Projetil::getAtirador() const
+    {
+        return atirador;
+    }
+
 
     void Projetil::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
     {    

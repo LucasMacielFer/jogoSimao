@@ -22,6 +22,7 @@ namespace Entidades
             Projetil();
             ~Projetil();
             const bool getAtivo() const;
+            Personagens::Inimigo* getAtirador() const;
             void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void executar(float dt);

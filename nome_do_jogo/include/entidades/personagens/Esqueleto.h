@@ -18,6 +18,10 @@
 #define CAMINHO_FLECHA "assets/textures/flecha.png"
 #define VELOCIDADE_FLECHA 10.0f
 
+namespace Fases
+{
+    class Fase;
+}
 
 namespace Entidades
 {
@@ -26,9 +30,8 @@ namespace Entidades
         class Esqueleto : public Inimigo
         {
             private:
-
+            Fases::Fase* faseAgregado;
             Projetil* flecha;
-            bool flechaTratada;
 
             public:
 
@@ -36,8 +39,8 @@ namespace Entidades
             Esqueleto();
             ~Esqueleto();
             Projetil* getFlecha();
-            const bool getFTratada() const;
-            void setFTratada(const bool f);
+            void setFlecha(Projetil* p);
+            void setFase(Fases::Fase* f);
             void salvar();
             void atacarCorpo(Personagem* pPersonagem);
             void atacarDist(float posJogador);
