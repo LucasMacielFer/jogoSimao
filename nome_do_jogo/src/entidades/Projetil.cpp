@@ -74,17 +74,19 @@ namespace Entidades
         if(entAlternativa->getId()==1)
         {
             dynamic_cast<Personagens::Personagem*>(entAlternativa)->sofrerDano(dano);
-            sumir();
         }
         else if(entAlternativa->getId()==2)
         {
             //dynamic_cast<Personagens::Personagem*>(entAlternativa)->sofrerDano(dano/2);
+            //sumir();
+            return;
         }
         else if(entAlternativa->getId()==3)
         {
             regularColisao(entAlternativa, distancia_colisao);
-            sumir();
         }
+
+        sumir();
     }
 
     void Projetil::executar(float dt)
