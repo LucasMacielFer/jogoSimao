@@ -42,6 +42,7 @@ namespace Fases
             void criarChao();
             void criarPlataformas(bool* plats, const int max);
             void criarEsqueletos(bool* esqs, const int max);
+            //void criarMagos(bool* mags, const int max);
 
         public:
             Fase(std::string tilemap);

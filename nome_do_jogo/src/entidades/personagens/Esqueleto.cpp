@@ -99,7 +99,7 @@ namespace Entidades
                 {
                     flecha = new Projetil(this, CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
                 }
-
+                
                 flechaTratada = false;
                 atacando = true;
             }

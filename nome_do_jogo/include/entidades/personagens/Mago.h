@@ -16,6 +16,7 @@
 #define TAMANHO_FOGO_X 25
 #define TAMANHO_FOGO_Y 25
 #define VELOCIDADE_FOGO 20.0f
+#define CAMINHO_FOGO "assets/textures/flecha.png"
 
 namespace Entidades
 {
@@ -31,16 +32,16 @@ namespace Entidades
 
             public:
 
-            //Mago(const char* txt, const float xx, const float yy);
+            Mago(const char* txt, const float xx, const float yy);
             Mago();
             ~Mago();
-            //Projetil* getFogo();
-            //const bool getBFTratada() const;
-            //void setBFTratada(const bool bf);
-            //void salvar();
-            //void atacarCorpo(Personagem* pPersonagem);
-            //void atacarDist(float posJogador);
-            //void habilidadeInimiga(float dt);
+            Projetil* getFogo();
+            const bool getBFTratada() const;
+            void setBFTratada(const bool bf);
+            void salvar();
+            void atacarCorpo(Personagem* pPersonagem);
+            void atacarDist(float posJogador);
+            void habilidadeInimiga(float dt);
         };
     }
 }

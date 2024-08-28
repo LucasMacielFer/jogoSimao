@@ -5,7 +5,7 @@ namespace Entidades
 {   
     namespace Personagens
     {
-        /*
+        
         Mago::Mago(const char* txt, const float xx, const float yy):
         Inimigo(txt, TAM_X_MAGO, TAM_Y_MAGO, xx, yy, VIDAS_MAGO, VEL_MAX_MAGO, FORCA_MAGO, DURACAO_ESPERA_MAGO, DURACAO_ATAQUE_MAGO, 3),
         fogo(NULL), 
@@ -13,7 +13,7 @@ namespace Entidades
         bolaDeFogoTratada(false)
         {
         }
-        */
+        
 
         Mago::Mago():
         Inimigo(), 
@@ -25,11 +25,11 @@ namespace Entidades
 
         Mago::~Mago()
         {
-            //delete fogo;
+            delete fogo;
             fogo = NULL;
         }
 
-        /*
+        
         Projetil* Mago::getFogo()
         {
             return fogo;
@@ -71,7 +71,6 @@ namespace Entidades
 
             if(fogo && !(fogo->getAtivo()))
             {
-                delete fogo;
                 fogo = NULL;
             }
             
@@ -102,8 +101,18 @@ namespace Entidades
                         esperaTeleporte = 0;
                     }
                 }
+
+                if(existeP1())
+                    distancia_jogador1 = getPosJogador1().x - getPosicao().x;
+                else
+                    distancia_jogador1 = FLOAT_MAX;
+
+                if(existeP2())
+                    distancia_jogador2 = getPosJogador2().x - getPosicao().x;
+                else
+                    distancia_jogador2 = FLOAT_MAX;
             }
-            
+           
             if(fabs(distancia_jogador1) < ALCANCE_MAGO || (fabs(distancia_jogador2) < ALCANCE_MAGO)) 
              { 
                 setVelocidade(VEL_MAX_MAGO*2);
@@ -130,15 +139,19 @@ namespace Entidades
         {
             if(!fogo && ataqueDisponivel())
             {
+
+                std::cout << "Flecha atirada" << std::endl;
+
                 if(posJogador <= 0)
                 {
-                    fogo = new Projetil( this,sf::Color::Red , TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FOGO);
+                    fogo = new Projetil( this, "assets/textures/plat1.png" , TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FOGO);
                 }
                 else 
                 {
-                    fogo = new Projetil( this,sf::Color::Red, TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FOGO);
+                    fogo = new Projetil( this,"assets/textures/plat1.png", TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FOGO);
                 }
 
+                bolaDeFogoTratada = false;
                 atacando = true;
 
             }
@@ -149,6 +162,6 @@ namespace Entidades
        void Mago::salvar()
        {
        }
-       */
+    
     }
 }

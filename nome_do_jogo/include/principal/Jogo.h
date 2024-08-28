@@ -3,7 +3,7 @@
 #include "../gerenciadores/Gerenciador_Eventos.h"
 #include "../gerenciadores/Gerenciador_Colisoes.h"
 #include "../fases/FasePrimeira.h"
-//#include "entidades/personagens/Esqueleto.h"
+#include "entidades/personagens/Esqueleto.h"
 //#include "entidades/personagens/Mago.h"
 
 

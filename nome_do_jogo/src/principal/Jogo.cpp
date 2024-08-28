@@ -1,5 +1,6 @@
 #include "../../include/principal/Jogo.h"
 //#include "SFML/Graphics/Color.hpp"
+#include "entidades/Entidade.h"
 //#include "entidades/personagens/Esqueleto.h"
 //#include "entidades/personagens/Mago.h"
 
@@ -44,7 +45,7 @@ namespace Principal
 
     void Jogo::executar()
     {
-        //bool inicio = true;
+        bool inicio = true;
         while(gGrafico->janelaAberta())
         {
             if(p1)
@@ -89,8 +90,8 @@ namespace Principal
             
             //gGrafico->getJanela().draw(retangulo);
             gGrafico->desenhaEnte(static_cast<Ente*>(fase1));
-            /*
-            gGrafico->desenhaEnte(static_cast<Ente*>(inim));
+            
+            /*gGrafico->desenhaEnte(static_cast<Ente*>(inim));
             if(inim->getFlecha())
             {
                 if(inicio)
@@ -98,16 +99,19 @@ namespace Principal
                     gColisoes->incluirInimigo(inim->getFlecha());
                     inicio = false;
                 }
-                
+            
                 gGrafico->desenhaEnte(static_cast<Ente*> (inim->getFlecha()));
 
                 if(!((inim->getFlecha())->getAtivo()))
                 {
-                    gColisoes->removerInimigo();
+                    gColisoes->removerInimigo(inim->getFlecha());
                     inicio = true;
                 }
-            }
-            */
+
+                inim->getFlecha()->executar(tempo);
+
+            }*/
+            
             
             /*gGrafico->desenhaEnte(static_cast<Ente*>(inim));
             if(inim->getFogo())
@@ -122,7 +126,7 @@ namespace Principal
 
                 if(!((inim->getFogo())->getAtivo()))
                 {
-                    gColisoes->removerInimigo();
+                    gColisoes->removerInimigo(inim->getFogo());
                     inicio = true;
                 }
             }*/
