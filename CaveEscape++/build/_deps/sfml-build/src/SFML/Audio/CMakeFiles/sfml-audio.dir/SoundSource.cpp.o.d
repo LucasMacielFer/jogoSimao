@@ -1,0 +1,11 @@
+_deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundSource.cpp.o: \
+ /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src/SFML/Audio/SoundSource.cpp \
+ /usr/include/stdc-predef.h \
+ /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Audio/SoundSource.hpp \
+ /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Audio/Export.hpp \
+ /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Config.hpp \
+ /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Audio/AlResource.hpp \
+ /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Vector3.hpp \
+ /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Vector3.inl \
+ /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src/SFML/Audio/ALCheck.hpp \
+ /usr/include/AL/al.h /usr/include/AL/alc.h
