@@ -65,7 +65,7 @@ namespace Listas
     template<class T>
     const bool Iterador<T>::fimDaLista() const
     {
-        if(indiceAtual >= lista->getTamanho() - 1)
+        if(indiceAtual > lista->getTamanho() - 1)
             return true;
         return false;
     }
