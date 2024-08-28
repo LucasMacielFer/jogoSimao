@@ -16,12 +16,14 @@ namespace Entidades
     Projetil::Projetil():
     Entidade(),
     dano(0),
-    ativo(false)
+    ativo(false),
+    atirador(NULL)
     {
     }
     
     Projetil::~Projetil()
     {
+        ativo = false;
         atirador = NULL;
         dano = 0;
     }
@@ -66,22 +68,24 @@ namespace Entidades
         if(entAlternativa->getId()==1)
         {
             dynamic_cast<Personagens::Personagem*>(entAlternativa)->sofrerDano(dano);
+            sumir();
         }
         else if(entAlternativa->getId()==2)
         {
-            dynamic_cast<Personagens::Personagem*>(entAlternativa)->sofrerDano(dano/2);
+            //dynamic_cast<Personagens::Personagem*>(entAlternativa)->sofrerDano(dano/2);
         }
         else if(entAlternativa->getId()==3)
         {
             regularColisao(entAlternativa, distancia_colisao);
+            sumir();
         }
-        sumir();
     }
 
     void Projetil::executar(float dt)
     {
         if(ativo)
         {
+            std::cout<<"Executei"<<std::endl;
             aplicaGravidade(dt);
             mover();
         }

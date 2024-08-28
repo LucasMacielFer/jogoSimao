@@ -24,6 +24,7 @@ namespace Fases
                     pEsq = dynamic_cast<Entidades::Personagens::Esqueleto*>(pInim);
                     if(pEsq->getFlecha() && !pEsq->getFTratada())
                     {
+                        std::cout<<"\n\n\nADICIONEI\n\n\n"<<std::endl;
                         lEntidades.acrescentarEntidade(static_cast<Entidades::Entidade*>(pEsq->getFlecha()));
                         pGColisoes->incluirInimigo(static_cast<Entidades::Entidade*>(pEsq->getFlecha()));
                         pEsq->setFTratada(true);
@@ -47,6 +48,7 @@ namespace Fases
                 pProj = dynamic_cast<Entidades::Projetil*>(pAux);
                 if(!pProj->getAtivo())
                 { 
+                    std::cout<<"\n\n\nREMOVI\n\n\n"<<std::endl;
                     pGColisoes->removerInimigo(static_cast<Entidades::Entidade*>(pProj));
                     lEntidades.removerEntidade(static_cast<Entidades::Entidade*>(pProj));
                     delete pProj;
@@ -145,6 +147,8 @@ namespace Fases
     jog2(NULL),
     tamMapa(0)
     {
+        time_t t;
+        srand((unsigned)time(&t));
         //Entidades::Personagens::Mago* pMag = new Entidades::Personagens::Mago("assets/textures/esqueleto.png", 500, 100);
         //lEntidades.acrescentarEntidade(static_cast<Entidades::Personagens::Mago*>(pMag));
     }
