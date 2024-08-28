@@ -1,6 +1,4 @@
 #include "../../include/fases/Fase.h"
-#include "entidades/Entidade.h"
-#include "entidades/personagens/Mago.h"
 
 namespace Fases
 {
@@ -24,10 +22,10 @@ namespace Fases
                 if(pInim->getTipo() == 2)
                 {
                     pEsq = dynamic_cast<Entidades::Personagens::Esqueleto*>(pInim);
-                    if(!pEsq->getFTratada())
+                    if(pEsq->getFlecha() && !pEsq->getFTratada())
                     {
-                        lEntidades.acrescentarEntidade(pEsq->getFlecha());
-                        pGColisoes-> incluirInimigo(static_cast<Entidades::Entidade*>(pEsq->getFlecha()));
+                        lEntidades.acrescentarEntidade(static_cast<Entidades::Entidade*>(pEsq->getFlecha()));
+                        pGColisoes->incluirInimigo(static_cast<Entidades::Entidade*>(pEsq->getFlecha()));
                         pEsq->setFTratada(true);
                     }
                 }
@@ -35,15 +33,15 @@ namespace Fases
                 else if(pInim->getTipo() == 3)
                 {
                     pMago = dynamic_cast<Entidades::Personagens::Mago*>(pInim);
-                    if(!pMago->getBFTratada())
+                    if(pMago->getFogo() && !pMago->getBFTratada())
                     {
-                        lEntidades.acrescentarEntidade(pMago->getFogo());
-                        pGColisoes-> incluirInimigo(static_cast<Entidades::Entidade*>(pMago->getFogo()));
+                        lEntidades.acrescentarEntidade(static_cast<Entidades::Entidade*>(pMago->getFogo()));
+                        pGColisoes->incluirInimigo(static_cast<Entidades::Entidade*>(pMago->getFogo()));
                         pMago->setBFTratada(true);
                     }
                 }
-                
             }
+            
             else if(pAux->getId() == 4)
             {
                 pProj = dynamic_cast<Entidades::Projetil*>(pAux);
@@ -74,11 +72,6 @@ namespace Fases
         aleatorizaOcorrencias(esqs, max);
         criadorDeMapas->criarTipo(&lEntidades, CODIGO_ESQUELETO, esqs, max);
     }
-
-    /*void Fase::criarMagos(bool* mags, const int max)
-    {
-        aleatorizaOcorrencias(mags,max);
-    }*/
     
     void Fase::gerenciarColisoes()
     {
@@ -152,8 +145,8 @@ namespace Fases
     jog2(NULL),
     tamMapa(0)
     {
-        Entidades::Personagens::Mago* pMag = new Entidades::Personagens::Mago("assets/textures/esqueleto.png", 500, 100);
-        lEntidades.acrescentarEntidade(pMag);
+        //Entidades::Personagens::Mago* pMag = new Entidades::Personagens::Mago("assets/textures/esqueleto.png", 500, 100);
+        //lEntidades.acrescentarEntidade(static_cast<Entidades::Personagens::Mago*>(pMag));
     }
 
     Fase::Fase():
@@ -180,11 +173,7 @@ namespace Fases
             jog1->desenhar(janela);
         if(jog2)
             jog2->desenhar(janela);
-        lEntidades.irAoPrimeiro();
-        while(!lEntidades.fim())
-        {
-            (lEntidades.passoPercorrer())->desenhar(janela);
-        }
+        lEntidades.percorreDesenhando(janela);
     }
 
     void Fase::setJogador1(Entidades::Personagens::Jogador* jog)

@@ -86,9 +86,7 @@ namespace Principal
             tempo = relogio.getElapsedTime().asSeconds();
             relogio.restart();
             fase1->executar(tempo);
-            //inim->executar(tempo);
             
-            //gGrafico->getJanela().draw(retangulo);
             gGrafico->desenhaEnte(static_cast<Ente*>(fase1));
             
             /*gGrafico->desenhaEnte(static_cast<Ente*>(inim));

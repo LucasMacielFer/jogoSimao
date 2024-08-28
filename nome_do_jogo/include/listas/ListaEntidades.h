@@ -23,6 +23,7 @@ namespace Listas
             void limpaLista();
             void irAoPrimeiro();
             void percorreExecutando(float dt);
+            void percorreDesenhando(sf::RenderWindow& janela);
             Entidades::Entidade* passoPercorrer();
             const bool fim() const;
             const unsigned int tamanho() const;

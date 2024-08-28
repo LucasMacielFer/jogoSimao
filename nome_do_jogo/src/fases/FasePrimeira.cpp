@@ -30,7 +30,7 @@ namespace Fases
         criarChao();
         criarGosmas(gosmas, NUM_GOSMAS_F1);
         criarPlataformas(plataformas, NUM_PLATAFORMAS_F1);
-       // criarEsqueletos(esqueletos, NUM_ESQUELETOS_F1);
+        criarEsqueletos(esqueletos, NUM_ESQUELETOS_F1);
         criarLobisomens(lobisomens, NUM_LOBISOMENS_F1);
         tamMapa = criadorDeMapas->getTamMapa();
     }

@@ -21,7 +21,8 @@ namespace Entidades
 
         Esqueleto::~Esqueleto()
         {
-            delete flecha;
+            if(flecha)
+                delete flecha;
             flecha = NULL;
         }
 
@@ -67,7 +68,7 @@ namespace Entidades
             }
             
             if(fabs(distancia_jogador1) < ALCANCE_ESQUELETO || (fabs(distancia_jogador2) < ALCANCE_ESQUELETO)) 
-             { 
+            { 
                 setVelocidade(0);
                 
                 if(fabs(distancia_jogador1) < fabs(distancia_jogador2))
@@ -80,7 +81,7 @@ namespace Entidades
                     if(existeP2())
                         atacarDist(distancia_jogador2);
                 }
-             }
+            }
             else 
             {
                 setVelocidade(VEL_MAX_ESQUELETO);
@@ -93,11 +94,11 @@ namespace Entidades
             {
                 if(posJogador <= 0)
                 {
-                    flecha = new Projetil(this, CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FLECHA);
+                    flecha = new Projetil(static_cast<Inimigo*>(this), CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FLECHA);
                 }
                 else 
                 {
-                    flecha = new Projetil(this, CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
+                    flecha = new Projetil(static_cast<Inimigo*>(this), CAMINHO_FLECHA, TAMANHO_FLECHA_X, TAMANHO_FLECHA_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FLECHA);
                 }
                 
                 flechaTratada = false;

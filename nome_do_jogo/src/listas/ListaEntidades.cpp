@@ -65,6 +65,16 @@ namespace Listas
         }
     }
 
+    void ListaEntidades::percorreDesenhando(sf::RenderWindow& janela)
+    {
+        iterador_entidades.primeiro();
+        while(!iterador_entidades.fimDaLista())
+        {
+            (iterador_entidades.getAtual())->desenhar(janela);
+            iterador_entidades.proximo();
+        }
+    }
+
     const bool ListaEntidades::fim() const
     {
         return iterador_entidades.fimDaLista();

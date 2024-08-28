@@ -73,11 +73,6 @@ namespace Entidades
             {
                 fogo = NULL;
             }
-            
-            if(fogo) 
-            {
-                fogo->executar(dt);
-            }
 
             if(esperaTeleporte < ESPERA_TELEPORTE_MAGO)
             {
@@ -114,7 +109,7 @@ namespace Entidades
             }
            
             if(fabs(distancia_jogador1) < ALCANCE_MAGO || (fabs(distancia_jogador2) < ALCANCE_MAGO)) 
-             { 
+            { 
                 setVelocidade(VEL_MAX_MAGO*2);
                 
                 if(fabs(distancia_jogador1) < fabs(distancia_jogador2))
@@ -127,35 +122,29 @@ namespace Entidades
                     if(existeP2())
                         atacarDist(distancia_jogador2);
                 }
-             }
+            }
             else 
             {
                 setVelocidade(VEL_MAX_MAGO);
             }
-
         }
 
         void Mago::atacarDist(float posJogador)
         {
             if(!fogo && ataqueDisponivel())
             {
-
-                std::cout << "Flecha atirada" << std::endl;
-
                 if(posJogador <= 0)
                 {
-                    fogo = new Projetil( this, "assets/textures/plat1.png" , TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FOGO);
+                    fogo = new Projetil(static_cast<Inimigo*>(this), "assets/textures/plat1.png" , TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FOGO);
                 }
                 else 
                 {
-                    fogo = new Projetil( this,"assets/textures/plat1.png", TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FOGO);
+                    fogo = new Projetil(static_cast<Inimigo*>(this),"assets/textures/plat1.png", TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FOGO);
                 }
 
                 bolaDeFogoTratada = false;
                 atacando = true;
-
             }
-
         }
 
 
