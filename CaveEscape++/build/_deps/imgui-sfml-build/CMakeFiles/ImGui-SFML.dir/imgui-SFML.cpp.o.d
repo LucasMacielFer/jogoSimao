@@ -1,13 +1,13 @@
 _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/imgui-SFML.cpp.o: \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src/imgui-SFML.cpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src/imgui-SFML.cpp \
  /usr/include/stdc-predef.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src/imgui-SFML.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Color.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Export.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Config.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Rect.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Vector2.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Vector2.inl \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src/imgui-SFML.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Color.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Export.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Config.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Rect.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Vector2.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Vector2.inl \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -106,13 +106,13 @@ _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/imgui-SFML.cpp.o: \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Rect.inl \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Time.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Export.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Joystick.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Export.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/String.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Utf.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Rect.inl \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Time.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Export.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Joystick.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Export.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/String.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Utf.hpp \
  /usr/include/c++/11/locale /usr/include/c++/11/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h \
  /usr/include/c++/11/clocale /usr/include/locale.h \
@@ -185,52 +185,52 @@ _deps/imgui-sfml-build/CMakeFiles/ImGui-SFML.dir/imgui-SFML.cpp.o: \
  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
  /usr/include/c++/11/bits/locale_conv.h \
  /usr/include/c++/11/bits/unique_ptr.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Utf.inl \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Utf.inl \
  /usr/include/c++/11/iterator /usr/include/c++/11/bits/stream_iterator.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/String.inl \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src/imgui-SFML_export.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/imgui.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src/imconfig-SFML.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/imconfig.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/String.inl \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src/imgui-SFML_export.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/imgui.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src/imconfig-SFML.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/imconfig.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/assert.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/View.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Transform.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/NonCopyable.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Texture.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Image.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/GlResource.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Window.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/WindowBase.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Cursor.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/VideoMode.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Vulkan.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/RenderTarget.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/View.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Transform.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/BlendMode.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/RenderStates.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/PrimitiveType.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Vertex.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/NonCopyable.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/RenderTexture.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Texture.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Image.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/GlResource.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/ContextSettings.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/RenderWindow.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Window.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/WindowBase.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Cursor.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/VideoMode.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Vulkan.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/WindowHandle.hpp \
  /usr/include/c++/11/cstddef \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/WindowStyle.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Clock.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/OpenGL.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/WindowStyle.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Clock.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Drawable.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Transformable.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/OpenGL.hpp \
  /usr/include/GL/gl.h /usr/include/GL/glext.h \
  /usr/include/KHR/khrplatform.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Clipboard.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Event.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Keyboard.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Mouse.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Sensor.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Vector3.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Vector3.inl \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Window/Touch.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Clipboard.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Event.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Keyboard.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Mouse.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Sensor.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Vector3.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Vector3.inl \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Window/Touch.hpp \
  /usr/include/c++/11/cassert /usr/include/c++/11/cmath \
  /usr/include/math.h /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \

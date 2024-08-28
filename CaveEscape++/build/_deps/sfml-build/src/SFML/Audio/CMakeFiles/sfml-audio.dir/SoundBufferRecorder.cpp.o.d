@@ -1,13 +1,13 @@
 _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundBufferRecorder.cpp.o: \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src/SFML/Audio/SoundBufferRecorder.cpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src/SFML/Audio/SoundBufferRecorder.cpp \
  /usr/include/stdc-predef.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Audio/SoundBufferRecorder.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Audio/Export.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Config.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Audio/SoundBuffer.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Audio/AlResource.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Time.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Export.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Audio/SoundBufferRecorder.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Audio/Export.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Config.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Audio/SoundBuffer.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Audio/AlResource.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Time.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Export.hpp \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -146,10 +146,10 @@ _deps/sfml-build/src/SFML/Audio/CMakeFiles/sfml-audio.dir/SoundBufferRecorder.cp
  /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h \
  /usr/include/c++/11/bits/erase_if.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Audio/SoundRecorder.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Thread.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/NonCopyable.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Thread.inl \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Audio/SoundRecorder.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Thread.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/NonCopyable.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Thread.inl \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/stl_algo.h \

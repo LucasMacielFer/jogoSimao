@@ -90,15 +90,15 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include"
 				}
 			],
 			"language" : "CXX",
@@ -157,7 +157,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/lib:",
+				"fragment" : "-Wl,-rpath,/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/lib:",
 				"role" : "libraries"
 			},
 			{

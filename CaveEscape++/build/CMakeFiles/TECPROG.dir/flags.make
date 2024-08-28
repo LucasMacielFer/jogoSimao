@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = -DIMGUI_USER_CONFIG=\"imconfig-SFML.h\"
 
-CXX_INCLUDES = -I/home/lucas/Documents/jogoSimao/nome_do_jogo/include -I/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/json-src/include
+CXX_INCLUDES = -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include
 
 CXX_FLAGS = -g
 

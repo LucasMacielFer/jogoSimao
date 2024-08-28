@@ -22,7 +22,7 @@ namespace Fases
     void FasePrimeira::criarGosmas(bool* gosmas, const int max)
     {
         aleatorizaOcorrencias(gosmas, max);
-        criadorDeMapas->criarTipo(&lEntidades, CODIGO_GOSMA, gosmas, max);
+        criadorDeMapas->criarTipoGrande(&lEntidades, CODIGO_GOSMA, gosmas, max);
     }
 
     void FasePrimeira::criarMapa()

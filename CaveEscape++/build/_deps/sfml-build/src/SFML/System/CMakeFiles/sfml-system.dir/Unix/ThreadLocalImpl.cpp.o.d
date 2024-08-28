@@ -1,10 +1,10 @@
 _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Unix/ThreadLocalImpl.cpp.o: \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src/SFML/System/Unix/ThreadLocalImpl.cpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src/SFML/System/Unix/ThreadLocalImpl.cpp \
  /usr/include/stdc-predef.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src/SFML/System/Unix/ThreadLocalImpl.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/NonCopyable.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Export.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Config.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src/SFML/System/Unix/ThreadLocalImpl.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/NonCopyable.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Export.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Config.hpp \
  /usr/include/pthread.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

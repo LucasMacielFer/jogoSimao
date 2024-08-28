@@ -8,14 +8,6 @@
 #include "../entidades/Entidade.h"
 #include "../entidades/personagens/Mago.h"
 
-#define CODIGO_PLATAFORMA 26
-#define CODIGO_GOSMA 50
-#define CODIGO_ESPINHO 47
-#define CODIGO_CHAO 28
-#define CODIGO_LOBISOMEM 59
-#define CODIGO_ESQUELETO 53
-#define CODIGO_MAGO -1
-
 namespace Fases
 {
     class Fase : public Ente
@@ -31,6 +23,7 @@ namespace Fases
             std::string caminhoTilemap;
 
         private:
+            void verificaVitoria();
             void gerenciarProjeteis();
             void gerenciarColisoes();
             void executarEntidades(float dt);

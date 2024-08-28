@@ -1,11 +1,11 @@
 _deps/sfml-build/src/SFML/System/CMakeFiles/sfml-system.dir/Mutex.cpp.o: \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src/SFML/System/Mutex.cpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src/SFML/System/Mutex.cpp \
  /usr/include/stdc-predef.h \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Mutex.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/Export.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/Config.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include/SFML/System/NonCopyable.hpp \
- /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src/SFML/System/Unix/MutexImpl.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Mutex.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/Export.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Config.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/System/NonCopyable.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src/SFML/System/Unix/MutexImpl.hpp \
  /usr/include/pthread.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

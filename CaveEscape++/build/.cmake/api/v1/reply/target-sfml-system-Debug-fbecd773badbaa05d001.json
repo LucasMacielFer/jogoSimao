@@ -89,11 +89,11 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src"
 				}
 			],
 			"language" : "CXX",

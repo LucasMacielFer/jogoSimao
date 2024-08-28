@@ -1,4 +1,4 @@
-# Install script for directory: /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src
+# Install script for directory: /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -49,12 +49,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libImGui-SFML_d.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-build/libImGui-SFML_d.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-build/libImGui-SFML_d.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libImGui-SFML_d.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libImGui-SFML_d.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libImGui-SFML_d.so"
-         OLD_RPATH "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/lib:"
+         OLD_RPATH "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libImGui-SFML_d.so")
@@ -67,16 +67,16 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src/imgui-SFML.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src/imgui-SFML_export.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/imconfig.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/imgui.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/imgui_internal.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/imstb_rectpack.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/imstb_textedit.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/imstb_truetype.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src/misc/cpp/imgui_stdlib.h"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src/imconfig-SFML.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src/imgui-SFML.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src/imgui-SFML_export.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/imconfig.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/imgui.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/imgui_internal.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/imstb_rectpack.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/imstb_textedit.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/imstb_truetype.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src/misc/cpp/imgui_stdlib.h"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src/imconfig-SFML.h"
     )
 endif()
 
@@ -84,7 +84,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ImGui-SFML/ImGui-SFMLConfig.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ImGui-SFML/ImGui-SFMLConfig.cmake"
-         "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-build/CMakeFiles/Export/lib/cmake/ImGui-SFML/ImGui-SFMLConfig.cmake")
+         "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-build/CMakeFiles/Export/lib/cmake/ImGui-SFML/ImGui-SFMLConfig.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ImGui-SFML/ImGui-SFMLConfig-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -93,9 +93,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ImGui-SFML" TYPE FILE FILES "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-build/CMakeFiles/Export/lib/cmake/ImGui-SFML/ImGui-SFMLConfig.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ImGui-SFML" TYPE FILE FILES "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-build/CMakeFiles/Export/lib/cmake/ImGui-SFML/ImGui-SFMLConfig.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ImGui-SFML" TYPE FILE FILES "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-build/CMakeFiles/Export/lib/cmake/ImGui-SFML/ImGui-SFMLConfig-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ImGui-SFML" TYPE FILE FILES "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-build/CMakeFiles/Export/lib/cmake/ImGui-SFML/ImGui-SFMLConfig-debug.cmake")
   endif()
 endif()
 

@@ -3,6 +3,8 @@
 
 #define TAM_PLAT_X 64.0
 #define TAM_PLAT_Y 32.0
+#define SUSTMAX 999999.0
+#define SUSTENTACAO 30.0
 
 namespace Entidades
 { 
@@ -12,6 +14,7 @@ namespace Entidades
         {
         private:
             const bool chao;
+            float sustentacao;
             
         public:            
             Plataforma(const char* txt, const float xx, const float yy, const bool ehChao);

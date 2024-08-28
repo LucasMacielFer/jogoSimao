@@ -1,7 +1,7 @@
 # Make file names absolute:
 #
-get_filename_component(filename "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/json-subbuild/json-populate-prefix/src/json.tar.xz" ABSOLUTE)
-get_filename_component(directory "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/json-src" ABSOLUTE)
+get_filename_component(filename "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-subbuild/json-populate-prefix/src/json.tar.xz" ABSOLUTE)
+get_filename_component(directory "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'

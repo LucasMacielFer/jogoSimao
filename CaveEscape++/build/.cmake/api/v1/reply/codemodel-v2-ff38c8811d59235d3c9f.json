@@ -285,42 +285,42 @@
 				{
 					"directoryIndex" : 10,
 					"id" : "ImGui-SFML::@0d4f94df99120bc7405e",
-					"jsonFile" : "target-ImGui-SFML-Debug-c3af1813fb0ebe8ba5c1.json",
+					"jsonFile" : "target-ImGui-SFML-Debug-6b7c75c90fe8dcb97fce.json",
 					"name" : "ImGui-SFML",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "TECPROG::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TECPROG-Debug-deb16a8ffef5539c2663.json",
+					"jsonFile" : "target-TECPROG-Debug-45e566c9d4b9e20a8941.json",
 					"name" : "TECPROG",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 8,
 					"id" : "sfml-audio::@a153e5727587c53fce98",
-					"jsonFile" : "target-sfml-audio-Debug-2658212045d54ddbe868.json",
+					"jsonFile" : "target-sfml-audio-Debug-b3114ee3014db3f0e7bb.json",
 					"name" : "sfml-audio",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 7,
 					"id" : "sfml-graphics::@98af38147d5fa7e70f61",
-					"jsonFile" : "target-sfml-graphics-Debug-2cf0821a39b6de76dc59.json",
+					"jsonFile" : "target-sfml-graphics-Debug-898f492aa3b5977778a9.json",
 					"name" : "sfml-graphics",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 5,
 					"id" : "sfml-system::@8cb1db2982443611e568",
-					"jsonFile" : "target-sfml-system-Debug-f7e072f6355bfdc614a6.json",
+					"jsonFile" : "target-sfml-system-Debug-fbecd773badbaa05d001.json",
 					"name" : "sfml-system",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 6,
 					"id" : "sfml-window::@5730451e331e3690ae65",
-					"jsonFile" : "target-sfml-window-Debug-14e2ce02c8121b414d96.json",
+					"jsonFile" : "target-sfml-window-Debug-e3ea42d096980c8da851.json",
 					"name" : "sfml-window",
 					"projectIndex" : 1
 				}
@@ -330,8 +330,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build",
-		"source" : "/home/lucas/Documents/jogoSimao/nome_do_jogo"
+		"build" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
+		"source" : "/home/lucas/Documents/jogoSimao/CaveEscape++"
 	},
 	"version" : 
 	{

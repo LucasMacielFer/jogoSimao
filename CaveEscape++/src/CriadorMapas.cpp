@@ -52,8 +52,7 @@ void CriadorMapas::criarChao(Listas::ListaEntidades* lista)
     tamMapa = (width-1)*sizeTiled;
 }
 
-
-void CriadorMapas::criarTipo(Listas::ListaEntidades* lista, const int idMapa, const bool* ocorrencias, const int max)
+void CriadorMapas::criarTipoGrande(Listas::ListaEntidades* lista, const int idMapa, const bool* ocorrencias, const int max)
 {
     // Pega as informações do mapa
     int sizeTiled = mapa["tilewidth"]; //tamhno do tile
@@ -76,67 +75,53 @@ void CriadorMapas::criarTipo(Listas::ListaEntidades* lista, const int idMapa, co
                 posX = x * sizeTiled;
                 posY = y * heightTiled;
 
-                switch (tileId)
+                if(ocorrencias[contOcorrencias])
                 {
-                case CODIGO_PLATAFORMA:
-                    if(ocorrencias[contOcorrencias])
-                    {
-                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
-                    }
-                    if(contTamanho++ >= 3)
-                    {
-                        contTamanho = 0;
-                        contOcorrencias++;
-                    }
-                    break;
-
-                case CODIGO_CHAO:
                     lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
-                    break;
-
-                case CODIGO_GOSMA:
-                    if(ocorrencias[contOcorrencias])
-                    {
-                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
-                    }
-                    else
-                    {
-                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, CODIGO_CHAO)));
-                    }
-                    if(contTamanho++ >= 3)
-                    {
-                        contTamanho = 0;
-                        contOcorrencias++;
-                    }
-                    break;
-
-                case CODIGO_ESPINHO:
-                    if(ocorrencias[contOcorrencias])
-                    {
-                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
-                    }
-                    contOcorrencias++;
-                    break;
-
-                case CODIGO_LOBISOMEM:
-                    if(ocorrencias[contOcorrencias])
-                    {
-                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
-                    }
-                    contOcorrencias++;
-                    break;
-
-                case CODIGO_ESQUELETO:
-                    if(ocorrencias[contOcorrencias])
-                    {
-                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
-                    }
-                    contOcorrencias++;
-                    break;
-
-                default:
-                    break;
                 }
+                else
+                {
+                    if(tileId == CODIGO_GOSMA)
+                        lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, CODIGO_CHAO)));
+                }
+                if(contTamanho++ >= 3)
+                {
+                    contTamanho = 0;
+                    contOcorrencias++;
+                }
+            }
+        }
+    }
+}
+
+void CriadorMapas::criarTipo(Listas::ListaEntidades* lista, const int idMapa, const bool* ocorrencias, const int max)
+{
+    // Pega as informações do mapa
+    int sizeTiled = mapa["tilewidth"]; //tamhno do tile
+    int heightTiled = mapa["tileheight"];
+    int width = mapa["width"];
+    int height = mapa["height"]; // altura do mapa
+    int posX = 0;
+    int posY = 0;
+    int indice = 0;
+    int contOcorrencias = 0;
+
+    for (int y = 0; y < height; y++) 
+    {
+        for (int x = 0; x < width; x++) 
+        {
+            int tileId = mapa["layers"][0]["data"][indice++];
+            if(tileId == idMapa && contOcorrencias < max)
+            {
+                posX = x * sizeTiled;
+                posY = y * heightTiled;
+                
+
+                if(ocorrencias[contOcorrencias])
+                {
+                    lista->acrescentarEntidade(static_cast<Entidades::Entidade*>(criarEntidade(posX, posY, tileId)));
+                }
+                contOcorrencias++;
             }
         }
     }
@@ -146,7 +131,6 @@ const int CriadorMapas::getTamMapa() const
 {
     return tamMapa;
 }
-
 
 Entidades::Entidade* CriadorMapas::criarEntidade(const int posX, const int posY, const int tipo)
 {
@@ -175,6 +159,9 @@ Entidades::Entidade* CriadorMapas::criarEntidade(const int posX, const int posY,
         case CODIGO_ESQUELETO:
             return new Entidades::Personagens::Esqueleto("assets/textures/esqueleto.png", posX, posY);
             break;
+
+        case CODIGO_MAGO:
+            return new Entidades::Personagens::Mago("assets/textures/mago.png", posX, posY);
             
         default:
             return NULL;

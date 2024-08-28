@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lucas/Documents/jogoSimao/nome_do_jogo
+CMAKE_SOURCE_DIR = /home/lucas/Documents/jogoSimao/CaveEscape++
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lucas/Documents/jogoSimao/nome_do_jogo/build
+CMAKE_BINARY_DIR = /home/lucas/Documents/jogoSimao/CaveEscape++/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -68,7 +68,7 @@ CMAKE_BINARY_DIR = /home/lucas/Documents/jogoSimao/nome_do_jogo/build
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/lucas/Documents/jogoSimao/nome_do_jogo/build/CPackSourceConfig.cmake
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/lucas/Documents/jogoSimao/CaveEscape++/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,14 +152,14 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lucas/Documents/jogoSimao/nome_do_jogo/build/CMakeFiles /home/lucas/Documents/jogoSimao/nome_do_jogo/build/dependencies/json//CMakeFiles/progress.marks
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/json/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucas/Documents/jogoSimao/nome_do_jogo/build/CMakeFiles 0
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles /home/lucas/Documents/jogoSimao/CaveEscape++/build/dependencies/json//CMakeFiles/progress.marks
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/json/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/json/clean
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/json/clean
 .PHONY : clean
 
 # The main clean target
@@ -168,17 +168,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/json/preinstall
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/json/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/json/preinstall
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dependencies/json/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -206,6 +206,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/lucas/Documents/jogoSimao/nome_do_jogo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/lucas/Documents/jogoSimao/CaveEscape++/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

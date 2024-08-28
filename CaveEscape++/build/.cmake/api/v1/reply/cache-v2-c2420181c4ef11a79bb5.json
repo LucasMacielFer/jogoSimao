@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -167,10 +167,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/bin/g++"
 		},
 		{
@@ -295,10 +295,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "/usr/bin/gcc"
 		},
 		{
@@ -651,7 +651,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++"
 		},
 		{
 			"name" : "CMAKE_INSTALL_BINDIR",
@@ -1783,7 +1783,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps"
 		},
 		{
 			"name" : "FETCHCONTENT_FULLY_DISCONNECTED",
@@ -2147,7 +2147,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-src"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src"
 		},
 		{
 			"name" : "IMGUI_SFML_CONFIG_DIR",
@@ -2159,7 +2159,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src"
 		},
 		{
 			"name" : "IMGUI_SFML_CONFIG_INSTALL_DIR",
@@ -3011,7 +3011,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build"
 		},
 		{
 			"name" : "SFML_BUILD_AUDIO",
@@ -3155,7 +3155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src"
 		},
 		{
 			"name" : "SFML_USE_DRM",
@@ -3191,7 +3191,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build"
 		},
 		{
 			"name" : "TECPROG_IS_TOP_LEVEL",
@@ -3215,7 +3215,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++"
 		},
 		{
 			"name" : "UDEV_INCLUDE_DIR",
@@ -4631,7 +4631,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-build"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-build"
 		},
 		{
 			"name" : "imgui_sfml_IS_TOP_LEVEL",
@@ -4655,7 +4655,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/imgui-sfml-src"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src"
 		},
 		{
 			"name" : "nlohmann_json_BINARY_DIR",
@@ -4667,7 +4667,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/json-build"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-build"
 		},
 		{
 			"name" : "nlohmann_json_IS_TOP_LEVEL",
@@ -4691,7 +4691,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/json-src"
+			"value" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src"
 		},
 		{
 			"name" : "pkgcfg_lib_PKG_FONTCONFIG_fontconfig",

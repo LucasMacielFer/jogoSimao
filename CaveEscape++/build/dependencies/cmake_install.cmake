@@ -1,4 +1,4 @@
-# Install script for directory: /home/lucas/Documents/jogoSimao/nome_do_jogo/dependencies
+# Install script for directory: /home/lucas/Documents/jogoSimao/CaveEscape++/dependencies
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,16 +44,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lucas/Documents/jogoSimao/nome_do_jogo/build/dependencies/sfml/cmake_install.cmake")
+  include("/home/lucas/Documents/jogoSimao/CaveEscape++/build/dependencies/sfml/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lucas/Documents/jogoSimao/nome_do_jogo/build/dependencies/imgui-sfml/cmake_install.cmake")
+  include("/home/lucas/Documents/jogoSimao/CaveEscape++/build/dependencies/imgui-sfml/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lucas/Documents/jogoSimao/nome_do_jogo/build/dependencies/json/cmake_install.cmake")
+  include("/home/lucas/Documents/jogoSimao/CaveEscape++/build/dependencies/json/cmake_install.cmake")
 endif()
 

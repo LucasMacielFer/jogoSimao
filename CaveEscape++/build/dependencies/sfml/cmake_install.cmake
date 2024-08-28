@@ -1,4 +1,4 @@
-# Install script for directory: /home/lucas/Documents/jogoSimao/nome_do_jogo/dependencies/sfml
+# Install script for directory: /home/lucas/Documents/jogoSimao/CaveEscape++/dependencies/sfml
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/cmake_install.cmake")
+  include("/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/cmake_install.cmake")
 endif()
 

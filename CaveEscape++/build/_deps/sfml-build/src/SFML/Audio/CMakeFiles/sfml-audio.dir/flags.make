@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = -DFLAC__NO_DLL -DOV_EXCLUDE_STATIC_CALLBACKS -DSFML_AUDIO_EXPORTS
 
-CXX_INCLUDES = -I/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src -isystem /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/extlibs/headers/minimp3 -isystem /usr/include/AL
+CXX_INCLUDES = -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src -isystem /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/extlibs/headers/minimp3 -isystem /usr/include/AL
 
 CXX_FLAGS = -g -fPIC -fvisibility=hidden
 

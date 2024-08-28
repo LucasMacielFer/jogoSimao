@@ -1,5 +1,6 @@
 #include "../../../include/entidades/personagens/Mago.h"
 #include "SFML/Graphics/Color.hpp"
+#include "../../../include/fases/Fase.h"
 
 namespace Entidades
 {   
@@ -8,7 +9,7 @@ namespace Entidades
         
         Mago::Mago(const char* txt, const float xx, const float yy):
         Inimigo(txt, TAM_X_MAGO, TAM_Y_MAGO, xx, yy, VIDAS_MAGO, VEL_MAX_MAGO, FORCA_MAGO, DURACAO_ESPERA_MAGO, DURACAO_ATAQUE_MAGO, 3),
-        fogo(NULL), 
+        bolaFogo(NULL), 
         esperaTeleporte(0.0f),
         bolaDeFogoTratada(false)
         {
@@ -17,7 +18,7 @@ namespace Entidades
 
         Mago::Mago():
         Inimigo(), 
-        fogo(NULL), 
+        bolaFogo(NULL), 
         esperaTeleporte(0.0f),
         bolaDeFogoTratada(true)
         {
@@ -25,24 +26,19 @@ namespace Entidades
 
         Mago::~Mago()
         {
-            delete fogo;
-            fogo = NULL;
+            delete bolaFogo;
+            bolaFogo = NULL;
         }
 
         
-        Projetil* Mago::getFogo()
+        Projetil* Mago::getBolaFogo() const
         {
-            return fogo;
+            return bolaFogo;
         }
 
-        const bool Mago::getBFTratada() const
+        void Mago::setBolaFogo(Projetil* bf)
         {
-            return bolaDeFogoTratada;
-        }
-
-        void Mago::setBFTratada(const bool bf)
-        {
-            bolaDeFogoTratada = bf;
+            bolaFogo = bf;
         }
 
         void Mago::atacarCorpo(Personagem* pPersonagem)
@@ -69,9 +65,9 @@ namespace Entidades
             else
                 distancia_jogador2 = FLOAT_MAX;
 
-            if(fogo && !(fogo->getAtivo()))
+            if(bolaFogo && !(bolaFogo->getAtivo()))
             {
-                fogo = NULL;
+                bolaFogo = NULL;
             }
 
             if(esperaTeleporte < ESPERA_TELEPORTE_MAGO)
@@ -131,15 +127,15 @@ namespace Entidades
 
         void Mago::atacarDist(float posJogador)
         {
-            if(!fogo && ataqueDisponivel())
+            if(!bolaFogo && ataqueDisponivel())
             {
                 if(posJogador <= 0)
                 {
-                    fogo = new Projetil(static_cast<Inimigo*>(this), "assets/textures/plat1.png" , TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FOGO);
+                    faseAgregado->criarProjetil(static_cast<Inimigo*>(this), CAMINHO_FOGO, TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30,-1,-VELOCIDADE_FOGO);
                 }
                 else 
                 {
-                    fogo = new Projetil(static_cast<Inimigo*>(this),"assets/textures/plat1.png", TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FOGO);
+                    faseAgregado->criarProjetil(static_cast<Inimigo*>(this), CAMINHO_FOGO, TAMANHO_FOGO_X, TAMANHO_FOGO_Y, this->getPosicao().x, this->getPosicao().y - 30 ,1,VELOCIDADE_FOGO);
                 }
 
                 bolaDeFogoTratada = false;
@@ -147,10 +143,14 @@ namespace Entidades
             }
         }
 
+        void Mago::setFase(Fases::Fase* f)
+        {
+            faseAgregado = f;
+        }
 
-       void Mago::salvar()
-       {
-       }
+        void Mago::salvar()
+        {
+        }
     
     }
 }

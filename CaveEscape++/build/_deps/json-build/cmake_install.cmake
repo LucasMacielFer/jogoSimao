@@ -1,4 +1,4 @@
-# Install script for directory: /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/json-src
+# Install script for directory: /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

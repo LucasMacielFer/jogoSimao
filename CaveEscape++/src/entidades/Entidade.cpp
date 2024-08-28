@@ -129,6 +129,14 @@ namespace Entidades
         velocidadeY += GRAVIDADE*dt;
     }
 
+    void Entidade::aplicaGrvaidade(float dt, float sustentacao)
+    {
+        if(GRAVIDADE > sustentacao)
+        {
+            velocidadeY += (GRAVIDADE - sustentacao);
+        }
+    }
+
     void Entidade::desenhar(sf::RenderWindow& janela)
     {
         janela.draw(retangulo);

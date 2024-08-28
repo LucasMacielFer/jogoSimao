@@ -93,7 +93,6 @@ namespace Entidades
     {
         if(ativo)
         {
-            std::cout<<"Executei"<<std::endl;
             aplicaGravidade(dt);
             mover();
         }

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = -DSFML_SYSTEM_EXPORTS
 
-CXX_INCLUDES = -I/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src
+CXX_INCLUDES = -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src
 
 CXX_FLAGS = -g -fPIC -fvisibility=hidden
 

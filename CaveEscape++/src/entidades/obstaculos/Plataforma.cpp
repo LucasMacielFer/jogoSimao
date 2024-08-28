@@ -8,6 +8,8 @@ namespace Entidades
         Obstaculo(txt, TAM_PLAT_X, TAM_PLAT_Y, xx, yy, false),
         chao(ehChao)
         {
+            if(!chao) {sustentacao = SUSTENTACAO;}
+            else      {sustentacao = SUSTMAX;}
         }
 
         Plataforma::Plataforma():
@@ -26,6 +28,10 @@ namespace Entidades
 
         void Plataforma::executar(float dt)
         {
+            if(!chao)
+            {
+                aplicaGravidade(dt);
+            }
         }
 
         void Plataforma::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)

@@ -1,4 +1,4 @@
-# Install script for directory: /home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src/SFML/Graphics
+# Install script for directory: /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src/SFML/Graphics
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -55,8 +55,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xbinx" OR NOT CMAKE_INSTALL_COMPONEN
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/lib/libsfml-graphics-d.so.2.6.1"
-    "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/lib/libsfml-graphics-d.so.2.6"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/lib/libsfml-graphics-d.so.2.6.1"
+    "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/lib/libsfml-graphics-d.so.2.6"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics-d.so.2.6.1"
@@ -66,7 +66,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xbinx" OR NOT CMAKE_INSTALL_COMPONEN
        NOT IS_SYMLINK "${file}")
       file(RPATH_CHANGE
            FILE "${file}"
-           OLD_RPATH "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/lib:"
+           OLD_RPATH "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/lib:"
            NEW_RPATH "")
       if(CMAKE_INSTALL_DO_STRIP)
         execute_process(COMMAND "/usr/bin/strip" "${file}")
@@ -82,12 +82,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xbinx" OR NOT CMAKE_INSTALL_COMPONEN
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics-d.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/lib/libsfml-graphics-d.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/lib/libsfml-graphics-d.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics-d.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics-d.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics-d.so"
-         OLD_RPATH "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/lib:"
+         OLD_RPATH "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics-d.so")

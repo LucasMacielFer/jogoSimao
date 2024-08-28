@@ -1,3 +1,3 @@
-/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
-/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
-/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir
+/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
+/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
+/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir

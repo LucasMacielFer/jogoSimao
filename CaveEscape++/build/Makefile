@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lucas/Documents/jogoSimao/nome_do_jogo
+CMAKE_SOURCE_DIR = /home/lucas/Documents/jogoSimao/CaveEscape++
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lucas/Documents/jogoSimao/nome_do_jogo/build
+CMAKE_BINARY_DIR = /home/lucas/Documents/jogoSimao/CaveEscape++/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,7 +78,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/lucas/Documents/jogoSimao/nome_do_jogo/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/lucas/Documents/jogoSimao/CaveEscape++/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -152,9 +152,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucas/Documents/jogoSimao/nome_do_jogo/build/CMakeFiles /home/lucas/Documents/jogoSimao/nome_do_jogo/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles /home/lucas/Documents/jogoSimao/CaveEscape++/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucas/Documents/jogoSimao/nome_do_jogo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -643,6 +643,30 @@ src/fases/FasePrimeira.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.s
 .PHONY : src/fases/FasePrimeira.cpp.s
 
+src/fases/FaseSegunda.o: src/fases/FaseSegunda.cpp.o
+.PHONY : src/fases/FaseSegunda.o
+
+# target to build an object file
+src/fases/FaseSegunda.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.o
+.PHONY : src/fases/FaseSegunda.cpp.o
+
+src/fases/FaseSegunda.i: src/fases/FaseSegunda.cpp.i
+.PHONY : src/fases/FaseSegunda.i
+
+# target to preprocess a source file
+src/fases/FaseSegunda.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.i
+.PHONY : src/fases/FaseSegunda.cpp.i
+
+src/fases/FaseSegunda.s: src/fases/FaseSegunda.cpp.s
+.PHONY : src/fases/FaseSegunda.s
+
+# target to generate assembly for a file
+src/fases/FaseSegunda.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.s
+.PHONY : src/fases/FaseSegunda.cpp.s
+
 src/gerenciadores/Gerenciador_Colisoes.o: src/gerenciadores/Gerenciador_Colisoes.cpp.o
 .PHONY : src/gerenciadores/Gerenciador_Colisoes.o
 
@@ -855,6 +879,9 @@ help:
 	@echo "... src/fases/FasePrimeira.o"
 	@echo "... src/fases/FasePrimeira.i"
 	@echo "... src/fases/FasePrimeira.s"
+	@echo "... src/fases/FaseSegunda.o"
+	@echo "... src/fases/FaseSegunda.i"
+	@echo "... src/fases/FaseSegunda.s"
 	@echo "... src/gerenciadores/Gerenciador_Colisoes.o"
 	@echo "... src/gerenciadores/Gerenciador_Colisoes.i"
 	@echo "... src/gerenciadores/Gerenciador_Colisoes.s"

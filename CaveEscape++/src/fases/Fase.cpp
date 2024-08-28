@@ -4,6 +4,35 @@ namespace Fases
 {
     const int Fase::idClasse(4);
     Gerenciadores::Gerenciador_Colisoes* Fase::pGColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia());
+    
+    void Fase::verificaVitoria()
+    {
+        int cont = 0;
+        int posX = 0;
+
+        if(jog1)
+        {
+            posX += jog1->getPosicao().x;
+            cont++;
+        }
+        if(jog2)
+        {
+            posX += jog2->getPosicao().x;
+            cont++;
+        }
+        if(cont == 0)
+        {
+            // Perder
+        }
+        else
+        {
+            if(posX/cont >= tamMapa-100)
+            {
+                std::cout<<"VITÓRIA!"<<std::endl;
+                exit(0);
+            }
+        }
+    }
 
     void Fase::gerenciarProjeteis()
     {
@@ -27,12 +56,10 @@ namespace Fases
                     {
                         dynamic_cast<Entidades::Personagens::Esqueleto*>(pProj->getAtirador())->setFlecha(NULL);
                     }
-                    /*
                     if(pProj->getAtirador()->getTipo() == 3)
                     {
-                        dynamic_cast<Entidades::Personagens::Mago*>(pProj->getAtirador())->setFogo(NULL);
+                        dynamic_cast<Entidades::Personagens::Mago*>(pProj->getAtirador())->setBolaFogo(NULL);
                     }
-                    */
                     delete pProj;
                     pProj = NULL;
                 }
@@ -48,7 +75,7 @@ namespace Fases
     void Fase::criarPlataformas(bool* plats, const int max)
     {
         aleatorizaOcorrencias(plats, max);
-        criadorDeMapas->criarTipo(&lEntidades, CODIGO_PLATAFORMA, plats, max);
+        criadorDeMapas->criarTipoGrande(&lEntidades, CODIGO_PLATAFORMA, plats, max);
     }
 
     void Fase::criarEsqueletos(bool* esqs, const int max)
@@ -78,6 +105,10 @@ namespace Fases
                 if(dynamic_cast<Entidades::Personagens::Inimigo*>(pAux)->getTipo() == 2)
                 {
                     dynamic_cast<Entidades::Personagens::Esqueleto*>(pAux)->setFase(this);
+                }
+                if(dynamic_cast<Entidades::Personagens::Inimigo*>(pAux)->getTipo() == 3)
+                {
+                    dynamic_cast<Entidades::Personagens::Mago*>(pAux)->setFase(this);
                 }
             }
             else if(pAux->getId() == 3)
@@ -136,8 +167,8 @@ namespace Fases
     {
         time_t t;
         srand((unsigned)time(&t));
-        //Entidades::Personagens::Mago* pMag = new Entidades::Personagens::Mago("assets/textures/esqueleto.png", 500, 100);
-        //lEntidades.acrescentarEntidade(static_cast<Entidades::Personagens::Mago*>(pMag));
+        Entidades::Personagens::Mago* pMag = new Entidades::Personagens::Mago("assets/textures/mago.png", 500, 100);
+        lEntidades.acrescentarEntidade(static_cast<Entidades::Personagens::Mago*>(pMag));
     }
 
     Fase::Fase():
@@ -209,6 +240,11 @@ namespace Fases
             Entidades::Personagens::Esqueleto* pEsq = dynamic_cast<Entidades::Personagens::Esqueleto*>(inim);
             pEsq->setFlecha(pProj);
         }
+        if(inim->getTipo() == 3)
+        {
+            Entidades::Personagens::Mago* pMag = dynamic_cast<Entidades::Personagens::Mago*>(inim);
+            pMag->setBolaFogo(pProj);
+        }
         pGColisoes->incluirInimigo(static_cast<Entidades::Entidade*>(pProj));
         lEntidades.acrescentarEntidade(static_cast<Entidades::Entidade*>(pProj));
     }
@@ -220,6 +256,7 @@ namespace Fases
         gerenciarProjeteis();
         executarEntidades(dt);
         pGGrafico->moveCamera(calculaCentroCamera());
+        verificaVitoria();
     }
 
     void Fase::aleatorizaOcorrencias(bool* ocorrencias, const int max)

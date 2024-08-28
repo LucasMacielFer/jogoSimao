@@ -36,6 +36,7 @@ namespace Entidades
             const float getVelMax() const;
             void movimentaX(const float s);
             void aplicaGravidade(float dt);
+            void aplicaGrvaidade(float dt, float sustentacao);
             void desenhar(sf::RenderWindow& janela);
             void mover();
             virtual void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;

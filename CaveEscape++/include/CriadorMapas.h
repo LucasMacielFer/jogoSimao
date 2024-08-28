@@ -8,6 +8,8 @@
 #include "entidades/obstaculos/Espinho.h"
 #include "entidades/personagens/Lobisomem.h"
 #include "entidades/personagens/Esqueleto.h"
+#include "entidades/personagens/Mago.h"
+
 
 #define CODIGO_PLATAFORMA 26
 #define CODIGO_GOSMA 50
@@ -34,6 +36,7 @@ class CriadorMapas
         CriadorMapas(std::string tilemap);
         ~CriadorMapas(); 
         void criarChao(Listas::ListaEntidades* lista);
+        void criarTipoGrande(Listas::ListaEntidades* lista, const int idMapa, const bool* ocorrencias, const int max);
         void criarTipo(Listas::ListaEntidades* lista, const int idMapa, const bool* ocorrencias, const int max);
         const int getTamMapa() const;
         Entidades::Entidade* criarEntidade(const int posX, const int posY, const int tipo);

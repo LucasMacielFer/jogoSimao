@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TECPROG.dir/src/fases/Fase.cpp.o.d"
   "CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.o"
   "CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.o.d"
+  "CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.o"
+  "CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.o.d"
   "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o"
   "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o.d"
   "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o"

@@ -112,21 +112,21 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src"
 				},
 				{
 					"backtrace" : 7,
 					"isSystem" : true,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/extlibs/headers/stb_image"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/extlibs/headers/stb_image"
 				},
 				{
 					"backtrace" : 8,
 					"isSystem" : true,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/extlibs/headers/glad/include"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/extlibs/headers/glad/include"
 				},
 				{
 					"backtrace" : 9,
@@ -195,21 +195,21 @@
 			[
 				{
 					"backtrace" : 6,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/include"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/src"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/src"
 				},
 				{
 					"backtrace" : 7,
 					"isSystem" : true,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/extlibs/headers/stb_image"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/extlibs/headers/stb_image"
 				},
 				{
 					"backtrace" : 8,
 					"isSystem" : true,
-					"path" : "/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-src/extlibs/headers/glad/include"
+					"path" : "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/extlibs/headers/glad/include"
 				},
 				{
 					"backtrace" : 9,
@@ -267,7 +267,7 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-Wl,-rpath,/home/lucas/Documents/jogoSimao/nome_do_jogo/build/_deps/sfml-build/lib:",
+				"fragment" : "-Wl,-rpath,/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/lib:",
 				"role" : "libraries"
 			},
 			{
