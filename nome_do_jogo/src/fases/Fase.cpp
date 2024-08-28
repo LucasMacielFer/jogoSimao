@@ -209,7 +209,7 @@ namespace Fases
             Entidades::Personagens::Esqueleto* pEsq = dynamic_cast<Entidades::Personagens::Esqueleto*>(inim);
             pEsq->setFlecha(pProj);
         }
-
+        pGColisoes->incluirInimigo(static_cast<Entidades::Entidade*>(pProj));
         lEntidades.acrescentarEntidade(static_cast<Entidades::Entidade*>(pProj));
     }
 
