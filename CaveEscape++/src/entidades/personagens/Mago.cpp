@@ -40,16 +40,16 @@ namespace Entidades
             bolaFogo = bf;
         }
 
-        void Mago::atacarCorpo(Personagem* pPersonagem)
+        void Mago::danificar(Jogador* pJogador)
         {
-            if(ataqueDisponivel() && pPersonagem)
+            if(ataqueDisponivel() && pJogador)
             {
                 atacando = true;
                 pular();
+                Personagem* pPersonagem = dynamic_cast <Personagem*>(pJogador);
                 pPersonagem->sofrerDano(forca);
             }
         }
-
 
         void Mago::habilidadeInimiga(float dt) 
         {  
@@ -76,6 +76,7 @@ namespace Entidades
                     {
                         this->setPosicao(getPosJogador1().x, getPosJogador1().y);
                         esperaTeleporte = 0;
+                        atacando = true;
                     }
                 }
                 else 
@@ -84,6 +85,7 @@ namespace Entidades
                     {
                         this->setPosicao(getPosJogador2().x, getPosJogador2().y);
                         esperaTeleporte = 0;
+                        atacando = true;
                     }
                 }
 

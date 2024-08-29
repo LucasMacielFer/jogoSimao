@@ -38,7 +38,7 @@ namespace Entidades
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();
                 virtual void direcionar();
-                virtual void atacarCorpo(Personagem* pPersonagem);
+                virtual void danificar(Jogador* pJogador) = 0;
                 virtual void atacarDist(float posJogador);
                 virtual void habilidadeInimiga(float dt) = 0;
                 virtual void salvar() = 0;

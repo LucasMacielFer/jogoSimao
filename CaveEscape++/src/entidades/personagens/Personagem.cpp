@@ -88,6 +88,10 @@ namespace Entidades
             }
         }
         */
+        void Personagem::executar(float dt)
+        {
+
+        }
 
         void Personagem::pular()
         {
@@ -119,6 +123,11 @@ namespace Entidades
         const bool Personagem::emAtaque() const
         {
             return atacando;
+        }
+
+        void Personagem::setAtaque(const bool status_ataque)
+        {
+            atacando = status_ataque;
         }
 
         void Personagem::aumentarTempoExecucao(const float tempo)

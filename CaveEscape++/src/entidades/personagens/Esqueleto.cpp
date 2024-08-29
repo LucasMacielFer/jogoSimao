@@ -42,14 +42,16 @@ namespace Entidades
         }
 
 
-        void Esqueleto::atacarCorpo(Personagem* pPersonagem)
+        void Esqueleto::danificar(Jogador* pJogador)
         {
-            if(ataqueDisponivel() && pPersonagem)
+            if(ataqueDisponivel() && pJogador)
             {
                 atacando = true;
+                Personagem* pPersonagem = dynamic_cast <Personagem*>(pJogador);
                 pPersonagem->sofrerDano(forca);
             }
         }
+
 
         void Esqueleto::habilidadeInimiga(float dt) 
         {  

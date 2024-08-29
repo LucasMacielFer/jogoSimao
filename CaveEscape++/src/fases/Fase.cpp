@@ -1,4 +1,7 @@
 #include "../../include/fases/Fase.h"
+#include "entidades/Entidade.h"
+#include "entidades/personagens/Inimigo.h"
+#include "listas/ListaEntidades.h"
 
 namespace Fases
 {
@@ -124,7 +127,50 @@ namespace Fases
             jog1->executar(dt);
         if(jog2)
             jog2->executar(dt);
+
         lEntidades.percorreExecutando(dt);
+
+        Entidades::Entidade* pAux = NULL;
+        lEntidades.irAoPrimeiro();
+        while(!lEntidades.fim())
+        {
+            pAux = lEntidades.passoPercorrer();
+
+            if(pAux->getId() == 2)
+            {
+                Entidades::Personagens::Inimigo* inim = dynamic_cast<Entidades::Personagens::Inimigo*>(pAux);
+                if(!inim->getVivo())
+                {
+                    pGColisoes->removerInimigo(pAux);
+                    lEntidades.removerEntidade(pAux);
+                    if(inim->getTipo() == 2)
+                    {
+                        Entidades::Personagens::Esqueleto* esq = dynamic_cast<Entidades::Personagens::Esqueleto*>(inim);
+                        if(esq->getFlecha())
+                        {
+                            pGColisoes->removerInimigo(esq->getFlecha());
+                            lEntidades.removerEntidade(esq->getFlecha());
+                            delete (esq->getFlecha());
+                            esq->setFlecha(NULL);
+                        }
+                    }
+                    if(inim->getTipo() == 3)
+                    {
+                        Entidades::Personagens::Mago* mag = dynamic_cast<Entidades::Personagens::Mago*>(inim);
+                        if(mag->getBolaFogo())
+                        {
+                            pGColisoes->removerInimigo(mag->getBolaFogo());
+                            lEntidades.removerEntidade(mag->getBolaFogo());
+                            delete (mag->getBolaFogo());
+                            mag->setBolaFogo(NULL);
+                        }
+                    }
+                    //delete pAux;
+                    //pAux = NULL;
+                }
+            }
+        }
+
     }
 
     const float Fase::calculaCentroCamera()
@@ -252,11 +298,13 @@ namespace Fases
 
     void Fase::executar(float dt)
     {
+    
         gerenciarColisoes();
         gerenciarProjeteis();
         executarEntidades(dt);
         pGGrafico->moveCamera(calculaCentroCamera());
         verificaVitoria();
+
     }
 
     void Fase::aleatorizaOcorrencias(bool* ocorrencias, const int max)

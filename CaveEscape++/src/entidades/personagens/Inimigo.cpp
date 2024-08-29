@@ -89,7 +89,7 @@ namespace Entidades
             return tipoInim;
         }
 
-            void Inimigo::executar(float dt)
+        void Inimigo::executar(float dt)
         {
             if(vivo)
             {
@@ -107,7 +107,9 @@ namespace Entidades
             if(entAlternativa->getId()==3)
                 regularColisao(entAlternativa, distancia_colisao);
             if(entAlternativa->getId()==1)
-                atacarCorpo(dynamic_cast<Personagem*>(entAlternativa));
+            {
+                danificar(dynamic_cast<Jogador*>(entAlternativa));
+            }
         }
 
         void Inimigo::direcionar()
@@ -117,18 +119,6 @@ namespace Entidades
             {
                 sentidoMovX = -sentidoMovX;
                 tempoVolta = 0;
-            }
-        }
-
-        void Inimigo::atacarCorpo(Personagem* pPersonagem)
-        {
-            if(ataqueDisponivel())
-            {
-                if(!atacando)
-                {
-                    pPersonagem->sofrerDano(forca);
-                }
-                atacando = true;
             }
         }
 

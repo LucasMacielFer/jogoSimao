@@ -27,8 +27,7 @@ namespace Entidades
                 ~Jogador();
                 const int getPontuacao() const;
                 void operator++();
-                void atacarCorpo(Personagens::Personagem* pPersonagem);
-                void atacarDist(float PosJogador);
+                void atacarCorpo(/*Personagens::Personagem* pPersonagem*/);
                 void executar(float dt);
                 void salvar();
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);

@@ -33,21 +33,16 @@ namespace Entidades
             pontuacao++;
         }
 
-        void Jogador::atacarCorpo(Personagens::Personagem* pPersonagem)
+        void Jogador::atacarCorpo(/*Personagens::Personagem* pPersonagem*/)
         {
             if(ataqueDisponivel())
             {
-                if(!atacando)
+                /*if(!atacando)
                 {
                     pPersonagem->sofrerDano(forca);
-                }
+                }*/
                 atacando = true;
             }
-        }
-
-        void Jogador::atacarDist(float posJogador)
-        {
-            // Implementar caso o jogador venha a atacar em distancia também
         }
 
         void Jogador::executar(float dt)

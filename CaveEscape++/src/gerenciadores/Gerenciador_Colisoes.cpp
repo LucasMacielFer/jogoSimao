@@ -1,4 +1,5 @@
 #include "gerenciadores/Gerenciador_Colisoes.h"
+#include "entidades/Entidade.h"
 //#include "auxiliares/ListaEntidades.h"
 
 namespace Gerenciadores
@@ -102,6 +103,14 @@ namespace Gerenciadores
 
                 if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
+                    if(pJogador1->emAtaque())
+                    {
+                        Entidades::Personagens::Personagem* pAtacado = dynamic_cast<Entidades::Personagens::Personagem*>(inim);
+                        pAtacado->sofrerDano(pJogador1->getForca());
+                        pJogador1->setAtaque(false);
+                        pJogador1->operator++();
+                        std::cout << "P1 Pontuou!" << std::endl;
+                    }
                     //pJogador1->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
                     inim->colidir(pJogador1, distancia_colisao); //metodo ainda precisa ser definido na classe entidade
                 }
@@ -112,6 +121,14 @@ namespace Gerenciadores
 
                 if(distancia_colisao.x < 0.0f && distancia_colisao.y < 0.0f)
                 {
+                    if(pJogador2->emAtaque())
+                    {
+                        Entidades::Personagens::Personagem* pAtacado = dynamic_cast<Entidades::Personagens::Personagem*>(inim);
+                        pAtacado->sofrerDano(pJogador2->getForca());
+                        pJogador2->setAtaque(false);
+                        pJogador2->operator++();
+                        std::cout << "P2 pontuou!" << std::endl;
+                    }
                     //pJogador2->colidir(obst, distancia_colisao);, metodo ainda precisa ser definido na classe entidade
                     inim->colidir(pJogador2, distancia_colisao); //metodo ainda precisa ser definido na classe entidade
                 }

@@ -29,15 +29,14 @@ namespace Entidades
             void setPulo(const bool p);
             const bool ataqueDisponivel() const;
             const bool emAtaque() const;
+            void setAtaque(const bool status_ataque);
             void aumentarTempoExecucao(const float tempo);
             const int getForca() const;
             void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void pular();
             void sofrerDano(const int dano);
             const bool getVivo() const;
-            virtual void atacarCorpo(Personagem* pPersonagem) = 0; 
-            virtual void atacarDist(float posJogador) = 0;
-            virtual void executar(float dt) = 0;
+            virtual void executar(float dt);
             virtual void salvar() = 0;
             virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;
             virtual void morrer() = 0;

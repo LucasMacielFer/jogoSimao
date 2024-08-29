@@ -40,9 +40,13 @@ namespace Gerenciadores
                         jogador1->movimentaX(0);
                     break;
                 case sf::Keyboard::Key::W:
-                case sf::Keyboard::Key::S:
+                //case sf::Keyboard::Key::S:
                     if(jogador1)
                         jogador1->movimentaX(0);
+                    break;
+                case sf::Keyboard::Key::S:
+                    if(jogador1)
+                        jogador1->atacarCorpo();
                     break;
                 case sf::Keyboard::Key::Left:
                 case sf::Keyboard::Key::Right:
@@ -50,9 +54,13 @@ namespace Gerenciadores
                         jogador2->movimentaX(0);
                     break;
                 case sf::Keyboard::Key::Up:
-                case sf::Keyboard::Key::Down:
+                //case sf::Keyboard::Key::Down:
                     if (jogador2)
                         jogador2->movimentaX(0);
+                    break;
+                case sf::Keyboard::Key::Down:
+                    if (jogador2)
+                        jogador2->atacarCorpo();
                     break;
                 default:
                     break;

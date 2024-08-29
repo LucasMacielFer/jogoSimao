@@ -42,7 +42,7 @@ namespace Entidades
             void setFlecha(Projetil* p);
             void setFase(Fases::Fase* f);
             void salvar();
-            void atacarCorpo(Personagem* pPersonagem);
+            void danificar(Jogador* pJogador);
             void atacarDist(float posJogador);
             void habilidadeInimiga(float dt);
         };

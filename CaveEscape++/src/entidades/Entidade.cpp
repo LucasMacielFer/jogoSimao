@@ -129,7 +129,7 @@ namespace Entidades
         velocidadeY += GRAVIDADE*dt;
     }
 
-    void Entidade::aplicaGrvaidade(float dt, float sustentacao)
+    void Entidade::aplicaGravidade(float dt, float sustentacao)
     {
         if(GRAVIDADE > sustentacao)
         {

@@ -21,19 +21,19 @@ namespace Entidades
         {
         }
 
-        void Lobisomem::atacarCorpo(Personagem* pPersonagem)
+        void Lobisomem::danificar(Jogador* pJogador)
         {
-            if(ataqueDisponivel() && pPersonagem)
+            if(ataqueDisponivel() && pJogador)
             {
                 atacando = true;
                 pular();
                 if(rand()%100 > nivelAtrapalhado)
                 {
+                    Personagem* pPersonagem = dynamic_cast <Personagem*>(pJogador);
                     pPersonagem->sofrerDano(forca);
                 }
             }
         }
-
 
         void Lobisomem::habilidadeInimiga(float dt) 
         {  
