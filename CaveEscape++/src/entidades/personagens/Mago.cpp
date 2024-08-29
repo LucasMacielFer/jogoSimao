@@ -1,6 +1,6 @@
 #include "../../../include/entidades/personagens/Mago.h"
 #include "SFML/Graphics/Color.hpp"
-#include "../../../include/fases/Fase.h"
+#include "../../../include/estados/fases/Fase.h"
 
 namespace Entidades
 {   
@@ -8,7 +8,7 @@ namespace Entidades
     {
         
         Mago::Mago(const char* txt, const float xx, const float yy):
-        Inimigo(txt, TAM_X_MAGO, TAM_Y_MAGO, xx, yy, VIDAS_MAGO, VEL_MAX_MAGO, FORCA_MAGO, DURACAO_ESPERA_MAGO, DURACAO_ATAQUE_MAGO, 3),
+        Inimigo(txt, TAM_X_MAGO, TAM_Y_MAGO, xx, yy, VIDAS_MAGO, VEL_MAX_MAGO, FORCA_MAGO, DURACAO_ESPERA_MAGO, DURACAO_ATAQUE_MAGO, tipoInimigo::Mag),
         bolaFogo(NULL), 
         esperaTeleporte(0.0f)
         {
@@ -138,7 +138,7 @@ namespace Entidades
             }
         }
 
-        void Mago::setFase(Fases::Fase* f)
+        void Mago::setFase(Estados::Fases::Fase* f)
         {
             faseAgregado = f;
         }

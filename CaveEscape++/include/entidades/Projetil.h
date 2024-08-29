@@ -12,7 +12,6 @@ namespace Entidades
     class Projetil : public Entidade
     {
         private:
-            static const int idClasse;
             Personagens::Inimigo* atirador;
             bool ativo;
             int dano;

@@ -71,7 +71,8 @@ namespace Listas
         iterador_entidades.primeiro();
         while(!iterador_entidades.fimDaLista())
         {
-            (iterador_entidades.getAtual())->desenhar(janela);
+            if(iterador_entidades.getAtual())
+                (iterador_entidades.getAtual())->desenhar(janela);
             iterador_entidades.proximo();
         }
     }

@@ -177,7 +177,7 @@ namespace Listas
         while(pAux != NULL)
         {
 
-            if (pAux->getInfo() == info)
+            if (pAux && pAux->getInfo() == info)
             {
                 if(pAux == pPrimeiro)
                 {
@@ -199,9 +199,6 @@ namespace Listas
             pAnt = pAux;
             pAux = pAux->getProximo();
         }
-
         return NULL;
-
     }
-
 }

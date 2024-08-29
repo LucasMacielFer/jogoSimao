@@ -267,4 +267,5 @@ CMakeFiles/TECPROG.dir/src/entidades/personagens/Jogador.cpp.o: \
  /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Glsl.inl \
  /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Sprite.hpp \
  /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/Text.hpp \
- /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp
+ /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include/SFML/Graphics/VertexBuffer.hpp \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/entidades/personagens/Inimigo.h

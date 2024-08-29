@@ -1,12 +1,12 @@
 #include "../../../include/entidades/personagens/Esqueleto.h"
-#include "../../../include/fases/Fase.h"
+#include "../../../include/estados/fases/Fase.h"
 
 namespace Entidades
 {
     namespace Personagens
     {
         Esqueleto::Esqueleto(const char* txt, const float xx, const float yy):
-        Inimigo(txt, TAM_X_ESQUELETO, TAM_Y_ESQUELETO, xx, yy, VIDAS_ESQUELETO, VEL_MAX_ESQUELETO, FORCA_ESQUELETO, DURACAO_ESPERA_ESQUELETO, DURACAO_ATAQUE_ESQUELETO, 2),
+        Inimigo(txt, TAM_X_ESQUELETO, TAM_Y_ESQUELETO, xx, yy, VIDAS_ESQUELETO, VEL_MAX_ESQUELETO, FORCA_ESQUELETO, DURACAO_ESPERA_ESQUELETO, DURACAO_ATAQUE_ESQUELETO, tipoInimigo::Esque),
         flecha(NULL),
         faseAgregado(NULL)
         {
@@ -36,7 +36,7 @@ namespace Entidades
             flecha = p;
         }
 
-        void Esqueleto::setFase(Fases::Fase* f)
+        void Esqueleto::setFase(Estados::Fases::Fase* f)
         {
             faseAgregado = f;
         }

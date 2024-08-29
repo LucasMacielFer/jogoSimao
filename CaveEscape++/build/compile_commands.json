@@ -71,18 +71,18 @@
 },
 {
   "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
-  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/fases/Fase.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/Fase.cpp",
-  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/Fase.cpp"
+  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/Fase.cpp",
+  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/Fase.cpp"
 },
 {
   "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
-  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/FasePrimeira.cpp",
-  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/FasePrimeira.cpp"
+  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FasePrimeira.cpp",
+  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FasePrimeira.cpp"
 },
 {
   "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
-  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/FaseSegunda.cpp",
-  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/FaseSegunda.cpp"
+  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FaseSegunda.cpp",
+  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FaseSegunda.cpp"
 },
 {
   "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
@@ -113,6 +113,11 @@
   "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
   "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/principal/Jogo.cpp",
   "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/principal/Jogo.cpp"
+},
+{
+  "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
+  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/texto/ElementoTexto.cpp",
+  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/texto/ElementoTexto.cpp"
 },
 {
   "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-build/src/SFML/System",

@@ -3,10 +3,8 @@
 
 namespace Entidades
 {
-    const int Projetil::idClasse(4);
-
     Projetil::Projetil(Personagens::Inimigo* at, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel):
-    Entidade(idClasse, txt, tamXX, tamYY, xx, yy, sentMovX, vel),
+    Entidade(idEntes::Projetil, txt, tamXX, tamYY, xx, yy, sentMovX, vel),
     dano(1),
     ativo(true),
     atirador(at)
@@ -71,21 +69,18 @@ namespace Entidades
 
     void Projetil::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
     {
-        if(entAlternativa->getId()==1)
+        if(entAlternativa->getId() == idEntes::Jogador)
         {
             dynamic_cast<Personagens::Personagem*>(entAlternativa)->sofrerDano(dano);
         }
-        else if(entAlternativa->getId()==2)
+        else if(entAlternativa->getId() == idEntes::Inimigo)
         {
-            //dynamic_cast<Personagens::Personagem*>(entAlternativa)->sofrerDano(dano/2);
-            //sumir();
             return;
         }
-        else if(entAlternativa->getId()==3)
+        else if(entAlternativa->getId() == idEntes::Obstaculo)
         {
             regularColisao(entAlternativa, distancia_colisao);
         }
-
         sumir();
     }
 

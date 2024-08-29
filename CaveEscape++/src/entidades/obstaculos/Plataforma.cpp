@@ -36,38 +36,33 @@ namespace Entidades
 
         void Plataforma::regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
-            if(distancia_colisao.x > distancia_colisao.y)
+            if(entAlternativa->getId() == idEntes::Jogador || entAlternativa->getId() == idEntes::Inimigo)
             {
-                if(x < entAlternativa->getPosicao().x)
+                if(distancia_colisao.x > distancia_colisao.y)
                 {
-                    if(velocidadeX > 0) {velocidadeX = 0;}
-                    if(entAlternativa->getId() == 1 || entAlternativa->getId() == 2)
+                    if(x < entAlternativa->getPosicao().x)
                     {
-                        dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
+                        if(velocidadeX > 0) {velocidadeX = 0;}
+                            dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
                     }
-                }
-                else
-                {
-                    if(velocidadeX < 0) {velocidadeX = 0;}
-                    if(entAlternativa->getId() == 1 || entAlternativa->getId() == 2)
+                    else
                     {
-                        dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
-                    }
-                }
-            }
-            else 
-            {
-                if(y < entAlternativa->getPosicao().y)
-                {
-                    if(velocidadeY > 0) {velocidadeY = 0;}
-                    if(entAlternativa->getId() == 1 || entAlternativa->getId() == 2)
-                    {
-                        dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
+                        if(velocidadeX < 0) {velocidadeX = 0;}
+                            dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
                     }
                 }
                 else 
                 {
-                    if(velocidadeY < 0) {velocidadeY = 0;}
+                    if(y < entAlternativa->getPosicao().y)
+                    {
+                        if(velocidadeY > 0) {velocidadeY = 0;}
+                            dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(false);
+                    }
+                    else 
+                    {
+                        if(velocidadeY > 0) {velocidadeY = 0;}
+                            dynamic_cast<Personagens::Personagem*>(entAlternativa)->setPulo(true);
+                    }
                 }
             }
         }
@@ -75,8 +70,6 @@ namespace Entidades
         void Plataforma::obstacular(Personagens::Personagem* p)
         {
             p->setVelocidade(p->getVelMax());
-            if(chao)
-                p->setPulo(true);
         }
     }
 }

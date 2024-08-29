@@ -46,7 +46,7 @@ namespace Gerenciadores
                     break;
                 case sf::Keyboard::Key::S:
                     if(jogador1)
-                        jogador1->atacarCorpo();
+                        jogador1->atacar();
                     break;
                 case sf::Keyboard::Key::Left:
                 case sf::Keyboard::Key::Right:
@@ -60,7 +60,7 @@ namespace Gerenciadores
                     break;
                 case sf::Keyboard::Key::Down:
                     if (jogador2)
-                        jogador2->atacarCorpo();
+                        jogador2->atacar();
                     break;
                 default:
                     break;

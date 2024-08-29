@@ -10,21 +10,28 @@ namespace Entidades
 {
     namespace Personagens
     {
+        enum tipoInimigo
+        {
+            Indef = 0,
+            Lobis = 1,
+            Esque,
+            Mag
+        };
+
         class Inimigo : public Personagem
         {
             private:
-                static const unsigned int idClasse;
                 float tempoVolta;
                 static Jogador* jogador1Perseguido;
                 static Jogador* jogador2Perseguido;
-                const int tipoInim;
+                const tipoInimigo tipoInim;
 
             protected:
                 float distancia_jogador1;
                 float distancia_jogador2;
 
             public:
-                Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque, const int tipo);
+                Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque, const tipoInimigo tipo);
                 Inimigo();
                 ~Inimigo();
                 void setJogador1(Jogador* pJogador);
@@ -33,7 +40,7 @@ namespace Entidades
                 sf::Vector2f getPosJogador2();
                 const bool existeP1() const;
                 const bool existeP2() const;
-                const int getTipo() const;
+                const tipoInimigo getTipo() const;
                 void executar(float dt);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();

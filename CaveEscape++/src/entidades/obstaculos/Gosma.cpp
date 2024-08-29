@@ -22,7 +22,7 @@ namespace Entidades
 
         void Gosma::obstacular(Personagens::Personagem* p)
         {
-            if(p->getId()==1) // Jogador
+            if(p->getId() == idEntes::Jogador) // Jogador
             {
                 p->setVelocidade(p->getVelMax()*decrementoVelocidade);
                 p->setPulo(false);

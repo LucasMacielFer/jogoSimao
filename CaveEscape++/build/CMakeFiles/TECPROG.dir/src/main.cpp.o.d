@@ -296,12 +296,13 @@ CMakeFiles/TECPROG.dir/src/main.cpp.o: \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
  /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../gerenciadores/../entidades/obstaculos/Obstaculo.h \
  /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../gerenciadores/../entidades/personagens/Inimigo.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/FasePrimeira.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/Fase.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../listas/ListaEntidades.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../listas/Lista.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../listas/Iterador.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../CriadorMapas.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/FasePrimeira.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/Fase.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../texto/ElementoTexto.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../listas/ListaEntidades.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../listas/Lista.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../listas/Iterador.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../CriadorMapas.h \
  /usr/include/c++/11/fstream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
@@ -386,10 +387,10 @@ CMakeFiles/TECPROG.dir/src/main.cpp.o: \
  /usr/include/c++/11/any \
  /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include/nlohmann/detail/macro_unscope.hpp \
  /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../entidades/obstaculos/Plataforma.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../entidades/obstaculos/Gosma.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../entidades/obstaculos/Espinho.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../entidades/personagens/Lobisomem.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../entidades/personagens/Esqueleto.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../entidades/personagens/../Projetil.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../fases/../entidades/personagens/Mago.h
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../entidades/obstaculos/Plataforma.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../entidades/obstaculos/Gosma.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../entidades/obstaculos/Espinho.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../entidades/personagens/Lobisomem.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../entidades/personagens/Esqueleto.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../entidades/personagens/../Projetil.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/../include/principal/../estados/fases/../../entidades/personagens/Mago.h

@@ -7,27 +7,32 @@
 #define VIDAS_JOGADOR 50
 #define VEL_MAX_JOGADOR 7
 #define FORCA_JOGADOR 10
-#define DURACAO_ATAQUE_JOGADOR 2.0f
+#define DURACAO_ATAQUE_JOGADOR 0.2f
 #define DURACAO_ESPERA_JOGADOR 2.0f
 
 namespace Entidades
 {
     namespace Personagens
     {
+        class Inimigo;
+
         class Jogador : public Personagem
         {
             private:
-                static const unsigned int idClasse;
                 int pontuacao;
+                const char* texturaAtaque;
+                const char* texturaPadrao;
 
             public: 
 
-                Jogador(const char* txt, const float xx, const float yy);
+                Jogador(const char* txt, const char* txt2, const float xx, const float yy);
                 Jogador();
                 ~Jogador();
                 const int getPontuacao() const;
                 void operator++();
-                void atacarCorpo(/*Personagens::Personagem* pPersonagem*/);
+                void aumentarTempoExecucao(const float tempo);
+                void atacar();
+                void danificar(Inimigo* pInim);
                 void executar(float dt);
                 void salvar();
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);

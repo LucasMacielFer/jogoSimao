@@ -595,77 +595,77 @@ src/entidades/personagens/Personagem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.s
 .PHONY : src/entidades/personagens/Personagem.cpp.s
 
-src/fases/Fase.o: src/fases/Fase.cpp.o
-.PHONY : src/fases/Fase.o
+src/estados/fases/Fase.o: src/estados/fases/Fase.cpp.o
+.PHONY : src/estados/fases/Fase.o
 
 # target to build an object file
-src/fases/Fase.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/Fase.cpp.o
-.PHONY : src/fases/Fase.cpp.o
+src/estados/fases/Fase.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o
+.PHONY : src/estados/fases/Fase.cpp.o
 
-src/fases/Fase.i: src/fases/Fase.cpp.i
-.PHONY : src/fases/Fase.i
+src/estados/fases/Fase.i: src/estados/fases/Fase.cpp.i
+.PHONY : src/estados/fases/Fase.i
 
 # target to preprocess a source file
-src/fases/Fase.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/Fase.cpp.i
-.PHONY : src/fases/Fase.cpp.i
+src/estados/fases/Fase.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.i
+.PHONY : src/estados/fases/Fase.cpp.i
 
-src/fases/Fase.s: src/fases/Fase.cpp.s
-.PHONY : src/fases/Fase.s
+src/estados/fases/Fase.s: src/estados/fases/Fase.cpp.s
+.PHONY : src/estados/fases/Fase.s
 
 # target to generate assembly for a file
-src/fases/Fase.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/Fase.cpp.s
-.PHONY : src/fases/Fase.cpp.s
+src/estados/fases/Fase.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.s
+.PHONY : src/estados/fases/Fase.cpp.s
 
-src/fases/FasePrimeira.o: src/fases/FasePrimeira.cpp.o
-.PHONY : src/fases/FasePrimeira.o
+src/estados/fases/FasePrimeira.o: src/estados/fases/FasePrimeira.cpp.o
+.PHONY : src/estados/fases/FasePrimeira.o
 
 # target to build an object file
-src/fases/FasePrimeira.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.o
-.PHONY : src/fases/FasePrimeira.cpp.o
+src/estados/fases/FasePrimeira.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o
+.PHONY : src/estados/fases/FasePrimeira.cpp.o
 
-src/fases/FasePrimeira.i: src/fases/FasePrimeira.cpp.i
-.PHONY : src/fases/FasePrimeira.i
+src/estados/fases/FasePrimeira.i: src/estados/fases/FasePrimeira.cpp.i
+.PHONY : src/estados/fases/FasePrimeira.i
 
 # target to preprocess a source file
-src/fases/FasePrimeira.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.i
-.PHONY : src/fases/FasePrimeira.cpp.i
+src/estados/fases/FasePrimeira.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.i
+.PHONY : src/estados/fases/FasePrimeira.cpp.i
 
-src/fases/FasePrimeira.s: src/fases/FasePrimeira.cpp.s
-.PHONY : src/fases/FasePrimeira.s
+src/estados/fases/FasePrimeira.s: src/estados/fases/FasePrimeira.cpp.s
+.PHONY : src/estados/fases/FasePrimeira.s
 
 # target to generate assembly for a file
-src/fases/FasePrimeira.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.s
-.PHONY : src/fases/FasePrimeira.cpp.s
+src/estados/fases/FasePrimeira.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.s
+.PHONY : src/estados/fases/FasePrimeira.cpp.s
 
-src/fases/FaseSegunda.o: src/fases/FaseSegunda.cpp.o
-.PHONY : src/fases/FaseSegunda.o
+src/estados/fases/FaseSegunda.o: src/estados/fases/FaseSegunda.cpp.o
+.PHONY : src/estados/fases/FaseSegunda.o
 
 # target to build an object file
-src/fases/FaseSegunda.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.o
-.PHONY : src/fases/FaseSegunda.cpp.o
+src/estados/fases/FaseSegunda.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o
+.PHONY : src/estados/fases/FaseSegunda.cpp.o
 
-src/fases/FaseSegunda.i: src/fases/FaseSegunda.cpp.i
-.PHONY : src/fases/FaseSegunda.i
+src/estados/fases/FaseSegunda.i: src/estados/fases/FaseSegunda.cpp.i
+.PHONY : src/estados/fases/FaseSegunda.i
 
 # target to preprocess a source file
-src/fases/FaseSegunda.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.i
-.PHONY : src/fases/FaseSegunda.cpp.i
+src/estados/fases/FaseSegunda.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.i
+.PHONY : src/estados/fases/FaseSegunda.cpp.i
 
-src/fases/FaseSegunda.s: src/fases/FaseSegunda.cpp.s
-.PHONY : src/fases/FaseSegunda.s
+src/estados/fases/FaseSegunda.s: src/estados/fases/FaseSegunda.cpp.s
+.PHONY : src/estados/fases/FaseSegunda.s
 
 # target to generate assembly for a file
-src/fases/FaseSegunda.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.s
-.PHONY : src/fases/FaseSegunda.cpp.s
+src/estados/fases/FaseSegunda.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.s
+.PHONY : src/estados/fases/FaseSegunda.cpp.s
 
 src/gerenciadores/Gerenciador_Colisoes.o: src/gerenciadores/Gerenciador_Colisoes.cpp.o
 .PHONY : src/gerenciadores/Gerenciador_Colisoes.o
@@ -811,6 +811,30 @@ src/principal/Jogo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.s
 .PHONY : src/principal/Jogo.cpp.s
 
+src/texto/ElementoTexto.o: src/texto/ElementoTexto.cpp.o
+.PHONY : src/texto/ElementoTexto.o
+
+# target to build an object file
+src/texto/ElementoTexto.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o
+.PHONY : src/texto/ElementoTexto.cpp.o
+
+src/texto/ElementoTexto.i: src/texto/ElementoTexto.cpp.i
+.PHONY : src/texto/ElementoTexto.i
+
+# target to preprocess a source file
+src/texto/ElementoTexto.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.i
+.PHONY : src/texto/ElementoTexto.cpp.i
+
+src/texto/ElementoTexto.s: src/texto/ElementoTexto.cpp.s
+.PHONY : src/texto/ElementoTexto.s
+
+# target to generate assembly for a file
+src/texto/ElementoTexto.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.s
+.PHONY : src/texto/ElementoTexto.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -873,15 +897,15 @@ help:
 	@echo "... src/entidades/personagens/Personagem.o"
 	@echo "... src/entidades/personagens/Personagem.i"
 	@echo "... src/entidades/personagens/Personagem.s"
-	@echo "... src/fases/Fase.o"
-	@echo "... src/fases/Fase.i"
-	@echo "... src/fases/Fase.s"
-	@echo "... src/fases/FasePrimeira.o"
-	@echo "... src/fases/FasePrimeira.i"
-	@echo "... src/fases/FasePrimeira.s"
-	@echo "... src/fases/FaseSegunda.o"
-	@echo "... src/fases/FaseSegunda.i"
-	@echo "... src/fases/FaseSegunda.s"
+	@echo "... src/estados/fases/Fase.o"
+	@echo "... src/estados/fases/Fase.i"
+	@echo "... src/estados/fases/Fase.s"
+	@echo "... src/estados/fases/FasePrimeira.o"
+	@echo "... src/estados/fases/FasePrimeira.i"
+	@echo "... src/estados/fases/FasePrimeira.s"
+	@echo "... src/estados/fases/FaseSegunda.o"
+	@echo "... src/estados/fases/FaseSegunda.i"
+	@echo "... src/estados/fases/FaseSegunda.s"
 	@echo "... src/gerenciadores/Gerenciador_Colisoes.o"
 	@echo "... src/gerenciadores/Gerenciador_Colisoes.i"
 	@echo "... src/gerenciadores/Gerenciador_Colisoes.s"
@@ -900,6 +924,9 @@ help:
 	@echo "... src/principal/Jogo.o"
 	@echo "... src/principal/Jogo.i"
 	@echo "... src/principal/Jogo.s"
+	@echo "... src/texto/ElementoTexto.o"
+	@echo "... src/texto/ElementoTexto.i"
+	@echo "... src/texto/ElementoTexto.s"
 .PHONY : help
 
 

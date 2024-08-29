@@ -18,9 +18,12 @@
 #define VELOCIDADE_FOGO 20.0f
 #define CAMINHO_FOGO "assets/textures/bolaDeFogo.png"
 
-namespace Fases
+namespace Estados
 {
-    class Fase;
+    namespace Fases
+    {
+        class Fase;
+    }
 }
 
 namespace Entidades
@@ -30,7 +33,7 @@ namespace Entidades
         class Mago : public Inimigo
         {
             private:
-            Fases::Fase* faseAgregado;
+            Estados::Fases::Fase* faseAgregado;
             Projetil* bolaFogo;
             float esperaTeleporte;
 
@@ -41,7 +44,7 @@ namespace Entidades
             ~Mago();
             Projetil* getBolaFogo() const;
             void setBolaFogo(Projetil* bf);
-            void setFase(Fases::Fase* f);
+            void setFase(Estados::Fases::Fase* f);
             void salvar();
             void danificar(Jogador* pJogador);
             void atacarDist(float posJogador);

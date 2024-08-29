@@ -10,7 +10,6 @@ namespace Entidades
         class Obstaculo : public Entidade
         {
         private:
-            static const unsigned int idClasse;
             bool danoso;
         
         public:

@@ -1,14 +1,15 @@
 #include "../../../include/entidades/personagens/Jogador.h"
+#include "../../../include/entidades/personagens/Inimigo.h"
 
 namespace Entidades
 {
     namespace Personagens
     {
-        const unsigned int Jogador::idClasse(1);
-
-        Jogador::Jogador(const char* txt, const float xx, const float yy):
-        Personagem(idClasse, txt ,TAM_X_JOGADOR, TAM_Y_JOGADOR, xx, yy, VIDAS_JOGADOR, VEL_MAX_JOGADOR, FORCA_JOGADOR, DURACAO_ESPERA_JOGADOR, DURACAO_ATAQUE_JOGADOR), 
-        pontuacao(0)
+        Jogador::Jogador(const char* txt, const char* txt2, const float xx, const float yy):
+        Personagem(idEntes::Jogador, txt ,TAM_X_JOGADOR, TAM_Y_JOGADOR, xx, yy, VIDAS_JOGADOR, VEL_MAX_JOGADOR, FORCA_JOGADOR, DURACAO_ESPERA_JOGADOR, DURACAO_ATAQUE_JOGADOR), 
+        pontuacao(0),
+        texturaAtaque(txt2),
+        texturaPadrao(txt)
         {
         }
 
@@ -33,15 +34,49 @@ namespace Entidades
             pontuacao++;
         }
 
-        void Jogador::atacarCorpo(/*Personagens::Personagem* pPersonagem*/)
+        void Jogador::atacar()
         {
-            if(ataqueDisponivel())
+            if(ataqueDisponivel()) 
             {
-                /*if(!atacando)
-                {
-                    pPersonagem->sofrerDano(forca);
-                }*/
                 atacando = true;
+                setTextura(texturaAtaque);
+                atualizaTextura();
+            }
+        }
+
+        void Jogador::danificar(Inimigo* pInim)
+        {
+            if(pInim)
+            {
+                pInim->sofrerDano(forca);
+                pontuacao+=10;
+                atacando = false;
+                setTextura(texturaPadrao);
+                atualizaTextura();
+            }
+        }
+
+        void Jogador::aumentarTempoExecucao(const float tempo)
+        {
+            if(emAtaque())
+            {
+                //Vai acontecendo enquanto o tempo definido de ataque não conclui.
+                tempoEsperando = 0;
+                tempoAtacando += tempo;
+
+                //Caso a duração do ataque chegue no limite ele diz que o ataque chegou ao fim.
+                if(tempoAtacando > duracaoAtaque)
+                {
+                    atacando = false;
+                    setTextura(texturaPadrao);
+                    atualizaTextura();
+                }
+            }
+            else 
+            {
+                //Vai considerando o tempo desde a finalização do último ataque.
+                tempoEsperando += tempo;
+                tempoAtacando = 0;
             }
         }
 
@@ -64,24 +99,10 @@ namespace Entidades
         {
             if(entAlternativa)
             {
-                //if( entAlternativa->getId() == 1    /*"Inimigo"*/ )
-                //{
-                //    Personagem* paux = static_cast<Personagem*>(entAlternativa);
-                //    if(paux && emAtaque())
-                //    {
-                //        Personagem* pJogador = static_cast <Personagem*> (this);    
-                //        if(pJogador)
-                //        {
-                //             pJogador->atacar(paux);
-                //        }
-                //    
-                //    }
-                //}
-                //else if(entAlternativa->getId() == 2  /*"Obstaculo"*/)
-                //{
+                if(entAlternativa->getId() == idEntes::Inimigo && atacando)
+                    danificar(dynamic_cast<Inimigo*>(entAlternativa));
+                if(entAlternativa->getId() == idEntes::Obstaculo)
                     regularColisao(entAlternativa, distancia_colisao);
-                    puloDisponivel = true;
-                //}
             }
         }
 

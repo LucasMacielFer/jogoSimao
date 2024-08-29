@@ -22,15 +22,16 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/Lobisomem.cpp" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Lobisomem.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Lobisomem.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/Mago.cpp" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/Personagem.cpp" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.o.d"
-  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/Fase.cpp" "CMakeFiles/TECPROG.dir/src/fases/Fase.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/fases/Fase.cpp.o.d"
-  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/FasePrimeira.cpp" "CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/fases/FasePrimeira.cpp.o.d"
-  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/fases/FaseSegunda.cpp" "CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/fases/FaseSegunda.cpp.o.d"
+  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/Fase.cpp" "CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o.d"
+  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FasePrimeira.cpp" "CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o.d"
+  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FaseSegunda.cpp" "CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/gerenciadores/Gerenciador_Colisoes.cpp" "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/gerenciadores/Gerenciador_Eventos.cpp" "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/gerenciadores/Gerenciador_Grafico.cpp" "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/listas/ListaEntidades.cpp" "CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/main.cpp" "CMakeFiles/TECPROG.dir/src/main.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/main.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/principal/Jogo.cpp" "CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o.d"
+  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/texto/ElementoTexto.cpp" "CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o.d"
   )
 
 # Targets to which this target links.

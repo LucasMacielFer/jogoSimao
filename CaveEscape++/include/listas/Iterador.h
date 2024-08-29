@@ -73,6 +73,9 @@ namespace Listas
     template<class T>
     T* Iterador<T>::getAtual() const
     {
-        return elemAtual->getInfo();
+        if(elemAtual)
+            return elemAtual->getInfo();
+        else
+            return NULL;
     }
 }

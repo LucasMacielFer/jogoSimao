@@ -1,12 +1,12 @@
 #include "../include/Ente.h"
     
-Ente::Ente(const int i):
+Ente::Ente(const idEntes i):
 id(i)
 {
     pGGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
 }
 
-Ente::Ente(const int i, const char* txt):
+Ente::Ente(const idEntes i, const char* txt):
 id(i)
 {
     pGGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
@@ -15,25 +15,16 @@ id(i)
 
 Ente::~Ente()
 {
-    id = -1;
+    id = idEntes::Indefinido;
     pGGrafico = NULL; 
 }
 
-const int Ente::getId() const
+void Ente::setTextura(const char* txt)
+{
+    textura = pGGrafico->carregarTextura(txt);
+}
+
+const idEntes Ente::getId() const
 {
     return id;
 }
-
-/*
-Temporariamente não há textura
-
-std::string Ente::getTextura() const
-{
-    return c;
-}
-
-void Ente::setTextura(std::string txt)
-{
-    textura = txt;
-}
-*/

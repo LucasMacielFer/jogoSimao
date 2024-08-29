@@ -4,10 +4,8 @@ namespace Entidades
 {
     namespace Obstaculos
     {
-        const unsigned int Obstaculo::idClasse(3);
-
         Obstaculo::Obstaculo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano):
-        Entidade(idClasse, txt, tamXX, tamYY, xx, yy),
+        Entidade(idEntes::Obstaculo, txt, tamXX, tamYY, xx, yy),
         danoso(dano)
         {
         }
@@ -52,7 +50,7 @@ namespace Entidades
         void Obstaculo::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
             regularColisao(entAlternativa, distancia_colisao);
-            if(entAlternativa->getId()==1 || entAlternativa->getId()==2)
+            if(entAlternativa->getId() == idEntes::Jogador || entAlternativa->getId() == idEntes::Inimigo)
             {
                 obstacular(dynamic_cast<Personagens::Personagem*>(entAlternativa));
             }

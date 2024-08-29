@@ -11,13 +11,13 @@
 #include "entidades/personagens/Mago.h"
 
 
-#define CODIGO_PLATAFORMA 26
-#define CODIGO_GOSMA 50
-#define CODIGO_ESPINHO 47
-#define CODIGO_CHAO 28
-#define CODIGO_LOBISOMEM 59
-#define CODIGO_ESQUELETO 53
-#define CODIGO_MAGO -1
+#define CODIGO_PLATAFORMA 1
+#define CODIGO_GOSMA 19
+#define CODIGO_ESPINHO 22
+#define CODIGO_CHAO 3
+#define CODIGO_LOBISOMEM 34
+#define CODIGO_ESQUELETO 28
+#define CODIGO_MAGO 32
 
 
 // O carregamento de mapas através de tilemaps no formato JSON foi implementado

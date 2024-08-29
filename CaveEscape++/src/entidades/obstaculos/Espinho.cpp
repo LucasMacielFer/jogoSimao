@@ -27,7 +27,7 @@ namespace Entidades
 
         void Espinho::obstacular(Personagens::Personagem* p)
         {
-            if(p->getId()==1) // Jogador
+            if(p->getId() == idEntes::Jogador) // Jogador
             {
                 if(danificar)
                 {

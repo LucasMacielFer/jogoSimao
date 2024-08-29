@@ -294,16 +294,18 @@ CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/Fase.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../gerenciadores/Gerenciador_Colisoes.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/Fase.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../texto/ElementoTexto.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../gerenciadores/Gerenciador_Colisoes.h \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/bits/list.tcc \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../gerenciadores/../entidades/obstaculos/Obstaculo.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../listas/ListaEntidades.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../listas/Lista.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../listas/Iterador.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../CriadorMapas.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../gerenciadores/../entidades/obstaculos/Obstaculo.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../gerenciadores/Gerenciador_Eventos.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../listas/ListaEntidades.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../listas/Lista.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../listas/Iterador.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../CriadorMapas.h \
  /usr/include/c++/11/fstream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
@@ -388,8 +390,8 @@ CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o: \
  /usr/include/c++/11/any \
  /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include/nlohmann/detail/macro_unscope.hpp \
  /home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../entidades/obstaculos/Plataforma.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../entidades/obstaculos/Gosma.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../entidades/obstaculos/Espinho.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../entidades/personagens/Lobisomem.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/fases/../entidades/personagens/Esqueleto.h
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/obstaculos/Plataforma.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/obstaculos/Gosma.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/obstaculos/Espinho.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/personagens/Lobisomem.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/personagens/Esqueleto.h

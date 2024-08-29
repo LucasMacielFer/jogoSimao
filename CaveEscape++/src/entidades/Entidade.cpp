@@ -2,7 +2,12 @@
 
 namespace Entidades
 {
-    Entidade::Entidade(const int i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const float vel):
+    void Entidade::atualizaTextura()
+    {
+        retangulo.setTexture(textura);
+    }
+
+    Entidade::Entidade(idEntes i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const float vel):
     Ente(i, txt),
     tamX(tamXX),
     tamY(tamYY),
@@ -20,7 +25,7 @@ namespace Entidades
         retangulo.setTexture(textura);
     } 
 
-    Entidade::Entidade(const int i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy):
+    Entidade::Entidade(idEntes i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy):
     Ente(i, txt),
     tamX(tamXX),
     tamY(tamYY),
@@ -39,7 +44,7 @@ namespace Entidades
     } 
 
     // Sobrecarga para o projetil
-    Entidade::Entidade(const int i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel):
+    Entidade::Entidade(idEntes i, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel):
     Ente(i, txt),
     tamX(tamXX),
     tamY(tamYY),
@@ -58,7 +63,7 @@ namespace Entidades
     }
 
     Entidade::Entidade():
-    Ente(-1),
+    Ente(idEntes::Indefinido),
     tamX(0),
     tamY(0),
     x(0),

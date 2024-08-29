@@ -4,12 +4,11 @@ namespace Entidades
 {
     namespace Personagens
     {
-        const unsigned int Inimigo::idClasse(2);
         Jogador* Inimigo::jogador1Perseguido(NULL);
         Jogador* Inimigo::jogador2Perseguido(NULL);
 
-        Inimigo::Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque, const int tipo):
-        Personagem(idClasse, txt ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque),
+        Inimigo::Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque, const tipoInimigo tipo):
+        Personagem(idEntes::Inimigo, txt ,tamXX, tamYY, xx, yy, vd, vel, f, duraEspera, duraAtaque),
         distancia_jogador1(0.0f),
         distancia_jogador2(0.0f),
         tempoVolta(0.0f),
@@ -22,14 +21,12 @@ namespace Entidades
         distancia_jogador1(0.0f),
         distancia_jogador2(0.0f),
         tempoVolta(0.0f),
-        tipoInim(0)
+        tipoInim(tipoInimigo::Indef)
         {
         }
 
         Inimigo::~Inimigo()
         {
-            jogador1Perseguido = NULL;
-            jogador2Perseguido = NULL;
         }
 
         void Inimigo::setJogador1(Jogador* pJogador)
@@ -84,7 +81,7 @@ namespace Entidades
                 return false;
         }
         
-        const int Inimigo::getTipo() const
+        const tipoInimigo Inimigo::getTipo() const
         {
             return tipoInim;
         }
@@ -104,9 +101,9 @@ namespace Entidades
 
         void Inimigo::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)
         {
-            if(entAlternativa->getId()==3)
+            if(entAlternativa->getId() == idEntes::Obstaculo)
                 regularColisao(entAlternativa, distancia_colisao);
-            if(entAlternativa->getId()==1)
+            if(entAlternativa->getId()== idEntes::Jogador)
             {
                 danificar(dynamic_cast<Jogador*>(entAlternativa));
             }
