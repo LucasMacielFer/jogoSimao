@@ -71,6 +71,16 @@
 },
 {
   "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
+  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/Estado.cpp",
+  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/Estado.cpp"
+},
+{
+  "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
+  "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/GerenciadorEstados.cpp",
+  "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/GerenciadorEstados.cpp"
+},
+{
+  "directory": "/home/lucas/Documents/jogoSimao/CaveEscape++/build",
   "command": "/usr/bin/g++ -DIMGUI_USER_CONFIG=\\\"imconfig-SFML.h\\\" -I/home/lucas/Documents/jogoSimao/CaveEscape++/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/imgui-sfml-src -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/sfml-src/include -I/home/lucas/Documents/jogoSimao/CaveEscape++/build/_deps/json-src/include -g -o CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/Fase.cpp",
   "file": "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/Fase.cpp"
 },

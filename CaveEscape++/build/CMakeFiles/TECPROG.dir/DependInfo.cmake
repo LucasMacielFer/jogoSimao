@@ -22,6 +22,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/Lobisomem.cpp" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Lobisomem.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Lobisomem.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/Mago.cpp" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/Personagem.cpp" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.o.d"
+  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/Estado.cpp" "CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o.d"
+  "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/GerenciadorEstados.cpp" "CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/Fase.cpp" "CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FasePrimeira.cpp" "CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o.d"
   "/home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FaseSegunda.cpp" "CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o" "gcc" "CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o.d"

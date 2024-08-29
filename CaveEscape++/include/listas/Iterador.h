@@ -50,9 +50,12 @@ namespace Listas
     template<class T>
     void Iterador<T>::primeiro()
     {
-        elemPrimeiro = lista->getPrimeiro();
-        indiceAtual = 0;
-        elemAtual = elemPrimeiro;
+        if(lista)
+        {
+            elemPrimeiro = lista->getPrimeiro();
+            indiceAtual = 0;
+            elemAtual = elemPrimeiro;
+        }
     }
 
     template<class T>

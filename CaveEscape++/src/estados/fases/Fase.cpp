@@ -74,8 +74,7 @@ namespace Estados
             {
                 if(posX/cont >= tamMapa-100)
                 {
-                    std::cout<<"VITÓRIA!"<<std::endl;
-                    exit(0);
+                    vencer();
                 }
             }
         }
@@ -161,7 +160,7 @@ namespace Estados
             while(!lEntidades.fim())
             {
                 pAux = lEntidades.passoPercorrer();
-                if(pAux->getId() == idEntes::Inimigo)
+                if(pAux && pAux->getId() == idEntes::Inimigo)
                 {
                     pGColisoes->incluirInimigo(pAux);
                     // TEMPORARIO - VAI PRA CRIAÇÃO DE MAPA
@@ -174,10 +173,11 @@ namespace Estados
                         dynamic_cast<Entidades::Personagens::Mago*>(pAux)->setFase(this);
                     }
                 }
-                else if(pAux->getId() == idEntes::Obstaculo)
+                else if(pAux && pAux->getId() == idEntes::Obstaculo)
                 {
                     pGColisoes->incluirObstaculo(pAux);
                 }
+                pAux = NULL;
             }
         }
 
@@ -261,7 +261,8 @@ namespace Estados
         }
 
 
-        Fase::Fase(std::string tilemap, const int numJogs):
+        Fase::Fase(std::string tilemap, idEstados id, const int numJogs):
+        Estado(id),
         Ente(idEntes::Fase),
         criadorDeMapas(new CriadorMapas(tilemap)),
         lEntidades(),
@@ -274,11 +275,14 @@ namespace Estados
         vidasJ1(new Texto::ElementoTexto(40, 80, 5,sf::Color::White, "assets/fonts/StepalangeShort.ttf")),
         vidasJ2(new Texto::ElementoTexto(40, 80, 35,sf::Color::White, "assets/fonts/StepalangeShort.ttf"))
         {
+            pGColisoes = Gerenciadores::Gerenciador_Colisoes::getInstancia();
+            pGEventos = Gerenciadores::Gerenciador_Eventos::getInstancia();
             time_t t;
             srand((unsigned)time(&t));
         }
 
         Fase::Fase():
+        Estado(idEstados::Indefinido),
         Ente(idEntes::Indefinido),
         criadorDeMapas(NULL),
         lEntidades(),

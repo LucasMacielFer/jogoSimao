@@ -9,12 +9,13 @@
 #include "../../CriadorMapas.h"
 #include "../../entidades/Entidade.h"
 #include "../../entidades/personagens/Inimigo.h"
+#include "../Estado.h"
 
 namespace Estados
 {
     namespace Fases
     {
-        class Fase : public Ente
+        class Fase : public Ente, public Estado
         {
             protected:
                 static Gerenciadores::Gerenciador_Colisoes* pGColisoes;
@@ -37,6 +38,8 @@ namespace Estados
                 void gerenciarProjeteis();
                 void gerenciarColisoes();
                 void executarEntidades(float dt);
+                void setJogador1(Entidades::Personagens::Jogador* jog);
+                void setJogador2(Entidades::Personagens::Jogador* jog);
                 const float calculaCentroCamera();
 
             protected:
@@ -44,16 +47,14 @@ namespace Estados
                 void inicializaColisoes();
                 void criarChao();
                 void criarJogadores(const int numJogs);
-                void setJogador1(Entidades::Personagens::Jogador* jog);
-                void setJogador2(Entidades::Personagens::Jogador* jog);
-                
                 // CriarPlataformas é virtual pois a fase 2 tem plataformas com espinhos, que são SEMPRE geradas.
                 // A solução geral para criar plataformas (utilizada pela fase 1) está implementada nesta classe.
                 virtual void criarPlataformas(bool* plats, const int max);
                 void criarEsqueletos(bool* esqs, const int max);
+                virtual void vencer() = 0;
 
             public:
-                Fase(std::string tilemap, const int numJogs);
+                Fase(std::string tilemap, idEstados id, const int numJogs);
                 Fase();
                 virtual ~Fase();
                 void criarProjetil(Entidades::Personagens::Inimigo* inim, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel);

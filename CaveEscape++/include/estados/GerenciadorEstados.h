@@ -1,18 +1,30 @@
 #pragma once
 
+#include <stack>
+#include "Estado.h"
+#include <iostream>
+
+class Ente;
+
 namespace Estados
 {
-    enum idEstados
-    {
-        Indefinido = -1,
-        Principal = 0,
-        Jogando1,
-        Jogando2,
-        Pause,
-        TabelaLideres
-    };
-
     class GerenciadorEstados
     {
+        private:
+            // Padrão de projeto singleton
+            static GerenciadorEstados* pInstancia;
+            std::stack<Estado*> pilhaEstados;
+
+        private:
+            GerenciadorEstados();
+
+        public:
+            ~GerenciadorEstados();
+            void empilharEstado(idEstados id);
+            void desempilharEstado();
+            Estado* getEstadoAtual();
+            Ente* getEnteAtual();
+            void executar(float dt);
+            static GerenciadorEstados* getInstancia();
     };
 }

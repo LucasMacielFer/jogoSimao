@@ -36,6 +36,7 @@ namespace Gerenciadores
             void incluirInimigo(Entidades::Entidade* pI);
             void removerObstaculo(Entidades::Entidade* pO);
             void removerInimigo(Entidades::Entidade* pI);
+            void limparListas();
             // Método para apagar listas! (Reutilizar o gerenciador na fase 2)
             void setJog1(Entidades::Personagens::Jogador* pJog1);
             void setJog2(Entidades::Personagens::Jogador* pJog2);

@@ -41,7 +41,7 @@ namespace Listas
 
                 void setInfo(Tipo* info){ pInfo = info;}
 
-                Tipo* getInfo(){ return pInfo;}
+                Tipo* getInfo(){return pInfo;}
             };
 
         private:

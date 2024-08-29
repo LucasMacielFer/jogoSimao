@@ -22,6 +22,7 @@ namespace Estados
                 void criarPlataformas(bool* plats, const int max);
                 void criarMagos(bool* magos, const int max);
                 void criarEspinhos(bool* espinhos, const int max);
+                void vencer();
 
             public:
                 FaseSegunda(const int numJogs);

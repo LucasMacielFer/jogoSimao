@@ -21,6 +21,7 @@ namespace Estados
             private:
                 void criarLobisomens(bool* lobs, const int max);
                 void criarGosmas(bool* gosmas, const int max);
+                void vencer();
 
             public:
                 FasePrimeira(const int numJogs);

@@ -265,10 +265,38 @@ CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/Personagem.cpp -o CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.s
 
+CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o: CMakeFiles/TECPROG.dir/flags.make
+CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o: ../src/estados/Estado.cpp
+CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o -MF CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o.d -o CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/Estado.cpp
+
+CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/Estado.cpp > CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.i
+
+CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/Estado.cpp -o CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.s
+
+CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o: CMakeFiles/TECPROG.dir/flags.make
+CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o: ../src/estados/GerenciadorEstados.cpp
+CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o -MF CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o.d -o CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/GerenciadorEstados.cpp
+
+CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/GerenciadorEstados.cpp > CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.i
+
+CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/GerenciadorEstados.cpp -o CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.s
+
 CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o: ../src/estados/fases/Fase.cpp
 CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o -MF CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o.d -o CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/Fase.cpp
 
 CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.i: cmake_force
@@ -282,7 +310,7 @@ CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o: ../src/estados/fases/FasePrimeira.cpp
 CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o -MF CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o.d -o CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FasePrimeira.cpp
 
 CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.i: cmake_force
@@ -296,7 +324,7 @@ CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o: ../src/estados/fases/FaseSegunda.cpp
 CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o -MF CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o.d -o CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/estados/fases/FaseSegunda.cpp
 
 CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.i: cmake_force
@@ -310,7 +338,7 @@ CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o: ../src/gerenciadores/Gerenciador_Colisoes.cpp
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o -MF CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o.d -o CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/gerenciadores/Gerenciador_Colisoes.cpp
 
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.i: cmake_force
@@ -324,7 +352,7 @@ CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Colisoes.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o: ../src/gerenciadores/Gerenciador_Eventos.cpp
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o -MF CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o.d -o CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/gerenciadores/Gerenciador_Eventos.cpp
 
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.i: cmake_force
@@ -338,7 +366,7 @@ CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Eventos.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o: ../src/gerenciadores/Gerenciador_Grafico.cpp
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o -MF CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o.d -o CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/gerenciadores/Gerenciador_Grafico.cpp
 
 CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.i: cmake_force
@@ -352,7 +380,7 @@ CMakeFiles/TECPROG.dir/src/gerenciadores/Gerenciador_Grafico.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o: ../src/listas/ListaEntidades.cpp
 CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o -MF CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o.d -o CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/listas/ListaEntidades.cpp
 
 CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.i: cmake_force
@@ -366,7 +394,7 @@ CMakeFiles/TECPROG.dir/src/listas/ListaEntidades.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/main.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/TECPROG.dir/src/main.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/TECPROG.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/TECPROG.dir/src/main.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/main.cpp.o -MF CMakeFiles/TECPROG.dir/src/main.cpp.o.d -o CMakeFiles/TECPROG.dir/src/main.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/main.cpp
 
 CMakeFiles/TECPROG.dir/src/main.cpp.i: cmake_force
@@ -380,7 +408,7 @@ CMakeFiles/TECPROG.dir/src/main.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o: ../src/principal/Jogo.cpp
 CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o -MF CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o.d -o CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/principal/Jogo.cpp
 
 CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.i: cmake_force
@@ -394,7 +422,7 @@ CMakeFiles/TECPROG.dir/src/principal/Jogo.cpp.s: cmake_force
 CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o: CMakeFiles/TECPROG.dir/flags.make
 CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o: ../src/texto/ElementoTexto.cpp
 CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o: CMakeFiles/TECPROG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o -MF CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o.d -o CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.o -c /home/lucas/Documents/jogoSimao/CaveEscape++/src/texto/ElementoTexto.cpp
 
 CMakeFiles/TECPROG.dir/src/texto/ElementoTexto.cpp.i: cmake_force
@@ -421,6 +449,8 @@ TECPROG_OBJECTS = \
 "CMakeFiles/TECPROG.dir/src/entidades/personagens/Lobisomem.cpp.o" \
 "CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o" \
 "CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.o" \
+"CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o" \
+"CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o" \
 "CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o" \
 "CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o" \
 "CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o" \
@@ -449,6 +479,8 @@ TECPROG: CMakeFiles/TECPROG.dir/src/entidades/personagens/Jogador.cpp.o
 TECPROG: CMakeFiles/TECPROG.dir/src/entidades/personagens/Lobisomem.cpp.o
 TECPROG: CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o
 TECPROG: CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.o
+TECPROG: CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o
+TECPROG: CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o
 TECPROG: CMakeFiles/TECPROG.dir/src/estados/fases/Fase.cpp.o
 TECPROG: CMakeFiles/TECPROG.dir/src/estados/fases/FasePrimeira.cpp.o
 TECPROG: CMakeFiles/TECPROG.dir/src/estados/fases/FaseSegunda.cpp.o
@@ -466,7 +498,7 @@ TECPROG: _deps/sfml-build/lib/libsfml-window-d.so.2.6.1
 TECPROG: _deps/sfml-build/lib/libsfml-system-d.so.2.6.1
 TECPROG: /usr/lib/x86_64-linux-gnu/libGL.so
 TECPROG: CMakeFiles/TECPROG.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable TECPROG"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lucas/Documents/jogoSimao/CaveEscape++/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable TECPROG"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TECPROG.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

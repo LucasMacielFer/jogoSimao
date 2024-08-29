@@ -6,7 +6,7 @@ namespace Principal
     gEventos(Gerenciadores::Gerenciador_Eventos::getInstancia()),
     gColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia()),
     gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
-    fase1(new Estados::Fases::FasePrimeira(2)),
+    gEstados(Estados::GerenciadorEstados::getInstancia()),
     relogio(),
     tempo(0.0f)
     {
@@ -19,6 +19,7 @@ namespace Principal
         delete gGrafico;
         delete gEventos;
         delete gColisoes;
+        delete gEstados;
     }
 
     void Jogo::executar()
@@ -29,11 +30,10 @@ namespace Principal
             gGrafico->limparJanela();
             gEventos->executar();
             gColisoes->executar();
-
             tempo = relogio.getElapsedTime().asSeconds();
             relogio.restart();
-            fase1->executar(tempo);
-            gGrafico->desenhaEnte(static_cast<Ente*>(fase1));
+            gEstados->executar(tempo);
+            gGrafico->desenhaEnte(static_cast<Ente*>(gEstados->getEnteAtual()));
             gGrafico->mostrarJanela();
         }
     }

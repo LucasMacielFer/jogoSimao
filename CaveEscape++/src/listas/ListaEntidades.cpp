@@ -6,7 +6,6 @@ namespace Listas
     lista_entidades(),
     iterador_entidades(&lista_entidades)
     {
-        iterador_entidades.primeiro();
     }
 
     ListaEntidades::~ListaEntidades()
@@ -50,9 +49,13 @@ namespace Listas
 
     Entidades::Entidade* ListaEntidades::passoPercorrer()
     {
-        Entidades::Entidade* e = iterador_entidades.getAtual();
-        iterador_entidades.proximo();
-        return e;
+        if(!iterador_entidades.fimDaLista())
+        {
+            Entidades::Entidade* e = iterador_entidades.getAtual();
+            iterador_entidades.proximo();
+            return e;
+        }
+        return NULL;
     }
 
     void ListaEntidades::percorreExecutando(float dt)

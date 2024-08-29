@@ -180,6 +180,14 @@ namespace Gerenciadores
             LInimigos.erase(itr);
     }
 
+    void Gerenciador_Colisoes::limparListas()
+    {
+        LInimigos.clear();
+        LObstaculos.clear();
+        setJog1(NULL);
+        setJog2(NULL);
+    }
+
     void Gerenciador_Colisoes::setJog1(Entidades::Personagens::Jogador* pJog1) {
         pJogador1 = pJog1;
     }

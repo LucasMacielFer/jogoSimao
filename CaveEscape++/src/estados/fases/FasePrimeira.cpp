@@ -5,7 +5,7 @@ namespace Estados
     namespace Fases
     {
         FasePrimeira::FasePrimeira(const int numJogs):
-        Fase(TILEMAP_F1, numJogs)
+        Fase(TILEMAP_F1, idEstados::Jogando1, numJogs)
         {
             criarMapa();
             inicializaColisoes();
@@ -26,6 +26,12 @@ namespace Estados
         {
             aleatorizaOcorrencias(gosmas, max);
             criadorDeMapas->criarTipoGrande(&lEntidades, CODIGO_GOSMA, gosmas, max);
+        }
+
+        void FasePrimeira::vencer()
+        {
+            pGColisoes->limparListas();
+            modificarEstado(idEstados::Jogando2);
         }
 
         void FasePrimeira::criarMapa()

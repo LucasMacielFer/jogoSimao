@@ -5,7 +5,7 @@ namespace Estados
     namespace Fases
     {
         FaseSegunda::FaseSegunda(const int numJogs):
-        Fase(TILEMAP_F2, numJogs)
+        Fase(TILEMAP_F2, idEstados::Jogando2, numJogs)
         {
             criarMapa();
             inicializaColisoes();
@@ -36,6 +36,12 @@ namespace Estados
         {
             aleatorizaOcorrencias(espinhos, max);
             criadorDeMapas->criarTipo(&lEntidades, CODIGO_ESPINHO, espinhos, max);
+        }
+
+        void FaseSegunda::vencer()
+        {
+            std::cout<<"Você venceu!"<<std::endl;
+            exit(1);
         }
 
         void FaseSegunda::criarMapa()

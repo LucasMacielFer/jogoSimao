@@ -394,4 +394,5 @@ CMakeFiles/TECPROG.dir/src/entidades/personagens/Mago.cpp.o: \
  /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/obstaculos/Gosma.h \
  /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/obstaculos/Espinho.h \
  /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/personagens/Lobisomem.h \
- /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/personagens/Esqueleto.h
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../../entidades/personagens/Esqueleto.h \
+ /home/lucas/Documents/jogoSimao/CaveEscape++/src/entidades/personagens/../../../include/estados/fases/../Estado.h

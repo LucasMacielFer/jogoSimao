@@ -595,6 +595,54 @@ src/entidades/personagens/Personagem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/entidades/personagens/Personagem.cpp.s
 .PHONY : src/entidades/personagens/Personagem.cpp.s
 
+src/estados/Estado.o: src/estados/Estado.cpp.o
+.PHONY : src/estados/Estado.o
+
+# target to build an object file
+src/estados/Estado.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.o
+.PHONY : src/estados/Estado.cpp.o
+
+src/estados/Estado.i: src/estados/Estado.cpp.i
+.PHONY : src/estados/Estado.i
+
+# target to preprocess a source file
+src/estados/Estado.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.i
+.PHONY : src/estados/Estado.cpp.i
+
+src/estados/Estado.s: src/estados/Estado.cpp.s
+.PHONY : src/estados/Estado.s
+
+# target to generate assembly for a file
+src/estados/Estado.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/Estado.cpp.s
+.PHONY : src/estados/Estado.cpp.s
+
+src/estados/GerenciadorEstados.o: src/estados/GerenciadorEstados.cpp.o
+.PHONY : src/estados/GerenciadorEstados.o
+
+# target to build an object file
+src/estados/GerenciadorEstados.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.o
+.PHONY : src/estados/GerenciadorEstados.cpp.o
+
+src/estados/GerenciadorEstados.i: src/estados/GerenciadorEstados.cpp.i
+.PHONY : src/estados/GerenciadorEstados.i
+
+# target to preprocess a source file
+src/estados/GerenciadorEstados.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.i
+.PHONY : src/estados/GerenciadorEstados.cpp.i
+
+src/estados/GerenciadorEstados.s: src/estados/GerenciadorEstados.cpp.s
+.PHONY : src/estados/GerenciadorEstados.s
+
+# target to generate assembly for a file
+src/estados/GerenciadorEstados.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TECPROG.dir/build.make CMakeFiles/TECPROG.dir/src/estados/GerenciadorEstados.cpp.s
+.PHONY : src/estados/GerenciadorEstados.cpp.s
+
 src/estados/fases/Fase.o: src/estados/fases/Fase.cpp.o
 .PHONY : src/estados/fases/Fase.o
 
@@ -897,6 +945,12 @@ help:
 	@echo "... src/entidades/personagens/Personagem.o"
 	@echo "... src/entidades/personagens/Personagem.i"
 	@echo "... src/entidades/personagens/Personagem.s"
+	@echo "... src/estados/Estado.o"
+	@echo "... src/estados/Estado.i"
+	@echo "... src/estados/Estado.s"
+	@echo "... src/estados/GerenciadorEstados.o"
+	@echo "... src/estados/GerenciadorEstados.i"
+	@echo "... src/estados/GerenciadorEstados.s"
 	@echo "... src/estados/fases/Fase.o"
 	@echo "... src/estados/fases/Fase.i"
 	@echo "... src/estados/fases/Fase.s"
