@@ -60,7 +60,8 @@ namespace Listas
         iterador_entidades.primeiro();
         while(!iterador_entidades.fimDaLista())
         {
-            (iterador_entidades.getAtual())->executar(dt);
+            if(iterador_entidades.getAtual())
+                (iterador_entidades.getAtual())->executar(dt);
             iterador_entidades.proximo();
         }
     }
