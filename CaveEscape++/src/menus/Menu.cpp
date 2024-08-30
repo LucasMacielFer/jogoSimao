@@ -2,10 +2,11 @@
 #include "Ente.h"
 #include "SFML/Graphics/Color.hpp"
 #include "texto/ElementoBotao.h"
+#include "texto/ElementoTexto.h"
 
 namespace Menus
 {
-    Menu::Menu(const idEntes id, const sf::Vector2f tamBotao, const std::string txt): Ente(MenuId), listaBotoes(), it(NULL), tamanhoBotao(tamBotao), tamanhoJanela(pGGrafico->getTamJanela()), /*nome()*/mousePressionado(false)
+    Menu::Menu(const idEntes id, const sf::Vector2f tamBotao, Texto::ElementoTexto txt): Ente(MenuId), listaBotoes(), it(NULL), tamanhoBotao(tamBotao), tamanhoJanela(pGGrafico->getTamJanela()), nome(txt),mousePressionado(false)
     {
 
     }
@@ -24,7 +25,7 @@ namespace Menus
         }
     }
 
-    void Menu::adicionarBotao(const std::string txt, const sf::Vector2f posicaoBotao, const sf::Color corBotao, const idEntes Id)
+    void Menu::adicionarBotao(const Texto::ElementoTexto txt, const sf::Vector2f posicaoBotao, const sf::Color corBotao, const idEntes Id)
     {
         Texto::ElementoBotao* BotaoAdicionado = new Texto::ElementoBotao(posicaoBotao, tamanhoBotao, txt, Id, corBotao);
         listaBotoes.push_back(BotaoAdicionado);
@@ -78,8 +79,6 @@ namespace Menus
                     break;
                }
         }
-
-
     }
 
     const bool Menu::getMousePressionado() const

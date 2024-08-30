@@ -19,6 +19,11 @@ namespace Texto
         texto.setString("");
     }
 
+    ElementoTexto::ElementoTexto(const char* txt): fonte(), texto()
+    {
+        texto.setString(txt);
+    }
+
     ElementoTexto::ElementoTexto():
     fonte(),
     texto()

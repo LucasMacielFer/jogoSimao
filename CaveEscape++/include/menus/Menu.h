@@ -3,6 +3,7 @@
 #include "../Ente.h"
 #include "../texto/ElementoBotao.h"
 #include "SFML/System/Vector2.hpp"
+#include "texto/ElementoTexto.h"
 #include <list>
 
 #define TAMANHO_BOTAO_X 300.0f
@@ -23,10 +24,10 @@ namespace Menus
 
         public:
 
-        Menu(const idEntes id, const sf::Vector2f tamBotao, const std::string txt);
+        Menu(const idEntes id, const sf::Vector2f tamBotao, Texto::ElementoTexto txt);
         virtual ~Menu();
 
-        void adicionarBotao(const std::string txt, const sf::Vector2f posicaoBotao, const sf::Color corBotao, const idEntes Id);
+        void adicionarBotao(const Texto::ElementoTexto txt, const sf::Vector2f posicaoBotao, const sf::Color corBotao, const idEntes Id);
         void irPraCima();
         void irPraBaixo();
         void acaoMouse(const sf::Vector2f posicaoMouse);

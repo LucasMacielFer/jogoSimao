@@ -1,4 +1,5 @@
 #include "../../include/texto/ElementoBotao.h"
+#include "texto/ElementoTexto.h"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 //#include "SFML/Graphics/Texture.hpp"
@@ -8,7 +9,7 @@
 namespace Texto
 {
 
-    ElementoBotao::ElementoBotao(const sf::Vector2f pos, const sf::Vector2f tam, const std::string txt, const idEntes Id, const sf::Color color): Ente(Botao), posicao(pos), tamanho(tam), cor(color), pressionado(false) 
+    ElementoBotao::ElementoBotao(const sf::Vector2f pos, const sf::Vector2f tam, const ElementoTexto txt, const idEntes Id, const sf::Color color): Ente(Botao), posicao(pos), tamanho(tam), cor(color), pressionado(false) 
     {
         caixaTexto.setPosition(pos);
         caixaTexto.setSize(tam);

@@ -23,7 +23,7 @@ namespace Texto
 
         public:
 
-            ElementoBotao(const sf::Vector2f pos, const sf::Vector2f tam, const std::string txt, const idEntes Id, const sf::Color color);
+            ElementoBotao(const sf::Vector2f pos, const sf::Vector2f tam, const ElementoTexto txt, const idEntes Id, const sf::Color color);
             ~ElementoBotao();
             void atualizarPos(const sf::Vector2f novaPos);
             const sf::Vector2f getPosicao() const;

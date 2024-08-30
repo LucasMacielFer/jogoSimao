@@ -13,6 +13,7 @@ namespace Texto
         
         public:
             ElementoTexto(const int tam, const float x, const float y, sf::Color cor, const char* caminhoFonte);
+            ElementoTexto(const char* txt);
             ElementoTexto();
             ~ElementoTexto();
             void setString(std::string str);
