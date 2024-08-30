@@ -292,7 +292,6 @@ namespace Estados
 
         Fase::~Fase()
         {
-            // Salvar?
             lEntidades.limpaLista();
         }
 
@@ -397,6 +396,11 @@ namespace Estados
 
         void Fase::salvarJogada(const char* caminhoSalvamento)
         {
+            if(jog1)
+                jog1->salvar(caminhoSalvamento);
+            if(jog2)
+                jog2->salvar(caminhoSalvamento);
+
             Entidades::Entidade* pAux = NULL;
             lEntidades.irAoPrimeiro();
             while(!lEntidades.fim())
