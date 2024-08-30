@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Vector2.hpp>
 
 namespace Texto
 {
@@ -17,6 +18,8 @@ namespace Texto
             void setString(std::string str);
             void setCor(sf::Color cor);
             void setX(const float x);
+            const sf::Vector2f getTamanho() const;
+            void setPosicao(sf::Vector2f posTexto);
             void desenhar(sf::RenderWindow& janela);
     };
 }

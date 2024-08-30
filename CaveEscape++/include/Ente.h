@@ -11,7 +11,8 @@ enum idEntes
     Obstaculo,
     Projetil,
     Fase,
-    Menu
+    Menu,
+    Botao
 };
 
 // Ente é a classe abstrata base para os entes do jogo

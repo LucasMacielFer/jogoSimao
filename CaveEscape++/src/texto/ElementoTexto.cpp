@@ -46,6 +46,15 @@ namespace Texto
         texto.setPosition(x, y);
     }
 
+    const sf::Vector2f ElementoTexto::getTamanho() const
+    {
+        return texto.getScale();
+    }
+    void ElementoTexto::setPosicao(sf::Vector2f posTexto)
+    {
+        texto.setPosition(posTexto);
+    }
+
     void ElementoTexto::desenhar(sf::RenderWindow& janela)
     {
         janela.draw(texto);
