@@ -24,8 +24,6 @@ namespace Entidades
 
         Mago::~Mago()
         {
-            if(bolaFogo)
-                delete bolaFogo;
             bolaFogo = NULL;
         }
 

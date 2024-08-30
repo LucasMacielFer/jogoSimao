@@ -57,7 +57,7 @@ namespace Listas
             const unsigned int getTamanho() const { return tamanho;}
             //T* operator[](unsigned int chave);
             void adicionar(T* info);
-            T* remover(T* info);
+            void remover(T* info);
             Elemento<T>* getPrimeiro(){ return pPrimeiro;}
 
         private:
@@ -169,14 +169,13 @@ namespace Listas
     }
 
     template<class T>
-    T* Lista<T>::remover(T* info)
+    void Lista<T>::remover(T* info)
     {
         Elemento<T>* pAux = pPrimeiro;
         Elemento<T>* pAnt = NULL;
 
         while(pAux != NULL)
         {
-
             if (pAux && pAux->getInfo() == info)
             {
                 if(pAux == pPrimeiro)
@@ -190,15 +189,18 @@ namespace Listas
                 else 
                 {
                     pAnt->setProximo(pAux->getProximo());
+                    pAux->getProximo()->setAnterior(pAnt);
                 }
 
-                delete (pAux);
+                delete info;
+                info = NULL;
+                delete pAux;
+                pAux = NULL;
                 tamanho--;
-                return info;
+                break;
             }
             pAnt = pAux;
             pAux = pAux->getProximo();
         }
-        return NULL;
     }
 }

@@ -81,6 +81,9 @@ namespace Estados
 
         void Fase::gerenciarProjeteis()
         {
+            Entidades::Entidade** vetRemocao = (Entidades::Entidade**) malloc(sizeof(Entidades::Entidade*)*100);
+            int index = 0;
+
             Entidades::Entidade* pAux = NULL;
             Entidades::Personagens::Esqueleto* pEsq = NULL;
             Entidades::Personagens::Mago* pMago = NULL;
@@ -95,8 +98,7 @@ namespace Estados
                     pProj = dynamic_cast<Entidades::Projetil*>(pAux);
                     if(!pProj->getAtivo())
                     { 
-                        pGColisoes->removerInimigo(static_cast<Entidades::Entidade*>(pProj));
-                        lEntidades.removerEntidade(static_cast<Entidades::Entidade*>(pProj));
+                        pGColisoes->removerInimigo(pAux);;
                         if(pProj->getAtirador()->getTipo() == Entidades::Personagens::tipoInimigo::Esque)
                         {
                             dynamic_cast<Entidades::Personagens::Esqueleto*>(pProj->getAtirador())->setFlecha(NULL);
@@ -105,11 +107,17 @@ namespace Estados
                         {
                             dynamic_cast<Entidades::Personagens::Mago*>(pProj->getAtirador())->setBolaFogo(NULL);
                         }
-                        delete pProj;
+                        vetRemocao[index] = pAux;
+                        index++;
+
                         pProj = NULL;
                         pAux = NULL;
                     }
                 }
+            }
+            for(int i=0; i<index; i++)
+            {
+                lEntidades.removerEntidade(vetRemocao[i]);
             }
         }
 
@@ -190,6 +198,9 @@ namespace Estados
 
             lEntidades.percorreExecutando(dt);
 
+            Entidades::Entidade** vetRemocao = (Entidades::Entidade**) malloc(sizeof(Entidades::Entidade*)*100);
+            int index = 0;
+
             Entidades::Entidade* pAux = NULL;
             lEntidades.irAoPrimeiro();
             while(!lEntidades.fim())
@@ -202,33 +213,15 @@ namespace Estados
                     if(!inim->getVivo())
                     {
                         pGColisoes->removerInimigo(pAux);
-                        lEntidades.removerEntidade(pAux);
-                        if(inim->getTipo() == Entidades::Personagens::tipoInimigo::Esque)
-                        {
-                            Entidades::Personagens::Esqueleto* esq = dynamic_cast<Entidades::Personagens::Esqueleto*>(inim);
-                            if(esq->getFlecha())
-                            {
-                                pGColisoes->removerInimigo(esq->getFlecha());
-                                lEntidades.removerEntidade(esq->getFlecha());
-                                delete (esq->getFlecha());
-                                esq->setFlecha(NULL);
-                            }
-                        }
-                        if(inim->getTipo() == Entidades::Personagens::tipoInimigo::Mag)
-                        {
-                            Entidades::Personagens::Mago* mag = dynamic_cast<Entidades::Personagens::Mago*>(inim);
-                            if(mag->getBolaFogo())
-                            {
-                                pGColisoes->removerInimigo(mag->getBolaFogo());
-                                lEntidades.removerEntidade(mag->getBolaFogo());
-                                delete (mag->getBolaFogo());
-                                mag->setBolaFogo(NULL);
-                            }
-                        }
-                        delete pAux;
+                        vetRemocao[index] = pAux;
+                        index++;
                         pAux = NULL;
                     }
                 }
+            }
+            for(int i=0; i<index; i++)
+            {
+                lEntidades.removerEntidade(vetRemocao[i]);
             }
         }
 

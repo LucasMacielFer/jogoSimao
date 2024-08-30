@@ -21,8 +21,6 @@ namespace Entidades
 
         Esqueleto::~Esqueleto()
         {
-            if(flecha)
-                delete flecha;
             flecha = NULL;
         }
 

@@ -61,7 +61,8 @@ namespace Listas
     template<class T>
     void Iterador<T>::proximo()
     {
-        elemAtual = elemAtual->getProximo();
+        if(elemAtual)
+            elemAtual = elemAtual->getProximo();
         indiceAtual++;
     }
 
