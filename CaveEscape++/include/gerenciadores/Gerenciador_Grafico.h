@@ -30,6 +30,7 @@ namespace Gerenciadores
         void desenhaEnte(Ente* pE);
         sf::RenderWindow& getJanela();
         void moveCamera(const float x);
+        const sf::View getCamera() const;
         const bool janelaAberta() const;
         sf::Texture* carregarTextura(const char* caminhoTextura);
         const sf::Vector2f getTamJanela() const;

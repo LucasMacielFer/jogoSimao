@@ -50,6 +50,11 @@ namespace Gerenciadores
         janela.setView(camera);
     }
 
+    const sf::View Gerenciador_Grafico::getCamera() const
+    {
+        return camera;
+    }
+
     const bool Gerenciador_Grafico::janelaAberta() const
     {
         return janela.isOpen();

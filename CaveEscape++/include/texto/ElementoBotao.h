@@ -30,6 +30,7 @@ namespace Texto
             void desenhar(sf::RenderWindow& janela);
             void setPressionado(const bool pressao);
             const bool getPressionado() const;
+            void executar(const float dt);
 
     };
 

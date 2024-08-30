@@ -61,4 +61,9 @@ namespace Texto
     {
         return pressionado;
     }
+
+    void ElementoBotao::executar(const float dt)
+    {
+
+    }
 }

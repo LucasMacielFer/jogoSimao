@@ -11,7 +11,7 @@ enum idEntes
     Obstaculo,
     Projetil,
     Fase,
-    Menu,
+    MenuId,
     Botao
 };
 
