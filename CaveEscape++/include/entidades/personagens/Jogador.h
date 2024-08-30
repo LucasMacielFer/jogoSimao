@@ -34,7 +34,7 @@ namespace Entidades
                 void atacar();
                 void danificar(Inimigo* pInim);
                 void executar(float dt);
-                void salvar();
+                void salvar(const char* caminhoSalvamento);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();
         };

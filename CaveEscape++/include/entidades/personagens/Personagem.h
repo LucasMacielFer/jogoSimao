@@ -38,7 +38,7 @@ namespace Entidades
             void sofrerDano(const int dano);
             const bool getVivo() const;
             virtual void executar(float dt);
-            virtual void salvar() = 0;
+            virtual void salvar(const char* caminhoSalvamento);
             virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;
             virtual void morrer() = 0;
         };

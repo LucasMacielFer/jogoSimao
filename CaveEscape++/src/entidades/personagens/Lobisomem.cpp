@@ -61,9 +61,27 @@ namespace Entidades
         }
 
 
-       void Lobisomem::salvar()
-       {
-       }
+        void Lobisomem::salvar(const char* caminhoSalvamento)
+        {
+            Inimigo::salvar(caminhoSalvamento);
+            salvamento += " ";
+            salvamento += std::to_string(nivelAtrapalhado);
+            salvamento += " ";
+            salvamento += std::to_string(tempoRapido);
+            salvamento += " ";
+            salvamento += std::to_string(rapido);
+
+            std::ofstream gravador(caminhoSalvamento, std::ios::app);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar lobisomem"<<std::endl;
+            }
+            else
+            {
+                gravador << salvamento << std::endl;
+            }
+            gravador.close();
+        }
     }
 
 }

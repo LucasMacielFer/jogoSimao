@@ -32,7 +32,6 @@ namespace Entidades
         {
         }
 
-
         Personagem::~Personagem()
         {
             vidas = -1;
@@ -72,22 +71,6 @@ namespace Entidades
             return vivo;
         }
 
-        /*
-        Método retirado e substituido, mas ainda não tenho certeza
-
-        void Personagem::atacar(Personagem* pPersonagem)
-        {
-            //Coloca o personagem no status de atacar se for possível.
-            if(ataqueDisponivel())
-            {
-                if(!atacando)
-                {
-                    pPersonagem->sofrerDano(dano);
-                }
-                atacando = true;
-            }
-        }
-        */
         void Personagem::executar(float dt)
         {
 
@@ -181,6 +164,28 @@ namespace Entidades
                     if(velocidadeY < 0) {velocidadeY = 0;}
                 }
             }
+        }
+
+        void Personagem::salvar(const char* caminhoSalvamento)
+        {
+            Entidade::salvar(caminhoSalvamento);
+            salvamento += std::to_string(vidas);
+            salvamento += " ";
+            salvamento += std::to_string(forca);
+            salvamento += " ";
+            salvamento += std::to_string(atacando);
+            salvamento += " ";
+            salvamento += std::to_string(puloDisponivel);
+            salvamento += " ";
+            salvamento += std::to_string(duracaoEspera);
+            salvamento += " ";
+            salvamento += std::to_string(duracaoAtaque);
+            salvamento += " ";
+            salvamento += std::to_string(tempoEsperando);
+            salvamento += " ";
+            salvamento += std::to_string(tempoAtacando);
+            salvamento += " ";
+            salvamento += std::to_string(vivo);
         }
     }
 }

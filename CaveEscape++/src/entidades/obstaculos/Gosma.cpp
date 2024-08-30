@@ -5,7 +5,7 @@ namespace Entidades
     namespace Obstaculos
     {
         Gosma::Gosma(const char* txt, const float d, const float xx, const float yy):
-        Obstaculo(txt, TAM_X_GOSMA, TAM_Y_GOSMA, xx, yy, false),
+        Obstaculo(txt, TAM_X_GOSMA, TAM_Y_GOSMA, xx, yy, idObstaculos::gosm, false),
         decrementoVelocidade(d)
         {
         }
@@ -33,8 +33,23 @@ namespace Entidades
             }
         }
 
-        void Gosma::salvar()
+        void Gosma::salvar(const char* caminhoSalvamento)
         {
+            Obstaculo::salvar(caminhoSalvamento);
+            salvamento += " ";
+            salvamento += std::to_string(decrementoVelocidade);
+
+
+            std::ofstream gravador(caminhoSalvamento, std::ios::app);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar gosma"<<std::endl;
+            }
+            else
+            {
+                gravador << salvamento << std::endl;
+            }
+            gravador.close();
         }
 
         void Gosma::executar(float dt)

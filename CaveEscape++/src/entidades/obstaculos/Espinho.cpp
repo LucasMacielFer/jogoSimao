@@ -5,7 +5,7 @@ namespace Entidades
     namespace Obstaculos
     {
         Espinho::Espinho(const char* txt, const int d, const float xx, const float yy):
-        Obstaculo(txt, TAM_X_ESPINHO, TAM_Y_ESPINHO, xx, yy, true),
+        Obstaculo(txt, TAM_X_ESPINHO, TAM_Y_ESPINHO, xx, yy, idObstaculos::esp, true),
         dano(d),
         danificar(true),
         tempoEspera(0.0f)
@@ -43,11 +43,30 @@ namespace Entidades
                 }
                 p->pular();
             }
+            danificar = false;
         }
 
-        void Espinho::salvar()
+        void Espinho::salvar(const char* caminhoSalvamento)
         {
+            Obstaculo::salvar(caminhoSalvamento);
+            salvamento += " ";
+            salvamento += std::to_string(dano);
+            salvamento += " ";
+            salvamento += std::to_string(danificar);
+            salvamento += " ";
+            salvamento += std::to_string(tempoEspera);
 
+
+            std::ofstream gravador(caminhoSalvamento, std::ios::app);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar espinho"<<std::endl;
+            }
+            else
+            {
+                gravador << salvamento << std::endl;
+            }
+            gravador.close();
         }
 
         void Espinho::executar(float dt)
@@ -58,8 +77,6 @@ namespace Entidades
                 danificar = true;
                 tempoEspera = 0;
             }
-            else
-                danificar = false;
         }
     }
 }

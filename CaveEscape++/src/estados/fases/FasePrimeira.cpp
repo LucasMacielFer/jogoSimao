@@ -44,8 +44,20 @@ namespace Estados
             tamMapa = criadorDeMapas->getTamMapa();
         }
 
-        void FasePrimeira::salvar()
+        void FasePrimeira::salvarJogada(const char* caminhoSalvamento)
         {
+            std::ofstream gravador(caminhoSalvamento, std::ios::out);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar primeira fase"<<std::endl;
+            }
+            else
+            {
+                gravador << "1" << std::endl;
+            }
+            gravador.close();
+
+            Fase::salvarJogada(caminhoSalvamento);
         }
     }
 }

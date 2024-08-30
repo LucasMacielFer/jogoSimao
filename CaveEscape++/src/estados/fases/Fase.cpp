@@ -395,9 +395,16 @@ namespace Estados
             }
         }
 
-        void Fase::salvar()
+        void Fase::salvarJogada(const char* caminhoSalvamento)
         {
-            // Logica de salvamento
+            Entidades::Entidade* pAux = NULL;
+            lEntidades.irAoPrimeiro();
+            while(!lEntidades.fim())
+            {
+                pAux = lEntidades.passoPercorrer();
+                if(pAux)
+                    pAux->salvar(caminhoSalvamento);
+            }
         }
     }
 }

@@ -93,8 +93,24 @@ namespace Entidades
         }
     }
 
-    void Projetil::salvar()
+    void Projetil::salvar(const char* caminhoSalvamento)
     {
+        Entidade::salvar(caminhoSalvamento);
+        salvamento += " ";
+        salvamento += std::to_string(ativo);
+        salvamento += " ";
+        salvamento += std::to_string(dano);
+
+        std::ofstream gravador(caminhoSalvamento, std::ios::app);
+        if(!gravador)
+        {
+            std::cout<<"Erro ao salvar projetil"<<std::endl;
+        }
+        else
+        {
+            gravador << salvamento << std::endl;
+        }
+        gravador.close();
     }
 
     void Projetil::sumir()

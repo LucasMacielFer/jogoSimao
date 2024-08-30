@@ -22,7 +22,7 @@ namespace Entidades
                 Espinho();
                 ~Espinho();
                 void obstacular(Personagens::Personagem* p);
-                void salvar();
+                void salvar(const char* caminhoSalvamento);
                 void executar(float dt);
         };
     }

@@ -21,9 +21,9 @@ namespace Entidades
         class Inimigo : public Personagem
         {
             private:
-                float tempoVolta;
                 static Jogador* jogador1Perseguido;
                 static Jogador* jogador2Perseguido;
+                float tempoVolta;
                 const tipoInimigo tipoInim;
 
             protected:
@@ -45,10 +45,9 @@ namespace Entidades
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();
                 virtual void direcionar();
+                virtual void salvar(const char* caminhoSalvamento);
                 virtual void danificar(Jogador* pJogador) = 0;
-                virtual void atacarDist(float posJogador);
                 virtual void habilidadeInimiga(float dt) = 0;
-                virtual void salvar() = 0;
         };
 
     }

@@ -28,7 +28,7 @@ namespace Entidades
                 Lobisomem(const char* txt, const float xx, const float yy);
                 Lobisomem();
                 ~Lobisomem();
-                void salvar();
+                void salvar(const char* caminhoSalvamento);
                 void danificar(Jogador* pJogador);
                 void habilidadeInimiga(float dt);
         };

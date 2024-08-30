@@ -141,9 +141,21 @@ namespace Entidades
             faseAgregado = f;
         }
 
-        void Mago::salvar()
+        void Mago::salvar(const char* caminhoSalvamento)
         {
+            Inimigo::salvar(caminhoSalvamento);
+            salvamento += " ";
+            salvamento += std::to_string(esperaTeleporte);
+            std::ofstream gravador(caminhoSalvamento, std::ios::app);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar mago"<<std::endl;
+            }
+            else
+            {
+                gravador << salvamento << std::endl;
+            }
+            gravador.close();
         }
-    
     }
 }

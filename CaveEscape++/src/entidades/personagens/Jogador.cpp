@@ -90,9 +90,24 @@ namespace Entidades
             }
         }
 
-        void Jogador::salvar()
+        void Jogador::salvar(const char* caminhoSalvamento)
         {
+            Personagem::salvar(caminhoSalvamento);
+            salvamento += " ";
+            salvamento += std::to_string(pontuacao);
+            salvamento += " ";
+            salvamento += texturaAtaque;
 
+            std::ofstream gravador(caminhoSalvamento, std::ios::app);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar jogador"<<std::endl;
+            }
+            else
+            {
+                gravador << salvamento << std::endl;
+            }
+            gravador.close();
         }
 
         void Jogador::colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao)

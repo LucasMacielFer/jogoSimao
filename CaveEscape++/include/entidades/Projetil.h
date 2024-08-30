@@ -25,7 +25,7 @@ namespace Entidades
             void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void executar(float dt);
-            void salvar();
+            void salvar(const char* caminhoSalvamento);
             void sumir();
     };
 }

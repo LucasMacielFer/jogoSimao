@@ -4,8 +4,9 @@ namespace Entidades
 {
     namespace Obstaculos
     {
-        Obstaculo::Obstaculo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const bool dano):
+        Obstaculo::Obstaculo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, idObstaculos id, const bool dano):
         Entidade(idEntes::Obstaculo, txt, tamXX, tamYY, xx, yy),
+        identificador(id),
         danoso(dano)
         {
         }
@@ -54,6 +55,15 @@ namespace Entidades
             {
                 obstacular(dynamic_cast<Personagens::Personagem*>(entAlternativa));
             }
+        }
+
+        void Obstaculo::salvar(const char* caminhoSalvamento)
+        {
+            Entidade::salvar(caminhoSalvamento);
+            salvamento += " ";
+            salvamento += std::to_string(identificador);
+            salvamento += " ";
+            salvamento += std::to_string(danoso);
         }
     }
 } 

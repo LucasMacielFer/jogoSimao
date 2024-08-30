@@ -45,7 +45,7 @@ namespace Entidades
             Projetil* getBolaFogo() const;
             void setBolaFogo(Projetil* bf);
             void setFase(Estados::Fases::Fase* f);
-            void salvar();
+            void salvar(const char* caminhoSalvamento);
             void danificar(Jogador* pJogador);
             void atacarDist(float posJogador);
             void habilidadeInimiga(float dt);

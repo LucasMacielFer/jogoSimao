@@ -5,7 +5,7 @@ namespace Entidades
     namespace Obstaculos
     {
         Plataforma::Plataforma(const char* txt, const float xx, const float yy, const bool ehChao):
-        Obstaculo(txt, TAM_PLAT_X, TAM_PLAT_Y, xx, yy, false),
+        Obstaculo(txt, TAM_PLAT_X, TAM_PLAT_Y, xx, yy, idObstaculos::plat, false),
         chao(ehChao)
         {
             if(!chao) {sustentacao = SUSTENTACAO;}
@@ -22,8 +22,24 @@ namespace Entidades
         {
         }
 
-        void Plataforma::salvar()
+        void Plataforma::salvar(const char* caminhoSalvamento)
         {
+            Obstaculo::salvar(caminhoSalvamento);
+            salvamento += " ";
+            salvamento += std::to_string(chao);
+            salvamento += " ";
+            salvamento += std::to_string(sustentacao);
+
+            std::ofstream gravador(caminhoSalvamento, std::ios::app);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar plataforma"<<std::endl;
+            }
+            else
+            {
+                gravador << salvamento << std::endl;
+            }
+            gravador.close();
         }
 
         void Plataforma::executar(float dt)

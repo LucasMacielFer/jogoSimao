@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fstream>
 #include "../Ente.h"
 
 #define GRAVIDADE 25
@@ -20,7 +21,11 @@ namespace Entidades
             int sentidoMovX;
         
         private:
+            const char* caminhoTextura;
             sf::RectangleShape retangulo;
+
+        protected:
+            std::string salvamento;
 
         protected:
             void atualizaTextura();
@@ -42,10 +47,11 @@ namespace Entidades
             void aplicaGravidade(float dt, float sustentacao);
             void desenhar(sf::RenderWindow& janela);
             void mover();
+            void atualizaEntidade();
+            std::string getSalvamento() const;
             virtual void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;
             virtual void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao) = 0;
             virtual void executar(float dt) = 0;
-            virtual void salvar() = 0;
-            void atualizaEntidade();
+            virtual void salvar(const char* caminhoSalvamento);
     };
 }

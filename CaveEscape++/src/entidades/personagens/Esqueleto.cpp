@@ -100,8 +100,20 @@ namespace Entidades
             }
         }
 
-       void Esqueleto::salvar()
-       {
-       }
+        void Esqueleto::salvar(const char* caminhoSalvamento)
+        {
+            Inimigo::salvar(caminhoSalvamento);
+        
+            std::ofstream gravador(caminhoSalvamento, std::ios::app);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar esqueleto"<<std::endl;
+            }
+            else
+            {
+                gravador << salvamento << std::endl;
+            }
+            gravador.close();
+        }
     }
 }

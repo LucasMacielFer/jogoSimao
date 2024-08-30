@@ -40,6 +40,7 @@ namespace Estados
 
         void FaseSegunda::vencer()
         {
+            salvarJogada("assets/salvamento/jogada.txt");
             std::cout<<"Você venceu!"<<std::endl;
             exit(1);
         }
@@ -54,8 +55,20 @@ namespace Estados
             tamMapa = criadorDeMapas->getTamMapa();
         }
 
-        void FaseSegunda::salvar()
+        void FaseSegunda::salvarJogada(const char* caminhoSalvamento)
         {
+            std::ofstream gravador(caminhoSalvamento, std::ios::out);
+            if(!gravador)
+            {
+                std::cout<<"Erro ao salvar segunda fase"<<std::endl;
+            }
+            else
+            {
+                gravador << "2" << std::endl;
+            }
+            gravador.close();
+
+            Fase::salvarJogada(caminhoSalvamento);
         }
     }
 }

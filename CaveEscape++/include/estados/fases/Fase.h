@@ -60,7 +60,7 @@ namespace Estados
                 void criarProjetil(Entidades::Personagens::Inimigo* inim, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel);
                 void executar(float dt);
                 void desenhar(sf::RenderWindow& janela);
-                virtual void salvar();
+                virtual void salvarJogada(const char* caminhoSalvamento);
         };
     }
 }

@@ -18,6 +18,7 @@ namespace Entidades
     velocidadeX(0.0f),
     velocidadeY(0.0f),
     sentidoMovX(1),
+    caminhoTextura(txt),
     retangulo(sf::Vector2f(tamXX, tamYY))
     {
         retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
@@ -36,6 +37,7 @@ namespace Entidades
     velocidadeX(0.0f),
     velocidadeY(0.0f),
     sentidoMovX(0),
+    caminhoTextura(txt),
     retangulo(sf::Vector2f(tamXX, tamYY))
     {
         retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
@@ -55,6 +57,7 @@ namespace Entidades
     velocidadeX(vel),
     velocidadeY(0.0f),
     sentidoMovX(sentMovX),
+    caminhoTextura(txt),
     retangulo(sf::Vector2f(tamXX, tamYY))
     {
         retangulo.setOrigin(tamX / 2.0f, tamY / 2.0f);
@@ -73,6 +76,7 @@ namespace Entidades
     velocidadeX(0.0f),
     velocidadeY(0.0f),
     sentidoMovX(0),
+    caminhoTextura(),
     retangulo()
     {
     }
@@ -157,5 +161,36 @@ namespace Entidades
     void Entidade::atualizaEntidade()
     {
         retangulo.setPosition(x, y);
+    }
+
+    std::string Entidade::getSalvamento() const
+    {
+        return salvamento;
+    }
+
+    void Entidade::salvar(const char* caminhoSalvamento)
+    {
+        salvamento += " ";
+        salvamento += std::to_string(getId());
+        salvamento += " ";
+        salvamento += caminhoTextura;
+        salvamento += " ";
+        salvamento += std::to_string(tamX);
+        salvamento += " ";
+        salvamento += std::to_string(tamY);
+        salvamento += " ";
+        salvamento += std::to_string(x);
+        salvamento += " ";
+        salvamento += std::to_string(y);
+        salvamento += " ";
+        salvamento += std::to_string(velocidade);
+        salvamento += " ";
+        salvamento += std::to_string(maxVelocidade);
+        salvamento += " ";
+        salvamento += std::to_string(velocidadeX);
+        salvamento += " ";
+        salvamento += std::to_string(velocidadeY);
+        salvamento += " ";
+        salvamento += std::to_string(sentidoMovX);
     }
 }

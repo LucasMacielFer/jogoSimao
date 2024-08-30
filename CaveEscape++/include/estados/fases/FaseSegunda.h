@@ -28,7 +28,7 @@ namespace Estados
                 FaseSegunda(const int numJogs);
                 ~FaseSegunda();
                 void criarMapa();
-                void salvar();
+                void salvarJogada(const char* caminhoSalvamento);
         };
     }
 }

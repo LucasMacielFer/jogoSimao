@@ -37,14 +37,13 @@ namespace Entidades
             Projetil* flecha;
 
             public:
-
             Esqueleto(const char* txt, const float xx, const float yy);
             Esqueleto();
             ~Esqueleto();
             Projetil* getFlecha();
             void setFlecha(Projetil* p);
             void setFase(Estados::Fases::Fase* f);
-            void salvar();
+            void salvar(const char* caminhoSalvamento);
             void danificar(Jogador* pJogador);
             void atacarDist(float posJogador);
             void habilidadeInimiga(float dt);

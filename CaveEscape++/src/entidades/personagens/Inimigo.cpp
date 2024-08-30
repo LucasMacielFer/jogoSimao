@@ -119,14 +119,18 @@ namespace Entidades
             }
         }
 
-        void Inimigo::atacarDist(float posJogador)
-        {
-            // Não é implementada na classe inimigo. As derivadas podem implementá-la!
-        }
-
         void Inimigo::morrer()
         {
             vivo = false;
+        }
+
+        void Inimigo::salvar(const char* caminhoSalvamento)
+        {
+            Personagem::salvar(caminhoSalvamento);
+            salvamento += " ";
+            salvamento += std::to_string(tempoVolta);
+            salvamento += " ";
+            salvamento += std::to_string(tipoInim);
         }
     }
 }

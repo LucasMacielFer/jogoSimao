@@ -20,7 +20,7 @@ namespace Entidades
             Plataforma(const char* txt, const float xx, const float yy, const bool ehChao);
             Plataforma();
             ~Plataforma();
-            void salvar();
+            void salvar(const char* caminhoSalvamento);
             void executar(float dt);
             void regularColisao(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
             void obstacular(Personagens::Personagem* p);
