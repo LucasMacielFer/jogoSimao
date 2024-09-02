@@ -12,7 +12,6 @@ namespace Principal
     {
         private:
             Gerenciadores::Gerenciador_Eventos* gEventos;
-            Gerenciadores::Gerenciador_Colisoes* gColisoes;
             Gerenciadores::Gerenciador_Grafico* gGrafico;
             Estados::GerenciadorEstados* gEstados;
 

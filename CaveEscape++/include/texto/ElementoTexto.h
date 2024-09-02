@@ -17,6 +17,7 @@ namespace Texto
             ElementoTexto();
             ~ElementoTexto();
             void setString(std::string str);
+            std::string getString() const;
             void setCor(sf::Color cor);
             void setX(const float x);
             const sf::Vector2f getTamanho() const;

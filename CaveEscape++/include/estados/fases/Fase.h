@@ -9,7 +9,13 @@
 #include "../../CriadorMapas.h"
 #include "../../entidades/Entidade.h"
 #include "../../entidades/personagens/Inimigo.h"
+#include "../../observadores/ObservadorJogador.h"
 #include "../Estado.h"
+
+namespace Observadores
+{
+    class ObservadorFase;
+}
 
 namespace Estados
 {
@@ -20,6 +26,8 @@ namespace Estados
             protected:
                 static Gerenciadores::Gerenciador_Colisoes* pGColisoes;
                 static Gerenciadores::Gerenciador_Eventos* pGEventos;
+                static int pontJ1;
+                static int pontJ2;
                 CriadorMapas* criadorDeMapas;
                 int tamMapa;
                 Entidades::Personagens::Jogador* jog1;
@@ -29,7 +37,8 @@ namespace Estados
                 Texto::ElementoTexto* vidasJ1;
                 Texto::ElementoTexto* vidasJ2;
                 Texto::ElementoTexto* pontosJ1;
-                Texto::ElementoTexto* pontosJ2;
+                Texto::ElementoTexto* pontosJ2; 
+                Observadores::ObservadorFase* pObs;
 
             private:
                 void constroiHud();
@@ -60,6 +69,7 @@ namespace Estados
                 void criarProjetil(Entidades::Personagens::Inimigo* inim, const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int sentMovX, const float vel);
                 void executar(float dt);
                 void desenhar(sf::RenderWindow& janela);
+                void setAtivo(const bool at);
                 virtual void salvarJogada(const char* caminhoSalvamento);
         };
     }

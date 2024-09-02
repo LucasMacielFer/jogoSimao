@@ -13,7 +13,6 @@ namespace Texto
     class ElementoBotao : public Ente
     {
         protected:
-
             sf::RectangleShape caixaTexto;
             ElementoTexto texto;
             sf::Vector2f posicao;
@@ -23,15 +22,15 @@ namespace Texto
 
         public:
 
-            ElementoBotao(const sf::Vector2f pos, const sf::Vector2f tam, const ElementoTexto txt, const idEntes Id, const sf::Color color);
+            ElementoBotao(const sf::Vector2f pos, const sf::Vector2f tam, const char* txt, const idEntes Id, const sf::Color color);
             ~ElementoBotao();
             void atualizarPos(const sf::Vector2f novaPos);
             const sf::Vector2f getPosicao() const;
             void desenhar(sf::RenderWindow& janela);
             void setPressionado(const bool pressao);
             const bool getPressionado() const;
+            std::string getTexto() const;
             void executar(const float dt);
-
     };
 
 }

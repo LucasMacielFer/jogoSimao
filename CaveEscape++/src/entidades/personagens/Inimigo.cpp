@@ -65,7 +65,7 @@ namespace Entidades
             }
         }
 
-        const bool Inimigo::existeP1() const
+        const bool Inimigo::existeP1()
         {
             if(jogador1Perseguido)
                 return true;
@@ -73,7 +73,7 @@ namespace Entidades
                 return false;
         }
 
-        const bool Inimigo::existeP2() const
+        const bool Inimigo::existeP2()
         {
             if(jogador2Perseguido)
                 return true;

@@ -9,6 +9,7 @@ namespace Estados
         Jogando1,
         Jogando2,
         Pause,
+        SelecaoFase,
         TabelaLideres
     };
 
@@ -16,7 +17,7 @@ namespace Estados
 
     class Estado
     {
-        private:
+        protected:
             static GerenciadorEstados* pGEstados;
             idEstados identificador;
             bool ativo;
@@ -25,11 +26,10 @@ namespace Estados
             Estado(idEstados id);
             Estado();
             virtual ~Estado();
-            void setAtivo(const bool at);
             const bool getAtivo() const;
             const idEstados getIdentificador() const;
             void modificarEstado(idEstados id);
-            void voltarAnterior();
+            virtual void setAtivo(const bool at) = 0;
             virtual void executar(float dt) = 0;
     };
 }

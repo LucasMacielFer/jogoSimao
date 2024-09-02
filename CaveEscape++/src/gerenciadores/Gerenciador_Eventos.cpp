@@ -7,6 +7,7 @@ namespace Gerenciadores
 
     Gerenciador_Eventos::Gerenciador_Eventos():
     pGGrafico(Gerenciador_Grafico::getInstancia()),
+    listaObs(),
     jogador1(NULL),
     jogador2(NULL)
     {
@@ -26,74 +27,62 @@ namespace Gerenciadores
 
     void Gerenciador_Eventos::processaEvento(sf::Event e)
     {
-        if (e.type == sf::Event::Closed)
+        std::list<Observadores::Observador*>::iterator itr;
+
+        if(e.type == sf::Event::Closed)
         {
             pGGrafico->fecharJanela();
         }
-        if (e.type == sf::Event::KeyReleased)
+
+        else if(e.type == sf::Event::KeyReleased)
         {
-            switch (e.key.code)
+            for(itr = listaObs.begin(); itr != listaObs.end(); itr++)
             {
-                case sf::Keyboard::Key::A:
-                case sf::Keyboard::Key::D:
-                    if(jogador1)
-                        jogador1->movimentaX(0);
-                    break;
-                case sf::Keyboard::Key::W:
-                //case sf::Keyboard::Key::S:
-                    if(jogador1)
-                        jogador1->movimentaX(0);
-                    break;
-                case sf::Keyboard::Key::S:
-                    if(jogador1)
-                        jogador1->atacar();
-                    break;
-                case sf::Keyboard::Key::Left:
-                case sf::Keyboard::Key::Right:
-                    if (jogador2)
-                        jogador2->movimentaX(0);
-                    break;
-                case sf::Keyboard::Key::Up:
-                //case sf::Keyboard::Key::Down:
-                    if (jogador2)
-                        jogador2->movimentaX(0);
-                    break;
-                case sf::Keyboard::Key::Down:
-                    if (jogador2)
-                        jogador2->atacar();
-                    break;
-                default:
-                    break;
+                (*itr)->teclaSolta(e.key.code);
             }
         }
-        if(jogador1)
+
+        for(itr = listaObs.begin(); itr != listaObs.end(); itr++)
         {
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
-                jogador1->movimentaX(-1);
+                (*itr)->teclaPressionada(sf::Keyboard::Key::A);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
             {
-                jogador1->movimentaX(1);
+                (*itr)->teclaPressionada(sf::Keyboard::Key::D);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
             {
-                jogador1->pular();
+                (*itr)->teclaPressionada(sf::Keyboard::Key::W);
             }
-        }
-        if(jogador2)
-        {
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
+            {
+                (*itr)->teclaPressionada(sf::Keyboard::Key::S);
+            }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
             {
-                jogador2->movimentaX(-1);
+                (*itr)->teclaPressionada(sf::Keyboard::Key::Left);  
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
             {
-                jogador2->movimentaX(1);
+                (*itr)->teclaPressionada(sf::Keyboard::Key::Right);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
             {
-                jogador2->pular();
+                (*itr)->teclaPressionada(sf::Keyboard::Key::Up);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
+            {
+                (*itr)->teclaPressionada(sf::Keyboard::Key::Down);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter))
+            {
+                (*itr)->teclaPressionada(sf::Keyboard::Key::Enter);
+            }
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
+            {
+                (*itr)->teclaPressionada(sf::Keyboard::Key::Escape);
             }
         }
     }
@@ -103,6 +92,25 @@ namespace Gerenciadores
         sf::Event e;
         e = recebeEvento();
         processaEvento(e);
+    }
+
+    void Gerenciador_Eventos::adicionarObservador(Observadores::Observador* pObs)
+    {
+        if(pObs)
+        {
+            listaObs.push_back(pObs);
+        }
+    }
+
+    void Gerenciador_Eventos::removerObservador(Observadores::Observador* pObs)
+    {
+        std::list<Observadores::Observador*>::iterator itr;
+        itr = std::find(listaObs.begin(), listaObs.end(), pObs);
+
+        if(itr != listaObs.end())
+        {
+            listaObs.erase(itr);
+        }
     }
 
     void Gerenciador_Eventos::setJogador1(Entidades::Personagens::Jogador* pJ)

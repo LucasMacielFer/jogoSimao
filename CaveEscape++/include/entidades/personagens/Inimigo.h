@@ -34,12 +34,12 @@ namespace Entidades
                 Inimigo(const char* txt, const float tamXX, const float tamYY, const float xx, const float yy, const int vd, const float vel, const int f, const float duraEspera, const float duraAtaque, const tipoInimigo tipo);
                 Inimigo();
                 ~Inimigo();
-                void setJogador1(Jogador* pJogador);
-                void setJogador2(Jogador* pJogador);
+                static void setJogador1(Jogador* pJogador);
+                static void setJogador2(Jogador* pJogador);
                 sf::Vector2f getPosJogador1();
                 sf::Vector2f getPosJogador2();
-                const bool existeP1() const;
-                const bool existeP2() const;
+                static const bool existeP1();
+                static const bool existeP2();
                 const tipoInimigo getTipo() const;
                 void executar(float dt);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <stack>
+#include <map>
 #include "Estado.h"
 #include <iostream>
 
@@ -13,15 +13,18 @@ namespace Estados
         private:
             // Padrão de projeto singleton
             static GerenciadorEstados* pInstancia;
-            std::stack<Estado*> pilhaEstados;
+            std::map<idEstados, Estado*> mapaEstados;
+            idEstados estadoAtual;
+            unsigned int numJogs;
 
         private:
             GerenciadorEstados();
 
         public:
             ~GerenciadorEstados();
-            void empilharEstado(idEstados id);
-            void desempilharEstado();
+            void mudarEstado(idEstados id);
+            void setNumJogs(const unsigned int i);
+            void excluirEstado(idEstados id);
             Estado* getEstadoAtual();
             Ente* getEnteAtual();
             void executar(float dt);

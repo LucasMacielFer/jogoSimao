@@ -4,7 +4,6 @@ namespace Principal
 {
     Jogo::Jogo():
     gEventos(Gerenciadores::Gerenciador_Eventos::getInstancia()),
-    gColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia()),
     gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
     gEstados(Estados::GerenciadorEstados::getInstancia()),
     relogio(),
@@ -18,7 +17,6 @@ namespace Principal
     {
         delete gGrafico;
         delete gEventos;
-        delete gColisoes;
         delete gEstados;
     }
 
@@ -29,7 +27,6 @@ namespace Principal
         {
             gGrafico->limparJanela();
             gEventos->executar();
-            gColisoes->executar();
             tempo = relogio.getElapsedTime().asSeconds();
             relogio.restart();
             gEstados->executar(tempo);

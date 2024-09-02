@@ -85,19 +85,22 @@ namespace Listas
     template<class T>
     void Lista<T>::limpar()
     {
-
         Elemento<T>* pAux1 = NULL;
         Elemento<T>* pAux2 = NULL;
+        const int tam = tamanho;
+        int i = 0;
 
         pAux1 = pPrimeiro;
         pAux2 = pAux1;
         
-        while(pAux1 != NULL)
+        while(pAux1 != NULL && i < tam)
         {
             pAux2 = pAux1->getProximo();
-            delete (pAux1->getInfo());
+            if(pAux1->getInfo())
+                delete (pAux1->getInfo());
             delete (pAux1);
             pAux1 = pAux2;
+            i++;
         }
 
         pPrimeiro = NULL;

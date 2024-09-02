@@ -7,7 +7,7 @@ namespace Estados
 
     Estado::Estado(idEstados id):
     identificador(id),
-    ativo(true)
+    ativo(false)
     {
     }
 
@@ -21,11 +21,6 @@ namespace Estados
     {
         identificador = idEstados::Indefinido;
         ativo = false;
-    }
-
-    void Estado::setAtivo(const bool at)
-    {
-        ativo = at;
     }
 
     const bool Estado::getAtivo() const
@@ -42,14 +37,8 @@ namespace Estados
     {
         if(id != identificador && id != idEstados::Indefinido)
         {
-            pGEstados->empilharEstado(id);
+            pGEstados->mudarEstado(id);
             ativo = false;
         }
-    }
-
-    void Estado::voltarAnterior()
-    {
-        ativo = false;
-        pGEstados->desempilharEstado();
     }
 }

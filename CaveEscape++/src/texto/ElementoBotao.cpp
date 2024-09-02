@@ -2,22 +2,25 @@
 #include "texto/ElementoTexto.h"
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-//#include "SFML/Graphics/Texture.hpp"
-//#include "Ente.h"
-//#include "SFML/System/Vector2.hpp"
 
 namespace Texto
 {
 
-    ElementoBotao::ElementoBotao(const sf::Vector2f pos, const sf::Vector2f tam, const ElementoTexto txt, const idEntes Id, const sf::Color color): Ente(Botao), posicao(pos), tamanho(tam), cor(color), pressionado(false) 
+    ElementoBotao::ElementoBotao(const sf::Vector2f pos, const sf::Vector2f tam, const char* txt, const idEntes Id, const sf::Color color): 
+    Ente(Botao), 
+    texto(40, 0, 0, sf::Color::Black, "assets/fonts/StepalangeShort.ttf"),
+    posicao(pos), 
+    tamanho(tam), 
+    cor(color), 
+    pressionado(false) 
     {
         caixaTexto.setPosition(pos);
         caixaTexto.setSize(tam);
 
         //Método adaptado do monitor Giovane. GitHub: https://github.com/Giovanenero/JogoPlataforma2D-Jungle.git. Acesso em: 30/08/2024.
+        texto.setString(txt);
         sf::Vector2f tamTexto = texto.getTamanho();
-        sf::Vector2f posTexto = sf::Vector2f(pos.x + tam.x / 2.0f - tamTexto.x / 2.05f, pos.y + tam.y / 2.0f - tamTexto.y * 1.2f);
-
+        sf::Vector2f posTexto = sf::Vector2f(pos.x + tam.x / 2.0f - tamTexto.x /2.0f, pos.y + tam.y / 2.0f - tamTexto.y);
         texto.setPosicao(posTexto);
     }
 
@@ -46,15 +49,11 @@ namespace Texto
     void ElementoBotao::desenhar(sf::RenderWindow& janela)
     {
         janela.draw(caixaTexto);
+        texto.desenhar(janela);
     }
 
     void ElementoBotao::setPressionado(const bool pressao)
     {
-        if(pressao)
-            texto.setCor(sf::Color::Yellow);
-        else
-            texto.setCor(sf::Color::White);
-
         pressionado = pressao;
     }
 
@@ -63,8 +62,20 @@ namespace Texto
         return pressionado;
     }
 
-    void ElementoBotao::executar(const float dt)
+    std::string ElementoBotao::getTexto() const
     {
+        return texto.getString();
+    }
 
+    void ElementoBotao::executar(float dt)
+    {
+        if(pressionado)
+        {
+            caixaTexto.setFillColor(sf::Color::Cyan);
+        }
+        else
+        {
+            caixaTexto.setFillColor(cor);
+        }
     }
 }

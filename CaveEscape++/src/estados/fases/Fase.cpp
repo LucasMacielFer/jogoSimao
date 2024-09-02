@@ -1,4 +1,5 @@
 #include "../../../include/estados/fases/Fase.h"
+#include "../../../include/observadores/ObservadorFase.h"
 
 namespace Estados
 {
@@ -6,6 +7,8 @@ namespace Estados
     {
         Gerenciadores::Gerenciador_Colisoes* Fase::pGColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia());
         Gerenciadores::Gerenciador_Eventos* Fase::pGEventos(Gerenciadores::Gerenciador_Eventos::getInstancia());    
+        int Fase::pontJ1(0);
+        int Fase::pontJ2(0);
 
         void Fase::constroiHud()
         {
@@ -14,6 +17,7 @@ namespace Estados
             {
                 vidasJ1->setString("Vidas J1: " + std::to_string(jog1->getVidas()));
                 pontosJ1->setString("Pontos J1: " + std::to_string(jog1->getPontuacao()));
+                pontJ1 = jog1->getPontuacao();
             }
             vidasJ1->setX(meio-496);
             pontosJ1->setX(meio+284);
@@ -21,6 +25,7 @@ namespace Estados
             {
                 vidasJ2->setString("Vidas J2: " + std::to_string(jog2->getVidas()));
                 pontosJ2->setString("Pontos J2: " + std::to_string(jog2->getPontuacao()));
+                pontJ2 = jog2->getPontuacao();
             }
             vidasJ2->setX(meio-496);
             pontosJ2->setX(meio+284);
@@ -34,7 +39,7 @@ namespace Estados
                 vidasJ1->setCor(sf::Color::Red);
                 pontosJ1->setCor(sf::Color::Red);
                 pGColisoes->setJog1(NULL);
-                pGEventos->setJogador1(NULL);
+                Entidades::Personagens::Inimigo::setJogador1(NULL);
                 delete jog1;
                 setJogador1(NULL);
             }
@@ -44,7 +49,7 @@ namespace Estados
                 vidasJ2->setCor(sf::Color::Red);
                 pontosJ2->setCor(sf::Color::Red);
                 pGColisoes->setJog2(NULL);
-                pGEventos->setJogador2(NULL);
+                Entidades::Personagens::Inimigo::setJogador1(NULL);
                 delete jog2;
                 setJogador2(NULL);
             }
@@ -101,11 +106,13 @@ namespace Estados
                         pGColisoes->removerInimigo(pAux);;
                         if(pProj->getAtirador()->getTipo() == Entidades::Personagens::tipoInimigo::Esque)
                         {
-                            dynamic_cast<Entidades::Personagens::Esqueleto*>(pProj->getAtirador())->setFlecha(NULL);
+                            if(pProj->getAtirador())
+                                dynamic_cast<Entidades::Personagens::Esqueleto*>(pProj->getAtirador())->setFlecha(NULL);
                         }
                         if(pProj->getAtirador()->getTipo() == Entidades::Personagens::tipoInimigo::Mag)
                         {
-                            dynamic_cast<Entidades::Personagens::Mago*>(pProj->getAtirador())->setBolaFogo(NULL);
+                            if(pProj->getAtirador())
+                                dynamic_cast<Entidades::Personagens::Mago*>(pProj->getAtirador())->setBolaFogo(NULL);
                         }
                         vetRemocao[index] = pAux;
                         index++;
@@ -130,15 +137,19 @@ namespace Estados
         {
             if(numJogs >= 1)
             {
-                setJogador1(new Entidades::Personagens::Jogador("assets/textures/jogador1.png", "assets/textures/jogador1ataca.png", 100, 0));
+                setJogador1(new Entidades::Personagens::Jogador(1, "assets/textures/jogador1.png", "assets/textures/jogador1ataca.png", 100, 0));
                 pGColisoes->setJog1(jog1);
-                pGEventos->setJogador1(jog1);
+
             }
+
             if(numJogs == 2)
             {
-                setJogador2(new Entidades::Personagens::Jogador("assets/textures/jogador2.png", "assets/textures/jogador2ataca.png", 100, 0));
+                setJogador2(new Entidades::Personagens::Jogador(2, "assets/textures/jogador2.png", "assets/textures/jogador2ataca.png", 100, 0));
                 pGColisoes->setJog2(jog2);
-                pGEventos->setJogador2(jog2);
+            }
+            else
+            {
+                jog2 = NULL;
             }
         }
 
@@ -266,7 +277,8 @@ namespace Estados
         pontosJ1(new Texto::ElementoTexto(40, 796, 5,sf::Color::White, "assets/fonts/StepalangeShort.ttf")),
         pontosJ2(new Texto::ElementoTexto(40, 796, 35,sf::Color::White, "assets/fonts/StepalangeShort.ttf")),
         vidasJ1(new Texto::ElementoTexto(40, 80, 5,sf::Color::White, "assets/fonts/StepalangeShort.ttf")),
-        vidasJ2(new Texto::ElementoTexto(40, 80, 35,sf::Color::White, "assets/fonts/StepalangeShort.ttf"))
+        vidasJ2(new Texto::ElementoTexto(40, 80, 35,sf::Color::White, "assets/fonts/StepalangeShort.ttf")),
+        pObs(new Observadores::ObservadorFase(this))
         {
             pGColisoes = Gerenciadores::Gerenciador_Colisoes::getInstancia();
             pGEventos = Gerenciadores::Gerenciador_Eventos::getInstancia();
@@ -286,7 +298,8 @@ namespace Estados
         pontosJ1(),
         pontosJ2(),
         vidasJ1(),
-        vidasJ2()
+        vidasJ2(),
+        pObs(NULL)
         {
         }
 
@@ -312,17 +325,7 @@ namespace Estados
         void Fase::setJogador1(Entidades::Personagens::Jogador* jog)
         {
             Entidades::Entidade* pAux = NULL;
-            Entidades::Personagens::Inimigo* pInim = NULL;
-            lEntidades.irAoPrimeiro();
-            while(!lEntidades.fim())
-            {
-                pAux = lEntidades.passoPercorrer();
-                if(pAux->getId() == idEntes::Inimigo)
-                {
-                    pInim = dynamic_cast<Entidades::Personagens::Inimigo*>(pAux);
-                    pInim->setJogador1(jog);
-                }
-            }
+            Entidades::Personagens::Inimigo::setJogador1(jog);
             jog1 = jog;
         }
 
@@ -330,16 +333,7 @@ namespace Estados
         {
             Entidades::Entidade* pAux = NULL;
             Entidades::Personagens::Inimigo* pInim = NULL;
-            lEntidades.irAoPrimeiro();
-            while(!lEntidades.fim())
-            {
-                pAux = lEntidades.passoPercorrer();
-                if(pAux->getId() == idEntes::Inimigo)
-                {
-                    pInim = dynamic_cast<Entidades::Personagens::Inimigo*>(pAux);
-                    pInim->setJogador2(jog);
-                }
-            }
+            Entidades::Personagens::Inimigo::setJogador2(jog);
             jog2 = jog;
         }
 
@@ -367,9 +361,9 @@ namespace Estados
             gerenciarProjeteis();
             executarEntidades(dt);
             pGGrafico->moveCamera(calculaCentroCamera());
-            verificaVitoria();
-            verificaJogsVivos();
             constroiHud();
+            verificaJogsVivos();
+            verificaVitoria();
         }
 
         void Fase::aleatorizaOcorrencias(bool* ocorrencias, const int max)
@@ -392,6 +386,16 @@ namespace Estados
                 }
                 i++;
             }
+        }
+
+        void Fase::setAtivo(const bool at)
+        {
+            ativo = true;
+            pObs->setAtivo(at);
+            if(jog1)
+                jog1->setAtivo(at);
+            if(jog2)
+                jog2->setAtivo(at);
         }
 
         void Fase::salvarJogada(const char* caminhoSalvamento)

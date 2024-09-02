@@ -10,6 +10,11 @@
 #define DURACAO_ATAQUE_JOGADOR 0.2f
 #define DURACAO_ESPERA_JOGADOR 2.0f
 
+namespace Observadores
+{
+    class ObservadorJogador;
+}
+
 namespace Entidades
 {
     namespace Personagens
@@ -19,17 +24,18 @@ namespace Entidades
         class Jogador : public Personagem
         {
             private:
+                int numeroJog;
                 int pontuacao;
                 const char* texturaAtaque;
                 const char* texturaPadrao;
+                Observadores::ObservadorJogador* pObs;
 
             public: 
-
-                Jogador(const char* txt, const char* txt2, const float xx, const float yy);
+                Jogador(const int numJog, const char* txt, const char* txt2, const float xx, const float yy);
                 Jogador();
                 ~Jogador();
                 const int getPontuacao() const;
-                void operator++();
+                void operator=(const unsigned int pontos);
                 void aumentarTempoExecucao(const float tempo);
                 void atacar();
                 void danificar(Inimigo* pInim);
@@ -37,6 +43,7 @@ namespace Entidades
                 void salvar(const char* caminhoSalvamento);
                 void colidir(Entidade* entAlternativa, sf::Vector2f distancia_colisao);
                 void morrer();
+                void setAtivo(const bool at);
         };
     }
 }

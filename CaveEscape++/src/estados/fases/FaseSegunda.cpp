@@ -10,6 +10,11 @@ namespace Estados
             criarMapa();
             inicializaColisoes();
             criarJogadores(numJogs);
+
+            if(numJogs >= 1)
+                jog1->operator=(pontJ1);
+            if(numJogs == 2)
+                jog2->operator=(pontJ2);
         }
 
         FaseSegunda::~FaseSegunda()

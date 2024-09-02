@@ -2,69 +2,92 @@
 #include "../../include/Ente.h"
 #include "../../include/estados/fases/FasePrimeira.h"
 #include "../../include/estados/fases/FaseSegunda.h"
+#include "../../include/estados/menus/MenuPrincipal.h"
+#include "../../include/estados/menus/MenuFases.h"
 
 namespace Estados
 {
     GerenciadorEstados* GerenciadorEstados::pInstancia(NULL);
 
     GerenciadorEstados::GerenciadorEstados():
-    pilhaEstados()
+    mapaEstados()
     {
-        empilharEstado(idEstados::Jogando1);
+        mudarEstado(idEstados::Principal);
     }
 
     GerenciadorEstados::~GerenciadorEstados()
     {
-        Estado* pAux;
-
-        while(!pilhaEstados.empty())
-        {
-            pAux = pilhaEstados.top();
-            pilhaEstados.pop();
-
-            if(pAux)
-                delete pAux;
-            pAux = NULL;
-        }
-    }
-
-    void GerenciadorEstados::empilharEstado(idEstados id)
-    {
-        if(id == idEstados::Jogando1)
-        {
-            Fases::FasePrimeira* f1 = new Fases::FasePrimeira(2);
-            pilhaEstados.push(static_cast<Estado*>(f1));
-        }
+        std::map<idEstados, Estado*>::iterator it;
         
-        else if(id == idEstados::Jogando2)
+        for(it = mapaEstados.begin(); it != mapaEstados.end(); it++)
         {
-            Fases::FaseSegunda* f2 = new Fases::FaseSegunda(2);
-            pilhaEstados.push(static_cast<Estado*>(f2));
+            delete (*it).second;
+            mapaEstados.erase(it);
         }
     }
 
-    void GerenciadorEstados::desempilharEstado()
+    void GerenciadorEstados::mudarEstado(idEstados id)
     {
-        Estado* pAux;
+        std::map<idEstados, Estado*>::iterator it;
+        estadoAtual = id;
+        it = mapaEstados.find(id);
 
-        if(!pilhaEstados.empty())
+        if(it == mapaEstados.end())
         {
-            pAux = pilhaEstados.top();
-            pilhaEstados.pop();
-            delete pAux;
-            pAux = NULL;
+            if(estadoAtual == idEstados::Jogando1)
+            {
+                Fases::FasePrimeira* f1 = new Fases::FasePrimeira(numJogs);
+                mapaEstados.insert(std::make_pair(idEstados::Jogando1, static_cast<Estado*>(f1)));
+            }
+            else if(estadoAtual == idEstados::Jogando2)
+            {
+                Fases::FaseSegunda* f2 = new Fases::FaseSegunda(numJogs);
+                mapaEstados.insert(std::make_pair(idEstados::Jogando2, static_cast<Estado*>(f2)));
+            }
+            else if(estadoAtual == idEstados::Principal)
+            {
+                Menus::MenuPrincipal* mp = new Menus::MenuPrincipal();
+                mapaEstados.insert(std::make_pair(idEstados::Principal, static_cast<Estado*>(mp)));
+            }
+            else if(estadoAtual == idEstados::SelecaoFase)
+            {
+                Menus::MenuFases* mf = new Menus::MenuFases();
+                mapaEstados.insert(std::make_pair(idEstados::SelecaoFase, static_cast<Estado*>(mf)));
+            }
+        }
+
+        mapaEstados[estadoAtual]->setAtivo(true);
+
+        if(estadoAtual == idEstados::Jogando2)
+            excluirEstado(idEstados::Jogando1);
+        else if(estadoAtual == idEstados::Jogando1)
+            excluirEstado(idEstados::Jogando2);
+        else if(estadoAtual == idEstados::Principal)
+        {
+            excluirEstado(idEstados::Jogando2);
+            excluirEstado(idEstados::Jogando2);
+        }
+    }
+
+    void GerenciadorEstados::setNumJogs(const unsigned int i)
+    {
+        numJogs = i;
+    }
+
+    void GerenciadorEstados::excluirEstado(idEstados id)
+    {
+        std::map<idEstados, Estado*>::iterator it;
+        it = mapaEstados.find(id);
+        if(it != mapaEstados.end())
+        {
+            delete (*it).second;
+            mapaEstados.erase(it);
         }
     }
 
     Estado* GerenciadorEstados::getEstadoAtual()
     {
-        if(!pilhaEstados.empty())
-            return pilhaEstados.top();
-        else
-        {
-            std::cout<<"A pilha de estados esta vazia"<<std::endl;
-            return NULL;
-        }
+        return mapaEstados[estadoAtual];
     }
 
     Ente* GerenciadorEstados::getEnteAtual()
@@ -76,6 +99,12 @@ namespace Estados
                 break;
             case idEstados::Jogando2:
                 return static_cast<Ente*>(dynamic_cast<Fases::FaseSegunda*>(getEstadoAtual()));
+                break;
+            case idEstados::Principal:
+                return static_cast<Ente*>(dynamic_cast<Menus::MenuPrincipal*>(getEstadoAtual()));
+                break;
+            case idEstados::SelecaoFase:
+                return static_cast<Ente*>(dynamic_cast<Menus::MenuFases*>(getEstadoAtual()));
                 break;
             default:
                 return NULL;

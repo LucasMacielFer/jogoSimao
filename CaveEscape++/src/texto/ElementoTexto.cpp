@@ -19,7 +19,9 @@ namespace Texto
         texto.setString("");
     }
 
-    ElementoTexto::ElementoTexto(const char* txt): fonte(), texto()
+    ElementoTexto::ElementoTexto(const char* txt): 
+    fonte(), 
+    texto()
     {
         texto.setString(txt);
     }
@@ -40,6 +42,11 @@ namespace Texto
         texto.setString(str);
     }
 
+    std::string ElementoTexto::getString() const
+    {
+        return texto.getString();
+    }
+
     void ElementoTexto::setCor(sf::Color cor)
     {
         texto.setColor(cor);
@@ -53,8 +60,9 @@ namespace Texto
 
     const sf::Vector2f ElementoTexto::getTamanho() const
     {
-        return texto.getScale();
+        return sf::Vector2f(texto.getLocalBounds().width, texto.getLocalBounds().height);
     }
+
     void ElementoTexto::setPosicao(sf::Vector2f posTexto)
     {
         texto.setPosition(posTexto);

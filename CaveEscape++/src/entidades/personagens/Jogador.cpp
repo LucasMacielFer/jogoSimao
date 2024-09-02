@@ -1,15 +1,18 @@
 #include "../../../include/entidades/personagens/Jogador.h"
 #include "../../../include/entidades/personagens/Inimigo.h"
+#include "../../../include/observadores/ObservadorJogador.h"
 
 namespace Entidades
 {
     namespace Personagens
     {
-        Jogador::Jogador(const char* txt, const char* txt2, const float xx, const float yy):
+        Jogador::Jogador(const int numJog, const char* txt, const char* txt2, const float xx, const float yy):
         Personagem(idEntes::Jogador, txt ,TAM_X_JOGADOR, TAM_Y_JOGADOR, xx, yy, VIDAS_JOGADOR, VEL_MAX_JOGADOR, FORCA_JOGADOR, DURACAO_ESPERA_JOGADOR, DURACAO_ATAQUE_JOGADOR), 
+        numeroJog(numJog),
         pontuacao(0),
         texturaAtaque(txt2),
-        texturaPadrao(txt)
+        texturaPadrao(txt),
+        pObs(new Observadores::ObservadorJogador(numeroJog, this))
         {
         }
 
@@ -21,6 +24,7 @@ namespace Entidades
 
         Jogador::~Jogador()
         {
+            delete pObs;
             pontuacao = -1;
         }
 
@@ -29,9 +33,9 @@ namespace Entidades
             return pontuacao;
         }
 
-        void Jogador:: operator++()
+        void Jogador:: operator=(const unsigned int pontos)
         {
-            pontuacao++;
+            pontuacao = pontos;
         }
 
         void Jogador::atacar()
@@ -124,6 +128,11 @@ namespace Entidades
         void Jogador::morrer()
         {
             vivo = false;
+        }
+
+        void Jogador::setAtivo(const bool at)
+        {
+            pObs->setAtivo(at);
         }
     }
 }
