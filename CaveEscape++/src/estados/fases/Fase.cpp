@@ -5,10 +5,8 @@ namespace Estados
 {
     namespace Fases
     {
-        Gerenciadores::Gerenciador_Colisoes* Fase::pGColisoes(Gerenciadores::Gerenciador_Colisoes::getInstancia());
-        Gerenciadores::Gerenciador_Eventos* Fase::pGEventos(Gerenciadores::Gerenciador_Eventos::getInstancia());    
-        int Fase::pontJ1(0);
-        int Fase::pontJ2(0);
+        Gerenciadores::GerenciadorColisoes* Fase::pGColisoes(Gerenciadores::GerenciadorColisoes::getInstancia());
+        Gerenciadores::GerenciadorEventos* Fase::pGEventos(Gerenciadores::GerenciadorEventos::getInstancia());    
 
         void Fase::constroiHud()
         {
@@ -55,8 +53,8 @@ namespace Estados
             }
             if(!jog1 && !jog2)
             {
-                std::cout<<"Skill issue"<<std::endl;
-                exit(1);
+                pGGrafico->moveCamera(pGGrafico->getTamJanela().x/2.0f);
+                modificarEstado(idEstados::Derrota);
             }
         }
 
@@ -182,7 +180,6 @@ namespace Estados
                 if(pAux && pAux->getId() == idEntes::Inimigo)
                 {
                     pGColisoes->incluirInimigo(pAux);
-                    // TEMPORARIO - VAI PRA CRIAÇÃO DE MAPA
                     if(dynamic_cast<Entidades::Personagens::Inimigo*>(pAux)->getTipo() == Entidades::Personagens::tipoInimigo::Esque)
                     {
                         dynamic_cast<Entidades::Personagens::Esqueleto*>(pAux)->setFase(this);
@@ -280,8 +277,8 @@ namespace Estados
         vidasJ2(new Texto::ElementoTexto(40, 80, 35,sf::Color::White, "assets/fonts/StepalangeShort.ttf")),
         pObs(new Observadores::ObservadorFase(this))
         {
-            pGColisoes = Gerenciadores::Gerenciador_Colisoes::getInstancia();
-            pGEventos = Gerenciadores::Gerenciador_Eventos::getInstancia();
+            pGColisoes = Gerenciadores::GerenciadorColisoes::getInstancia();
+            pGEventos = Gerenciadores::GerenciadorEventos::getInstancia();
             time_t t;
             srand((unsigned)time(&t));
         }
@@ -305,6 +302,9 @@ namespace Estados
 
         Fase::~Fase()
         {
+            pGColisoes->limparListas();
+            pGColisoes->setJog1(NULL);
+            pGColisoes->setJog2(NULL);
             lEntidades.limpaLista();
         }
 
@@ -390,7 +390,7 @@ namespace Estados
 
         void Fase::setAtivo(const bool at)
         {
-            ativo = true;
+            ativo = at;
             pObs->setAtivo(at);
             if(jog1)
                 jog1->setAtivo(at);
@@ -413,6 +413,12 @@ namespace Estados
                 if(pAux)
                     pAux->salvar(caminhoSalvamento);
             }
+        }
+
+        void Fase::pausar()
+        {
+            pGGrafico->moveCamera(pGGrafico->getTamJanela().x/2.0f);
+            modificarEstado(idEstados::Pause);
         }
     }
 }

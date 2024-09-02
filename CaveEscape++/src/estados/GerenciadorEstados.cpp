@@ -4,6 +4,12 @@
 #include "../../include/estados/fases/FaseSegunda.h"
 #include "../../include/estados/menus/MenuPrincipal.h"
 #include "../../include/estados/menus/MenuFases.h"
+#include "../../include/estados/menus/MenuVitoria.h"
+#include "../../include/estados/menus/MenuDerrota.h"
+#include "../../include/estados/menus/MenuPausa.h"
+#include "../../include/estados/menus/MenuSalvar.h"
+#include "../../include/estados/menus/MenuLideres.h"
+
 
 namespace Estados
 {
@@ -28,11 +34,19 @@ namespace Estados
 
     void GerenciadorEstados::mudarEstado(idEstados id)
     {
-        std::map<idEstados, Estado*>::iterator it;
         estadoAtual = id;
-        it = mapaEstados.find(id);
 
-        if(it == mapaEstados.end())
+        if(estadoAtual == idEstados::Jogando2)
+            excluirEstado(idEstados::Jogando1);
+        else if(estadoAtual == idEstados::Jogando1)
+            excluirEstado(idEstados::Jogando2);
+        else if(estadoAtual == idEstados::Principal || estadoAtual == idEstados::Vitoria || estadoAtual == idEstados::Derrota)
+        {
+            excluirEstado(idEstados::Jogando1);
+            excluirEstado(idEstados::Jogando2);
+        }
+        
+        if(mapaEstados.count(id) == 0)
         {
             if(estadoAtual == idEstados::Jogando1)
             {
@@ -54,19 +68,34 @@ namespace Estados
                 Menus::MenuFases* mf = new Menus::MenuFases();
                 mapaEstados.insert(std::make_pair(idEstados::SelecaoFase, static_cast<Estado*>(mf)));
             }
+            else if(estadoAtual == idEstados::Derrota)
+            {
+                Menus::MenuDerrota* md = new Menus::MenuDerrota();
+                mapaEstados.insert(std::make_pair(idEstados::Derrota, static_cast<Estado*>(md)));
+            }
+            else if(estadoAtual == idEstados::Vitoria)
+            {
+                Menus::MenuVitoria* mv = new Menus::MenuVitoria();
+                mapaEstados.insert(std::make_pair(idEstados::Vitoria, static_cast<Estado*>(mv)));
+            }
+            else if(estadoAtual == idEstados::Pause)
+            {
+                Menus::MenuPausa* mpausa = new Menus::MenuPausa();
+                mapaEstados.insert(std::make_pair(idEstados::Pause, static_cast<Estado*>(mpausa)));
+            }
+            else if(estadoAtual == idEstados::SalvarNome)
+            {
+                Menus::MenuSalvar* ms = new Menus::MenuSalvar();
+                mapaEstados.insert(std::make_pair(idEstados::SalvarNome, static_cast<Estado*>(ms)));
+            }
+            else if(estadoAtual == idEstados::TabelaLideres)
+            {
+                Menus::MenuLideres* ml = new Menus::MenuLideres();
+                mapaEstados.insert(std::make_pair(idEstados::TabelaLideres, static_cast<Estado*>(ml)));
+            }
         }
 
         mapaEstados[estadoAtual]->setAtivo(true);
-
-        if(estadoAtual == idEstados::Jogando2)
-            excluirEstado(idEstados::Jogando1);
-        else if(estadoAtual == idEstados::Jogando1)
-            excluirEstado(idEstados::Jogando2);
-        else if(estadoAtual == idEstados::Principal)
-        {
-            excluirEstado(idEstados::Jogando2);
-            excluirEstado(idEstados::Jogando2);
-        }
     }
 
     void GerenciadorEstados::setNumJogs(const unsigned int i)
@@ -76,12 +105,10 @@ namespace Estados
 
     void GerenciadorEstados::excluirEstado(idEstados id)
     {
-        std::map<idEstados, Estado*>::iterator it;
-        it = mapaEstados.find(id);
-        if(it != mapaEstados.end())
+        if(mapaEstados.count(id) != 0)
         {
-            delete (*it).second;
-            mapaEstados.erase(it);
+            delete mapaEstados[id];
+            mapaEstados.erase(id);
         }
     }
 
@@ -105,6 +132,21 @@ namespace Estados
                 break;
             case idEstados::SelecaoFase:
                 return static_cast<Ente*>(dynamic_cast<Menus::MenuFases*>(getEstadoAtual()));
+                break;
+            case idEstados::Vitoria:
+                return static_cast<Ente*>(dynamic_cast<Menus::MenuVitoria*>(getEstadoAtual()));
+                break;
+            case idEstados::Derrota:
+                return static_cast<Ente*>(dynamic_cast<Menus::MenuDerrota*>(getEstadoAtual()));
+                break;
+            case idEstados::Pause:
+                return static_cast<Ente*>(dynamic_cast<Menus::MenuPausa*>(getEstadoAtual()));
+                break;
+            case idEstados::SalvarNome:
+                return static_cast<Ente*>(dynamic_cast<Menus::MenuSalvar*>(getEstadoAtual()));
+                break;
+            case idEstados::TabelaLideres:
+                return static_cast<Ente*>(dynamic_cast<Menus::MenuLideres*>(getEstadoAtual()));
                 break;
             default:
                 return NULL;

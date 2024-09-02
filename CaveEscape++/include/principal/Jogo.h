@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../gerenciadores/Gerenciador_Eventos.h"
-#include "../gerenciadores/Gerenciador_Colisoes.h"
+#include "../gerenciadores/GerenciadorEventos.h"
+#include "../gerenciadores/GerenciadorColisoes.h"
 #include "../estados/GerenciadorEstados.h"
 
 #define TICKRATE 0.017
@@ -11,8 +11,8 @@ namespace Principal
     class Jogo
     {
         private:
-            Gerenciadores::Gerenciador_Eventos* gEventos;
-            Gerenciadores::Gerenciador_Grafico* gGrafico;
+            Gerenciadores::GerenciadorEventos* gEventos;
+            Gerenciadores::GerenciadorGrafico* gGrafico;
             Estados::GerenciadorEstados* gEstados;
 
             // Todo o gerenciamento de tempo foi feito baseado no jogo Desert++, do monitor Matheus Burda

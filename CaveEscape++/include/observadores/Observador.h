@@ -9,7 +9,7 @@ namespace Estados
 
 namespace Gerenciadores
 {
-    class Gerenciador_Eventos;
+    class GerenciadorEventos;
 }
 
 namespace Observadores
@@ -18,7 +18,7 @@ namespace Observadores
     class Observador
     {
         protected:
-            static Gerenciadores::Gerenciador_Eventos* pGEventos;
+            static Gerenciadores::GerenciadorEventos* pGEventos;
             static Estados::GerenciadorEstados* pGEstados;
             std::map<sf::Keyboard::Key, char> teclado;
             std::map<sf::Keyboard::Key, std::string> tecladoEspecial;
@@ -30,7 +30,7 @@ namespace Observadores
             void inicializarTeclado();
         
         public:
-            Observador(Gerenciadores::Gerenciador_Eventos* pGEv);
+            Observador(Gerenciadores::GerenciadorEventos* pGEv);
             virtual ~Observador();
             const bool getAtivar() const;
             void setAtivo(const bool at);

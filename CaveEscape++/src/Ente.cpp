@@ -3,13 +3,13 @@
 Ente::Ente(const idEntes i):
 id(i)
 {
-    pGGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
+    pGGrafico = Gerenciadores::GerenciadorGrafico::getInstancia();
 }
 
 Ente::Ente(const idEntes i, const char* txt):
 id(i)
 {
-    pGGrafico = Gerenciadores::Gerenciador_Grafico::getInstancia();
+    pGGrafico = Gerenciadores::GerenciadorGrafico::getInstancia();
     textura = pGGrafico->carregarTextura(txt);
 }
 

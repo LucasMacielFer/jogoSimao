@@ -61,6 +61,7 @@ namespace Estados
                 botao = *it;
                 botao->setPressionado(true);
                 moverBotao = false;
+                selecionarBotao = true;
             }
         }
 
@@ -80,6 +81,7 @@ namespace Estados
                 botao = *it;
                 botao->setPressionado(true);
                 moverBotao = false;
+                selecionarBotao = true;
             }
         }
 

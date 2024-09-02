@@ -10,7 +10,7 @@ namespace Estados
         class MenuPausa : public Menu
         {
             private:
-                Estados::Fases::Fase* faseApontada;
+                static idEstados fasePausada;
                 bool saida;
 
             public:
@@ -18,8 +18,8 @@ namespace Estados
                 MenuPausa(Estados::Fases::Fase* pFase = NULL);
                 ~MenuPausa();
 
-                void setFase(Estados::Fases::Fase* faseEscolhida);
-                Estados::Fases::Fase* getFase();
+                static void setFase(idEstados faseEscolhida);
+                static idEstados getFase();
                 void selecionar();
                 void criarBotoes();
         };

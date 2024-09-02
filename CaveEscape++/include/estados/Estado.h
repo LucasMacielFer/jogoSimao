@@ -10,7 +10,10 @@ namespace Estados
         Jogando2,
         Pause,
         SelecaoFase,
-        TabelaLideres
+        TabelaLideres,
+        SalvarNome,
+        Derrota,
+        Vitoria
     };
 
     class GerenciadorEstados;
@@ -21,6 +24,8 @@ namespace Estados
             static GerenciadorEstados* pGEstados;
             idEstados identificador;
             bool ativo;
+            static int pontJ1;
+            static int pontJ2;
         
         public:
             Estado(idEstados id);

@@ -72,4 +72,19 @@ namespace Texto
     {
         janela.draw(texto);
     }
+
+    void ElementoTexto::operator+=(char c)
+    {
+        std::string s = getString();
+        s = s + c;
+        setString(s);
+    }
+
+    void ElementoTexto::operator--()
+    {
+        std::string s = getString();
+        if (!s.empty())
+            s.pop_back();
+        setString(s);
+    }
 }

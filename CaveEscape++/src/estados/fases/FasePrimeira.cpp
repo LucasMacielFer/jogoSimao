@@ -1,4 +1,5 @@
 #include "../../../include/estados/fases/FasePrimeira.h"
+#include "../../../include/estados/menus/MenuPausa.h"
 
 namespace Estados
 {
@@ -58,6 +59,12 @@ namespace Estados
             gravador.close();
 
             Fase::salvarJogada(caminhoSalvamento);
+        }
+
+        void FasePrimeira::pausar()
+        {
+            Menus::MenuPausa::setFase(idEstados::Jogando1);
+            Fase::pausar();
         }
     }
 }

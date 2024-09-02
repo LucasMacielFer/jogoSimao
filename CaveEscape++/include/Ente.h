@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include "gerenciadores/Gerenciador_Grafico.h"
+#include "gerenciadores/GerenciadorGrafico.h"
 
 enum idEntes
 {
@@ -12,14 +12,15 @@ enum idEntes
     Projetil,
     Fase,
     MenuId,
-    Botao
+    Salvamento,
+    Botao,
 };
 
 // Ente é a classe abstrata base para os entes do jogo
 class Ente
 {
     protected:
-        Gerenciadores::Gerenciador_Grafico* pGGrafico;
+        Gerenciadores::GerenciadorGrafico* pGGrafico;
         idEntes id;
         sf::Texture* textura;
         

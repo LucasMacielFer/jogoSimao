@@ -3,8 +3,8 @@
 namespace Principal
 {
     Jogo::Jogo():
-    gEventos(Gerenciadores::Gerenciador_Eventos::getInstancia()),
-    gGrafico(Gerenciadores::Gerenciador_Grafico::getInstancia()),
+    gEventos(Gerenciadores::GerenciadorEventos::getInstancia()),
+    gGrafico(Gerenciadores::GerenciadorGrafico::getInstancia()),
     gEstados(Estados::GerenciadorEstados::getInstancia()),
     relogio(),
     tempo(0.0f)

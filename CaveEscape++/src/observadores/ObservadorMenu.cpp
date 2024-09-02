@@ -1,10 +1,10 @@
 #include "../../include/observadores/ObservadorMenu.h"
-#include "../../include/gerenciadores/Gerenciador_Eventos.h"
+#include "../../include/gerenciadores/GerenciadorEventos.h"
 
 namespace Observadores
 {
     ObservadorMenu::ObservadorMenu(Estados::Menus::Menu* pM):
-    Observador(Gerenciadores::Gerenciador_Eventos::getInstancia()),
+    Observador(Gerenciadores::GerenciadorEventos::getInstancia()),
     pMenu(pM)
     {
     }
@@ -25,7 +25,7 @@ namespace Observadores
         }
         else if(tecladoEspecial[tecla] == "Enter")
         {
-            pMenu->selecionar();
+            pMenu->podeSelecionarBotao();
         }
     }
 
@@ -37,7 +37,21 @@ namespace Observadores
         }
         else if(tecladoEspecial[tecla] == "Enter")
         {
-            pMenu->podeSelecionarBotao();
+            pMenu->selecionar();
+        }
+
+        if(pMenu->getIdentificador() == Estados::idEstados::SalvarNome)
+        {
+            Estados::Menus::MenuSalvar* pSalvar = dynamic_cast<Estados::Menus::MenuSalvar*>(pMenu);
+            if(teclado[tecla] >= 'a' && teclado[tecla] <= 'z')
+            {
+                pSalvar->digitar(teclado[tecla]);
+            }
+
+            if(tecladoEspecial[tecla] == "BackSpace")
+            {
+                pSalvar->deletar();
+            }
         }
     }
 }

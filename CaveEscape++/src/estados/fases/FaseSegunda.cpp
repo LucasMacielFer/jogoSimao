@@ -1,4 +1,5 @@
 #include "../../../include/estados/fases/FaseSegunda.h"
+#include "../../../include/estados/menus/MenuPausa.h"
 
 namespace Estados
 {
@@ -45,9 +46,8 @@ namespace Estados
 
         void FaseSegunda::vencer()
         {
-            salvarJogada("assets/salvamento/jogada.txt");
-            std::cout<<"Você venceu!"<<std::endl;
-            exit(1);
+            pGGrafico->moveCamera(pGGrafico->getTamJanela().x/2.0f);
+            modificarEstado(idEstados::Vitoria);
         }
 
         void FaseSegunda::criarMapa()
@@ -74,6 +74,12 @@ namespace Estados
             gravador.close();
 
             Fase::salvarJogada(caminhoSalvamento);
+        }
+
+        void FaseSegunda::pausar()
+        {
+            Menus::MenuPausa::setFase(idEstados::Jogando2);
+            Fase::pausar();
         }
     }
 }

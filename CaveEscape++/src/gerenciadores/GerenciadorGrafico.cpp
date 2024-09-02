@@ -1,12 +1,12 @@
-#include "../../include/gerenciadores/Gerenciador_Grafico.h"
+#include "../../include/gerenciadores/GerenciadorGrafico.h"
 #include "../../include/Ente.h"
 
 namespace Gerenciadores
 {
     // Inicialização de pInstancia como NULL
-    Gerenciador_Grafico* Gerenciador_Grafico::pInstancia(NULL);
+    GerenciadorGrafico* GerenciadorGrafico::pInstancia(NULL);
 
-    Gerenciador_Grafico::Gerenciador_Grafico():
+    GerenciadorGrafico::GerenciadorGrafico():
     janela(sf::VideoMode(tamanhoJanela.x, tamanhoJanela.y), "Jogo"),
     tamanhoJanela(sf::Vector2f(TAM_JANELA_X, TAM_JANELA_Y))
     {
@@ -15,52 +15,52 @@ namespace Gerenciadores
         janela.setView(camera);
     }
 
-    Gerenciador_Grafico::~Gerenciador_Grafico()
+    GerenciadorGrafico::~GerenciadorGrafico()
     {
     }
 
-    void Gerenciador_Grafico::fecharJanela()
+    void GerenciadorGrafico::fecharJanela()
     {
         janela.close();
     }
 
-    void Gerenciador_Grafico::limparJanela()
+    void GerenciadorGrafico::limparJanela()
     {
         janela.clear();
     }
 
-    void Gerenciador_Grafico::mostrarJanela()
+    void GerenciadorGrafico::mostrarJanela()
     {
         janela.display();
     }
 
-    void Gerenciador_Grafico::desenhaEnte(Ente* pE)
+    void GerenciadorGrafico::desenhaEnte(Ente* pE)
     {
         pE->desenhar(janela);
     }
 
-    sf::RenderWindow& Gerenciador_Grafico::getJanela()
+    sf::RenderWindow& GerenciadorGrafico::getJanela()
     {
         return janela;
     }
 
-    void Gerenciador_Grafico::moveCamera(const float x)
+    void GerenciadorGrafico::moveCamera(const float x)
     {
         camera.setCenter(x, tamanhoJanela.y/2.0f);
         janela.setView(camera);
     }
 
-    const sf::View Gerenciador_Grafico::getCamera() const
+    const sf::View GerenciadorGrafico::getCamera() const
     {
         return camera;
     }
 
-    const bool Gerenciador_Grafico::janelaAberta() const
+    const bool GerenciadorGrafico::janelaAberta() const
     {
         return janela.isOpen();
     }
 
-    sf::Texture* Gerenciador_Grafico::carregarTextura(const char* caminhoTextura)
+    sf::Texture* GerenciadorGrafico::carregarTextura(const char* caminhoTextura)
     {
         if(mapaTexturas.count(caminhoTextura) <= 0)
         {
@@ -79,17 +79,17 @@ namespace Gerenciadores
         }
     }
 
-    const sf::Vector2f Gerenciador_Grafico::getTamJanela() const
+    const sf::Vector2f GerenciadorGrafico::getTamJanela() const
     {
         return tamanhoJanela;
     }
 
     // Execução efetiva do padrão de projeto singleton
-    Gerenciador_Grafico* Gerenciador_Grafico::getInstancia()
+    GerenciadorGrafico* GerenciadorGrafico::getInstancia()
     {
         if(!pInstancia)
         {
-            pInstancia = new Gerenciador_Grafico();
+            pInstancia = new GerenciadorGrafico();
         }
         return pInstancia;
     } 

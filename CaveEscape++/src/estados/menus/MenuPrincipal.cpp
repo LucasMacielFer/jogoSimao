@@ -1,8 +1,7 @@
 #include "../../../include/estados/menus/MenuPrincipal.h"
 #include "../../../include/estados/GerenciadorEstados.h"
-#include "Ente.h"
+#include "../../../include/texto/ElementoTexto.h"
 #include "SFML/Graphics/Color.hpp"
-#include "texto/ElementoTexto.h"
 
 namespace Estados
 {
@@ -18,6 +17,9 @@ namespace Estados
             nome->setString("CaveEscape++");
             nome->setPosicao(sf::Vector2f(tamanhoJanela.x / 2.0f - nome->getTamanho().x / 2.0f, 100.0f));
             podeSelecionarBotao();
+
+            pontJ1 = 0;
+            pontJ2 = 0;
         }
 
         MenuPrincipal::~MenuPrincipal()
@@ -38,6 +40,10 @@ namespace Estados
                 {
                     pGEstados->setNumJogs(2);
                     modificarEstado(idEstados::SelecaoFase);
+                }
+                else if(selecao == "Colocacao")
+                {
+                    modificarEstado(idEstados::TabelaLideres);
                 }
                 else if(selecao == "Sair")
                 {

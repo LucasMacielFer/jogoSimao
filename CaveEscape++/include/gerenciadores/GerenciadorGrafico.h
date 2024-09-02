@@ -8,11 +8,11 @@ class Ente;
 
 namespace Gerenciadores
 {
-    class Gerenciador_Grafico
+    class GerenciadorGrafico
     {
     private:
         // Ponteiro estático para instância do gerenciador - Padrão de projeto Singleton
-        static Gerenciador_Grafico* pInstancia;
+        static GerenciadorGrafico* pInstancia;
         const sf::Vector2f tamanhoJanela;
         sf::RenderWindow janela;
         sf::View camera;
@@ -20,10 +20,10 @@ namespace Gerenciadores
 
     private:
         // Construtora privada, em conformidade com o padrão de projeto Singleton
-        Gerenciador_Grafico();
+        GerenciadorGrafico();
 
     public:
-        ~Gerenciador_Grafico();
+        ~GerenciadorGrafico();
         void fecharJanela();
         void mostrarJanela();
         void limparJanela();
@@ -34,6 +34,6 @@ namespace Gerenciadores
         const bool janelaAberta() const;
         sf::Texture* carregarTextura(const char* caminhoTextura);
         const sf::Vector2f getTamJanela() const;
-        static Gerenciador_Grafico* getInstancia();
+        static GerenciadorGrafico* getInstancia();
     };
 }

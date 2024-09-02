@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Menu.h"
 #include <string>
 
@@ -7,16 +5,17 @@ namespace Estados
 {
     namespace Menus
     {
-        class MenuPrincipal : public Menu
+        class MenuVitoria : public Menu
         {
             private:
-                bool saida;
+                Texto::ElementoTexto* pontuacaoVitoria;
 
             public:
-                MenuPrincipal();
-                ~MenuPrincipal();
+                MenuVitoria();
+                ~MenuVitoria();
                 void selecionar();
                 void criarBotoes();
+                virtual void desenhar(sf::RenderWindow& janela);
         };
     }
 }

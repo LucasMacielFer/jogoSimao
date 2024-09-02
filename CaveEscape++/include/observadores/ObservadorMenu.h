@@ -2,6 +2,8 @@
 
 #include "Observador.h"
 #include "../estados/menus/Menu.h"
+#include "../estados/Estado.h"
+#include "../estados/menus/MenuSalvar.h"
 
 namespace Observadores
 {

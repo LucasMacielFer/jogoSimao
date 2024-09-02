@@ -1,10 +1,10 @@
 #include "../../include/observadores/Observador.h"
-#include "../../include/gerenciadores/Gerenciador_Eventos.h"
+#include "../../include/gerenciadores/GerenciadorEventos.h"
 #include "../../include/estados/GerenciadorEstados.h"
 
 namespace Observadores
 {
-    Gerenciadores::Gerenciador_Eventos* Observador::pGEventos(Gerenciadores::Gerenciador_Eventos::getInstancia());
+    Gerenciadores::GerenciadorEventos* Observador::pGEventos(Gerenciadores::GerenciadorEventos::getInstancia());
     Estados::GerenciadorEstados* Observador::pGEstados(Estados::GerenciadorEstados::getInstancia());
 
     void Observador::inicializarTeclado()
@@ -56,7 +56,7 @@ namespace Observadores
         tecladoEspecial.insert(std::pair<sf::Keyboard::Key, std::string>(sf::Keyboard::LShift, "LShift"));
     }
 
-    Observador::Observador(Gerenciadores::Gerenciador_Eventos* pGEv):
+    Observador::Observador(Gerenciadores::GerenciadorEventos* pGEv):
     ativar(false),
     teclado(),
     tecladoEspecial()

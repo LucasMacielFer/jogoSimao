@@ -1,10 +1,10 @@
 #include "../../include/observadores/ObservadorFase.h"
-#include "../../include/gerenciadores/Gerenciador_Eventos.h"
+#include "../../include/gerenciadores/GerenciadorEventos.h"
 
 namespace Observadores
 {
     ObservadorFase::ObservadorFase(Estados::Fases::Fase* pF):
-    Observador(Gerenciadores::Gerenciador_Eventos::getInstancia()),
+    Observador(Gerenciadores::GerenciadorEventos::getInstancia()),
     pFase(pF)
     {
     }
@@ -17,7 +17,7 @@ namespace Observadores
     {
         if(tecladoEspecial[tecla] == "Escape")
         {
-
+            pFase->pausar();
         }
     }
 

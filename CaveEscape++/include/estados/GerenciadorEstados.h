@@ -15,7 +15,7 @@ namespace Estados
             static GerenciadorEstados* pInstancia;
             std::map<idEstados, Estado*> mapaEstados;
             idEstados estadoAtual;
-            unsigned int numJogs;
+            int numJogs;
 
         private:
             GerenciadorEstados();

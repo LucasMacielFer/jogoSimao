@@ -4,6 +4,8 @@
 namespace Estados
 {
     GerenciadorEstados* Estado::pGEstados(GerenciadorEstados::getInstancia());
+    int Estado::pontJ1(0);
+    int Estado::pontJ2(0);
 
     Estado::Estado(idEstados id):
     identificador(id),
@@ -37,8 +39,8 @@ namespace Estados
     {
         if(id != identificador && id != idEstados::Indefinido)
         {
+            setAtivo(false);
             pGEstados->mudarEstado(id);
-            ativo = false;
         }
     }
 }

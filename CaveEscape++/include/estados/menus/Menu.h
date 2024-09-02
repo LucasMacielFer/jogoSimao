@@ -42,7 +42,7 @@ namespace Estados
                 void irPraBaixo();
                 void podeMoverBotao();
                 void podeSelecionarBotao();
-                void desenhar(sf::RenderWindow& janela);
+                virtual void desenhar(sf::RenderWindow& janela);
                 void executar(float dt);
                 void setAtivo(const bool at);
                 virtual void selecionar() = 0;

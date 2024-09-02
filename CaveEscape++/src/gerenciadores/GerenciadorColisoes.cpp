@@ -1,12 +1,12 @@
-#include "gerenciadores/Gerenciador_Colisoes.h"
+#include "gerenciadores/GerenciadorColisoes.h"
 #include "entidades/Entidade.h"
 //#include "auxiliares/ListaEntidades.h"
 
 namespace Gerenciadores
 {
-    Gerenciador_Colisoes* Gerenciador_Colisoes::pInstancia(NULL);
+    GerenciadorColisoes* GerenciadorColisoes::pInstancia(NULL);
 
-    Gerenciador_Colisoes::Gerenciador_Colisoes():
+    GerenciadorColisoes::GerenciadorColisoes():
     pJogador1(NULL),
     pJogador2(NULL),
     LObstaculos(),
@@ -16,7 +16,7 @@ namespace Gerenciadores
         LInimigos.clear();
     }
 
-    Gerenciador_Colisoes::~Gerenciador_Colisoes()
+    GerenciadorColisoes::~GerenciadorColisoes()
     {
         std::vector<Entidades::Entidade*>::iterator itrInim;
         std::list<Entidades::Entidade*>::iterator itrObs;
@@ -36,7 +36,7 @@ namespace Gerenciadores
         LObstaculos.clear();
     }
 
-    const sf::Vector2f Gerenciador_Colisoes::calculaColisoes(Entidades::Entidade* e1, Entidades::Entidade* e2)
+    const sf::Vector2f GerenciadorColisoes::calculaColisoes(Entidades::Entidade* e1, Entidades::Entidade* e2)
     {
         if(e1 && e2)
         {
@@ -60,7 +60,7 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Colisoes::tratarColisoesJogsObstacs()
+    void GerenciadorColisoes::tratarColisoesJogsObstacs()
     {
         std::list<Entidades::Entidade*>::iterator itrObs;
         Entidades::Entidade* obst = NULL;
@@ -90,7 +90,7 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Colisoes::tratarColisoesJogsInimgs()
+    void GerenciadorColisoes::tratarColisoesJogsInimgs()
     {
         std::vector<Entidades::Entidade*>::iterator itrInim;
         Entidades::Entidade* inim = NULL;
@@ -120,7 +120,7 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Colisoes::tratarColisoesInimgsObstacs() {
+    void GerenciadorColisoes::tratarColisoesInimgsObstacs() {
         std::list<Entidades::Entidade*>::iterator itrObs;
 
         for (int i=0; i<LInimigos.size(); i++) {
@@ -137,7 +137,7 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Colisoes::tratarColisoesImimgs() {
+    void GerenciadorColisoes::tratarColisoesImimgs() {
         for (int i=0; i<LInimigos.size(); i++) {
             Entidades::Entidade* inimigo1 =LInimigos[i];
             for (int j=i; j<LInimigos.size(); j++) {
@@ -152,19 +152,19 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Colisoes::incluirObstaculo(Entidades::Entidade* pO) {
+    void GerenciadorColisoes::incluirObstaculo(Entidades::Entidade* pO) {
         if (pO) {
             LObstaculos.push_back(pO);
         }
     }
 
-    void Gerenciador_Colisoes::incluirInimigo(Entidades::Entidade* pI) {
+    void GerenciadorColisoes::incluirInimigo(Entidades::Entidade* pI) {
         if (pI) {
             LInimigos.push_back(pI);
         }
     }
 
-    void Gerenciador_Colisoes::removerObstaculo(Entidades::Entidade* pO)
+    void GerenciadorColisoes::removerObstaculo(Entidades::Entidade* pO)
     {
         std::list<Entidades::Entidade*>::iterator itr;
         itr = std::find(LObstaculos.begin(), LObstaculos.end(), pO);
@@ -172,7 +172,7 @@ namespace Gerenciadores
             LObstaculos.erase(itr);
     }
 
-    void Gerenciador_Colisoes::removerInimigo(Entidades::Entidade* pI)
+    void GerenciadorColisoes::removerInimigo(Entidades::Entidade* pI)
     {
         std::vector<Entidades::Entidade*>::iterator itr;
         itr = std::find(LInimigos.begin(), LInimigos.end(), pI);
@@ -180,7 +180,7 @@ namespace Gerenciadores
             LInimigos.erase(itr);
     }
 
-    void Gerenciador_Colisoes::limparListas()
+    void GerenciadorColisoes::limparListas()
     {
         LInimigos.clear();
         LObstaculos.clear();
@@ -188,15 +188,15 @@ namespace Gerenciadores
         setJog2(NULL);
     }
 
-    void Gerenciador_Colisoes::setJog1(Entidades::Personagens::Jogador* pJog1) {
+    void GerenciadorColisoes::setJog1(Entidades::Personagens::Jogador* pJog1) {
         pJogador1 = pJog1;
     }
 
-    void Gerenciador_Colisoes::setJog2(Entidades::Personagens::Jogador* pJog2) {
+    void GerenciadorColisoes::setJog2(Entidades::Personagens::Jogador* pJog2) {
         pJogador2 = pJog2;
     }
 
-    void Gerenciador_Colisoes::executar() {
+    void GerenciadorColisoes::executar() {
         tratarColisoesJogsObstacs();
         tratarColisoesJogsInimgs();
         tratarColisoesInimgsObstacs();
@@ -205,11 +205,11 @@ namespace Gerenciadores
     }
 
     // Execução efetiva do padrão de projeto singleton
-    Gerenciador_Colisoes* Gerenciador_Colisoes::getInstancia()
+    GerenciadorColisoes* GerenciadorColisoes::getInstancia()
     {
         if(!pInstancia)
         {
-            pInstancia = new Gerenciador_Colisoes();
+            pInstancia = new GerenciadorColisoes();
         }
         return pInstancia;
     }

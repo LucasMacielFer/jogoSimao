@@ -2,9 +2,9 @@
 
 #include <string>
 #include "../../texto/ElementoTexto.h"
-#include "../../gerenciadores/Gerenciador_Colisoes.h"
-#include "../../gerenciadores/Gerenciador_Grafico.h"
-#include "../../gerenciadores/Gerenciador_Eventos.h"
+#include "../../gerenciadores/GerenciadorColisoes.h"
+#include "../../gerenciadores/GerenciadorGrafico.h"
+#include "../../gerenciadores/GerenciadorEventos.h"
 #include "../../listas/ListaEntidades.h"
 #include "../../CriadorMapas.h"
 #include "../../entidades/Entidade.h"
@@ -24,10 +24,8 @@ namespace Estados
         class Fase : public Ente, public Estado
         {
             protected:
-                static Gerenciadores::Gerenciador_Colisoes* pGColisoes;
-                static Gerenciadores::Gerenciador_Eventos* pGEventos;
-                static int pontJ1;
-                static int pontJ2;
+                static Gerenciadores::GerenciadorColisoes* pGColisoes;
+                static Gerenciadores::GerenciadorEventos* pGEventos;
                 CriadorMapas* criadorDeMapas;
                 int tamMapa;
                 Entidades::Personagens::Jogador* jog1;
@@ -70,6 +68,7 @@ namespace Estados
                 void executar(float dt);
                 void desenhar(sf::RenderWindow& janela);
                 void setAtivo(const bool at);
+                virtual void pausar();
                 virtual void salvarJogada(const char* caminhoSalvamento);
         };
     }

@@ -1,10 +1,10 @@
 #include "../../include/observadores/ObservadorJogador.h"
-#include "../../include/gerenciadores/Gerenciador_Eventos.h"
+#include "../../include/gerenciadores/GerenciadorEventos.h"
 
 namespace Observadores
 {
     ObservadorJogador::ObservadorJogador(const int numJog, Entidades::Personagens::Jogador* pJ):
-    Observador(Gerenciadores::Gerenciador_Eventos::getInstancia()),
+    Observador(Gerenciadores::GerenciadorEventos::getInstancia()),
     numeroJogador(numJog),
     pJogador(pJ)
     {
@@ -32,7 +32,8 @@ namespace Observadores
             }
             else if(teclado[tecla] == 's')
             {
-                pJogador->atacar();
+                if(pJogador->ataqueDisponivel())
+                    pJogador->atacar();
             }
         }
 
@@ -52,7 +53,8 @@ namespace Observadores
             }
             else if(tecladoEspecial[tecla] == "Down")
             {
-                pJogador->atacar();
+                if(pJogador->ataqueDisponivel())
+                    pJogador->atacar();
             }
         }
     }

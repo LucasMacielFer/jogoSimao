@@ -23,5 +23,7 @@ namespace Texto
             const sf::Vector2f getTamanho() const;
             void setPosicao(sf::Vector2f posTexto);
             void desenhar(sf::RenderWindow& janela);
+            void operator+=(char c);
+            void operator--();
     };
 }

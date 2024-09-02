@@ -1,31 +1,31 @@
-#include "../../include/gerenciadores/Gerenciador_Eventos.h"
+#include "../../include/gerenciadores/GerenciadorEventos.h"
 
 namespace Gerenciadores
 {
     // Inicialização de pInstancia como NULL
-    Gerenciador_Eventos* Gerenciador_Eventos::pInstancia(NULL);
+    GerenciadorEventos* GerenciadorEventos::pInstancia(NULL);
 
-    Gerenciador_Eventos::Gerenciador_Eventos():
-    pGGrafico(Gerenciador_Grafico::getInstancia()),
+    GerenciadorEventos::GerenciadorEventos():
+    pGGrafico(GerenciadorGrafico::getInstancia()),
     listaObs(),
     jogador1(NULL),
     jogador2(NULL)
     {
     }
 
-    Gerenciador_Eventos::~Gerenciador_Eventos()
+    GerenciadorEventos::~GerenciadorEventos()
     {
         pGGrafico = NULL;
     }
 
-    sf::Event Gerenciador_Eventos::recebeEvento()
+    sf::Event GerenciadorEventos::recebeEvento()
     {
         sf::Event e;
         pGGrafico->getJanela().pollEvent(e);
         return e;
     }
 
-    void Gerenciador_Eventos::processaEvento(sf::Event e)
+    void GerenciadorEventos::processaEvento(sf::Event e)
     {
         std::list<Observadores::Observador*>::iterator itr;
 
@@ -38,7 +38,8 @@ namespace Gerenciadores
         {
             for(itr = listaObs.begin(); itr != listaObs.end(); itr++)
             {
-                (*itr)->teclaSolta(e.key.code);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaSolta(e.key.code);
             }
         }
 
@@ -46,55 +47,65 @@ namespace Gerenciadores
         {
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::A);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::A);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::D);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::D);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::W);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::W);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::S);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::S);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::Left);  
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::Left);  
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::Right);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::Right);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::Up);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::Up);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::Down);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::Down);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::Enter);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::Enter);
             }
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
             {
-                (*itr)->teclaPressionada(sf::Keyboard::Key::Escape);
+                if((*itr)->getAtivar())
+                    (*itr)->teclaPressionada(sf::Keyboard::Key::Escape);
             }
         }
     }
 
-    void Gerenciador_Eventos::executar()
+    void GerenciadorEventos::executar()
     {
         sf::Event e;
         e = recebeEvento();
         processaEvento(e);
     }
 
-    void Gerenciador_Eventos::adicionarObservador(Observadores::Observador* pObs)
+    void GerenciadorEventos::adicionarObservador(Observadores::Observador* pObs)
     {
         if(pObs)
         {
@@ -102,7 +113,7 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Eventos::removerObservador(Observadores::Observador* pObs)
+    void GerenciadorEventos::removerObservador(Observadores::Observador* pObs)
     {
         std::list<Observadores::Observador*>::iterator itr;
         itr = std::find(listaObs.begin(), listaObs.end(), pObs);
@@ -113,22 +124,22 @@ namespace Gerenciadores
         }
     }
 
-    void Gerenciador_Eventos::setJogador1(Entidades::Personagens::Jogador* pJ)
+    void GerenciadorEventos::setJogador1(Entidades::Personagens::Jogador* pJ)
     {
         jogador1 = pJ;
     }
 
-    void Gerenciador_Eventos::setJogador2(Entidades::Personagens::Jogador* pJ)
+    void GerenciadorEventos::setJogador2(Entidades::Personagens::Jogador* pJ)
     {
         jogador2 = pJ;        
     }
 
     // Execução efetiva do padrão de projeto singleton
-    Gerenciador_Eventos* Gerenciador_Eventos::getInstancia()
+    GerenciadorEventos* GerenciadorEventos::getInstancia()
     {
         if(!pInstancia)
         {
-            pInstancia = new Gerenciador_Eventos();
+            pInstancia = new GerenciadorEventos();
         }
         return pInstancia;
     }

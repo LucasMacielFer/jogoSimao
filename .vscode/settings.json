@@ -62,5 +62,6 @@
         "typeinfo": "cpp",
         "valarray": "cpp",
         "list": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/lucas/Documents/jogoSimao/CaveEscape++"
 }
